@@ -9,3 +9,5 @@ Hola soy Camila Gaytan, tengo 18 años. Me encanta el diseño y usar la creativi
 
 Mi nombre es Brian Rodriguez, tengo 25 años y vivo en CABA. Me recibí como Técnico Superior en Higiene y Seguridad en el Trabajo en el año 2020. Pero decidí abarcar por nuevos rumbos y dedicarme 100% a la Programación Web Full Stack.
 
+Soy Dylan Ojeda, tengo 19 años, soy papá de un varoncito y me encanta la programación, espero poder vivir de esto al finalizar la cursada.
+
