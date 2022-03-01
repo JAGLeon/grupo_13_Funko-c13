@@ -1,0 +1,180 @@
+/* GENERALES */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+/* END GENERALES */
+
+/* HEADER */
+
+.login header{
+    display: flex;
+    background-color: #072227;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 10px;
+}
+
+.login header i{
+    color: white;
+}
+
+.login header a{
+    text-decoration: none;
+    color: white;
+}
+
+.login header ul{
+    list-style: none;
+    color: white;
+}
+
+.login header .logo{
+    width: 25%;
+
+}
+
+.login header nav ul{
+    display: none;
+}
+
+.login header ul.user{
+    display: none;
+}
+
+.login header form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+.login header form input{
+    background-color: white;
+    background-image: url('/public/img/searchicon.png');
+    background-size: 19px;
+    background-position: 93% center ;
+    background-repeat: no-repeat;
+    padding-left: 10px;
+    padding-right: 25px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    border: none;
+}
+
+.login header form input::placeholder{
+    border-right: 1px solid black;
+    width: 82%;
+    font-size: large;
+}
+
+.login header i{
+    width: 5%;
+    font-size: 1.3rem;
+}
+
+/* END HEADER */
+
+
+/* MAIN */
+
+.login main{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login main h1{
+    margin: 15% 0;
+    font-size: 2.5rem;
+}
+
+.login main article{
+    width: 90%;
+    max-width: 360px;
+}
+
+.login main article form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.login main article form input{
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgba(128, 128, 128,0.6);
+    font-size: 1.3rem;
+}
+
+.login main article form i.fa-solid{
+    position: absolute;
+    top:37%;
+    right: 9%;
+    font-size: 1.2rem;
+}
+
+.login main article form div.checkbox{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.login main article form div.checkbox input{
+    position: absolute;
+    top: 3px;
+    left: 0%;
+    background-color: rgba(128, 128, 128,0.6);
+    border: none;
+}
+
+.login main article form div.checkbox label{
+    position: absolute;
+    left: 4%;
+}
+
+.login main article form div.checkbox a{
+    position: absolute;
+    right: 0%;
+    font-size: 1rem;
+    color: black;
+}
+
+.login main article form button{
+    background-color: #3483FA;
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: none;
+    margin: 20px 0;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.login main article.art-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login main article.art-bottom a{
+    color: black;
+}
+
+.login main article.art-bottom p{
+    margin-top: 20px;
+}
+/* END MAIN */
+
+/* FOOTER */
+
+
+
+/* END FOOTER  */
