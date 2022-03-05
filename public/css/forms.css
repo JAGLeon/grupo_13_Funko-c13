@@ -10,10 +10,6 @@
     box-sizing: border-box;
 }
 
-/* body.forms{
-    width: 100%;
-} */
-
 body.forms span.error-message{
     display: none;
     color: red;
@@ -29,6 +25,8 @@ body.forms a{
     color: black;
 }
 
+/* END GENERALES */
+
 /* HEADER */
 
 header{
@@ -38,6 +36,7 @@ header{
     justify-content: space-around;
     padding-right: 10px;
     margin-bottom: 20px;
+    max-height: 50px;
 }
 
 header i{
@@ -58,7 +57,7 @@ header ul{
 
 header .logo{
     width: 25%;
-
+    max-width: 150px;
 }
 
 header nav ul{
@@ -98,7 +97,7 @@ header form input{
 
 /* END HEADER */
 
-/* END GENERALES */
+
 body.forms main{
     display: flex;
     flex-direction: column;
@@ -163,6 +162,78 @@ body.forms main section.form-container .btn{
     background-color: #3483FA;
 }
 
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.4rem;
+    background-color: #072227;
+    color: white;
+    padding: 0 1rem;
+}
+
+#footer-ul{
+    list-style: none;
+}
+
+#footer-a{
+    color: white;
+    text-decoration: none;
+}
+
+footer .footer_logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .footer_logo img{
+    margin: 0 auto;
+    max-width: 250px;
+}
+
+footer span {
+    margin-bottom: 0.5rem;
+}
+
+footer .footer_article-container{
+    line-height: 1.5rem;
+}
+
+footer .footer_article-container h4{
+    margin: 0.8rem 0;
+}
+
+footer .footer-division{
+    background-color: grey;
+    height: 1px;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+footer .footer_bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5rem;
+}
+
+footer .footer_bottom span{
+    font-size: 0.9rem;
+}
+
+footer .footer_bottom .logo-redes i{
+    color: white;
+    margin-right: 0.8rem;
+    font-size: 1.5rem;
+}
+
+footer .footer_bottom .logo-redes i:last-child{
+    margin-right: none;
+}
+/* END FOOTER  */
 
 
 
