@@ -5,6 +5,7 @@ body.login main .login .input-container_login{
 
 body.login main .login .input-container_login label{
     display: flex;
+    cursor: pointer;
 }
 
 input.checkbox{
@@ -12,6 +13,7 @@ input.checkbox{
     position: relative;
     top: 14%;
     margin-right: 0.2rem;
+    cursor: pointer;
 }
 
 .main_login-container{
@@ -19,3 +21,10 @@ input.checkbox{
 }
 
 
+@media(min-width:768px){
+    .form-container{
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1.8rem;
+        border-radius: 0.3rem;
+    }
+}

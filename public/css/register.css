@@ -1,6 +1,5 @@
 body.forms main section.register .nom_ape-container{
     display: flex;
-
     justify-content: space-between;
 }
 
@@ -14,6 +13,10 @@ body.forms main section.register .nom_ape-container .rInput .rInput-style{
 
 body.forms main section.register .span-register a{
     color: #1EC124;
+}
+
+.selec-container{
+    cursor: pointer;
 }
 
 
