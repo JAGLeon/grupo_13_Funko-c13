@@ -81,100 +81,52 @@
 
 /* END HEADER */
 
-
 /* MAIN */
 
-.login main{
-    background-color: white;
+body.login main .login .input-container_login{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
 }
 
-.login main h1{
-    margin: 15% 0;
-    font-size: 2.5rem;
-}
-
-.login main article{
-    width: 90%;
-    max-width: 360px;
-}
-
-.login main article form{
+body.login main .login .input-container_login label{
     display: flex;
-    flex-direction: column;
+}
+
+input.checkbox{
+    order:-1;
     position: relative;
+    top: 14%;
+
+
 }
 
-.login main article form input{
-    margin-bottom: 20px;
-    padding: 15px 20px;
-    border-radius: 15px;
-    border: none;
-    background-color: rgba(128, 128, 128,0.6);
-    font-size: 1.3rem;
-}
-
-.login main article form i.fa-solid{
-    position: absolute;
-    top:37%;
-    right: 9%;
-    font-size: 1.2rem;
-}
-
-.login main article form div.checkbox{
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.login main article form div.checkbox input{
-    position: absolute;
-    top: 3px;
-    left: 0%;
-    background-color: rgba(128, 128, 128,0.6);
-    border: none;
-}
-
-.login main article form div.checkbox label{
-    position: absolute;
-    left: 4%;
-}
-
-.login main article form div.checkbox a{
-    position: absolute;
-    right: 0%;
-    font-size: 1rem;
-    color: black;
-}
-
-.login main article form button{
-    background-color: #3483FA;
-    padding: 15px 20px;
-    border-radius: 15px;
-    border: none;
-    margin: 20px 0;
-    font-size: 1.3rem;
-    color: white;
-}
-
-.login main article.art-bottom{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login main article.art-bottom a{
-    color: black;
-}
-
-.login main article.art-bottom p{
-    margin-top: 20px;
-}
 /* END MAIN */
 
 /* FOOTER */
 
+.login footer{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 
+.login footer article.logo-redes{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #072227;
+}
 
+.login footer article.logo-redes img.logo{
+    width: 20%;
+}
+
+.login footer article.logo-redes i{
+    color: white;
+    font-weight: lighter;
+    margin-right: 5px;
+    font-size: 100%;
+}
 /* END FOOTER  */

@@ -14,7 +14,7 @@
     <!-- StyleSheets -->
     <link rel="stylesheet" href="/public/css/forms.css">
 </head>
-<body class="forms login">
+<body class="forms">
 <!-- HEADER -->
     <header>
         <img src="/public/img/Logo.svg" alt="Funko logo" class="logo">
@@ -38,27 +38,52 @@
 <!-- END HEADER -->
 <!-- MAIN -->
     <main>
-        <section class="form-container login">
-            <h2>Inicia sesión</h2>
+        <section class="form-container register">
+            <h2>Registrate</h2>
             <form action="" method="">
                 <div class="input-container">
-                    <input class="input-style" placeholder="Email o usuario" type="text" name="usu" required>
-                    <span class="error-message">Coloque su email o usuario</span>
+                    <select class="input-style" name="pais" id="">
+                        <option value="" hidden>País</option>
+                        <option value="ar">Argentina</option>
+                        <option value="pe">Perú</option>
+                        <option value="ch">Chile</option>
+                        <option value="bo">Bolivia</option>
+                        <option value="ur">Uruguay</option>
+                        <option value="Ec">Ecuador</option>
+                        <option value="pa">Paraguay</option>
+                        <option value="co">Colombia</option>
+                    </select>
+                    <span class="error-message">Seleccionar su país</span>
+                </div>
+                <div class="nom_ape-container">
+                    <div class="input-container rInput">
+                        <input class="input-style rInput-style" placeholder="Nombre" type="text" name="name" id="name" required>
+                        <span class="error-message">Su nombre</span>
+                    </div>
+                    <div class="input-container rInput">
+                        <input class="input-style rInput-style" placeholder="Apellido" type="apellido" name="apellido" id="apellido" required>
+                        <span class="error-message">Su apellido</span>
+                    </div>
+                </div>
+                <div class="input-container">
+                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="usu" id="usu" required>
+                    <span class="error-message">Ingresar un usuario</span>
+                </div>
+                <div class="input-container">
+                    <input class="input-style" placeholder="Email" type="email" name="email" id="email" required>
+                    <span class="error-message">Ingresar su email</span>
                 </div>
                 <div class="input-container pass-container">
                     <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password" required>
                     <span class="error-message">Ingresar una contraseña</span>
                     <i class="fa-solid fa-eye-slash"></i>
                 </div>
-                <div class="input-container_login">
-                    <label for="recuerdame">Recuerdame<input type="checkbox" name="recuerdame" class="checkbox"></label>
-                    <a href="">¿Necesitas ayuda?</a>
-                </div>
+                <span>Al registrarte estás aceptando las <a href="">políticas de privacidad</a></span>
                 <div class="btn-container">
                     <span class="error-message">Hubo un error en el registro</span>
-                    <button type="submit" class="btn btn-submit">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-submit">Continuar</button>
                 </div>
-                <span>¿No tienes una cuenta de Funko? <a href="">Registrate</a></span>
+                <span class="span-register">¿Ya tenés cuenta? <a href="">Iniciá sesión aquí</a></span>
             </form>
         </section>
     </main>

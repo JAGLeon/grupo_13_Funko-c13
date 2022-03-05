@@ -1,0 +1,22 @@
+body.forms main section.register .nom_ape-container{
+    display: flex;
+
+    justify-content: space-between;
+}
+
+body.forms main section.register .nom_ape-container .rInput{
+    width: 49%;
+}
+
+body.forms main section.register .nom_ape-container .rInput .rInput-style{
+    width: 100%;
+}
+
+body.forms main section.register .span-register a{
+    color: #1EC124;
+}
+
+
+
+
+
