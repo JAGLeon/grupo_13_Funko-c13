@@ -1,5 +1,5 @@
-@import url('/public/css/register.css');
-@import url('/public/css/login.css');
+@import url('/css/register.css');
+@import url('/css/login.css');
 
 /* GENERALES */
 
@@ -17,6 +17,12 @@ body.forms span.error-message{
     margin-left: 1rem;
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 body.forms main section.form-container div.input-container .input-style:focus{
     outline: none;
 }
@@ -32,6 +38,9 @@ header{
     padding-right: 0.8rem;
     margin-bottom: 1.4rem;
     max-height: 3.1rem;
+    /* position: fixed;
+    top: 0; */
+    width: 100%;
 }
 
 header .fa-cart-shopping,
@@ -77,12 +86,12 @@ header form{
 
 header form input{
     background-color: white;
-    background-image: url('/public/img/searchicon.png');
-    background-size: 1.3rem;
+    background-image: url('/img/searchicon.png');
+    background-size: 1.2rem;
     background-position: 93% center ;
     background-repeat: no-repeat;
-    padding: 0.6rem 1rem 0.6rem 1rem;
-    border-radius: 0.9rem;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 0.7rem;
     width: 100%;
     border: none;
 }
@@ -106,6 +115,11 @@ body.forms main{
     justify-content: center;
     align-items: center;
     padding: 0 0.6rem;
+    margin: 1.4rem 0;
+}
+
+body.forms main{
+    margin: auto 0;
 }
 
 body.forms main section.form-container{
@@ -116,7 +130,7 @@ body.forms main section.form-container{
     max-width:  85rem;
 }
 
-body.forms main section.form-container h2{
+body.forms main section.form-container h1{
     text-align: center;
     font-size: 3rem;
     font-weight: 100;
@@ -175,8 +189,8 @@ footer{
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 1.4rem;
     background-color: #072227;
+    margin-top: 1.4rem;
     color: white;
     padding: 0 1rem;
 }
@@ -189,6 +203,11 @@ footer{
     color: white;
     text-decoration: none;
 }
+
+#footer-a:hover{
+    color: #3483FA;
+}
+
 
 footer .footer_logo{
     display: flex;
@@ -234,6 +253,12 @@ footer .footer_bottom .logo-redes i{
     color: white;
     margin-right: 0.8rem;
     font-size: 2rem;
+    transition: all 450ms;
+}
+
+footer .footer_bottom .logo-redes i:hover{
+    font-size: 2.3rem;
+    color: #3483FA;
 }
 
 footer .footer_bottom .logo-redes i:last-child{
@@ -269,14 +294,14 @@ header form{
 }
 
 /* MAIN */
-main{
-    margin-bottom: 1.4rem;
+body.forms main{
+    margin: auto 0;
 }
 
 /* FOOTER */
-footer{
+/* footer{
     margin-top: auto;
-}
+}  */
 
 footer .footer-div{
     display: flex;
