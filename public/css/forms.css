@@ -17,7 +17,7 @@ body.forms span.error-message{
     margin-left: 1rem;
 }
 
-body{
+body.forms{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -39,7 +39,8 @@ header{
     margin-bottom: 1.4rem;
     max-height: 3.1rem;
     /* position: fixed;
-    top: 0; */
+    top: 0; 
+    left: 0;*/
     width: 100%;
 }
 
@@ -275,13 +276,6 @@ footer .footer_bottom .logo-redes i:last-child{
 
 @media(min-width: 768px){
 
-/* BODY  */
-body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 /* NAV */
 header i{
     color: white;
@@ -299,9 +293,6 @@ body.forms main{
 }
 
 /* FOOTER */
-/* footer{
-    margin-top: auto;
-}  */
 
 footer .footer-div{
     display: flex;
@@ -313,7 +304,7 @@ footer .footer-div{
 footer .footer_logo{
     display: flex;
     flex-wrap: wrap;
-    width: 17rem;
+    width: 19rem;
 }
     
 footer .footer-division{

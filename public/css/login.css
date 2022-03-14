@@ -7,6 +7,9 @@ body.login main .login .input-container_login label{
     display: flex;
     cursor: pointer;
 }
+.a-contraseña{
+    color: black;
+}
 
 input.checkbox{
     order:-1;

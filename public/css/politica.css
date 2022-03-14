@@ -1,0 +1,339 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    background-color: #072227;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 0.8rem;
+    margin-bottom: 1.4rem;
+    max-height: 3.1rem;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+}
+
+header .fa-cart-shopping,
+.fa-bars{
+    color: white;
+    width: 5%;
+    font-size: 1.3rem;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header ul{
+    list-style: none;
+    color: white;
+}
+
+header a.logo{
+    width: 25%;
+    max-width: 10rem;
+}
+
+header .logo img{
+    width: 100%;
+}
+
+header nav ul{
+    display: none;
+}
+
+header div.user{
+    display: none;
+}
+
+header form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+}
+
+header form input{
+    background-color: white;
+    background-image: url('/img/searchicon.png');
+    background-size: 1.2rem;
+    background-position: 93% center ;
+    background-repeat: no-repeat;
+    padding: 0.4rem 1rem 0.4rem 1rem;
+    border-radius: 0.7rem;
+    width: 100%;
+    border: none;
+}
+
+header form input:focus{
+    outline: none;
+}
+
+ header form input::placeholder{
+    border-right: 1px solid black;
+    width: 82%;
+    font-size: large;
+}
+
+/* END HEADER */
+
+/* MAIN */
+body.politicas main{
+    margin: 0  1rem;
+}
+
+main section.menu-politicas{
+    margin: 4rem 0 1rem;
+}
+
+main section.menu-politicas h2{
+    text-decoration: underline  3px black;
+}
+
+main section.menu-politicas ul{
+    list-style: none;
+    margin-top: 0.4rem;
+    line-height: 1.5rem;
+}
+
+main section.menu-politicas ul li a{
+    color: rgb(50, 50, 168);
+    text-decoration: none; 
+    font-size: 0.8rem;
+}
+
+main section.politicas-priv h1{
+    font-size: 1.9rem;
+    margin-bottom: 0.4rem;
+}
+
+main section.politicas-priv article h3{
+    margin: 0.4rem 0;
+    font-weight: 500;
+}
+
+main section.politicas-priv article p{
+    margin: 0.6rem 0;
+    color: rgb(44, 43, 43);
+    
+}
+
+main section.politicas-priv article ul{
+    margin-left: 1.1rem;
+}
+
+/* END MAIN */
+
+/* FOOTER */
+
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #072227;
+    margin-top: 1.4rem;
+    color: white;
+    padding: 0 1rem;
+}
+
+#footer-ul{
+    list-style: none;
+}
+
+#footer-a{
+    color: white;
+    text-decoration: none;
+}
+
+#footer-a:hover{
+    color: #3483FA;
+}
+
+
+footer .footer_logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .footer_logo img{
+    margin: 0 auto;
+    max-width: 16.5rem;
+}
+
+footer span {
+    margin-bottom: 0.5rem;
+}
+
+footer .footer_article-container{
+    line-height: 1.5rem;
+}
+
+footer .footer_article-container h4{
+    margin: 0.8rem 0;
+}
+
+footer .footer-division{
+    background-color: grey;
+    height: 1px;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+footer .footer_bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5rem;
+}
+
+footer .footer_bottom span{
+    font-size: 0.9rem;
+}
+
+footer .footer_bottom .logo-redes i{
+    color: white;
+    margin-right: 0.8rem;
+    font-size: 2rem;
+    transition: all 450ms;
+}
+
+footer .footer_bottom .logo-redes i:hover{
+    font-size: 2.3rem;
+    color: #3483FA;
+}
+
+footer .footer_bottom .logo-redes i:last-child{
+    margin-right: none;
+}
+/* END FOOTER  */
+
+
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+
+/* TABLET */
+
+@media(min-width: 768px){
+
+    /* NAV */
+    header i{
+        color: white;
+        width: 5%;
+        font-size: 1.5rem;
+    }
+    
+    header form{
+        width: 25rem;
+    }
+    
+    /* MAIN */
+    
+    body.politicas main{
+        margin: 0  1rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    main section.menu-politicas{
+        margin: 4rem 0 1rem;
+    }
+
+
+    main section.politicas-priv{
+        margin: 4rem 0rem 0 1rem;
+        width: 700px;
+    }
+
+    /* FOOTER */
+    
+    footer .footer-div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+        
+    footer .footer_logo{
+        display: flex;
+        flex-wrap: wrap;
+        width: 19rem;
+    }
+        
+    footer .footer-division{
+        margin: 0.6rem 0;
+    }
+    
+    footer .footer_bottom{
+        height: 4.5rem;
+    }
+    }
+    
+    
+    /* DESKTOP */
+    
+    @media(min-width: 1200px){
+    
+    /* MAIN */
+    main section.menu-politicas{
+        max-width: 350px;
+    }
+
+    main section.politicas-priv{
+        max-width: 700px;
+    }
+
+    main section.menu-politicas ul li a{
+        font-size: 0.9rem;
+    }
+
+    /* HEADER */
+    
+    header .fa-bars{
+        display: none;
+    }
+    
+    header nav ul{
+        display: flex;
+    }
+    
+    header nav ul li{
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+    }
+    
+    header .fa-caret-down{
+        font-size: 1rem;
+        margin:0 0.4rem;
+    }
+    
+    header div.user{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header .img_usu-header{
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: white;
+        margin-right: 0.3rem;
+        border-radius: 50%;
+    }
+    
+    /* END HEADER */
+    
+    }
