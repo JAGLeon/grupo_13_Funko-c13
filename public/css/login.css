@@ -19,19 +19,31 @@ input.checkbox{
     cursor: pointer;
 }
 
-.main_login-container{
-    margin: 5.5rem 0;
+body.forms .main_login-container{
+    margin:  6rem auto 4rem;
 }
 
 
 @media(min-width:768px){
-    .main_login-container{
-        margin: auto 1.4rem;
+    body.forms{
+        padding: 3.1rem 0 300px;
     }
 
     .form-container{
         background-color: rgba(0, 0, 0, 0.1);
         padding: 1.8rem;
         border-radius: 0.3rem;
-    }
+   }
+
+   body.forms .main_login-container{
+       margin: auto;
+   }
+   
+   /* Footer */
+
+   footer{
+       position: absolute;
+       left: 0;
+       bottom: 0;
+   }
 }

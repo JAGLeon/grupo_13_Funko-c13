@@ -12,6 +12,7 @@
     box-sizing: border-box;
 }
 /****/
+
 body.forms span.error-message{
     display: none;
     color: red;
@@ -35,7 +36,7 @@ body.forms main{
 }
 
 body.forms main{
-    margin: auto 0;
+    margin: 3.3rem auto 0 auto;
 }
 
 body.forms main section.form-container{
