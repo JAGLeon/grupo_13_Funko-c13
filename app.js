@@ -12,6 +12,8 @@ app.get('/login',(req,res)=>{res.sendFile(path.join(__dirname,'./views/login.htm
 app.get('/register',(req,res)=>{res.sendFile(path.join(__dirname,'./views/register.html'))});
 app.get('/politicas',(req,res)=>{res.sendFile(path.join(__dirname,'./views/politicas.html'))});
 app.get('/formas-de-pago',(req,res)=>{res.sendFile(path.join(__dirname,'./views/formas-de-pago.html'))});
+app.get('/productDetail', (req,res) => {res.sendFile(path.join(__dirname, './views/productDetail.html'))})
+
 
 app.listen(PORT,()=> console.log(`Puerto ${PORT} 
 link: http://localhost:${PORT}`))
