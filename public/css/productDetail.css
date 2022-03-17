@@ -321,6 +321,14 @@ div.interest div.product button:hover {
 
 /* END MAIN */
 
+/* FOOTER */
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
 
 /* Media queries */
 
@@ -574,7 +582,7 @@ div.interest div.product button:hover {
         border: solid 1px #35858B;
         border-radius: 10px;
         max-width: 420px;
-        height: 26rem;
+        height: 30rem;
         margin-right: 1.3rem;
     }
 
@@ -631,14 +639,14 @@ div.interest div.product button:hover {
         border-radius: 10px;
         max-width: 725px;
         width: 60%;
-        height: 26rem;
+        height: 30rem;
         margin-left: 1.3rem;
     }
 
     div.description div#item {
         margin: 0 1rem 1.5rem;
         display: block;
-        font-size: 1.38rem;
+        font-size: 1.5rem;
     }
 
 
