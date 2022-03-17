@@ -46,6 +46,45 @@ main section article p {
     line-height: 1.5rem;
 } 
 
+/*Slider*/
+
+.slider-formasDePago{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.slider-formasDePago ul{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300%;
+    animation: deslizar 20s infinite alternate;
+}
+
+.slider-formasDePago ul li{
+    list-style: none;
+    width: 100%;
+}
+
+.slider-formasDePago ul li img{
+    width: 100%;
+}
+
+@keyframes deslizar {
+    0%{margin-left: 0%;}
+    30%{margin-left: 0%;}
+
+    35%{margin-left: -100%;}
+    65%{margin-left: -100%;}
+
+    70%{margin-left: -200%;}
+    100%{margin-left: -200%;}
+}
+
+
 /* END MAIN */
 
 /*****************/
@@ -60,16 +99,40 @@ main section article p {
 body.pagos{
     display: flex;
     flex-direction: column;
+    padding: 3.1rem 0 300px;
     min-height: 100vh;
 }
 
 /* MAIN */
 
 main{
-    margin: auto 0;
+    /* margin: 4.5rem auto 0;
+     */
+     margin: auto;
 }
 
 main h1{
     margin-bottom: 2rem;
 }
+
+/*SLIDER*/
+
+.slider-formasDePago{
+    width: 100%;
+}
+
+/*FOOTER*/
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+}
+
+
+@media(min-width: 1200px){
+    .slider-formasDePago{
+        width: 60%;
+    }
 }

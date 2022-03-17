@@ -15,7 +15,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icon -->
-    <link rel="icon" href="/img/Logo.svg">
+    <link rel="shortcut icon" href="/img/funkoIcon.png" type="image/x-icon">
     <!-- StyleSheets -->
     <!-- CSS only -->
     <link rel="stylesheet" href="css/pagos.css">
@@ -23,53 +23,60 @@
 
 <body class="pagos">
 <!-- HEADER -->
-<header>
-    <a href="" class="logo"><img src="img/Logo.svg" alt="Funko logo"></a>
-    <nav>
-        <ul>
-            <li><a href="">Categorias <i class="fa-solid fa-caret-down"></i></a></li>
-            <li><a href="">Ofertas <i class="fa-solid fa-caret-down"></i></a></li>
-            <li><a href="">Novedades </a></li>
-        </ul>
-    </nav>
-    <form action="" class="search">
-        <input type="text" placeholder="Search" name="search">
-    </form> 
-    <div class="user">
-        <div class="img_usu-header"></div>
-        <a href="">User<i class="fa-solid fa-caret-down"></i></a>
-    </div>
-    <i class="fas fa-bars"></i>  
-    <a href="" class="header-carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-</header>
+    <header>
+        <a href="/" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
+        <nav class="menu">
+            <div class="menuClose"><i class="fa-solid fa-xmark"></i></div>
+            <ul>
+                <li><a href="">Categorias <i class="fa-solid fa-caret-down"></i></a></li>
+                <li><a href="">Ofertas <i class="fa-solid fa-caret-down"></i></a></li>
+                <li><a href="">Novedades </a></li>
+            </ul>
+        </nav>
+        <form action="" class="search">
+            <input type="text" placeholder="Search" name="search">
+        </form> 
+        <button class="headerButton-bars"><i class="fas fa-bars"></i> </button>
+        <div class="user">
+            <div class="img_usu-header"></div>
+            <a href="">User<i class="fa-solid fa-caret-down"></i></a>
+        </div>
+        <a href="" class="header-carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+    </header>
 <!-- END HEADER -->
 
 <!-- MAIN -->
 
-<main>
-    <H1>FORMAR DE PAGO</H1>
-    <section>
-        <article>
-            <div class="check-pago">
-                <i class="fa-solid fa-check"></i>
-                <h2>Precio Especial:</h2>
-            </div>
-            <p><b>-EFECTIVO:</b> Pago Fácil - Rapipago - Provincia NET</p>
-            <p><b>-DÉBITO:</b> Mastercard - CABAL Debito - Visa</p>
-            <p><b>-CRÉDITO 1 PAGO:</b> Visa - Mastercard - CABAL - American Express</p>
-            <p><b>-TRANSFERENCIA:</b> Online</p>
-            <p><b>-DEPÓSITO BANCARIO:</b>Online</p>
-        </article>
-        <article>
-            <div class="check-pago">
-                <i class="fa-solid fa-check"></i>
-                <h2>Precio de Lista</h2>
-            </div>
-            <p><b>-CRÉDITO 12 CUOTAS por MP:</b> Pago online. Mastercard Mercado Pago</p>
-        </article>
-    </section>  
-</main>
-
+    <main>
+        <H1>FORMAS DE PAGO</H1>
+        <section>
+            <article>
+                <div class="check-pago">
+                    <i class="fa-solid fa-check"></i>
+                    <h2>Precio Especial:</h2>
+                </div>
+                <p><b>-EFECTIVO:</b> Pago Fácil - Rapipago - Provincia NET</p>
+                <p><b>-DÉBITO:</b> Maestro - Mastercard Débito - CABAL Débito - Visa Débito</p>
+                <p><b>-CRÉDITO 1 PAGO:</b> Visa - Mastercard - CABAL - American Express</p>
+                <p><b>-TRANSFERENCIA:</b> Online</p>
+                <p><b>-DEPÓSITO BANCARIO:</b>Online</p>
+            </article>
+            <article>
+                <div class="check-pago">
+                    <i class="fa-solid fa-check"></i>
+                    <h2>Precio de Lista</h2>
+                </div>
+                <p><b>-CRÉDITO 12 CUOTAS por MP:</b> Pago online. Mastercard Mercado Pago</p>
+            </article>
+        </section>  
+        <div class="slider-formasDePago">
+            <ul>
+                <li><img src="/img/Efectivo.jpg" alt="Formas de pago en efectivo con Pago Facíl, Rapi Pago y Provincia NET."></li>
+                <li><img src="/img/Debito.jpg" alt="Formas de pago con tarjetas débito Maestro, Mastercard, Cabal y Visa."></li>
+                <li><img src="/img/Credito.jpg" alt="Se puede pagar con tarjetas de crédito con Me "></li>
+            </ul>
+        </div>
+    </main>
 <!-- END MAIN -->
 <!-- FOOTER -->
  <footer>
@@ -113,7 +120,8 @@
     </div>
 </footer>
 <!-- END FOOTER -->
-<!-- JavaScript Bundle with Popper -->
+<!-- Script -->
+<script src="js/header.js"></script>
 </body>
 
 </html>

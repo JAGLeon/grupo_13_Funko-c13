@@ -15,8 +15,21 @@ header{
     z-index: 1;
 }
 
-header .fa-cart-shopping,
+button.headerButton-bars{
+    border: none;
+    width: 5%;
+    font-size: 1.3rem;
+    background-color: #072227;
+}
+
 .fa-bars{
+    color: white;
+    width: 100%;
+    font-size: 1.3rem;
+    opacity: 1;
+}
+
+header .fa-cart-shopping{
     color: white;
     width: 5%;
     font-size: 1.3rem;
@@ -41,9 +54,57 @@ header .logo img{
     width: 100%;
 }
 
-header nav ul{
+header nav.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #3483FA;
+    padding: 1rem;
     display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
 }
+
+header nav.menu .menuClose{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+header nav.menu .menuClose .fa-xmark{
+    color: white;
+}
+
+header nav.menu ul{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+header nav.menu ul li{
+    width: 14rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+}
+
 
 header div.user{
     display: none;
@@ -78,6 +139,22 @@ header form input:focus{
     font-size: large;
 }
 
+/* ANIMACIONES */
+@keyframes menuFadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+header nav.menu.active{
+    display: flex;
+    opacity: 1;
+    animation: menuFadeIn 1s;
+}
+
 /* END HEADER */
 
 /*****************/
@@ -90,11 +167,6 @@ header form input:focus{
 @media(min-width: 768px){
 
 /* NAV */
-header i{
-    color: white;
-    width: 5%;
-    font-size: 1.5rem;
-}
 
 header form{
     width: 25rem;
@@ -106,19 +178,49 @@ header form{
 @media(min-width: 1200px){
 
 /* HEADER */
+header nav.menu{
+    position: initial;
+    height: auto;
+    background-color: #072227;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 1;
+    max-width: fit-content;
+}
+
+header nav.menu .menuClose{
+    display: none;
+}
+
+header button{
+    display: none;
+}
+header button .headerButton-bars{
+    display:none;
+}
+header nav.menu ul{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0.5;
+}
+
+header nav.menu ul li{
+    width: auto;
+}
 
 header .fa-bars{
     display: none;
 }
 
-header nav ul{
+header nav.menu ul{
     display: flex;
 }
 
-header nav ul li{
+header nav.menu ul li{
     display: flex;
     justify-content: space-between;
-    margin-left: 1rem;
 }
 
 header .fa-caret-down{

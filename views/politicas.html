@@ -15,7 +15,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icon -->
-    <link rel="icon" href="/img/Logo.svg">
+    <link rel="shortcut icon" href="/img/funkoIcon.png" type="image/x-icon">
     <!-- StyleSheets -->
     <link rel="stylesheet" href="css/politica.css">
 </head>
@@ -23,8 +23,9 @@
 <body class="politicas">
     <!-- HEADER -->
     <header>
-        <a href="" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
-        <nav>
+        <a href="/" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
+        <nav class="menu">
+            <div class="menuClose"><i class="fa-solid fa-xmark"></i></div>
             <ul>
                 <li><a href="">Categorias <i class="fa-solid fa-caret-down"></i></a></li>
                 <li><a href="">Ofertas <i class="fa-solid fa-caret-down"></i></a></li>
@@ -33,12 +34,12 @@
         </nav>
         <form action="" class="search">
             <input type="text" placeholder="Search" name="search">
-        </form>
+        </form> 
+        <button class="headerButton-bars"><i class="fas fa-bars"></i> </button>
         <div class="user">
             <div class="img_usu-header"></div>
             <a href="">User<i class="fa-solid fa-caret-down"></i></a>
         </div>
-        <i class="fas fa-bars"></i>
         <a href="" class="header-carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </header>
     <!-- END HEADER -->
@@ -234,7 +235,7 @@
                 <ul id="footer-ul">
                     <li><a href="" id="footer-a">FAQS</a></li>
                     <li><a href="http://localhost:3000/politicas" id="footer-a">Políticas de privacidad</a></li>
-                    <li><a href="" id="footer-a">Forma de pago</a></li>
+                    <li><a href="http://localhost:3000/formas-de-pago" id="footer-a">Forma de pago</a></li>
                 </ul>
             </article>
         </div>
@@ -250,6 +251,7 @@
         </div>
     </footer>
 <!-- END FOOTER -->
+<!-- Script -->
+<script src="js/header.js"></script>
 </body>
-
 </html>

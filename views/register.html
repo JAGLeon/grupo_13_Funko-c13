@@ -12,15 +12,16 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icon -->
-    <link rel="icon" href="/img/Logo.svg">
+    <link rel="shortcut icon" href="/img/funkoIcon.png" type="image/x-icon">
     <!-- StyleSheets -->
     <link rel="stylesheet" href="/css/forms.css">
 </head>
 <body class="forms">
 <!-- HEADER -->
     <header>
-        <a href="" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
-        <nav>
+        <a href="/" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
+        <nav class="menu">
+            <div class="menuClose"><i class="fa-solid fa-xmark"></i></div>
             <ul>
                 <li><a href="">Categorias <i class="fa-solid fa-caret-down"></i></a></li>
                 <li><a href="">Ofertas <i class="fa-solid fa-caret-down"></i></a></li>
@@ -30,14 +31,13 @@
         <form action="" class="search">
             <input type="text" placeholder="Search" name="search">
         </form> 
+        <button class="headerButton-bars"><i class="fas fa-bars"></i> </button>
         <div class="user">
             <div class="img_usu-header"></div>
             <a href="">User<i class="fa-solid fa-caret-down"></i></a>
         </div>
-        <i class="fas fa-bars"></i>  
         <a href="" class="header-carrito"><i class="fa-solid fa-cart-shopping"></i></a>
     </header>
-
 <!-- END HEADER -->
 <!-- MAIN -->
 
@@ -136,5 +136,7 @@
         </div>
     </footer>
 <!-- END FOOTER -->
+<!-- Script -->
+<script src="js/header.js"></script>
 </body>
 </html>
