@@ -7,8 +7,8 @@ app.use(express.static(path.join(__dirname,'public')));
 
 // ROUTES
 
-// app.get('/',(req,res)=>{res.sendFile(path.join(__dirname,'./views/home.html'))}); creo que debe de ser así
-app.get('/',(req,res)=>{res.sendFile(path.join(__dirname,'./views/login.html'))});
+app.get('/',(req,res)=>{res.sendFile(path.join(__dirname,'./views/home.html'))});
+app.get('/login',(req,res)=>{res.sendFile(path.join(__dirname,'./views/login.html'))});
 app.get('/register',(req,res)=>{res.sendFile(path.join(__dirname,'./views/register.html'))});
 app.get('/politicas',(req,res)=>{res.sendFile(path.join(__dirname,'./views/politicas.html'))});
 app.get('/formas-de-pago',(req,res)=>{res.sendFile(path.join(__dirname,'./views/formas-de-pago.html'))});

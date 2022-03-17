@@ -1,0 +1,427 @@
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+/* Variables */
+
+:root {
+  --verdeClaro: #35858b;
+  --verdeOscuro: #072227;
+  --verdeCuadro: #4fbdba;
+  --botones: #3483fa;
+
+  /* Fuentes */
+  --fontRoboto: "Roboto", sans-serif;
+
+  /* Tamaño de Fuente */
+  --title: 16px;
+  --prices: 16px;
+  --publish: 16px;
+}
+
+/* Estilos Generales */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--fontRoboto);
+  overflow-x: hidden;
+}
+
+.page_container {
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: auto;
+}
+
+/* MAIN */
+
+main div.carrousel-container{
+    width: 100%;
+}
+
+body main div.carousel .carousel-indicators{
+    bottom: -23px;
+}
+
+body main div.carousel .carousel-indicators button{
+    background-color: rgb(255, 255, 255);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+body main div.carousel-item div.banner-container{
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-image: url("/img/backgroundBanner.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+body main div.carousel-item div.banner-container2{
+    background-image: url("/img/backgroundBanner2.jpg");
+    background-position: center;
+    font-family: var(--fontRoboto) 'sans-serif';
+}
+
+
+body main div.carousel-item div.banner-container3{
+    background-image: url("/img/backgroundBanner3.jpg");
+    background-position: center right;
+    font-family: var(--fontRoboto) 'sans-serif';
+}
+
+body main div.carousel-item div.banner-container4{
+    background-image: url("/img/backgroundBanner4.jpg");
+    background-position: bottom left;
+}
+
+body main div.carousel-item div.banner-container div.banner-text{
+    padding: 16px;
+}
+
+body main div.carousel-item div.banner-container div.banner-text p{
+    font-size: 16px;
+    padding-bottom: 5px;
+    text-shadow: rgb(0, 0, 0) 1px 1px 8px;
+}
+
+body main div.carousel-item div.banner-container div.banner-text h2{
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: rgb(0, 0, 0) 1px 1px 8px;
+}
+
+body main div.carousel-item div.banner-container div.banner-text p.banner-subtitle{
+    font-size: 14px;
+    padding-bottom: 10px;
+    text-shadow: rgb(0, 0, 0) 1px 1px 8px;
+    
+}
+
+body main div.carousel-item div.banner-container div.banner-text a{
+    font-size: 12px;
+    padding: 10px 15px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+    position: relative;
+    z-index: 3;
+    font-family: var(--fontRoboto);
+}
+
+body main div.carousel-item div.banner-container div.banner-text a:hover{
+    background-color: var(--verdeOscuro);
+    color: white ;
+}
+
+body main div.carousel-item div.banner-container a img.product-banner{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+body main div.carrousel-banner{
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+body main div.carrousel-banner i{
+    padding: 5px;
+    color: var(--verdeClaro);
+    font-size: 12px;
+}
+
+body main div.carrousel-banner i.white-circle{
+    color: gray;
+}
+
+body main div.carousel button.carousel-control-next,
+body main div.carousel button.carousel-control-prev{
+    opacity: 0;
+    
+}
+
+body main div.franchises-container{
+    font-family: var(--fontRoboto);
+    font-size: var(--title);
+    border: 3px solid var(--verdeCuadro);
+    border-radius: 15px;
+    margin: 16px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+body main div.franchises-container h3.franchises-title{
+    width: 100%;
+    padding-bottom: 15px;
+    justify-content: left;
+    font-size: var(--title);
+}
+
+body main div.franchises-container div.franchise-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+body main div.franchises-container div.franchise-carousel{
+    width: 100%;
+}
+
+body main div.franchises-container div.franchise-logo {
+    width: 75px;
+    height: 70px;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body main div.franchises-container div.franchise-logo img{
+    width: 100%;
+    height: auto;
+}
+
+body main div.franchises-container h3.franchises-title{
+    width: 100%;
+    padding-bottom: 15px;
+    text-align: left;
+    font-size: var(--title);
+}
+
+body main div.sales-container{
+    font-family: var(--fontRoboto);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    border: 3px solid var(--verdeCuadro);
+    border-radius: 15px;
+    margin: 16px;
+    padding: 15px;
+}
+
+body main div.sales-container div.sales-top{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--verdeCuadro);
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+
+body main div.sales-container div.sales-box-container{
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box{
+    margin: 10px 10px;
+    min-width: 225px;
+}
+
+body main div.sales-container div.sales-top a{
+    font-size: 14px;
+    color: #3483FA;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box img{
+    max-width: 100%;
+    height: 250px;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-bottom: 3px;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box div.sales-description{
+    margin-top: 1px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 10px;
+}
+
+
+body main div.sales-container div.sales-box-container div.sales-box div.sales-description h4.funko-title,
+body main div.sales-container div.sales-box-container div.sales-box div.sales-description p.funko-name{
+    font-size: var(--title);
+    text-align: center;
+    font-weight: bold;
+}
+
+
+body main div.sales-container div.sales-box-container div.sales-box div.sales-description p.funko-prices{
+    text-align: center;
+    font-size: var(--prices);
+    font-weight: bold;
+    padding: 5px;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box div.sales-description p.funko-cuotes{
+    text-align: center;
+    font-size: 12px;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box div.cart-box{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box div.cart-box p.add-cart:hover{
+    background-color: #3483FA;
+    color: white;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box div.cart-box p.add-cart{
+    color: var(--botones);
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid var(--botones);
+}
+
+
+body main img.banner-bottom{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* FIN MAIN */
+
+/********************/
+ /* MEDIA QUERIES */
+/********************/
+
+/* TABLET */
+
+    @media(min-width: 768px){
+
+        /* MAIN */
+
+    body main div.carousel button.carousel-control-next,
+    body main div.carousel button.carousel-control-prev{
+        opacity: 1;
+    }
+    
+  
+    body main div.franchises-container div.franchise-logo {
+        width: 130px;
+        height: 130px;
+    }
+
+    body main div.banner-container div.banner-text p{
+        font-size: 20px;
+    }
+
+    body main div.banner-container div.banner-text h2{
+        font-size: 45px;
+    }
+    
+    body main div.banner-container div.banner-text p.banner-subtitle{
+        font-size: 17px;
+    }
+    
+    body main div.banner-container div.banner-text a{
+        font-size: 16px;
+    }
+
+    body main div.sales-container{
+        position: relative;
+    }
+
+    body main div.sales-container div.sales-box{
+        width: 30%;
+    }
+
+    body main div.sales-container div.sales-box img{
+        padding: 10px;
+        width: 100%;
+        height: 50%;
+    }
+     
+    /* FIN MAIN */
+
+
+/* Desktop */
+
+    @media(min-width: 1200px){
+
+    /* MAIN */
+
+    body main div.carousel div.carousel-item div.banner-container{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    body main div.carousel div.carousel-item div.banner-container div.banner-text{
+        padding: 60px;
+        width: 45%;
+        margin: 0;
+    }
+
+    body main div.carousel-item div.banner-container a img.product-banner{
+        width: 100%;
+    }
+
+    body main div.carousel button.carousel-control-next{
+        position: absolute;
+        right: -50px;
+    }
+
+    body main button.carousel-control-prev{
+        position: absolute;
+
+        left: -50px;
+    }
+
+     body main div.sales-container div.sales-box{
+        width: 10%;
+    }
+
+
+    body main img.banner-bottom{
+        max-height: 50%;
+        max-width: 1180px;
+        margin: auto;
+    }
+    }
+}
+    /* FIN MAIN */
