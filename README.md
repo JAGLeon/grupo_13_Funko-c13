@@ -34,3 +34,7 @@ Nos inspiramos en diseño y estructura de MercadoLibre y Collage Kids como princ
 El login fue inspirado por Netflix y el registro nos enfocamos en Epic Games, siendo ambas plataforma conocidas y apta para cualquier persona.
 Añadimos también a Mexx y Funko, por el motivo de disposición de productos y dinámicas de los dos sitios web.
 
+
+## Link de Trello
+
+* [Trello - Grupo 13 - Comision 13] (https://trello.com/b/5duzYkGb/sprints-pi-grupo-13-fünko)
