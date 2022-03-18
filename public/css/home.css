@@ -53,6 +53,7 @@ body {
 /* MAIN */
 
 main div.carrousel-container{
+    padding-top: 2.8rem;
     width: 100%;
 }
 
@@ -83,19 +84,16 @@ body main div.carousel-item div.banner-container{
 body main div.carousel-item div.banner-container2{
     background-image: url("/img/backgroundBanner2.jpg");
     background-position: center;
-    font-family: var(--fontRoboto) 'sans-serif';
 }
 
 
 body main div.carousel-item div.banner-container3{
     background-image: url("/img/backgroundBanner3.jpg");
     background-position: center right;
-    font-family: var(--fontRoboto) 'sans-serif';
 }
 
 body main div.carousel-item div.banner-container4{
     background-image: url("/img/backgroundBanner4.jpg");
-    background-position: bottom left;
 }
 
 body main div.carousel-item div.banner-container div.banner-text{
