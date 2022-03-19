@@ -1,7 +1,30 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+
+/* FOOTER */
+.product-datail footer #footer-ul{
+    padding: 0;
+}
+.product-datail footer p{
+    margin: 0;
+}
+
+.product-datail footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
 /* MAIN */
+
 
 main {
     padding-top: 3.5rem;
@@ -321,13 +344,8 @@ div.interest div.product button:hover {
 
 /* END MAIN */
 
-/* FOOTER */
 
-footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
-}
+
 
 
 /* Media queries */
