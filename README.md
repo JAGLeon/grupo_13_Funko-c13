@@ -1,5 +1,7 @@
 # Fünko
 
+![logo](/public/img/Logo.svg)
+
 FÜNKO es una empresa dedicada a la venta de figuras coleccionables, llamados Funkos. Siendo apta para toda edad sin limite alguno!.
 Los productos que comercializamos abarcan desde franquicias de Disney, Marvel, Star Wars, DC, NBA, y muchos más!. 
 Si estás interesado en nuestros productos podes adquirirlo desde nuestro página web de una manera fácil, rápida y accesible.
@@ -37,4 +39,4 @@ Añadimos también a Mexx y Funko, por el motivo de disposición de productos y 
 
 ## Link de Trello
 
-* [Trello - Grupo 13 - Comision 13] (https://trello.com/b/5duzYkGb/sprints-pi-grupo-13-fünko)
+* [Trello - Grupo 13 - Comision 13](https://trello.com/b/5duzYkGb/sprints-pi-grupo-13-fünko)
