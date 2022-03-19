@@ -6,9 +6,10 @@ Extender las dailys. Hablar de temas no relacionados con el proyecto.
 
 Hacer más (>):
 3 preguntas de dailys. Atención a trello. Cumplir con las reuniones. Tomar ideas nuevas para el proyecto.
+Cumplir con las fechas establecidas
 
 Hacer menos (<): 
 Exigencia de codear. 
 
 Seguir haciendo (=):
-Cumplir con las fechas establecidas. Inspeccion de posibles fallos/errores. Aportes de ideas y opiniones. Usar diversos metodos de comunicación. Distribución de tareas. Pullear y avisar al hacerlo. Buena relación dentro del equipo.
+Inspeccion de posibles fallos/errores. Aportes de ideas y opiniones. Usar diversos metodos de comunicación. Distribución de tareas. Pullear y avisar al hacerlo. Buena relación dentro del equipo.
