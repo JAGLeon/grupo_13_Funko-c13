@@ -48,6 +48,7 @@ body main .novedad-h2{
     background-color: lightgrey;
     padding: .3rem;
     margin: 4rem auto 1rem;
+    border-radius: 3px;
 }
 /* SECTION */
 .main-carrito .main_section-muestra{
