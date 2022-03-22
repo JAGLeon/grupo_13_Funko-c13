@@ -1,0 +1,185 @@
+@import url('/css/header.css');
+@import url('/css/footer.css');
+@import url('/css/home.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+/* FOOTER */
+footer #footer-ul{
+    padding: 0;
+}
+footer p{
+    margin: 0;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+footer .footer_article-container{
+    height: 121px;
+}
+
+/* CATALOGO */
+body main div.sales-container{
+    max-width: 1161px;
+    margin: 0 auto;
+}
+
+body main img.banner-bottom {
+    max-width: 1161px;
+    margin: 1rem auto;
+}
+
+body main .novedad-h2{
+    margin: 1rem 0 0;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+/*MAIN*/
+.main-carrito .main_section-muestra{
+    background-color: lightgrey;
+    padding: .3rem;
+    margin: 4rem auto 1rem;
+}
+/* SECTION */
+.main-carrito .main_section-muestra{
+    max-width: 1161px;
+}
+.main-carrito .main_section-muestra h4{
+    text-align: center;
+    background-color: white;
+    margin:0 0 .2rem ;
+}
+/* FUNKOS */
+.main-carrito .main_section-muestra .carrito-funkos{
+    background-color: white;
+    padding: .3rem;
+    margin: 0 0 .2rem;
+}
+
+.main-carrito .main_section-muestra .carrito-funkos .muestra-funko{
+    display: flex;
+    margin: 0 0 .5rem;
+}
+/* IMAGEN */
+.main-carrito .main_section-muestra .carrito-funkos .muestra-funko .muestra-img{
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    margin: 0 .3rem 0 0;
+}
+
+.main-carrito .main_section-muestra .carrito-funkos .muestra-funko .muestra-img img{
+    width: 100%;
+}
+
+/* OPCIONES IMAGEN */
+.main-carrito .main_section-muestra .carrito-funkos .muestra-funko .muestra-caracteristica p{
+    color: lightslategray;
+    margin: 0;
+}
+
+.main-carrito .main_section-muestra .carrito-funkos .muestra-funko .muestra-caracteristica a.muestra_carac-funko{
+    text-decoration: none;
+    color: #027981;
+}
+
+/* BTN-AUMENTO */
+.main-carrito .main_section-muestra .carrito-funkos .btn_carrito-aumento{
+    display: flex;
+    justify-content: space-around;
+    width: 80px;
+    height: 30px;
+    border-radius: 7px;
+    border: solid 3px rgba(177, 171, 171, 0.4);
+    margin: 0 auto .5rem;
+}
+
+.main-carrito .main_section-muestra .carrito-funkos .btn_carrito-aumento button{
+    border: none;
+    background-color: white;
+    color: rgba(177, 171, 171, 0.4);
+}
+
+.main-carrito .main_section-muestra .carrito-funkos .btn_carrito-aumento button:hover{
+    color: grey;
+}
+/* SUBTOTAL */
+.main-carrito .main_section-muestra .carrito-funkos .carrito-precio{
+    display: flex;
+}
+
+p.p_espacio-carrito{
+    margin: 0 .2rem 0 0;
+}
+.main-carrito .main_section-muestra .bottom-carrito{
+    background-color: white;
+    padding: .3rem;
+}
+/* BOTTTOM CARRITO */
+.main-carrito .main_section-muestra .bottom-carrito .costo-envio .domicilio{
+    display: flex;
+    cursor: pointer;
+}
+
+.main-carrito .main_section-muestra .bottom-carrito .costo-envio .domicilio p{
+    color: #027981;
+}
+
+.main-carrito .main_section-muestra .bottom-carrito .costo-envio .total-precio{
+    display: flex;
+}
+
+/* BTN FINALIZAR */
+.main-carrito .main_section-muestra .bottom-carrito .btn-finalizar{
+    display: flex;
+    justify-content: center;
+}
+
+.main-carrito .main_section-muestra .bottom-carrito .btn-finalizar button{
+    border: none;
+    background-color: #3483FA;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: .6rem;
+}
+
+/* MEDIA QUERIES */
+@media(min-width:600px){
+    .main-carrito .main_section-muestra .carrito-funkos{
+        display: flex;
+        align-items: center;
+    }
+
+    .main-carrito .main_section-muestra .bottom-carrito .costo-envio{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-carrito .main_section-muestra .carrito-funkos .muestra-funko{
+        width: 290px;
+    }
+
+    .main-carrito .main_section-muestra .carrito-funkos .muestra-funko .muestra-caracteristica{
+        width: 200px;
+    }
+
+    .main-carrito .main_section-muestra .bottom-carrito .btn-finalizar button{
+        width: 200px;
+        font-size: 1.4rem;
+    }
+    
+    p.p_espacio-carrito,
+    .dinero-domicilio{
+        font-size: 1.4rem;
+    }
+}

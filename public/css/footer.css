@@ -7,7 +7,7 @@ footer{
     background-color: #072227;
     margin-top: auto;
     color: white;
-    padding: 0 1rem;
+    padding: 0 1rem 5px;
 }
 
 #footer-ul{
@@ -79,6 +79,7 @@ footer .footer_bottom .logo-redes i:hover{
 footer .footer_bottom .logo-redes i:last-child{
     margin-right: none;
 }
+
 /* END FOOTER  */
 
 /*****************/
