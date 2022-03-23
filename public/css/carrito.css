@@ -28,7 +28,7 @@ footer .footer_article-container{
 /* CATALOGO */
 body main div.sales-container{
     max-width: 1161px;
-    margin: 0 auto;
+    margin: 0 auto;  
 }
 
 body main img.banner-bottom {
@@ -44,11 +44,18 @@ body main .novedad-h2{
 
 
 /*MAIN*/
+.main-carrito{
+    margin: 3rem auto 1rem;
+}
+
+.main-carrito h1{
+    text-align: center;
+}
 .main-carrito .main_section-muestra{
     background-color: lightgrey;
     padding: .3rem;
-    margin: 4rem auto 1rem;
     border-radius: 3px;
+    margin: 0 auto 1rem;
 }
 /* SECTION */
 .main-carrito .main_section-muestra{

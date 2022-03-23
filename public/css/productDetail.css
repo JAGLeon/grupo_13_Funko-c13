@@ -23,6 +23,10 @@
     left: 0;
 }
 
+.product-datail footer .footer_article-container{
+    height: 121px;
+}
+
 /* MAIN */
 
 
@@ -138,7 +142,7 @@ div.product-detail div.btn-quantity #res:hover {
     background-color: rgba(183, 212, 255, 0.7)
 }
 
-div.product-detail button.btn-buy {
+div.product-detail button.btn-buy{
     margin: 0 auto 0.5rem;
     border-radius: 0.5rem;
     width: 90%;
@@ -146,10 +150,16 @@ div.product-detail button.btn-buy {
     text-transform: uppercase;
     border: none;
     background-color: #3483FA;
-    color: white;
     font-size: 1rem;
     transition: all 0.3s ease-in;
 }
+
+div.product-detail button.btn-buy a{
+    text-decoration: none;
+    color: white;
+    border: none;
+}
+
 
 div.product-detail button.btn-buy:hover {
     background-color: white;
