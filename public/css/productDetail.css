@@ -142,7 +142,7 @@ div.product-detail div.btn-quantity #res:hover {
     background-color: rgba(183, 212, 255, 0.7)
 }
 
-div.product-detail button.btn-buy{
+div.product-detail .btn-buy{
     margin: 0 auto 0.5rem;
     border-radius: 0.5rem;
     width: 90%;
@@ -152,16 +152,15 @@ div.product-detail button.btn-buy{
     background-color: #3483FA;
     font-size: 1rem;
     transition: all 0.3s ease-in;
-}
-
-div.product-detail button.btn-buy a{
     text-decoration: none;
     color: white;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
-div.product-detail button.btn-buy:hover {
+div.product-detail .btn-buy:hover {
     background-color: white;
     color: #3483FA;
     border: solid 2px #3483FA;
@@ -430,7 +429,7 @@ div.interest div.product button:hover {
         height: 3rem;
     }
 
-    div.product-detail button.btn-buy,
+    div.product-detail .btn-buy,
     div.product-detail button.btn-add {
         height: 3rem;
         font-size: 1.5rem;
@@ -589,7 +588,7 @@ div.interest div.product button:hover {
         box-shadow: 0px 3px 3px 1px rgb(0, 0, 0, 0.3);
     }
 
-    div.product-detail button.btn-buy,
+    div.product-detail .btn-buy,
     div.product-detail button.btn-add {
         height: 2.5rem;
         font-size: 1.5rem;
