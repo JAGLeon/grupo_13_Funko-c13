@@ -32,6 +32,8 @@
 
 main {
     padding-top: 3.5rem;
+    max-width: 1225px;
+    margin: 0 auto;
 }
 
 /* SECITON 1 */
@@ -272,7 +274,7 @@ div.tittle p {
 div.interest {
     display: flex;
     flex-direction: row;
-    margin-bottom: 1rem;
+    margin: 1rem;
     overflow-x: scroll;
     gap: 1rem;
     padding: 0 1rem;
