@@ -1,6 +1,6 @@
 @import url('/css/register.css');
 @import url('/css/login.css');
-@import url('/css/header.css');
+@import url('/css/header2.css');
 @import url('/css/footer.css');
 
 /* GENERALES */
@@ -11,6 +11,19 @@
     font-family: 'Roboto';
     box-sizing: border-box;
 }
+
+/* FOOTER */
+footer #footer-ul{
+    padding: 0;
+}
+footer p{
+    margin: 0;
+}
+
+footer .footer_article-container{
+    height: 121px;
+}
+
 /****/
 
 body.forms span.error-message{

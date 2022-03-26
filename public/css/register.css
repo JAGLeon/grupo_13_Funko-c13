@@ -1,3 +1,5 @@
+@import url('/css/header2.css');
+
 body.forms .main_register section.register .nom_ape-container{
     display: flex;
     justify-content: space-between;

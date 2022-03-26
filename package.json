@@ -16,6 +16,7 @@
     "depd": "^1.1.2",
     "destroy": "^1.0.4",
     "ee-first": "^1.1.1",
+    "ejs": "^3.1.6",
     "encodeurl": "^1.0.2",
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
@@ -54,7 +55,6 @@
     "utils-merge": "^1.0.1",
     "vary": "^1.1.2"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
