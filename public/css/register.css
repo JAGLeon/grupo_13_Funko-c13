@@ -25,17 +25,30 @@ body.forms .main_register{
 
 
 @media(min-width: 768px){
-    body.forms .main_register{
-        margin: auto;
+    body.forms{
+        min-height: 0;
     }
 
+    /* body.forms .main_register{
+        margin: auto;
+    } */
+
     footer{
-        position: absolute;
+        position: initial;
         left: 0;
         bottom: 0;
     }
 }
 
+@media(min-width: 1200px){
+    body.forms{
+        min-height: 100vh;
+    }
+
+    body.forms .main_register{
+        margin: 4.4rem auto 1.8rem;
+    }
+}
 
 
 
