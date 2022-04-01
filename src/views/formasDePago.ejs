@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,37 +15,17 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icon -->
     <link rel="shortcut icon" href="/img/funkoIcon.png" type="image/x-icon">
+    <!-- Script -->
+    <script src="../js/header2.js" defer></script>
     <!-- StyleSheets -->
-    <!-- CSS only -->
-    <link rel="stylesheet" href="css/pagos.css">
+    <link rel="stylesheet" href="/css/pagos.css">
 </head>
-
 <body class="pagos">
 <!-- HEADER -->
-    <header>
-        <a href="/" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
-        <nav class="menu">
-            <div class="menuClose"><i class="fa-solid fa-xmark"></i></div>
-            <ul>
-                <li><a href="">Categorias <i class="fa-solid fa-caret-down"></i></a></li>
-                <li><a href="">Ofertas <i class="fa-solid fa-caret-down"></i></a></li>
-                <li><a href="">Novedades </a></li>
-            </ul>
-        </nav>
-        <form action="" class="search">
-            <input type="text" placeholder="Search" name="search">
-        </form> 
-        <button class="headerButton-bars"><i class="fas fa-bars"></i> </button>
-        <div class="user">
-            <div class="img_usu-header"></div>
-            <a href="">User<i class="fa-solid fa-caret-down"></i></a>
-        </div>
-        <a href="/carrito" class="header-carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-    </header>
+    <%- include('./partials/header')  %> 
 <!-- END HEADER -->
 
 <!-- MAIN -->
-
     <main>
         <H1>FORMAS DE PAGO</H1>
         <section>

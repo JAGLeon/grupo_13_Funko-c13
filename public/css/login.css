@@ -7,6 +7,11 @@ body.login main .login .input-container_login label{
     display: flex;
     cursor: pointer;
 }
+
+body.forms .span-register a{
+    color: #1EC124;
+}
+
 .a-contraseña{
     color: black;
 }
@@ -25,7 +30,33 @@ body.forms .main_login-container{
 
 
 @media(min-width:768px){
-    body.forms{
+    body.login{
+        justify-content: space-evenly;
+    } 
+
+    .form-container{
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1.8rem;
+        border-radius: 0.3rem;
+   }
+
+   body.forms .main_login-container{
+       margin: auto;
+   }
+   
+   /* Footer */
+   body.login footer{
+       margin: 0;
+   }
+    /* body.login footer{
+       position: absolute;
+       left: 0;
+       bottom: 0;
+   } */
+}
+
+@media(min-width:1200px){
+    body.login{
         padding: 3.1rem 0 300px;
     }
 
@@ -41,7 +72,7 @@ body.forms .main_login-container{
    
    /* Footer */
 
-   footer{
+    body.login footer{
        position: absolute;
        left: 0;
        bottom: 0;

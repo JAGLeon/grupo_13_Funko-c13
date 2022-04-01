@@ -1,5 +1,3 @@
-@import url('/css/header2.css');
-
 body.forms .main_register section.register .nom_ape-container{
     display: flex;
     justify-content: space-between;
@@ -22,21 +20,32 @@ body.forms .main_register section.register .span-register a{
 }
 
 body.forms .main_register{
-    margin:  5rem auto 3rem;
+    margin:  6rem auto 3rem;
 }
 
 
 @media(min-width: 768px){
-    body.forms .main_register{
-        margin: auto;
+    body.forms{
+        min-height: 0;
     }
 
     footer{
-        position: absolute;
+        position: initial;
         left: 0;
         bottom: 0;
     }
 }
+
+@media(min-width: 1200px){
+    body.forms{
+        min-height: 100vh;
+    }
+
+    body.forms .main_register{
+        margin: 5.4rem auto 1.8rem;
+    }
+}
+
 
 
 
