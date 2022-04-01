@@ -29,6 +29,10 @@ body.forms .main_register{
         min-height: 0;
     }
 
+    /* body.forms .main_register{
+        margin: auto;
+    } */
+
     footer{
         position: initial;
         left: 0;
@@ -47,6 +51,9 @@ body.forms .main_register{
 }
 
 
+        /* margin: 4.4rem auto 1.8rem;
+    }
+} */
 
 
 
