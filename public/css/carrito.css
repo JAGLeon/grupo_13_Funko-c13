@@ -146,6 +146,12 @@ p.p_espacio-carrito{
     display: flex;
 }
 
+.main-carrito .main_section-muestra .bottom-carrito .methods-payment select{
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
 /* BTN FINALIZAR */
 .main-carrito .main_section-muestra .bottom-carrito .btn-finalizar{
     display: flex;

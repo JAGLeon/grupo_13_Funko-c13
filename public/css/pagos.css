@@ -99,15 +99,13 @@ main section article p {
 body.pagos{
     display: flex;
     flex-direction: column;
-    padding: 3.1rem 0 300px;
+    padding: 4.5rem 0 0 ;
     min-height: 100vh;
 }
 
 /* MAIN */
 
 main{
-    /* margin: 4.5rem auto 0;
-     */
      margin: auto;
 }
 
@@ -119,14 +117,6 @@ main h1{
 
 .slider-formasDePago{
     width: 100%;
-}
-
-/*FOOTER*/
-
-footer{
-    position: absolute;
-    left: 0;
-    bottom: 0;
 }
 }
 
