@@ -1,6 +1,6 @@
 @import url('/css/register.css');
 @import url('/css/login.css');
-@import url('/css/header2.css');
+@import url('/css/header.css');
 @import url('/css/footer.css');
 
 /* GENERALES */
@@ -37,6 +37,7 @@ body.forms{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin-top: 3rem;
 }
 
 body.forms main{
@@ -124,7 +125,9 @@ body.forms span a{
 /* TABLET */
 
 @media(min-width: 768px){
-
+body.forms{
+    margin-top: 4rem;
+}
 /* MAIN */
 body.forms main{
     margin: auto 0;

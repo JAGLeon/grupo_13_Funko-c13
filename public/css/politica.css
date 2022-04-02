@@ -9,13 +9,21 @@
 }
 
 /* MAIN */
+body.politicas{
+    margin-top: 4rem;   
+}
+
+body.politicas ul{
+    padding: 0;
+}
+
 body.politicas main{
     margin: 0  1rem;
 }
 
-main section.menu-politicas{
+/* main section.menu-politicas{
     margin: 4rem 0 1rem;
-}
+} */
 
 main section.menu-politicas h2{
     text-decoration: underline  3px black;
@@ -75,13 +83,7 @@ body.politicas main{
     align-items: flex-start;
 }
 
-main section.menu-politicas{
-    margin: 4rem 0 1rem;
-}
-
-
 main section.politicas-priv{
-    margin: 4rem 0rem 0 1rem;
     width: 700px;
 }
 }
@@ -90,7 +92,9 @@ main section.politicas-priv{
 /* DESKTOP */
 
 @media(min-width: 1200px){
-
+body.politicas{
+    margin-top: 6rem;   
+}
 /* MAIN */
 main section.menu-politicas{
     max-width: 350px;

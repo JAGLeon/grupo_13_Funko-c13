@@ -20,7 +20,7 @@ body.forms .main_register section.register .span-register a{
 }
 
 body.forms .main_register{
-    margin:  6rem auto 3rem;
+    margin:  auto auto 0;
 }
 
 
@@ -46,7 +46,7 @@ body.forms .main_register{
     }
 
     body.forms .main_register{
-        margin: 5.4rem auto 1.8rem;
+        margin: 3rem auto 3rem;
     }
 
 }

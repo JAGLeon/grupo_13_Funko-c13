@@ -1,4 +1,4 @@
-@import url("/css/header2.css");
+@import url("/css/header.css");
 @import url("/css/footer.css");
 
 /* Variables */
@@ -227,7 +227,7 @@ body main div.sales-container{
     border: 3px solid var(--verdeCuadro);
     border-radius: 15px;
     margin: 16px;
-    padding: 15px;
+    padding: 15px 10px;
 }
 
 body main div.sales-container div.sales-top{
