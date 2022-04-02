@@ -20,26 +20,7 @@
 </head>
 <body class="product-datail">
 <!-- HEADER -->
-    <header>
-        <a href="/" class="logo"><img src="/img/Logo.svg" alt="Funko logo"></a>
-        <nav class="menu">
-            <div class="menuClose"><i class="fa-solid fa-xmark"></i></div>
-            <ul>
-                <li><a href="">Categorias <i class="fa-solid fa-caret-down"></i></a></li>
-                <li><a href="">Ofertas <i class="fa-solid fa-caret-down"></i></a></li>
-                <li><a href="">Novedades </a></li>
-            </ul>
-        </nav>
-        <form action="" class="search">
-            <input type="text" placeholder="Search" name="search">
-        </form> 
-        <button class="headerButton-bars"><i class="fas fa-bars"></i> </button>
-        <div class="user">
-            <div class="img_usu-header"></div>
-            <a href="">User<i class="fa-solid fa-caret-down"></i></a>
-        </div>
-        <a href="/carrito" class="header-carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-    </header>
+    <%- include('partials/header') %> 
 <!-- END HEADER -->
 <!-- MAIN -->
     <main>
@@ -187,80 +168,7 @@
     </main>
 <!-- END MAIN -->
 <!-- FOOTER -->
-    <footer>
-        <div class="footer-div">
-        <div class="footer_logo">
-            <img src="/img/Logo.svg" alt="Logo Funko" />
-            <span
-            >Horario de atención de Lunes a Viernes de 10 a 19hs y Sábados de 10
-            a 14hs.</span
-            >
-        </div>
-        <article class="footer_article-container">
-            <h4>Navegación</h4>
-            <ul id="footer-ul">
-            <li><a href="" id="footer-a">Categorias</a></li>
-            <li><a href="" id="footer-a">Ofertas</a></li>
-            <li><a href="" id="footer-a">Novedades</a></li>
-            </ul>
-        </article>
-        <article class="footer_article-container">
-            <h4>Contacto</h4>
-            <p>Av. Elm Street 1428</p>
-            <p>011-XXXXXXXX</p>
-            <a href="https://mail.google.com/" target="_blank" id="footer-a"
-            >funko@gmail.com</a
-            >
-        </article>
-        <article class="footer_article-container">
-            <h4>Enlaces útiles</h4>
-            <ul id="footer-ul">
-            <li>
-                <a
-                href="https://es.semrush.com/blog/faqs/"
-                target="_blank"
-                id="footer-a"
-                >FAQS</a
-                >
-            </li>
-            <li>
-                <a
-                href="http://localhost:3000/politicas"
-                target="_blank"
-                id="footer-a"
-                >Políticas de privacidad</a
-                >
-            </li>
-            <li>
-                <a
-                href="http://localhost:3000/formas-de-pago"
-                target="_blank"
-                id="footer-a"
-                >Forma de pago</a
-                >
-            </li>
-            </ul>
-        </article>
-        </div>
-        <div class="footer-division"></div>
-        <div class="footer_bottom">
-        <span>Diseño web realizado por ABCD Developer | 2022</span>
-        <article class="logo-redes">
-            <a href="https://web.whatsapp.com" target="_blank"
-            ><i class="fa-brands fa-whatsapp"></i
-            ></a>
-            <a href="https://www.instagram.com" target="_blank"
-            ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="https://www.facebook.com" target="_blank"
-            ><i class="fa-brands fa-facebook"></i
-            ></a>
-            <a href="https://twitter.com" target="_blank"
-            ><i class="fa-brands fa-twitter"></i
-            ></a>
-        </article>
-        </div>
-    </footer>
+  <%- include('partials/footer') %> 
 <!-- END FOOTER -->
     <script src="../js/productDetail.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
