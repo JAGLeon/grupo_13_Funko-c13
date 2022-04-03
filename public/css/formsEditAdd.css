@@ -1,0 +1,61 @@
+@import url("/css/header2.css");
+@import url("/css/footer.css");
+
+* {
+    margin: 0 important;
+    padding: 0 important;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem auto;
+    width: 90%;
+    max-width: 40rem;
+    border: solid 1px #35858B;
+    border-radius: 5px;
+}
+
+form{
+    width: 60%;
+}
+
+h2 {
+    margin: 1rem 0 1.5rem;
+}
+
+label,
+input,
+textarea {
+    margin-bottom: 1rem;
+}
+
+select{
+    margin: 1.7rem 0 1rem;
+}
+
+button {
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+    width: 40%;
+    height: 2rem;
+    text-transform: uppercase;
+    border: none;
+    background-color: #3483FA;
+    font-size: 1.1rem;
+    transition: all 0.3s ease-in;
+    text-decoration: none;
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: white;
+    color: #3483FA;
+    border: solid 2px #3483FA;
+}

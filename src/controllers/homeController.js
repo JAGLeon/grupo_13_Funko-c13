@@ -7,5 +7,5 @@ module.exports = {
     },
     compra:(req,res)=>{
         res.render('carrito')
-    }
+    }, 
 }
