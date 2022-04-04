@@ -24,9 +24,7 @@ input.checkbox{
     cursor: pointer;
 }
 
-body.forms .main_login-container{
-    margin:  auto auto 0;
-}
+
 
 
 @media(min-width:768px){
@@ -34,6 +32,17 @@ body.forms .main_login-container{
         background-color: rgba(0, 0, 0, 0.1);
         padding: 1.8rem;
         border-radius: 0.3rem;
+    }
+    
+    body.forms .main_login-container{
+        margin:  auto auto 0;
+    }
+
+    body.forms{
+        background-image: url('/img/loginBackground.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
     }
 }
 

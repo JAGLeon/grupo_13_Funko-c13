@@ -12,6 +12,11 @@ footer{
 
 #footer-ul{
     list-style: none;
+    padding: 0;
+}
+
+#footer-ul p{
+    margin: 0;
 }
 
 #footer-a{

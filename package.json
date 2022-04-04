@@ -2,7 +2,7 @@
   "name": "pi---funko",
   "version": "1.0.0",
   "description": "FÜNKO es una empresa dedicada a la venta de figuras coleccionables, llamados Funkos. Siendo apta para toda edad sin limite alguno!.\r Los productos que comercializamos abarcan desde franquicias de Disney, Marvel, Star Wars, DC, NBA, y muchos más!. \r Si estás interesado en nuestros productos podes adquirirlo desde nuestro página web de una manera fácil, rápida y accesible.",
-  "main": "app.js",
+  "main": "src/app.js",
   "dependencies": {
     "accepts": "^1.3.8",
     "array-flatten": "^1.1.1",

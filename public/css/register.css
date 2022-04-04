@@ -19,9 +19,7 @@ body.forms .main_register section.register .span-register a{
     cursor: pointer;
 }
 
-body.forms .main_register{
-    margin:  auto auto 0;
-}
+
 
 
 @media(min-width: 768px){
@@ -29,9 +27,9 @@ body.forms .main_register{
         min-height: 0;
     }
 
-    /* body.forms .main_register{
-        margin: auto;
-    } */
+    body.forms .main_register{
+        margin:  auto auto 0;
+    }
 
     footer{
         position: initial;

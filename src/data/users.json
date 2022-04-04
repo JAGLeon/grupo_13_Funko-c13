@@ -1,0 +1,82 @@
+[
+    {
+        "id": 0,
+        "pais": "Perú",
+        "name": "León",
+        "apeliido": "Garay",
+        "nombreUsuario": "Leon97",
+        "email": "Leon@tony.com",
+        "password": "4321",
+        "avatar": ""
+    },
+    {
+        "id": 1,
+        "pais": "ar",
+        "name": "Lionel",
+        "apeliido": "Messi",
+        "nombreUsuario": "Messi10",
+        "email": "ms10@gmail.com",
+        "password": "123",
+        "avatar": ""
+    },
+    {
+        "id": 2,
+        "pais": "pe",
+        "name": "Paolo",
+        "apeliido": "Guerrero",
+        "nombreUsuario": "PGuerrero10",
+        "email": "Pg10@gmail.com",
+        "password": "per123",
+        "avatar": ""
+    },
+    {
+        "id": 3,
+        "pais": "pa",
+        "name": "Sandro",
+        "apeliido": "Guerrero",
+        "nombreUsuario": "Sandro02",
+        "email": "sandro@hotmail.com",
+        "password": "21312",
+        "avatar": ""
+    },
+    {
+        "id": 4,
+        "pais": "",
+        "name": "Guido",
+        "apeliido": "Perez",
+        "nombreUsuario": "GPerex",
+        "email": "Gperez@gmail.com",
+        "password": "123",
+        "avatar": ""
+    },
+    {
+        "id": 5,
+        "pais": "ch",
+        "name": "Pedro",
+        "apeliido": "Navaja",
+        "nombreUsuario": "PedroNav",
+        "email": "Face@email.com",
+        "password": "987",
+        "avatar": ""
+    },
+    {
+        "id": 6,
+        "pais": "ar",
+        "name": "Ezequiel",
+        "apeliido": "Saveedra",
+        "nombreUsuario": "SaveQuiel34",
+        "email": "Save-eze@gmail.com",
+        "password": "1234",
+        "avatar": ""
+    },
+    {
+        "id": 7,
+        "pais": "pe",
+        "name": "Anderson",
+        "apeliido": "Francia",
+        "nombreUsuario": "Aamon",
+        "email": "Paolo@email.com",
+        "password": "9999",
+        "avatar": ""
+    }
+]

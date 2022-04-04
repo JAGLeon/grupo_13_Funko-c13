@@ -7,14 +7,14 @@
 <!-- HEADER -->
 <%- include('./partials/header')  %> 
 <!-- END HEADER -->
-
+    <div id="particles-js"></div>
 <!-- MAIN -->
     <main class="main_login-container">
         <section class="form-container login">
             <h1>Inicia sesión</h1>
             <form action="" method="">
                 <div class="input-container">
-                    <input class="input-style" placeholder="Email o usuario" type="text" name="usu" required>
+                    <input class="input-style" placeholder="Email o usuario" type="text" name="nameUser" required>
                     <span class="error-message">Coloque su email o usuario</span>
                 </div>
                 <div class="input-container pass-container">
@@ -30,7 +30,7 @@
                     <span class="error-message">Hubo un error en el registro</span>
                     <button type="submit" class="btn btn-submit">Iniciar sesión</button>
                 </div>
-                <span class="span-register">¿No tienes una cuenta de Funko? <a href="/usuarios/register">Regístrate</a></span>
+                <span class="span-register">¿No tienes una cuenta de Funko? <a href="/usuarios/registro">Regístrate</a></span>
             </form>
         </section>
     </main>
@@ -39,5 +39,8 @@
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
+<!-- Scripts -->
+    <script src="/js/particlesFunko/particles.min.js"></script>
+    <script src="/js/particlesFunko/funkoParticle.js"></script>
 </body>
 </html>

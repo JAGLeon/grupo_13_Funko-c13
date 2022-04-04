@@ -136,13 +136,17 @@ header.header-main .retenedor nav.header-navMenu div.header-menuClose{
     border-radius: 50%;
     font-size: 2rem;
     color: white;
-    border: 2px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 1rem;
     right: 1rem;;
+}
+header.header-main .retenedor nav.header-navMenu div.header-menuClose:hover{
+    color:rgba(0, 0, 0,.5);
+    background-color: rgba(94, 154, 245, .8);
+    transition: all .5s ease;
 }
 /*USER*/
 header.header-main .retenedor nav.header-navMenu div.header-user{
@@ -217,7 +221,7 @@ header.header-main .retenedor nav.header-navMenu div.header-user div.header-desp
 }
 
 header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser li:hover{
-    margin: 1px 0;
+    background-color: rgb(108, 163, 247);
 }
 
 header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser li a{
@@ -409,12 +413,7 @@ header.header-main .retenedor button.header-btnBars{
     
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser li:last-child{
         border-radius: 0 0 10px 10px;
-    }
-
-    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser li:hover:first-child{
-        margin: 0 0 1px 0;
-    }
-       
+    }   
     /*REDIRECCION C O N*/
     header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones{
         height: 40px;

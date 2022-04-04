@@ -7,14 +7,14 @@
 <!-- HEADER -->
     <%- include('./partials/header') %> 
 <!-- END HEADER -->
-
+    <div id="particles-js"></div>
 <!-- MAIN -->
     <main class="main_register">
         <section class="form-container register">
             <h1>Registrate</h1>
-            <form action="" method="">
+            <form action="/usuarios/registro" method="POST">
                 <div class="input-container">
-                    <select class="input-style selec-container" name="pais" id="">
+                    <select class="input-style selec-container" name="pais" id="pais">
                         <option value="" hidden>País</option>
                         <option value="ar">Argentina</option>
                         <option value="pe">Perú</option>
@@ -33,12 +33,12 @@
                         <span class="error-message">Su nombre</span>
                     </div>
                     <div class="input-container rInput">
-                        <input class="input-style rInput-style" placeholder="Apellido" type="apellido" name="apellido" id="apellido" required>
+                        <input class="input-style rInput-style" placeholder="Apellido" type="apellido" name="lastName" id="lastName" required>
                         <span class="error-message">Su apellido</span>
                     </div>
                 </div>
                 <div class="input-container">
-                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="usu" id="usu" required>
+                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="nameUser" id="nameUser" required>
                     <span class="error-message">Ingresar un usuario</span>
                 </div>
                 <div class="input-container">
@@ -50,12 +50,12 @@
                     <span class="error-message">Ingresar una contraseña</span>
                     <i class="fa-solid fa-eye-slash"></i>
                 </div>
-                <span>Al registrarte estás aceptando las <a href="">políticas de privacidad</a></span>
+                <span>Al registrarte estás aceptando las <a href="/enlaces-utiles/politicas-de-privacidad" target="_blank">políticas de privacidad</a></span>
                 <div class="btn-container">
                     <span class="error-message">Hubo un error en el registro</span>
                     <button type="submit" class="btn btn-submit">Regístrate</button>
                 </div>
-                <span class="span-register">¿Ya tenés cuenta? <a href="/usuarios">Iniciá sesión aquí</a></span>
+                <span class="span-register">¿Ya tenés cuenta? <a href="/usuarios/inicio">Iniciá sesión aquí</a></span>
             </form>
         </section>
     </main>
@@ -65,6 +65,8 @@
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
-
+<!-- Scripts -->
+<script src="/js/particlesFunko/particles.min.js"></script>
+<script src="/js/particlesFunko/funkoParticle.js"></script>
 </body>
 </html>
