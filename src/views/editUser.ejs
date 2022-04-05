@@ -26,11 +26,11 @@
     <div class="contenedor-nameUser">
         <form action="" method="post">
             <div>
-                <input type="text">
+                <input type="text" name="userName" id="userName">
                 <button><i class="fa-solid fa-pen-to-square"></i></button>
             </div>
             <div>
-                <input type="email">
+                <input type="email" name="email" id="email">
                 <button><i class="fa-solid fa-pen-to-square"></i></button>
             </div>
         </form>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="pais_tel-contenedor">
-                <select class="selec-container" name="pais" id="pais">
+                <select class="selec-container" name="country" id="country">
                     <option value="" hidden>País</option>
                     <option value="ar">Argentina</option>
                     <option value="pe">Perú</option>
@@ -62,7 +62,7 @@
                     <option value="co">Colombia</option>
                 </select>
                 <div >
-                    <input class="input-style" placeholder="Celular" type="tel" name="telefono" id="telefono" required>
+                    <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" required>
                 </div>
             </div>
         </form>
@@ -72,20 +72,20 @@
         <form action="" method="post">
             <div class="contenedor-address">
                 <div class="input-container">
-                    <input class="input-style" placeholder="Dirección" type="text" name="name" id="name" required>
+                    <input class="input-style" placeholder="Dirección" type="text" name="address" id="address" required>
                 </div>
                 <div class="input-container">
-                    <input class="input-style" placeholder="Ciudad" type="apellido" name="lastName" id="lastName" required>
+                    <input class="input-style" placeholder="Ciudad" type="apellido" name="city" id="city" required>
                 </div>
             </div>
             <div class="contenedor-bottom">
                 <div class="input-barrio">
-                    <input class="input-style" placeholder="Barrio" type="text" name="name" id="name" required>
+                    <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood" required>
                 </div>
                 <div class="input-region">
-                    <input class="input-style" placeholder="Código postal" type="apellido" name="lastName" id="lastName" required>
-                    <input class="input-style" placeholder="Departamento" type="text" name="" id="">
-                    <input class="input-style" placeholder="Timbre" type="text" name="" id="">
+                    <input class="input-style" placeholder="Código postal" type="text" name="postalCode" id="postalCode" required>
+                    <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
+                    <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">
                 </div>
             </div>
         </form>

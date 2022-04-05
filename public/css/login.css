@@ -29,9 +29,9 @@ input.checkbox{
 
 @media(min-width:768px){
     .form-container{
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgb(208, 208, 208);
         padding: 1.8rem;
-        border-radius: 0.3rem;
+        border-radius: .3rem;
     }
     
     body.forms .main_login-container{
@@ -46,10 +46,3 @@ input.checkbox{
     }
 }
 
-@media(min-width:1200px){
-    .form-container{
-        background-color: rgba(0, 0, 0, 0.1);
-        padding: 1.8rem;
-        border-radius: 0.3rem;
-   }
-}

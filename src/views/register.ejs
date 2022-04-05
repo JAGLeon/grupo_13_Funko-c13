@@ -14,7 +14,7 @@
             <h1>Registrate</h1>
             <form action="/usuarios/registro" method="POST">
                 <div class="input-container">
-                    <select class="input-style selec-container" name="pais" id="pais">
+                    <select class="input-style selec-container" name="country" id="country">
                         <option value="" hidden>País</option>
                         <option value="ar">Argentina</option>
                         <option value="pe">Perú</option>
@@ -33,12 +33,12 @@
                         <span class="error-message">Su nombre</span>
                     </div>
                     <div class="input-container rInput">
-                        <input class="input-style rInput-style" placeholder="Apellido" type="apellido" name="lastName" id="lastName" required>
+                        <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" required>
                         <span class="error-message">Su apellido</span>
                     </div>
                 </div>
                 <div class="input-container">
-                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="nameUser" id="nameUser" required>
+                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" required>
                     <span class="error-message">Ingresar un usuario</span>
                 </div>
                 <div class="input-container">

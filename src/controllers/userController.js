@@ -23,10 +23,10 @@ module.exports = {
 
         let newUser = {
             id: lastId + 1,
-            pais: req.body.pais,
+            country: req.body.country,
             name: req.body.name,
-            apeliido: req.body.lastName,
-            nombreUsuario: req.body.nameUser,
+            lastName: req.body.lastName,
+            userName: req.body.userName,
             email: req.body.email,
             password: req.body.password,
             avatar: ""
