@@ -18,9 +18,20 @@ body.perfilUser main{
     text-align: center;
 }
 
-p{
-    color: rgb(162, 160, 160);
+.perfilUser main p{
+    /* color: rgb(162, 160, 160); */
     font-size: .8rem;
+    text-align: center;
+}
+.perfilUser main p a{
+    color: black;
+}
+.perfilUser main p a:hover{
+    color: #3483FA;
+}
+
+.perfilUser main h5{
+    text-align: center;
 }
 /* AVATAR  */
 .contendor-avatar .imgUser{
@@ -61,7 +72,9 @@ p{
 }
 
 /* INPUT USER EMAIL  */
-.contenedor-nameUser form div input{
+
+
+.contenedor-nameUser  div input{
     width: 78%;
     margin-bottom: 1rem;
     height: 3rem;
@@ -71,11 +84,11 @@ p{
     padding-left: 1rem;
 }
 
-.contenedor-nameUser form div input:hover{
+.contenedor-nameUser  div input:hover{
     outline: none;
 }
 
-.contenedor-nameUser form div button{
+.contenedor-nameUser  div button{
     width: 20%;
     height: 3rem;
     border: none;
@@ -84,7 +97,7 @@ p{
     border-radius: .8rem;
 }
 
-.contenedor-nameUser form div button:hover{
+.contenedor-nameUser  div button:hover{
     background-color: rgba(52, 131, 250,0.9);
 }
 /* NAME LASTNAME  */
@@ -135,6 +148,115 @@ p{
     background-color: rgba(52, 131, 250,0.9);
 }
 
+/* POP-UP */
+
+.overlay{
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay.active{
+    visibility: visible;
+}
+
+.overlay .pop-up{
+    background-color: #f8f8f8;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-family: 'Roboto';
+    text-align: center;
+    width: 80%;  
+    padding: .8rem;
+    max-width: 400px;
+    transition: .5s ease all;
+    transform: scale(.7);
+    opacity: 0;
+}
+
+.pop-up .squareLogo{
+    height: 120px;
+    width: 100%;
+    position: relative;
+}
+
+.pop-up .squareLogo img{
+    width: 100%;
+    max-width: 200px;
+    opacity: 0;
+}
+
+.pop-up .squareLogo .closePop-up{
+    font-size: 1rem;
+    color: #BBB;
+    transition: .3s ease all;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pop-up .squareLogo .closePop-up:hover{
+    color: #000;
+}
+
+.pop-up article h5{
+    margin-bottom: .8rem;
+}
+
+.pop-up article p{
+    color: #000;
+    font-size: .9rem;
+    margin-bottom: .8rem;
+}
+
+.pop-up article p b{
+    color: red;
+}
+
+.pop-up form .input input{
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    background-color: rgba(128, 128, 128,0.6);
+    text-align: center;
+}
+.pop-up form .input input:hover{
+    outline: none;
+}
+
+.pop-up form .btnSubmit{
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    margin-top: 1rem;
+    color: white;
+    font-family: 'Roboto';
+    cursor: pointer;
+    border: none;
+    background-color: #3483FA;
+    border-radius: 0.8rem;
+}
+
+.pop-up form .btnSubmit:hover{
+    background-color: rgba(52, 131, 250,0.9);
+}
+
+/* Transition - Animacion */
+ .pop-up.active{opacity: 1; transform: scale(1);}
+ .pop-up.active img{animation: logoOut .8s ease .5s forwards}
+ @keyframes logoOut{
+    0%{transform: translateY(-25px);opacity: 0;}
+    100%{transform: translateY(0);opacity: 1;}
+ }
+
 @media(min-width:768px){
     body.perfilUser{
         margin-top: 6rem;
@@ -142,22 +264,25 @@ p{
     body.perfilUser main{
         padding: 1rem;
         max-width: 900px;
-        border: 1px solid rgba(128, 128, 128, 0.4);
+        border: none;
         margin: 0 auto 2rem;
+        border-radius: .3rem;
+        background-color: rgb(208, 208, 208);
     }
     .perfilH1 h1{
         border:none;
         font-size: 1.6rem;
         text-decoration: underline;
     }
-    .contenedor-nameUser form{
+    .contenedor-nameUser{
         display: flex;
         justify-content: space-between;
     }
-    .contenedor-nameUser form div{
+    
+    .contenedor-nameUser  div{
         width: 48%;
     }
-    .contenedor-nameUser form div input{
+    .contenedor-nameUser  div input{
         margin: 2rem 0;
     }
     .contenedor-datos form .nom_ape-container,

@@ -37,12 +37,5 @@ input.checkbox{
     body.forms .main_login-container{
         margin:  auto auto 0;
     }
-
-    body.forms{
-        background-image: url('/img/loginBackground.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
 }
 

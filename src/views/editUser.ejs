@@ -24,16 +24,16 @@
     </div>
 
     <div class="contenedor-nameUser">
-        <form action="" method="post">
+        <!-- <form action="" method="post"> -->
             <div>
                 <input type="text" name="userName" id="userName">
-                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="btnOpenPop-up"><i class="fa-solid fa-pen-to-square"></i></button>
             </div>
             <div>
                 <input type="email" name="email" id="email">
-                <button><i class="fa-solid fa-pen-to-square"></i></button>
+                <button id="btnPopOpen"><i class="fa-solid fa-pen-to-square"></i></button>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
     <div class="contenedor-datos">
         <div class="perfilh4">
@@ -94,11 +94,51 @@
         <button class="btnDelete" type="reset">DESCARTAR LOS CAMBIOS</button>
         <button class="btnSubmit" type="submit">GUARDAR CAMBIOS</button>
     </div>
+    <div class="overlay">
+        <div class="pop-up">
+            <div class="squareLogo">
+                <a href="" class="closePop-up"><i class="fas fa-times"></i></a>
+                <img src="/img/Logo.svg" alt="Logo Funko">
+            </div>
+            <article>
+                <h5>Confirmar el cambio de nombre de usuario</h5>
+                <p><b>Aviso:</b> Si cambias el nombre de pantalla de Funko, no puedes volver a cambiarlo durante 2 semanas luego de confirmar este cambio.</p>
+                <b>Nombre en pantalla actual: <%  %></b>
+            </article>
+            <form action="" method="post">
+                <div class="input">
+                    <input type="text" placeholder="Nuevo nombre de usuario" name="userName" id="userName">
+                    <input type="text" placeholder="Confirme nombre de usuario" name="userName" id="userName">
+                </div>
+                <button class="btnSubmit" type="submit">CONFIRMAR</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="pop-up" id="pop-up">
+            <div class="squareLogo">
+                <a href="" class="closePop-up" id="closePop-up"><i class="fas fa-times"></i></a>
+                <img src="/img/Logo.svg" alt="Logo Funko">
+            </div>
+            <article>
+                <h5>Cambiar la dirección de correo electrónico de la cuenta</h5>
+                <p><b>Aviso:</b> Se requiere una verificación con código de seguridad para completar este cambio. No podrás cambiar el email durante 90 días despúes de que se confirme el cambio en la cuenta.</p>
+            </article>
+            <form action="" method="post">
+                <div class="input">
+                    <input type="email" placeholder="Nuevo email" name="userName" id="userName">
+                </div>
+                <button class="btnSubmit" type="submit">CONFIRMAR</button>
+            </form>
+        </div>
+    </div>
 </main>
 <!-- END MAIN -->
 
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
+<script src="../js/overlay.js"></script>
 </body>
 </html>
