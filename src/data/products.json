@@ -1,0 +1,384 @@
+[
+    {
+        "id": 1,
+        "name": "Funko POP Capitan America",
+        "price": 6000,
+        "description": "Las mejores pantuflas del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoCapAmerica.png",
+        "stock": true
+    },
+    {
+        "id": 2,
+        "name": "Funko POP Capitan America Mini",
+        "price": 5000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoCaptainAmerica2.jpg",
+        "stock": true
+    },
+    {
+        "id": 3,
+        "name": "Funko POP Black Panther",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkofunkoBlackPanther.jpg",
+        "stock": true
+    },
+    {
+        "id": 4,
+        "name": "Funko POP Black Panther Sin Mascara",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkofunkoBlackPantherWOMask.jpg",
+        "stock": true
+    },
+    {
+        "id": 5,
+        "name": "Funko POP Groot Bailarin",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoDancingGroot.jpg",
+        "stock": true
+    },
+    {
+        "id": 6,
+        "name": "Funko POP Deadpool",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoDeadpool.jpg",
+        "stock": true
+    },
+    {
+        "id": 7,
+        "name": "Funko POP Deadpool 2",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoDeadpool2.jpg",
+        "stock": true
+    },
+    {
+        "id": 8,
+        "name": "Funko POP Dr Strange",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoDrStrange.png",
+        "stock": true
+    },
+    {
+        "id": 9,
+        "name": "Funko POP Green Lantern ",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoGreenLantern.jpg",
+        "stock": true
+    },
+    {
+        "id": 10,
+        "name": "Funko POP Hulk",
+        "price": 5000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoHulk.png",
+        "stock": true
+    },
+    {
+        "id": 11,
+        "name": "Funko POP Iron Man",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoIronMan.png",
+        "stock": true
+    },
+    {
+        "id": 12,
+        "name": "Funko POP Rocket Holiday",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoRocketHoliday.png",
+        "stock": true
+    },
+    {
+        "id": 13,
+        "name": "Funko POP Thanos",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoThanos.png",
+        "stock": true
+    },
+    {
+        "id": 14,
+        "name": "Funko POP Venom",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoVenom.jpg",
+        "stock": true
+    },
+    {
+        "id": 15,
+        "name": "Funko POP The Wasp",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoWasp.jpg",
+        "stock": true
+    },
+    {
+        "id": 16,
+        "name": "Funko POP Captain America",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoCapAmerica.png",
+        "stock": true
+    },
+    {
+        "id": 17,
+        "name": "Funko POP Alakazam",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoAlakazam.png",
+        "stock": true
+    },
+    {
+        "id": 18,
+        "name": "Funko POP Asuka Langley",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoAsuka.jpg",
+        "stock": true
+    },
+    {
+        "id": 19,
+        "name": "Funko POP Eren Yeager",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoEren.jpg",
+        "stock": true
+    },
+    {
+        "id": 20,
+        "name": "Funko POP Goku",
+        "price": 5000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoGoku.jpg",
+        "stock": true
+    },
+    {
+        "id": 21,
+        "name": "Funko POP Gon Freecs",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoGon.png",
+        "stock": true
+    },
+    {
+        "id": 22,
+        "name": "Funko POP Hisoka",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoHisoka.jpg",
+        "stock": true
+    },
+    {
+        "id": 23,
+        "name": "Funko POP Inosuke",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoInosuke.png",
+        "stock": true
+    },
+    {
+        "id": 24,
+        "name": "Funko POP Levi Ackerman",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoLevi.jpg",
+        "stock": true
+    },
+    {
+        "id": 25,
+        "name": "Funko POP Mew",
+        "price": 5000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoMew.jpg",
+        "stock": true
+    },
+    {
+        "id": 26,
+        "name": "Funko POP Muzan Kibutsuji",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoMuzan.jpg",
+        "stock": true
+    },
+    {
+        "id": 27,
+        "name": "Funko POP Nezuko",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoNezuko.jpg",
+        "stock": true
+    },
+    {
+        "id": 28,
+        "name": "Funko POP Ochako",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoOchako.jpg",
+        "stock": true
+    },
+    {
+        "id": 29,
+        "name": "Funko POP Pikachu",
+        "price": 5000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoPikachu.png",
+        "stock": true
+    },
+    {
+        "id": 30,
+        "name": "Funko POP Rei Ayanami",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoRei.jpg",
+        "stock": true
+    },
+    {
+        "id": 31,
+        "name": "Funko POP Rock Lee",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoRockLee.png",
+        "stock": true
+    },
+    {
+        "id": 32,
+        "name": "Funko POP Sasuke",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoSasuke.jpg",
+        "stock": true
+    },
+    {
+        "id": 33,
+        "name": "Funko POP Shenron",
+        "price": 12000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoShenron.jpg",
+        "stock": true
+    },
+    {
+        "id": 34,
+        "name": "Funko POP Tanjiro Kamado",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoTanjiro.jpg",
+        "stock": true
+    },
+    {
+        "id": 35,
+        "name": "Funko POP Shoto Todoroki",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoOchako.jpg",
+        "stock": true
+    },
+    {
+        "id": 36,
+        "name": "Funko POP Fumikage Tokoyami",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoTokoyami.jpg",
+        "stock": true
+    },
+    {
+        "id": 37,
+        "name": "Funko POP Vegeta",
+        "price": 6000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 10,
+        "image": "funkoOchako.png",
+        "stock": true
+    },
+    {
+        "id": 38,
+        "name": "Funko POP Zenitsu",
+        "price": 8000,
+        "description": "La mejor birra del condado",
+        "projectId": 1,
+        "discount": 0,
+        "image": "funkoZenitsu.jpg",
+        "stock": true
+    }
+    
+
+]
