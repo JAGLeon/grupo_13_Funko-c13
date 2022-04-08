@@ -1,0 +1,73 @@
+@import url("adminHeader.css");
+@import url("adminFooter.css");
+
+* {
+    margin: 0 ;
+    padding: 0 ;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+/* FOOTER */
+footer ul#footer-ul{
+    padding: 0;
+}
+
+footer p{
+    margin: 0;
+}
+/* END FOOTER */
+
+h2.title-listado {
+    text-align: center;
+    margin: 1rem 0 2.5rem;
+    font-weight: bold;
+}
+
+.pt-5 {
+    padding-top: 5rem!important;
+}
+
+table {
+    width: 50%;
+}
+
+td.btn {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-radius: 0;
+    max-width: 7rem;
+}
+
+a.btn-edit{
+    color: #35858B;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #35858B;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a.btn-edit i{
+    font-size: 1.1rem;
+}
+
+button.btn-delete{
+    color: white;
+    background-color: #35858B;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.btn-delete i{
+    font-size: 1.2rem;
+}
+

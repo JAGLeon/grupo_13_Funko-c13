@@ -1,13 +1,15 @@
-const {getProducts} = require('../../data');
+const {getProducts, writeProducts} = require('../../data');
 
 module.exports = {
     /* Envia la vista de listado de productos */
     list: (req, res) => {
         res.render('admin/products/listProducts', {
-            titulo: "Listado de productos",
+            title: "Listado de productos",
+            stylesheet: 'adminList.css',
             productos: getProducts
         })
     },
+    /* Envia la vista de formulario de creación de producto */
     addProduct: (req,res)=>{
         res.render('admin/products/addProduct',{
             title : 'Funko | Admin',
@@ -48,7 +50,7 @@ module.exports = {
         /* 2 - Buscar el producto a editar */
         let producto = getProducts.find(producto => producto.id === idProducto)
         /* 3 - Mostrar el producto en la vista */
-        res.render('admin/editProduct',{
+        res.render('admin/products/editProduct',{
             title : 'Funko | Admin',
             stylesheet: 'formsEditAdd.css',
             producto

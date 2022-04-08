@@ -1,7 +1,8 @@
 const express = require('express');
-const adminController = require('../controllers/admin/adminController.js');
-const adminProductsController = require('../controllers/admin/adminProductsController');
 const router = express.Router();
+const adminController = require('../controllers/admin/adminController');
+const adminProductsController = require('../controllers/admin/adminProductsController');
+
 
 /* GET - Index */
 router.get('/', adminController.index);
@@ -19,6 +20,6 @@ router.get('/productos/editar/:id', adminProductsController.editProduct);
 /* PUT - Actualiza producto en la DB */
 router.put('/productos/:id', adminProductsController.updateProduct);
 /* DELETE - Elimina un producto */
-router.delete('/productos/eliminar/:id', adminProductsController.DeleteProduct);
+router.delete('/productos/eliminar/:id', adminProductsController.deleteProduct);
 
 module.exports = router;

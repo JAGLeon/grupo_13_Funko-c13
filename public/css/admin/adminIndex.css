@@ -1,0 +1,30 @@
+@import url("adminHeader.css");
+@import url("adminFooter.css");
+
+* {
+    margin: 0 ;
+    padding: 0 ;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+/* FOOTER */
+footer ul#footer-ul{
+    padding: 0;
+}
+
+footer p{
+    margin: 0;
+}
+/* END FOOTER */
+
+/* INDEX */
+main.index {
+    height: 100vh;
+}
+
+main.index h1 {
+    text-align: center;
+    margin-top: 6rem;
+}
+/* END INDEX */

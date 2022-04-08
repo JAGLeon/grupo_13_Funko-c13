@@ -2,9 +2,9 @@ const {getProducts} = require('../../data')
 
 module.exports = {
     index: (req,res)=>{
-        res.render('admin/index',{
+        res.render('admin/adminIndex',{
             title : 'Funko | Admin',
-            stylesheet: 'formsEditAdd.css'
+            stylesheet: 'adminIndex.css',
         })
     },
 }
