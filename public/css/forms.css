@@ -50,7 +50,7 @@ body.forms main{
 }
 
 body.forms main{
-    margin: 3.3rem auto 0 auto;
+    margin: 2rem auto;
 }
 
 body.forms main section.form-container{
@@ -121,12 +121,21 @@ body.forms span a{
 /*****************/
 /* MEDIA QUERIES */
 /*****************/
-
+#particles-js{
+    display: none;
+}
 /* TABLET */
 
 @media(min-width: 768px){
 body.forms{
     margin-top: 4rem;
+}
+#particles-js{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    position: fixed;
 }
 /* MAIN */
 body.forms main{

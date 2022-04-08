@@ -31,8 +31,8 @@ body main .novedad-h2{
 
 .main-carrito h1{
     text-align: center;
-        margin: 0 auto;  
-        text-decoration: underline;
+    margin: 0 auto 1.5rem;  
+    text-decoration: underline;
 }
 .main-carrito .main_section-muestra{
     background-color: lightgrey;
@@ -189,5 +189,11 @@ p.p_espacio-carrito{
     body main div.sales-container{
         max-width: 1161px;
         margin: 0 auto;  
+    }
+}
+
+@media(min-width:1200px){
+    .main-carrito h1{
+        margin: 5rem auto 1.5rem;  
     }
 }

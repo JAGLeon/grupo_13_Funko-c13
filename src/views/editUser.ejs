@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('./partials/head')  %> 
+<!-- END HEAD -->
+<body class="forms perfilUser">
+<!-- HEADER -->
+<%- include('partials/header') %> 
+<!-- END HEADER -->
+
+<!-- MAIN -->
+<main>
+
+    <div class="perfilH1">
+        <h1>AJUSTES DE LA CUENTA</h1>
+        <p>Administra la cuenta que has compartido con Funko e incluye tu nombre, dirección de contacto y más.</p>
+    </div>
+    <div class="contendor-avatar">
+        <div class="imgUser"><img src="/img/User.jpg" alt="Foto de perfil"></div>
+        <div class="inputFile">
+            <span>Subir imagen</span>
+            <input type="file" name="avatar">
+        </div>
+    </div>
+
+    <div class="contenedor-nameUser">
+        <!-- <form action="" method="post"> -->
+            <div>
+                <input type="text" name="userName" id="userName">
+                <button class="btnOpenPop-up"><i class="fa-solid fa-pen-to-square"></i></button>
+            </div>
+            <div>
+                <input type="email" name="email" id="email">
+                <button id="btnPopOpen"><i class="fa-solid fa-pen-to-square"></i></button>
+            </div>
+        <!-- </form> -->
+    </div>
+    <div class="contenedor-datos">
+        <div class="perfilh4">
+            <h5>DATOS PERSONALES</h5>
+            <p>Administra tu nombre y dirección. Estos datos personales son privados y no se mostrarán a otros usuarios. Consulta nuestra <a href="/enlaces-utiles/politicas-de-privacidad">política de privacidad</a> </p>
+        </div>
+        <form action="" method="POST">
+            <div class="nom_ape-container">
+                <div>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div>
+                    <input type="text" name="lastName" id="lastName" required>
+                </div>
+            </div>
+            <div class="pais_tel-contenedor">
+                <select class="selec-container" name="country" id="country">
+                    <option value="" hidden>País</option>
+                    <option value="ar">Argentina</option>
+                    <option value="pe">Perú</option>
+                    <option value="ch">Chile</option>
+                    <option value="bo">Bolivia</option>
+                    <option value="ur">Uruguay</option>
+                    <option value="Ec">Ecuador</option>
+                    <option value="pa">Paraguay</option>
+                    <option value="co">Colombia</option>
+                </select>
+                <div >
+                    <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" required>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="contenedor-direccion">
+        <h5>DIRECCIÓN</h5>
+        <form action="" method="post">
+            <div class="contenedor-address">
+                <div class="input-container">
+                    <input class="input-style" placeholder="Dirección" type="text" name="address" id="address" required>
+                </div>
+                <div class="input-container">
+                    <input class="input-style" placeholder="Ciudad" type="apellido" name="city" id="city" required>
+                </div>
+            </div>
+            <div class="contenedor-bottom">
+                <div class="input-barrio">
+                    <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood" required>
+                </div>
+                <div class="input-region">
+                    <input class="input-style" placeholder="Código postal" type="text" name="postalCode" id="postalCode" required>
+                    <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
+                    <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="btn-cambios">
+        <button class="btnDelete" type="reset">DESCARTAR LOS CAMBIOS</button>
+        <button class="btnSubmit" type="submit">GUARDAR CAMBIOS</button>
+    </div>
+    <div class="overlay">
+        <div class="pop-up">
+            <div class="squareLogo">
+                <a href="" class="closePop-up"><i class="fas fa-times"></i></a>
+                <img src="/img/Logo.svg" alt="Logo Funko">
+            </div>
+            <article>
+                <h5>Confirmar el cambio de nombre de usuario</h5>
+                <p><b>Aviso:</b> Si cambias el nombre de pantalla de Funko, no puedes volver a cambiarlo durante 2 semanas luego de confirmar este cambio.</p>
+                <b>Nombre en pantalla actual: <%  %></b>
+            </article>
+            <form action="" method="post">
+                <div class="input">
+                    <input type="text" placeholder="Nuevo nombre de usuario" name="userName" id="userName">
+                    <input type="text" placeholder="Confirme nombre de usuario" name="userName" id="userName">
+                </div>
+                <button class="btnSubmit" type="submit">CONFIRMAR</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="pop-up" id="pop-up">
+            <div class="squareLogo">
+                <a href="" class="closePop-up" id="closePop-up"><i class="fas fa-times"></i></a>
+                <img src="/img/Logo.svg" alt="Logo Funko">
+            </div>
+            <article>
+                <h5>Cambiar la dirección de correo electrónico de la cuenta</h5>
+                <p><b>Aviso:</b> Se requiere una verificación con código de seguridad para completar este cambio. No podrás cambiar el email durante 90 días despúes de que se confirme el cambio en la cuenta.</p>
+            </article>
+            <form action="" method="post">
+                <div class="input">
+                    <input type="email" placeholder="Nuevo email" name="userName" id="userName">
+                </div>
+                <button class="btnSubmit" type="submit">CONFIRMAR</button>
+            </form>
+        </div>
+    </div>
+</main>
+<!-- END MAIN -->
+
+<!-- FOOTER -->
+<%- include('./partials/footer')  %> 
+<!-- END FOOTER -->
+<script src="../js/overlay.js"></script>
+</body>
+</html>

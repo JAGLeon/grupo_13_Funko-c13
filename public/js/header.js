@@ -1,6 +1,6 @@
-let menuButton = document.querySelector('.header-btnBars');
-let menu = document.querySelector('.header-navMenu');
-let menuCloseButton = document.querySelector('.header-menuClose');
+let menuButton = document.querySelector('.header-btnBars'),
+    menu = document.querySelector('.header-navMenu'),
+    menuCloseButton = document.querySelector('.header-menuClose');
 
 menuButton.addEventListener('click', () => {
     menu.classList.add('active')

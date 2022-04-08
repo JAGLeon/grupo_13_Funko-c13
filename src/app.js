@@ -5,17 +5,21 @@ const PORT = 3000;
 
 // Enrutadores 
 
-const userRouter = require('./src/routes/userRouter');
-const homeRouter = require ('./src/routes/homeRouter');
-const enlacesRouter = require ('./src/routes/enlacesRouter');
-const adminRouter = require('./src/routes/adminRouter');
+const userRouter = require('../src/routes/userRouter');
+const homeRouter = require ('../src/routes/homeRouter');
+const enlacesRouter = require ('../src/routes/enlacesRouter');
+const adminRouter = require('../src/routes/adminRouter');
 
-app.use(express.static(path.join(__dirname,'./public')));
+app.use(express.static(path.join(__dirname,'../public')));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 // Views Config
 
 app.set('view engine', 'ejs');
-app.set('views', 'src/views');
+app.set('views', path.join(__dirname, "views"));
+const methodOverride = require('method-override');
+app.use(methodOverride("_method"));
 
 // ROUTES
 

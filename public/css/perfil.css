@@ -1,0 +1,319 @@
+@import url('/css/header.css');
+@import url('/css/footer.css');
+
+
+
+
+body.perfilUser{
+    margin-top: 3rem;
+}
+
+body.perfilUser main{
+    padding: 1rem;
+}
+
+.perfilH1 h1{
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.perfilUser main p{
+    /* color: rgb(162, 160, 160); */
+    font-size: .8rem;
+    text-align: center;
+}
+.perfilUser main p a{
+    color: black;
+}
+.perfilUser main p a:hover{
+    color: #3483FA;
+}
+
+.perfilUser main h5{
+    text-align: center;
+}
+/* AVATAR  */
+.contendor-avatar .imgUser{
+    background-color: beige;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin:0 auto;
+}
+
+.contendor-avatar .imgUser img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.contendor-avatar .inputFile{
+    background-color: rgba(128, 128, 128,0.6);
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.8rem;
+    color: white;
+    margin: 1rem auto;
+    position: relative;
+    cursor: pointer;
+    max-width: 320px;
+}
+
+.contendor-avatar .inputFile span{
+    position: absolute;
+    top: 25%;
+    left: 34%; 
+}
+
+.contendor-avatar .inputFile input{
+    opacity: 0;
+    width: 100%;
+}
+
+/* INPUT USER EMAIL  */
+
+
+.contenedor-nameUser  div input{
+    width: 78%;
+    margin-bottom: 1rem;
+    height: 3rem;
+    background-color: rgba(128, 128, 128,0.6);
+    border-radius:  .8rem  ;
+    border: none;
+    padding-left: 1rem;
+}
+
+.contenedor-nameUser  div input:hover{
+    outline: none;
+}
+
+.contenedor-nameUser  div button{
+    width: 20%;
+    height: 3rem;
+    border: none;
+    background-color: #3483FA;
+    color: white;
+    border-radius: .8rem;
+}
+
+.contenedor-nameUser  div button:hover{
+    background-color: rgba(52, 131, 250,0.9);
+}
+/* NAME LASTNAME  */
+.contenedor-datos form .nom_ape-container div input,
+.selec-container,
+.input-style{
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(128, 128, 128,0.6);
+    border-radius: .8rem;
+    border: none;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contenedor-datos form .nom_ape-container div input:hover{
+    outline: none;
+}
+
+/* BTN  */
+.btn-cambios .btnDelete{
+    height: 3rem;
+    width: 100%;
+    border-radius: .8rem;
+    border: 1px solid red;
+    margin-bottom: 1rem;
+    transition: all ease .7s;
+    background-color: white;
+}
+
+.btn-cambios .btnDelete:hover{
+    background-color: #3483FA;
+    border: none;
+    color: white;
+}
+
+.btn-cambios .btnSubmit{
+    background-color: #3483FA;
+    height: 3rem;
+    width: 100%;
+    border-radius: .8rem;
+    border: none;
+    color: white;
+    transition: all ease .5s;
+}
+
+.btn-cambios .btnSubmit:hover{
+    background-color: rgba(52, 131, 250,0.9);
+}
+
+/* POP-UP */
+
+.overlay{
+    background: rgba(0, 0, 0, .3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
+.overlay.active{
+    visibility: visible;
+}
+
+.overlay .pop-up{
+    background-color: #f8f8f8;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    font-family: 'Roboto';
+    text-align: center;
+    width: 80%;  
+    padding: .8rem;
+    max-width: 400px;
+    transition: .5s ease all;
+    transform: scale(.7);
+    opacity: 0;
+}
+
+.pop-up .squareLogo{
+    height: 120px;
+    width: 100%;
+    position: relative;
+}
+
+.pop-up .squareLogo img{
+    width: 100%;
+    max-width: 200px;
+    opacity: 0;
+}
+
+.pop-up .squareLogo .closePop-up{
+    font-size: 1rem;
+    color: #BBB;
+    transition: .3s ease all;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pop-up .squareLogo .closePop-up:hover{
+    color: #000;
+}
+
+.pop-up article h5{
+    margin-bottom: .8rem;
+}
+
+.pop-up article p{
+    color: #000;
+    font-size: .9rem;
+    margin-bottom: .8rem;
+}
+
+.pop-up article p b{
+    color: red;
+}
+
+.pop-up form .input input{
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    background-color: rgba(128, 128, 128,0.6);
+    text-align: center;
+}
+.pop-up form .input input:hover{
+    outline: none;
+}
+
+.pop-up form .btnSubmit{
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    margin-top: 1rem;
+    color: white;
+    font-family: 'Roboto';
+    cursor: pointer;
+    border: none;
+    background-color: #3483FA;
+    border-radius: 0.8rem;
+}
+
+.pop-up form .btnSubmit:hover{
+    background-color: rgba(52, 131, 250,0.9);
+}
+
+/* Transition - Animacion */
+ .pop-up.active{opacity: 1; transform: scale(1);}
+ .pop-up.active img{animation: logoOut .8s ease .5s forwards}
+ @keyframes logoOut{
+    0%{transform: translateY(-25px);opacity: 0;}
+    100%{transform: translateY(0);opacity: 1;}
+ }
+
+@media(min-width:768px){
+    body.perfilUser{
+        margin-top: 6rem;
+    }
+    body.perfilUser main{
+        padding: 1rem;
+        max-width: 900px;
+        border: none;
+        margin: 0 auto 2rem;
+        border-radius: .3rem;
+        background-color: rgb(208, 208, 208);
+    }
+    .perfilH1 h1{
+        border:none;
+        font-size: 1.6rem;
+        text-decoration: underline;
+    }
+    .contenedor-nameUser{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .contenedor-nameUser  div{
+        width: 48%;
+    }
+    .contenedor-nameUser  div input{
+        margin: 2rem 0;
+    }
+    .contenedor-datos form .nom_ape-container,
+    .pais_tel-contenedor,
+    .contenedor-address,
+    .contenedor-bottom,
+    .btn-cambios{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .contenedor-datos form .nom_ape-container div,
+    .selec-container,
+    .pais_tel-contenedor div,
+    .contenedor-address .input-container,
+    .contenedor-bottom .input-barrio,
+    .contenedor-bottom .input-region,
+    .btn-cambios .btnDelete,
+    .btn-cambios .btnSubmit{
+        width: 48%;
+    }
+    .contenedor-bottom .input-region{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .contenedor-bottom .input-region .input-style{
+        width: 33%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+    }
+}
