@@ -25,14 +25,14 @@
           <label for="discount" class="form-label">Descuento</label>
           <input type="number" name="discount" class="form-control" id="discount" placeholder="Ej: 1500" value="<%= producto.discount %>">
           <div class="franquicia">
-            <select name="categoryId" class="form-select" id="category">
-              <option selected hidden>Franquicia</option> <!-- NO ME SALE ACA -->
-              <option value="1">Dc</option>
-              <option value="2">Marvel</option>
-              <option value="3">Disney</option>
-              <option value="3">Star Wars</option>
-              <option value="3">Anime</option>
-              <option value="3">Game</option>
+            <label for="category" >Franquicia:</label>
+            <select name="category" class="form-select" id="category">
+              <option value="dc" <%= producto.category === "dc" && "selected" %>>Dc</option>
+              <option value="marvel" <%= producto.category === "marvel" && "selected" %>>Marvel</option>
+              <option value="disney" <%= producto.category === "dc" && "selected" %>>Disney</option>
+              <option value="starWars" <%= producto.category === "starWars" && "selected" %>>Star Wars</option>
+              <option value="anime" <%= producto.category === "anime" && "selected" %>>Anime</option>
+              <option value="game" <%= producto.category === "game" && "selected" %>>Game</option>
             </select>
           </div>
         <div class="form-check form-switch">
