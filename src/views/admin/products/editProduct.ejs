@@ -35,6 +35,11 @@
               <option value="game" <%= producto.category === "game" && "selected" %>>Game</option>
             </select>
           </div>
+        </div>
+        <div class="image">
+          <label for="image" class="form-label">Imágen</label>
+          <input type="file" name="image" class="form-control" id="image">
+        </div>
         <div class="form-check form-switch">
           <input <%= producto.stock ? "checked" : "" %>  class="form-check-input" name="stock" type="checkbox" role="switch" id="stock">
           <label class="form-check-label" for="stock">Stock disponible</label>

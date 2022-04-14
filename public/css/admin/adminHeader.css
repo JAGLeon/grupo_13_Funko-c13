@@ -1,7 +1,23 @@
 @import url("/css/header.css");
 
-.header-despliegueUser{
-    width: 70%;
+div.header-despliegeUser {
+    width: 100%;
+}
+
+button#header-btnMenu.header-btnMenu,
+button#header-btnMenu2.header-btnMenu{
+    width: 100%;
+    height: 40px;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    background-color: #3483FA;
+}
+
+button#header-btnMenu.header-btnMenu:hover,
+button#header-btnMenu2.header-btnMenu:hover{
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    background-color: #5e9af5;
 }
 
 .header-btnMenu{
@@ -47,3 +63,79 @@
 .header-ulUser li:last-child{
     border-radius: 0 0 10px 10px;
 } 
+
+header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser.active{
+    top: 195px;
+}
+
+div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active{ 
+    top: 330px;
+    left: 0;
+    width: 100%;
+}
+div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{
+    top: 490px;
+    left: 0;
+    width: 100%;
+}
+
+button.header-btnMenu i,
+button#header-btnMenu i,
+button#header-btnMenu2 i {
+    margin-left: 0.5rem;
+}
+
+/*MEDIA QUERIES*/
+
+@media (min-width:768px) {
+
+    div.header-despliegeUser {
+        max-width: 700px;
+    }
+
+    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser.active {
+        top: 253px;
+    }
+
+    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active{ 
+        max-width: 700px;
+        top: 593px;
+        left: 34px;
+    }
+
+    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{
+        max-width: 700px;
+        top: 925px;
+        left: 34px;
+    }
+}
+
+@media (min-width:1200px) {
+    
+    button#header-btnMenu.header-btnMenu, button#header-btnMenu.header-btnMenu,
+    button#header-btnMenu.header-btnMenu, button#header-btnMenu2.header-btnMenu {
+        background-color: #072227;
+    }
+
+    button#header-btnMenu.header-btnMenu, button#header-btnMenu.header-btnMenu:hover,
+    button#header-btnMenu.header-btnMenu, button#header-btnMenu2.header-btnMenu:hover {
+        background-color: #072227;
+    }
+    
+    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser.active {
+        top: 64px;
+        right: 10px;
+    }
+
+    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active{ 
+        top: 63px;
+        left: 235px;
+        width: 200px;
+    }
+
+    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{
+        top: 63px;
+        left: 436px;
+        width: 200px;
+    }
+}

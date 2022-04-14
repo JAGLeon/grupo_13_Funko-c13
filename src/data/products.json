@@ -14,17 +14,17 @@
         "name": "Funko POP Dr Strange",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 10,
         "image": "funkoDrStrange.png",
         "stock": true
     },
     {
         "id": 9,
-        "name": "Funko POP Green Lantern ",
+        "name": "Funko POP Green Lantern",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "dc",
         "discount": 10,
         "image": "funkoGreenLantern.jpg",
         "stock": true
@@ -34,7 +34,7 @@
         "name": "Funko POP Hulk",
         "price": 5000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 0,
         "image": "funkoHulk.png",
         "stock": true
@@ -44,7 +44,7 @@
         "name": "Funko POP Iron Man",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 10,
         "image": "funkoIronMan.png",
         "stock": true
@@ -54,7 +54,7 @@
         "name": "Funko POP Rocket Holiday",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 0,
         "image": "funkoRocketHoliday.png",
         "stock": true
@@ -64,7 +64,7 @@
         "name": "Funko POP Thanos",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 10,
         "image": "funkoThanos.png",
         "stock": true
@@ -74,7 +74,7 @@
         "name": "Funko POP Venom",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 0,
         "image": "funkoVenom.jpg",
         "stock": true
@@ -84,7 +84,7 @@
         "name": "Funko POP The Wasp",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 10,
         "image": "funkoWasp.jpg",
         "stock": true
@@ -94,7 +94,7 @@
         "name": "Funko POP Captain America",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "marvel",
         "discount": 0,
         "image": "funkoCapAmerica.png",
         "stock": true
@@ -104,7 +104,7 @@
         "name": "Funko POP Alakazam",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime", 
         "discount": 10,
         "image": "funkoAlakazam.png",
         "stock": true
@@ -114,7 +114,7 @@
         "name": "Funko POP Asuka Langley",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoAsuka.jpg",
         "stock": true
@@ -124,7 +124,7 @@
         "name": "Funko POP Eren Yeager",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoEren.jpg",
         "stock": true
@@ -134,7 +134,7 @@
         "name": "Funko POP Goku",
         "price": 5000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoGoku.jpg",
         "stock": true
@@ -144,7 +144,7 @@
         "name": "Funko POP Gon Freecs",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoGon.png",
         "stock": true
@@ -154,7 +154,7 @@
         "name": "Funko POP Hisoka",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoHisoka.jpg",
         "stock": true
@@ -164,7 +164,7 @@
         "name": "Funko POP Inosuke",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoInosuke.png",
         "stock": true
@@ -174,7 +174,7 @@
         "name": "Funko POP Levi Ackerman",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoLevi.jpg",
         "stock": true
@@ -184,7 +184,7 @@
         "name": "Funko POP Mew",
         "price": 5000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoMew.jpg",
         "stock": true
@@ -194,7 +194,7 @@
         "name": "Funko POP Muzan Kibutsuji",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoMuzan.jpg",
         "stock": true
@@ -204,7 +204,7 @@
         "name": "Funko POP Nezuko",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoNezuko.jpg",
         "stock": true
@@ -214,7 +214,7 @@
         "name": "Funko POP Ochako",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoOchako.jpg",
         "stock": true
@@ -224,7 +224,7 @@
         "name": "Funko POP Pikachu",
         "price": 5000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoPikachu.png",
         "stock": true
@@ -234,7 +234,7 @@
         "name": "Funko POP Rei Ayanami",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoRei.jpg",
         "stock": true
@@ -244,7 +244,7 @@
         "name": "Funko POP Rock Lee",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoRockLee.png",
         "stock": true
@@ -254,7 +254,7 @@
         "name": "Funko POP Sasuke",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoSasuke.jpg",
         "stock": true
@@ -264,7 +264,7 @@
         "name": "Funko POP Shenron",
         "price": 12000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoShenron.jpg",
         "stock": true
@@ -274,7 +274,7 @@
         "name": "Funko POP Tanjiro Kamado",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoTanjiro.jpg",
         "stock": true
@@ -284,7 +284,7 @@
         "name": "Funko POP Shoto Todoroki",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoOchako.jpg",
         "stock": true
@@ -294,7 +294,7 @@
         "name": "Funko POP Fumikage Tokoyami",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoTokoyami.jpg",
         "stock": true
@@ -304,7 +304,7 @@
         "name": "Funko POP Vegeta",
         "price": 6000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 10,
         "image": "funkoOchako.png",
         "stock": true
@@ -314,7 +314,7 @@
         "name": "Funko POP Zenitsu",
         "price": 8000,
         "description": "La mejor birra del condado",
-        "category": 1,
+        "category": "anime",
         "discount": 0,
         "image": "funkoZenitsu.jpg",
         "stock": true
