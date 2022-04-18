@@ -21,16 +21,11 @@ module.exports = {
             };
         });
 
-        let newUser = {
-            id: lastId + 1,
-            country: req.body.country,
-            name: req.body.name,
-            lastName: req.body.lastName,
-            userName: req.body.userName,
-            email: req.body.email,
-            password: req.body.password,
-            avatar: ""
-        }
+		let newUser = {
+			id : lastId + 1,
+			...req.body,
+			avatar : req.file ? req.file.filename : "user.jpg"
+		}
 
         getUsers.push(newUser);
         writeUsers(getUsers);

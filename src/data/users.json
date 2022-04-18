@@ -98,5 +98,15 @@
         "email": "AyalaPity@gmail.com",
         "password": "312312",
         "avatar": ""
+    },
+    {
+        "id": 10,
+        "country": "pe",
+        "name": "Prueba",
+        "lastName": "Prueba",
+        "userName": "Prueba",
+        "email": "asdasdas@gmai.comn",
+        "password": "123",
+        "avatar": "1650325319827_img_.png"
     }
 ]

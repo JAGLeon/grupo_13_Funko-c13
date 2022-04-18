@@ -12,7 +12,7 @@
     <main class="main_register">
         <section class="form-container register">
             <h1>Registrate</h1>
-            <form action="/usuarios/registro" method="POST">
+            <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
                 <div class="input-container">
                     <select class="input-style selec-container" name="country" id="country">
                         <option value="" hidden>País</option>
@@ -41,6 +41,12 @@
                     <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" required>
                     <span class="error-message">Ingresar un usuario</span>
                 </div>
+
+                    <div class="inputFile">
+                        <span>Subir imagen</span>
+                        <input type="file" name="avatar">
+                    </div>
+
                 <div class="input-container">
                     <input class="input-style" placeholder="Email" type="email" name="email" id="email" required>
                     <span class="error-message">Ingresar su email</span>
