@@ -16,17 +16,10 @@ button#header-btnMenu2.header-btnMenu{
 
 button#header-btnMenu.header-btnMenu:hover,
 button#header-btnMenu2.header-btnMenu:hover{
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
     background-color: #5e9af5;
 }
 
-.header-btnMenu{
-    width: 100%;
-    border: none;
-    background-color: rgba(7, 34, 39, 0.8);
-    color: white;
-    font-size: 1.3rem;
-}
+
 
 .header-ulUser.active{
     display: flex;
@@ -39,8 +32,6 @@ button#header-btnMenu2.header-btnMenu:hover{
 
 .header-ulUser{
     width: 200px;
-    position: absolute;
-    top: 64px;
     padding: 0;
     display: none;
 }
@@ -64,20 +55,11 @@ button#header-btnMenu2.header-btnMenu:hover{
     border-radius: 0 0 10px 10px;
 } 
 
-header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser.active{
-    top: 195px;
+div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active,
+div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{ 
+    width: 100%;
 }
 
-div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active{ 
-    top: 330px;
-    left: 0;
-    width: 100%;
-}
-div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{
-    top: 490px;
-    left: 0;
-    width: 100%;
-}
 
 button.header-btnMenu i,
 button#header-btnMenu i,
@@ -86,56 +68,45 @@ button#header-btnMenu2 i {
 }
 
 /*MEDIA QUERIES*/
-
-@media (min-width:768px) {
-
-    div.header-despliegeUser {
-        max-width: 700px;
+@media(min-width: 700px){
+    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active,
+    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{ 
+    max-width: 700px;
     }
 
-    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser.active {
-        top: 253px;
-    }
-
-    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active{ 
+    .header-despliegeUser{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         max-width: 700px;
-        top: 593px;
-        left: 34px;
-    }
-
-    div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{
-        max-width: 700px;
-        top: 925px;
-        left: 34px;
     }
 }
 
+
 @media (min-width:1200px) {
-    
-    button#header-btnMenu.header-btnMenu, button#header-btnMenu.header-btnMenu,
-    button#header-btnMenu.header-btnMenu, button#header-btnMenu2.header-btnMenu {
+    button#header-btnMenu.header-btnMenu,
+    button#header-btnMenu2.header-btnMenu{
         background-color: #072227;
     }
 
-    button#header-btnMenu.header-btnMenu, button#header-btnMenu.header-btnMenu:hover,
-    button#header-btnMenu.header-btnMenu, button#header-btnMenu2.header-btnMenu:hover {
-        background-color: #072227;
-    }
-    
-    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-ulUser.active {
-        top: 64px;
-        right: 10px;
+    button#header-btnMenu.header-btnMenu:hover,
+    button#header-btnMenu2.header-btnMenu:hover{
+    box-shadow:none;
+    background-color: #072227;
     }
 
     div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser.header-ulUser.active{ 
-        top: 63px;
-        left: 235px;
+        position: absolute;
+        top: 64px;
         width: 200px;
     }
 
     div.conteiner-redirecciones div.header-despliegeUser ul#header-ulUser2.header-ulUser.active{
-        top: 63px;
-        left: 436px;
+        position: absolute;
+        top: 64px;
         width: 200px;
     }
+
+
 }
