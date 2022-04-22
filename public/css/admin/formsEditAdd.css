@@ -35,6 +35,18 @@ section.admin {
     border-radius: 5px;
 }
 
+main#category section {
+    height: 20rem;
+}
+
+main#category section h2 {
+    margin-bottom: 3rem;
+}
+
+main#category section form div.name {
+    margin-bottom: 2rem;
+}
+
 section.admin form{
     width: 65%;
 }

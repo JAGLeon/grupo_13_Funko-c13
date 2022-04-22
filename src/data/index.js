@@ -10,8 +10,15 @@ module.exports = {
     }, 
     //Lectura de JSON-Product
     getProducts: JSON.parse(fs.readFileSync(path.join(__dirname, "/products.json"), "utf-8")),
-    //Escritura y pasado a string de Json.Product
+    //Escritura y pasado a string de Json-Product
     writeProducts: (data) => {
         fs.writeFileSync(path.join(__dirname, "/products.json"), JSON.stringify(data));
     },
+    //Lectura de JSON-Category
+    getCategories: JSON.parse(fs.readFileSync(path.join(__dirname, "/category.json"), "utf-8")),
+    //Escritura y pasado a string de Json-Category
+    writeCategories: (data) => {
+        fs.writeFileSync(path.join(__dirname, "/category.json"), JSON.stringify(data));
+    },
+
 }

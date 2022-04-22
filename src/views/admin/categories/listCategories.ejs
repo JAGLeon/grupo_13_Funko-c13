@@ -10,31 +10,25 @@
 
 <!-- MAIN -->
     <main class="container min-vh-100 pt-5">
-        <h2 class="title-listado">LISTADO DE PRODUCTOS:</h2>
+        <h2 class="title-listado">LISTADO DE FRANQUICIAS:</h2>
         <table class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Franquicia</th>
-                <th scope="col">Stock</th>
                 <th scope="col" class="btn"></th>
             </tr>
             </thead>
             <tbody>
-            <% productos.forEach(producto => { %>
+            <% categories.forEach(category => { %>
                 <tr>
-                <th scope="row"><%- producto.id %></th>
-                <td><%- producto.name %></td>
-                <td><%- producto.price %></td>
-                <td><%- producto.category %></td>
-                <td><%- producto.stock %></td>
+                <th scope="row"><%- category.id %></th>
+                <td><%- category.name %></td>
                 <td class="btn">
-                    <a href="/admin/productos/editar/<%- producto.id %>" class="btn-edit">
+                    <a href="/admin/franquicias/editar/<%- category.id %>" class="btn-edit">
                     <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                    <form action="/admin/productos/eliminar/<%- producto.id %>?_method=DELETE" method="post">
+                    <form action="/admin/franquicias/eliminar/<%- category.id %>?_method=DELETE" method="post">
                     <button class="btn-delete" type="submit">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
