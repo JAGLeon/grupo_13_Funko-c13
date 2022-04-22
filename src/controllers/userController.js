@@ -1,4 +1,5 @@
 const{getUsers,writeUsers} = require('../data')
+const { validationResult } = require('express-validator');
 
 module.exports = {
     login: (req,res) => {
@@ -14,22 +15,33 @@ module.exports = {
         });
     },
     registrarUser : (req,res)=>{
-        let lastId = 0;
-        getUsers.forEach(user => {
-            if (user.id > lastId) {
-                lastId = user.id
-            };
-        });
+        let errors = validationResult(req);
 
-		let newUser = {
-			id : lastId + 1,
-			...req.body,
-			avatar : req.file ? req.file.filename : "user.jpg"
-		}
-
-        getUsers.push(newUser);
-        writeUsers(getUsers);
-        res.redirect('/usuarios/inicio');
+        if(errors.isEmpty()){
+            let lastId = 0;
+            getUsers.forEach(user => {
+                if (user.id > lastId) {
+                    lastId = user.id
+                };
+            });
+    
+            let newUser = {
+                id : lastId + 1,
+                ...req.body,
+                avatar : req.file ? req.file.filename : "user.jpg"
+            }
+    
+            getUsers.push(newUser);
+            writeUsers(getUsers);
+            res.redirect('/usuarios/inicio');
+        }else{
+            res.render('register',{
+                title : 'Funko | Registro',
+                stylesheet: 'forms.css',
+                errors : errors.mapped()
+            });
+        }
+        
     },
     perfil : (req,res)=>{
         res.render('editUser',{

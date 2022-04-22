@@ -29,16 +29,20 @@
                 </div>
                 <div class="nom_ape-container">
                     <div class="input-container rInput">
-                        <input class="input-style rInput-style" placeholder="Nombre" type="text" name="name" id="name" required>
-                        <span class="error-message">Su nombre</span>
+                        <input class="input-style rInput-style" placeholder="Nombre" type="text" name="name" id="name" >
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.name.msg %> </small>
+                        <% } %> 
                     </div>
                     <div class="input-container rInput">
-                        <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" required>
-                        <span class="error-message">Su apellido</span>
+                        <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" >
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.lastName.msg %> </small>
+                        <% } %> 
                     </div>
                 </div>
                 <div class="input-container">
-                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" required>
+                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" >
                     <span class="error-message">Ingresar un usuario</span>
                 </div>
 
@@ -48,11 +52,11 @@
                     </div>
 
                 <div class="input-container">
-                    <input class="input-style" placeholder="Email" type="email" name="email" id="email" required>
+                    <input class="input-style" placeholder="Email" type="email" name="email" id="email" >
                     <span class="error-message">Ingresar su email</span>
                 </div>
                 <div class="input-container pass-container">
-                    <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password" required>
+                    <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password" >
                     <span class="error-message">Ingresar una contraseña</span>
                     <i class="fa-solid fa-eye-slash"></i>
                 </div>
