@@ -1,6 +1,9 @@
 const{getUsers,writeUsers} = require('../data')
 const { validationResult } = require('express-validator');
 
+let  countries = ['Argentina','Bolivia', 'Chile','Colombia','Ecuador', 'Paraguay', 'Perú' , 'Uruguay' ];
+
+
 module.exports = {
     login: (req,res) => {
         res.render('login',{
@@ -11,12 +14,12 @@ module.exports = {
     register:(req,res)=>{
         res.render('register',{
             title : 'Funko | Registro',
-            stylesheet: 'forms.css'
+            stylesheet: 'forms.css',
+            countries
         });
     },
     registrarUser : (req,res)=>{
         let errors = validationResult(req);
-
         if(errors.isEmpty()){
             let lastId = 0;
             getUsers.forEach(user => {
@@ -38,7 +41,9 @@ module.exports = {
             res.render('register',{
                 title : 'Funko | Registro',
                 stylesheet: 'forms.css',
-                errors : errors.mapped()
+                countries,          
+                errors : errors.mapped(),
+                oldData: req.body
             });
         }
         

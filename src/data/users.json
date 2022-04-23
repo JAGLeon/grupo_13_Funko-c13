@@ -108,5 +108,25 @@
         "email": "asdasdas@gmai.comn",
         "password": "123",
         "avatar": "1650325319827_img_.png"
+    },
+    {
+        "id": 11,
+        "country": "Colombia",
+        "name": "Prueba",
+        "lastName": "Messi",
+        "userName": "Prueba",
+        "email": "klklklk@email.com",
+        "password": "asdfghjk",
+        "avatar": "user.jpg"
+    },
+    {
+        "id": 12,
+        "country": "Argentina",
+        "name": "Prueba",
+        "lastName": "Guerrero",
+        "userName": "Guerrero Prueba",
+        "email": "GuerreroPaolo@msg.com",
+        "password": "123456789",
+        "avatar": "1650730219980_img_.jpg"
     }
 ]
