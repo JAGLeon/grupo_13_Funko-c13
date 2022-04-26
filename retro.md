@@ -1,3 +1,5 @@
+** Sprint 3 **
+
 Empezar a hacer (+): 
 Retrospectivas en cada sprint.
 Definir dias y horario fijo para las dailys. 
