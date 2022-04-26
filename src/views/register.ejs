@@ -14,51 +14,58 @@
             <h1>Registrate</h1>
             <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
                 <div class="input-container">
-                    <select class="input-style selec-container" name="country" id="country">
-                        <option value="" hidden>País</option>
-                        <option value="ar">Argentina</option>
-                        <option value="pe">Perú</option>
-                        <option value="ch">Chile</option>
-                        <option value="bo">Bolivia</option>
-                        <option value="ur">Uruguay</option>
-                        <option value="Ec">Ecuador</option>
-                        <option value="pa">Paraguay</option>
-                        <option value="co">Colombia</option>
+                    <select class="input-style selec-container" name="country" id="country" value="<%= locals.oldData && oldData.country ? oldData.country : "" %>">
+                        <option value="" hidden>Elegí un país</option>
+                        <% for( const oneCountry of countries ) { %>
+                            <option value="<%= oneCountry %>" <%= locals.oldData && (oneCountry === oldData.country) ? 'selected' : null %> > <%= oneCountry %> </option>
+                        <% } %>
                     </select>
-                    <span class="error-message">Seleccionar su país</span>
+                    <% if (locals.errors && errors.country) { %>
+                        <small class="text-danger"><%= errors.country.msg %> </small>
+                    <% } %> 
                 </div>
                 <div class="nom_ape-container">
                     <div class="input-container rInput">
-                        <input class="input-style rInput-style" placeholder="Nombre" type="text" name="name" id="name" >
+                        <input class="input-style rInput-style" placeholder="Nombre" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : "" %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="text-danger"><%= errors.name.msg %> </small>
                         <% } %> 
                     </div>
                     <div class="input-container rInput">
-                        <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" >
+                        <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
                         <% if (locals.errors && errors.name) { %>
                             <small class="text-danger"><%= errors.lastName.msg %> </small>
                         <% } %> 
                     </div>
                 </div>
                 <div class="input-container">
-                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" >
-                    <span class="error-message">Ingresar un usuario</span>
+                    <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" value="<%= locals.oldData && oldData.userName ? oldData.userName : "" %>">
+                    <% if (locals.errors && errors.userName) { %>
+                        <small class="text-danger"><%= errors.userName.msg %> </small>
+                    <% } %> 
                 </div>
 
-                    <div class="inputFile">
+                    <!-- <div class="inputFile">
                         <span>Subir imagen</span>
                         <input type="file" name="avatar">
-                    </div>
+                    </div> -->
 
                 <div class="input-container">
-                    <input class="input-style" placeholder="Email" type="email" name="email" id="email" >
-                    <span class="error-message">Ingresar su email</span>
+                    <input class="input-style" placeholder="Email" type="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
+                    <% if (locals.errors && errors.email) { %>
+                        <small class="text-danger"><%= errors.email.msg %> </small>
+                    <% } %> 
                 </div>
                 <div class="input-container pass-container">
-                    <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password" >
-                    <span class="error-message">Ingresar una contraseña</span>
+                    <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password">
                     <i class="fa-solid fa-eye-slash"></i>
+                    <% if (locals.errors && errors.password) { %>
+                        <small class="text-danger"><%= errors.password.msg %> </small>
+                    <% } %> 
+                </div>
+                <div class="mb-3">
+                    <label for="avatar" class="form-label">Foto de perfil</label>
+                    <input class="form-control" type="file" id="avatar" name="avatar" >
                 </div>
                 <span>Al registrarte estás aceptando las <a href="/enlaces-utiles/politicas-de-privacidad" target="_blank">políticas de privacidad</a></span>
                 <div class="btn-container">
