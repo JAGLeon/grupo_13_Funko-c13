@@ -8,14 +8,51 @@ module.exports = {
     login: (req,res) => {
         res.render('login',{
             title : 'Funko | Inicio',
-            stylesheet: 'forms.css'
+            stylesheet: 'forms.css',
+            session: req.session
         });
+    },
+    loginUser: (req,res) => {
+        let errors = validationResult(req);
+        if(errors.isEmpty()){
+            //Levantar sesión
+            let user = getUsers.find(user => user.email === req.body.email);
+
+            req.session.user = {
+                id: user.id,
+                name: user.name,
+                avatar: user.avatar,
+                email: user.email,
+                rol: user.rol
+            }
+
+            if(req.body.recuerdame){
+                const TIME_IN_MILISECONDS = 60000 * 60 * 24 * 365;
+                res.cookie('funko', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                })
+            }
+
+            res.locals.user = req.session.user
+
+            res.redirect('/')
+        }else{
+            res.render('login', {
+                title: 'Funko | Inicio',
+                stylesheet: 'forms.css',
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
     },
     register:(req,res)=>{
         res.render('register',{
             title : 'Funko | Registro',
             stylesheet: 'forms.css',
-            countries
+            countries,
+            session: req.session
         });
     },
     registrarUser : (req,res)=>{
@@ -31,7 +68,8 @@ module.exports = {
             let newUser = {
                 id : lastId + 1,
                 ...req.body,
-                avatar : req.file ? req.file.filename : "user.jpg"
+                avatar : req.file ? req.file.filename : "user.jpg",
+                rol : 'USER'
             }
     
             getUsers.push(newUser);
@@ -43,7 +81,8 @@ module.exports = {
                 stylesheet: 'forms.css',
                 countries,          
                 errors : errors.mapped(),
-                oldData: req.body
+                oldData: req.body,
+                session: req.session
             });
         }
         
@@ -51,7 +90,17 @@ module.exports = {
     perfil : (req,res)=>{
         res.render('editUser',{
             title : 'Funko | Perfil',
-            stylesheet : 'perfil.css'
+            stylesheet : 'perfil.css',
+            session: req.session
         })
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+
+        if(req.cookies.funko){
+            res.cookie('funko', "", { maxAge: -1 })
+        }
+
+        res.redirect('/usuarios/inicio')
     }
 }

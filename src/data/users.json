@@ -128,5 +128,16 @@
         "email": "GuerreroPaolo@msg.com",
         "password": "123456789",
         "avatar": "1650730219980_img_.jpg"
+    },
+    {
+        "id": 13,
+        "country": "Argentina",
+        "name": "Rodrigo",
+        "lastName": "Suarez",
+        "userName": "Rodrigo ADMIN",
+        "email": "admin@mail.com",
+        "password": "123",
+        "avatar": "1651023356753_img_.png",
+        "rol": "USER"
     }
 ]
