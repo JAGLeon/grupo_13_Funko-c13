@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Marvel"
+    },
+    {
+        "id": 2,
+        "name": "Anime"
+    },
+    {
+        "id": 3,
+        "name": "DC"
+    },
+    {
+        "id": 4,
+        "name": "Disney"
+    },
+    {
+        "id": 5,
+        "name": "Star Wars"
+    },
+    {
+        "id": 6,
+        "name": "Games"
+    }
+]

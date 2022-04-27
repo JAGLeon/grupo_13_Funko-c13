@@ -32,7 +32,7 @@ module.exports = {
             stock: req.body.stock ? true : false
         };
 
-        // Paso 2 - Guardar el nuevo producto en el array de usuarios
+        // Paso 2 - Guardar el nuevo producto en el array de productos
 
         getProducts.push(newProduct);
 
@@ -66,7 +66,7 @@ module.exports = {
                 producto.name = req.body.name
                 producto.price = req.body.price
                 producto.description = req.body.description
-                producto.projectId = req.body.projectId
+                producto.category = req.body.category
                 producto.discount = req.body.discount
                 producto.stock = req.body.stock ? true : false
             }
