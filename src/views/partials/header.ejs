@@ -12,14 +12,32 @@
         <nav class="header-navMenu">
             <div class="header-menuClose"><i class="fa-solid fa-xmark"></i></div>
             <div class="header-user">
-                <div class="header-imgUser"><img src="/img/users/user.jpg" alt="Foto de perfil"></div>
+                <div class="header-imgUser">
+                <% if (typeof session.usuario != "undefined") { %>
+                    <img src="/img/users/<%= session.usuario.avatar %>" alt="Foto de perfil de <%= session.usuario.name  %> ">
+                <% } else { %> 
+                    <img src="/img/users/user.jpg" alt="Funko foto">
+                <% } %> 
+
+                </div>
                 <div class="header-despliegeUser">
-                    <button class="header-btnMenu">Usuario <i class="fa-solid fa-caret-down"></i></button>
+                    <% if (typeof session.usuario != "undefined") { %>
+                      <button class="header-btnMenu"><%= session.usuario.name %> <i class="fa-solid fa-caret-down"></i></button>
+                    <% } else { %> 
+                      <button class="header-btnMenu">Usuario <i class="fa-solid fa-caret-down"></i></button>
+                    <% } %> 
                     <ul class="header-ulUser">
-                        <li><a href="/usuarios/perfil">Configuración</a></li>
-                        <li><a href="/usuarios/registro">Registrate</a></li>
-                        <li><a href="/usuarios/inicio">Inicia Sesión</a></li>
-                        <li><a href="/usuarios/inicio">Cerrar Sesión</a></li>
+                        <% if (typeof session.usuario != "undefined") { %>
+                            <% if (session.usuario.rol === "ADMIN") { %>
+                                <li><a href="/admin">Admin</a></li>
+                            <% } %>
+                            <li><a href="/usuarios/perfil">Mi perfil</a></li>
+                            <li><a href="/usuarios/salir">Cerrar Sesión</a></li>
+                        <% }else{ %> 
+                            <li><a href="/usuarios/registro">Registrate</a></li>
+                            <li><a href="/usuarios/inicio">Inicia Sesión</a></li>
+                        <% } %> 
+                            
                     </ul>
                 </div>
             </div>

@@ -6,14 +6,16 @@ module.exports = {
         res.render('admin/products/listProducts', {
             title: "Listado de productos",
             stylesheet: 'adminList.css',
-            productos: getProducts
+            productos: getProducts,
+            session: req.session
         })
     },
     /* Envia la vista de formulario de creación de producto */
     addProduct: (req,res)=>{
         res.render('admin/products/addProduct',{
             title : 'Funko | Admin',
-            stylesheet: 'formsEditAdd.css'
+            stylesheet: 'formsEditAdd.css',
+            session: req.session
         })
     },
     /* Recibe los datos del form de creación y guarda el producto en la DB */
@@ -53,7 +55,8 @@ module.exports = {
         res.render('admin/products/editProduct',{
             title : 'Funko | Admin',
             stylesheet: 'formsEditAdd.css',
-            producto
+            producto,
+            session: req.session
         })
     },
     /* Recibe los datos actualizados del form de edición */

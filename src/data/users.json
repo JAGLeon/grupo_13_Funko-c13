@@ -1,143 +1,46 @@
 [
     {
         "id": 0,
-        "country": "Perú",
-        "name": "León",
-        "lastName": "Garay",
-        "userName": "Leon97",
-        "email": "Leon@tony.com",
-        "password": "4321",
-        "avatar": ""
+        "country": "Bolivia",
+        "name": "Pity",
+        "lastName": "Ayala",
+        "userName": "TheKing",
+        "email": "res@mail.com",
+        "password": "$2a$10$1iaY56Kqnvano6TxZCCSte12drO1o6nvU/xrpKuKhoPbb2o01LQQS",
+        "avatar": "1651338385760_img_.png",
+        "rol": "USER"
     },
     {
         "id": 1,
-        "country": "ar",
-        "name": "Lionel",
-        "lastName": "Messi",
-        "userName": "Messi10",
-        "email": "ms10@gmail.com",
-        "password": "123",
-        "avatar": ""
+        "country": "Chile",
+        "name": "Chubaca",
+        "lastName": "Colo",
+        "userName": "Chuba",
+        "email": "chubaco@mail.com",
+        "password": "$2a$10$BmxtXsU3CWtrJJ7cIgW9DuzEf6gUgTwGwHLybQtCRcG.D/PBy4e0S",
+        "avatar": "1651344210260_img_.png",
+        "rol": "USER"
     },
     {
         "id": 2,
-        "country": "pe",
-        "name": "Paolo",
-        "lastName": "Guerrero",
-        "userName": "PGuerrero10",
-        "email": "Pg10@gmail.com",
-        "password": "per123",
-        "avatar": ""
+        "country": "Argentina",
+        "name": "Admin",
+        "lastName": "Funko",
+        "userName": "ADMIN FUNKO",
+        "email": "admin@mail.com",
+        "password": "$2a$10$CoUeMCgOs6370rJFtfgr3.RUyW14V5NoktTlB632jkfsUzqD5/e.K",
+        "avatar": "1651346749063_img_.png",
+        "rol": "ADMIN"
     },
     {
         "id": 3,
-        "country": "pa",
-        "name": "Sandro",
-        "lastName": "Guerrero",
-        "userName": "Sandro02",
-        "email": "sandro@hotmail.com",
-        "password": "21312",
-        "avatar": ""
-    },
-    {
-        "id": 4,
-        "country": "",
-        "name": "Guido",
-        "lastName": "Perez",
-        "userName": "GPerex",
-        "email": "Gperez@gmail.com",
-        "password": "123",
-        "avatar": ""
-    },
-    {
-        "id": 5,
-        "country": "ch",
-        "name": "Pedro",
-        "lastName": "Navaja",
-        "userName": "PedroNav",
-        "email": "Face@email.com",
-        "password": "987",
-        "avatar": ""
-    },
-    {
-        "id": 6,
-        "country": "ar",
-        "name": "Ezequiel",
-        "lastName": "Saveedra",
-        "userName": "SaveQuiel34",
-        "email": "Save-eze@gmail.com",
-        "password": "1234",
-        "avatar": ""
-    },
-    {
-        "id": 7,
-        "country": "pe",
-        "name": "Anderson",
-        "lastName": "Francia",
-        "userName": "Aamon",
-        "email": "Paolo@email.com",
-        "password": "9999",
-        "avatar": ""
-    },
-    {
-        "id": 8,
-        "country": "",
-        "name": "Daddy",
-        "lastName": "Yankee",
-        "userName": "TheKing",
-        "email": "king@yankee.com",
-        "password": "9876",
-        "avatar": ""
-    },
-    {
-        "id": 9,
-        "country": "pa",
-        "name": "Pity",
-        "lastName": "Ayala",
-        "userName": "Ayala56",
-        "email": "AyalaPity@gmail.com",
-        "password": "312312",
-        "avatar": ""
-    },
-    {
-        "id": 10,
-        "country": "pe",
-        "name": "Prueba",
-        "lastName": "Prueba",
-        "userName": "Prueba",
-        "email": "asdasdas@gmai.comn",
-        "password": "123",
-        "avatar": "1650325319827_img_.png"
-    },
-    {
-        "id": 11,
         "country": "Colombia",
-        "name": "Prueba",
-        "lastName": "Messi",
-        "userName": "Prueba",
-        "email": "klklklk@email.com",
-        "password": "asdfghjk",
-        "avatar": "user.jpg"
-    },
-    {
-        "id": 12,
-        "country": "Argentina",
-        "name": "Prueba",
+        "name": "Eduardo",
         "lastName": "Guerrero",
-        "userName": "Guerrero Prueba",
-        "email": "GuerreroPaolo@msg.com",
-        "password": "123456789",
-        "avatar": "1650730219980_img_.jpg"
-    },
-    {
-        "id": 13,
-        "country": "Argentina",
-        "name": "Rodrigo",
-        "lastName": "Suarez",
-        "userName": "Rodrigo ADMIN",
-        "email": "admin@mail.com",
-        "password": "123",
-        "avatar": "1651023356753_img_.png",
-        "rol": "USER"
+        "userName": "EduAd",
+        "email": "edu@mail.com",
+        "password": "$2a$10$QYI7S0uMixCrxzVqzph4pOlydKVjEVtqrXCl2w7/w2SlPVFOKwv3W",
+        "avatar": "1651354393834_img_.png",
+        "rol": "ADMIN"
     }
 ]

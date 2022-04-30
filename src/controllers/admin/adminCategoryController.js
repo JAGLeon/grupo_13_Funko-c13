@@ -6,14 +6,16 @@ module.exports = {
         res.render('admin/categories/listCategories', {
             title: "Listado de franquicias",
             stylesheet: 'adminList.css',
-            categories: getCategories
+            categories: getCategories,
+            session: req.session
         })
     },
     /* Envia la vista de formulario de creación de franquicia */
     addCategory: (req,res)=>{
         res.render('admin/categories/addCategories',{
             title : 'Funko | Admin',
-            stylesheet: 'formsEditAdd.css'
+            stylesheet: 'formsEditAdd.css',
+            session: req.session
         })
     },
     /* Recibe los datos del form de creación y guarda el franquicia en la DB */
@@ -52,7 +54,8 @@ module.exports = {
         res.render('admin/categories/editCategories',{
             title : 'Funko | Admin',
             stylesheet: 'formsEditAdd.css',
-            category
+            category,
+            session: req.session
         })
     },
     /* Recibe los datos actualizados del form de edición */

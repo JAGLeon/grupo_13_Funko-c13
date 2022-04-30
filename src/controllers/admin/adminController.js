@@ -5,6 +5,7 @@ module.exports = {
         res.render('admin/adminIndex',{
             title : 'Funko | Admin',
             stylesheet: 'adminIndex.css',
+            session: req.session
         })
     },
 }

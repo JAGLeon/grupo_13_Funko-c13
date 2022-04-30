@@ -4,8 +4,9 @@ const path  = require('path');
 const PORT = 3000;
 const methodOverride = require('method-override');
 const session = require('express-session');
-const cookieParser = require('cookie-parser')
-const cookieSession = require('./middlewares/cookies/cookieSession')
+const cookieParser = require('cookie-parser');
+const cookieSession = require('./middlewares/cookies/cookieSession');
+
 // Enrutadores 
 
 const userRouter = require('../src/routes/userRouter');
@@ -18,13 +19,19 @@ const adminRouter = require('../src/routes/adminRouter');
 app.use(express.static(path.join(__dirname,'../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+// Session
+
 app.set('trust proxy', 1);
 app.use(session({
-    secret:"Funko",
+    secret:"Funko Company",
     resave: false,
     saveUninitialized: true,
     cookie: {}
 }));
+
+// Cookies
+
 app.use(cookieParser());
 app.use(cookieSession);
 
@@ -43,4 +50,4 @@ app.use('/admin', adminRouter); // Admin
 
 
 app.listen(PORT,()=> console.log(`Puerto ${PORT} 
-link: http://localhost:${PORT}`))
+link: http://localhost:${PORT}`));

@@ -1,8 +1,8 @@
-const{getUsers,writeUsers} = require('../data')
+const{getUsers,writeUsers} = require('../data');
 const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 let  countries = ['Argentina','Bolivia', 'Chile','Colombia','Ecuador', 'Paraguay', 'Perú' , 'Uruguay' ];
-
 
 module.exports = {
     login: (req,res) => {
@@ -14,38 +14,39 @@ module.exports = {
     },
     loginUser: (req,res) => {
         let errors = validationResult(req);
+
         if(errors.isEmpty()){
-            //Levantar sesión
             let user = getUsers.find(user => user.email === req.body.email);
 
-            req.session.user = {
+            req.session.usuario = {
                 id: user.id,
                 name: user.name,
+                userName: user.userName,
                 avatar: user.avatar,
                 email: user.email,
                 rol: user.rol
-            }
+            };
 
             if(req.body.recuerdame){
                 const TIME_IN_MILISECONDS = 60000 * 60 * 24 * 365;
-                res.cookie('funko', req.session.user, {
+                res.cookie('funko', req.session.usuario, {
                     expires: new Date(Date.now() + TIME_IN_MILISECONDS),
                     httpOnly: true,
                     secure: true
-                })
-            }
+                });
+            };
 
-            res.locals.user = req.session.user
+            res.locals.user = req.session.usuario;
 
-            res.redirect('/')
+            res.redirect('/');
         }else{
             res.render('login', {
                 title: 'Funko | Inicio',
                 stylesheet: 'forms.css',
                 errors: errors.mapped(),
                 session: req.session
-            })
-        }
+            });
+        };
     },
     register:(req,res)=>{
         res.render('register',{
@@ -57,8 +58,10 @@ module.exports = {
     },
     registrarUser : (req,res)=>{
         let errors = validationResult(req);
+
         if(errors.isEmpty()){
             let lastId = 0;
+
             getUsers.forEach(user => {
                 if (user.id > lastId) {
                     lastId = user.id
@@ -68,9 +71,10 @@ module.exports = {
             let newUser = {
                 id : lastId + 1,
                 ...req.body,
-                avatar : req.file ? req.file.filename : "user.jpg",
+                password: bcrypt.hashSync(req.body.password, 10),
+                avatar : req.file ? req.file.filename : 'user.jpg',
                 rol : 'USER'
-            }
+            };
     
             getUsers.push(newUser);
             writeUsers(getUsers);
@@ -84,23 +88,23 @@ module.exports = {
                 oldData: req.body,
                 session: req.session
             });
-        }
+        };
         
     },
     perfil : (req,res)=>{
-        res.render('editUser',{
+        res.render('perfil',{
             title : 'Funko | Perfil',
             stylesheet : 'perfil.css',
             session: req.session
-        })
+        });
     },
     logout: (req, res) => {
         req.session.destroy();
 
         if(req.cookies.funko){
-            res.cookie('funko', "", { maxAge: -1 })
-        }
+            res.cookie('funko', '', { maxAge: -1 });
+        };
 
-        res.redirect('/usuarios/inicio')
+        res.redirect('/');
     }
-}
+};

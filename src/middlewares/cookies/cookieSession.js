@@ -1,7 +1,7 @@
 const cookieSession = (req, res, next) => {
     if(req.cookies.funko){
-        req.session.user = req.cookies.funko;
-        res.locals.user = req.session.user;
+        req.session.usuario = req.cookies.funko;
+        res.locals.usuario = req.session.usuario;
     }
     next()
 }

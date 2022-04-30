@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/admin/adminController');
 const adminProductsController = require('../controllers/admin/adminProductsController');
+const adminCategoryController = require('../controllers/admin/adminCategoryController');
 const userSession = require('../middlewares/user/userSession');
 const adminSession = require('../middlewares/user/adminSession');
-const adminCategoryController = require('../controllers/admin/adminCategoryController');
 
 
 /* GET - Index */
-router.get('/', adminController.index);
+router.get('/', userSession, adminSession, adminController.index);
 
 /* CRUD PRODUCTOS */
 
@@ -29,13 +29,13 @@ router.delete('/productos/eliminar/:id', adminProductsController.deleteProduct);
 /* CRUD FRANQUICIAS */
 
 /* GET - Lista de franquicias */
-router.get('/franquicias', adminCategoryController.list);
+router.get('/franquicias', userSession, adminSession, adminCategoryController.list);
 /* GET - Agregar franquicia */
-router.get('/franquicias/agregar',adminCategoryController.addCategory);
+router.get('/franquicias/agregar', userSession, adminSession, adminCategoryController.addCategory);
 /* POST - Crea un franquicia en la DB */
 router.post('/franquicias', adminCategoryController.createCategory);
 /* GET - Editar franquicia */
-router.get('/franquicias/editar/:id', adminCategoryController.editCategory);
+router.get('/franquicias/editar/:id', userSession, adminCategoryController.editCategory);
 /* PUT - Actualiza franquicia en la DB */
 router.put('/franquicias/:id', adminCategoryController.updateCategory);
 /* DELETE - Elimina un franquicia */

@@ -16,7 +16,11 @@
         <p>Administra la cuenta que has compartido con Funko e incluye tu nombre, dirección de contacto y más.</p>
     </div>
     <div class="contendor-avatar">
-        <div class="imgUser"><img src="/img/users/user.jpg" alt="Foto de perfil"></div>
+        <div class="imgUser">
+        <% if (typeof session.usuario != "undefined") { %>
+            <img src="/img/users/<%= session.usuario.avatar %>" alt="Foto de perfil de <%= session.usuario.name  %> ">
+        <% } %> 
+        </div>
         <div class="inputFile">
             <span>Subir imagen</span>
             <input type="file" name="avatar">
