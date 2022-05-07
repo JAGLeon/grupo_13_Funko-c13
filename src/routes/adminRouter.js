@@ -5,6 +5,7 @@ const adminProductsController = require('../controllers/admin/adminProductsContr
 const adminCategoryController = require('../controllers/admin/adminCategoryController');
 const userSession = require('../middlewares/user/userSession');
 const adminSession = require('../middlewares/user/adminSession');
+const productCreateValidator = require('../validations/productCreateValidator');
 
 
 /* GET - Index */
@@ -17,7 +18,7 @@ router.get('/productos', userSession, adminSession, adminProductsController.list
 /* GET - Agregar producto */
 router.get('/productos/agregar', userSession, adminSession, adminProductsController.addProduct);
 /* POST - Crea un producto en la DB */
-router.post('/productos', adminProductsController.createProduct);
+router.post('/productos', productCreateValidator ,adminProductsController.createProduct);
 /* GET - Editar producto */
 router.get('/productos/editar/:id', userSession, adminSession, adminProductsController.editProduct);
 /* PUT - Actualiza producto en la DB */

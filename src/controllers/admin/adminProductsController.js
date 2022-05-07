@@ -1,4 +1,5 @@
 const {getProducts, writeProducts} = require('../../data');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     /* Envia la vista de listado de productos */
@@ -20,6 +21,9 @@ module.exports = {
     },
     /* Recibe los datos del form de creación y guarda el producto en la DB */
     createProduct: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
         /* 1 - Crear el objeto producto */
         let lastId = 0;
         getProducts.forEach(product => {
@@ -44,7 +48,16 @@ module.exports = {
 
        // Paso 4 - Devolver respuesta (redirección)
 
-       res.redirect('/admin/productos');
+         res.redirect('/admin/productos')
+        }else{
+            res.render('admin/products/addProduct',{
+                title : 'Funko | Admin',
+                stylesheet: 'formsEditAdd.css',
+                session: req.session,
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }   
     },
     editProduct: (req,res)=>{
         /* 1 - Obtener el id del producto */
