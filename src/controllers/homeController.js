@@ -1,23 +1,22 @@
+let {getProducts, getCategories} = require('../data')
+
 module.exports = {
     home: (req,res)=>{
         res.render('home',{
             title : 'Funko',
             stylesheet: 'home.css',
+            categorias: getCategories,
             session: req.session
         })
     },
-    detailProduct: (req,res)=>{
-        res.render('productDetail',{
-            title : 'Funko | Detalles',
-            stylesheet: 'productDetail.css',
-            session: req.session
-        })
-    },
-    compra:(req,res)=>{
-        res.render('carrito',{
-            title : 'Funko | Compras',
-            stylesheet: 'carrito.css',
-            session: req.session
+    search: (req, res) => {
+        let busqueda = req.query.search.toLowerCase()
+        let productos = getProducts.filter( producto => producto.category == busqueda || producto.name == busqueda)
+        res.render('search',{
+            productos,
+            busqueda,
+            title: 'Funko | Busqueda',
+            stylesheet: 'home.css',
         })
     }
 }

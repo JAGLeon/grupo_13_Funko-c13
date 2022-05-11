@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('./partials/head')  %> 
+<!-- END HEAD -->
+<body class="product-datail">
+<!-- HEADER -->
+<%- include('./partials/header')  %> 
+<!-- END HEADER -->
+
+<!-- MAIN -->
+    <main>
+        <section id="section1">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../img/image_cap-america.png" class="img-product" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/img-cap-mini.png" class="img-product" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <i class="fa-solid fa-angle-left" id="angle-left"></i>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <i class="fa-solid fa-angle-right" id="angle-right"></i>
+                </button>
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+            </div>
+            <div class="product-detail">
+                <p id="name">Funko POP Infinity War Capitan America</p>
+                <p id="price">$5.799</p>
+                <p id="cuotas">en 3x $1.933,33 Sin interés</p>
+                <div id="truck">
+                    <img src="/img/truck-fast-solid.png" class="truck">
+                    <p>Envíos a todo el país</p>
+                </div>
+                <a href="" id="send">calcular costo de envío</a>
+                <div class="btn-quantity">
+                    <div id="res">-</div>
+                    <div id="num">1</div>
+                    <div id="sum">+</div>
+                </div>
+                <a href="/carrito" class="btn-buy">Comprar ahora</a>
+                <button type="" class="btn-add">Agregar al carrito</button>
+            </div>
+        </section>
+
+        <section id="section2">
+            <div class="means-money">
+                <div id="tittle">
+                    <p>Medios de pago</p>
+                    <i class="fas fa-angle-down" id="medios"></i>
+                </div>
+                <div id="items">
+                    <p>Tarjetas de crédito</p>
+                    <img src="/img/Credito.jpg" alt="">
+                    <p>Tarjetas de débito</p>
+                    <img src="/img/Debito.jpg" alt="">
+                    <p>Efectivo</p>
+                    <img src="/img/Efectivo.jpg" alt="">
+                </div>
+            </div>
+            <div class="description">
+                <div id="tittle">
+                    <p>Descripción</p>
+                    <i class="fas fa-angle-down" id="description"></i>
+                </div>
+                <div id="item">
+                    <p> Estos muñecos están fabricados en vinilo modelados con estilo cabezón que los han hecho tan populares. Dentro de esta línea podemos encontrar más de 1.000 personajes distintos pertenecientes a series de éxito de la actualidad como Hora de Aventuras o grandes clásicos intemporales como Mickey Mouse, divididas a su vez en múltiples categorías. Entre ellas destacan Bart Simpson en Pop! TV, Batman en DC Pop! o Michael Myers en Pop! Películas.
+                        Estas figuras normalmente tienen un tamaño de 3,75 pulgadas, lo que serían 10 cm aproximadamente.
+                        Edad Recomendada: a partir de los 4 años.﻿</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="section3">
+            <div class="tittle">
+                <p>También te puede interesar</p>
+            </div>
+            <div class="interest">
+                <div class="product">
+                    <img src="/img/hulk.png" alt="">
+                    <div class="description">
+                        <p class="funko-title">Funko POP</p> 
+                        <p class="funko-name">Banner Hulk</p>
+                        <p class="funko-prices">$5.799</p>
+                        <p class="funko-cuotes">en 3x $1.933,33</p>
+                        <p class="funko-cuotes">Sin Interés</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/img/batman-mini.png" alt="">
+                    <div class="description">
+                        <p class="funko-title">Funko POP</p>
+                        <p class="funko-name">Batman</p>
+                        <p class="funko-prices">$5.799</p>
+                        <p class="funko-cuotes">en 3x $1.933,33</p>
+                        <p class="funko-cuotes">Sin Interés</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/img/batmanJL.png" alt="">
+                    <div class="description">
+                        <p class="funko-title">Funko POP</p>
+                        <p class="funko-name">Batman JL</p>
+                        <p class="funko-prices">$5.799</p>
+                        <p class="funko-cuotes">en 3x $1.933,33</p>
+                        <p class="funko-cuotes">Sin Interés</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/img/beetlejuice.png" alt="">
+                    <div class="description">
+                        <p class="funko-title">Funko POP</p>
+                        <p class="funko-name">Beetlejuice</p>
+                        <p class="funko-prices">$5.799</p>
+                        <p class="funko-cuotes">en 3x $1.933,33</p>
+                        <p class="funko-cuotes">Sin Interés</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/img/buzz.png" alt="">
+                    <div class="description">
+                        <p class="funko-title">Funko POP</p> 
+                        <p class="funko-name">Buzz Toy Story</p>
+                        <p class="funko-prices">$5.799</p>
+                        <p class="funko-cuotes">en 3x $1.933,33</p>
+                        <p class="funko-cuotes">Sin Interés</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/img/star-wars.png" alt="">
+                    <div class="description">
+                        <p class="funko-title">Funko POP</p> 
+                        <p class="funko-name">Star Wars 13</p>
+                        <p class="funko-prices">$5.799</p>
+                        <p class="funko-cuotes">en 3x $1.933,33</p>
+                        <p class="funko-cuotes">Sin Interés</p>
+                        <button>Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<!-- END MAIN -->
+
+<!-- FOOTER -->
+    <%- include('./partials/footer')  %> 
+<!-- END FOOTER -->
+    <script src="../js/productDetail.js"></script>
+</body>
+</html>
