@@ -1,4 +1,4 @@
-let {getProducts, getCategories} = require('../data')
+let {getProducts, getCategories} = require('../data/index')
 
 module.exports = {
     home: (req,res)=>{
@@ -13,10 +13,18 @@ module.exports = {
         let busqueda = req.query.search.toLowerCase()
         let productos = getProducts.filter( producto => producto.category == busqueda || producto.name == busqueda)
         res.render('search',{
-            productos,
-            busqueda,
             title: 'Funko | Busqueda',
             stylesheet: 'home.css',
+            session: req.session,
+            productos,
+            busqueda,
+        })
+    },
+    compra:(req,res)=>{
+        res.render('carrito',{
+            title : 'Funko | Compras',
+            stylesheet: 'carrito.css',
+            session: req.session
         })
     }
 }

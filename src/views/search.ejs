@@ -3,16 +3,15 @@
 <!-- HEAD -->
 <%- include('./partials/head')  %> 
 <!-- END HEAD -->
-<body class="forms">
+<body>
 <!-- HEADER -->
-    <%- include('./partials/header') %> 
+<%- include('partials/header') %> 
 <!-- END HEADER -->
-    <div id="particles-js"></div>
 <!-- MAIN -->
 
-<main class="container">
-    <h2 class="text-center">Tu Busqueda : <%= busqueda %>  </h2>
-    <div class="container d-flex flex-wrap justify-content-center">
+<main>
+    <h2>Tu Busqueda : <%= busqueda %>  </h2>
+    <div>
 
         <% if (productos.length == 0) { %>
 
@@ -21,14 +20,14 @@
         <% } else { %>
      
             <% productos.forEach( producto => { %>
-                <div class="card m-2 text-black bg-light" style="width: 16rem;">
-                    <img src="/images/<%- producto.image %>" class="card-img-top" alt="...">
+                <div>
+                    <img src="/img/<%- producto.image %>" alt="...">
                     <div class="card-body">
                     <h5 class="card-title"><%= producto.categoria.toUpperCase() %></h5>
                     <p class="card-text">Nombre: <%= producto.nombre %></p>
                     <p class="card-text">Precio: <%= producto.precio %></p>
                     <p class="card-text">Descripción: <%= producto.description %></p>
-                    <a href="/productos/detalle/<%- producto.id %>" class="btn btn-primary">Detalle</a>
+                    <a href="/producto/detalle/<%- producto.id %>" class="btn btn-primary">Detalle</a>
                     </div>
                 </div>
             <% }) %>
@@ -38,11 +37,10 @@
 
 <!-- END MAIN -->
 
+
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
-<!-- Scripts -->
-<script src="/js/particlesFunko/particles.min.js"></script>
-<script src="/js/particlesFunko/funkoParticle.js"></script>
+    <script src="../js/productDetail.js"></script>
 </body>
 </html>

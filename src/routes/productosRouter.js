@@ -5,6 +5,6 @@ const userSession = require('../middlewares/user/userSession');
 
 router.get('/', productosController.listar);
 router.get('/detalle/:id', productosController.detailProduct);
-router.get('/carrito', userSession, productosController.compra);
+
 
 module.exports = router;

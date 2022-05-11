@@ -11,7 +11,7 @@ let productsController = {
     },   
     detailProduct : (req, res) => {
         let producto = getProducts.find( producto => producto.id == req.params.id)
-        let category = get.find( category => category.id == producto.category)
+        let category = getCategories.find( category => category.id == producto.category)
         res.render('productDetail', {
             producto,
             category,
@@ -19,14 +19,8 @@ let productsController = {
             stylesheet: 'productDetail.css',
             session: req.session
         })
-    },
-    compra:(req,res)=>{
-        res.render('carrito',{
-            title : 'Funko | Compras',
-            stylesheet: 'carrito.css',
-            session: req.session
-        })
-    },
+    }
+  
 }
 
 
