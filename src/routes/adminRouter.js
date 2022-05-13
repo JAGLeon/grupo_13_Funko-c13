@@ -36,7 +36,7 @@ router.get('/franquicias/agregar', userSession, adminSession, adminCategoryContr
 /* POST - Crea un franquicia en la DB */
 router.post('/franquicias', adminCategoryController.createCategory);
 /* GET - Editar franquicia */
-router.get('/franquicias/editar/:id', userSession, adminCategoryController.editCategory);
+router.get('/franquicias/editar/:id', userSession, adminSession, adminCategoryController.editCategory);
 /* PUT - Actualiza franquicia en la DB */
 router.put('/franquicias/:id', adminCategoryController.updateCategory);
 /* DELETE - Elimina un franquicia */

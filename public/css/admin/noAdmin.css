@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+}
+
+.scan{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scan .fingerprint{
+    position: relative;
+    width: 300px;
+    height: 380px;
+    background:url('/img/noAdmin/huella1.png');
+    background-size: 300px;
+}
+
+.scan .fingerprint::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/img/noAdmin/huella2.png');
+    background-size: 300px;
+    animation: scanner 4s ease-in-out infinite;
+}
+
+@keyframes scanner {
+    0% ,100% {height: 0%;}
+    50% {height: 100%;}
+}
+
+.scan .fingerprint::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: #3fefef;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+    animation: scanner_line 4s ease-in-out infinite;
+}
+
+@keyframes scanner_line {
+    0% ,100% {top: 0%;}
+    50% {top: 100%;}
+}
+
+.scan .h3_scan{
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    color: #3fefef;
+    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+    animation: animate_text 0.5s steps(1) infinite;   
+}
+
+@keyframes  animate_text {
+    0% ,100% {opacity: 0;}
+    50% {opacity: 1;}
+}
+
+
+.window{
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation-name: noAdmin;
+    animation-duration: 30s;
+    animation-delay: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.window .contentP p {
+    color: white;
+    filter: drop-shadow(0 0 1px #ffffff) drop-shadow(0 0 1px #ffffff);
+    letter-spacing: 0px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.window a{
+    width: 300px;
+    height: 300px;
+}
+
+.window a img{
+    height: 100%;
+    width: 100%;
+    transform: scale(.9);
+}
+
+.window a img:hover{
+    transform: scale(1);
+}
+
+@keyframes noAdmin {
+    0%,100%{
+        opacity: 1;
+    }
+}
+
+
+@media(min-width: 768px){
+    .window .contentP p {
+        letter-spacing: 10px;
+        font-size: 3rem;
+    }
+
+    .window a{
+        width: 600px;
+        height: 500px;
+    }
+}
+
+@media(min-width: 1200px){
+    .window .contentP p {
+        letter-spacing: 20px;
+        font-size: 3rem;
+    }
+
+    .window a{
+        width: 700px;
+        height: 500px;
+    }
+}

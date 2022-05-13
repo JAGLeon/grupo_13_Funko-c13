@@ -22,9 +22,9 @@ module.exports = {
     createCategory: (req, res) => {
         /* 1 - Crear el objeto franquicia */
         let lastId = 0;
-        getCategories.forEach(cateogry => {
-            if(cateogry.id > lastId){
-                lastId = product.id;
+        getCategories.forEach(category => {
+            if(category.id > lastId){
+                lastId = category.id;
             }
         });
 
