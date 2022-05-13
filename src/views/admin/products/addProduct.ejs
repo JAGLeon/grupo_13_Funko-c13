@@ -14,38 +14,53 @@
       <form class="formAdd" action="/admin/productos" method="POST">
         <div class="name">
           <label for="name" class="form-label">Nombre del producto</label>
-          <input type="text" name="name" class="form-control" id="name">
+          <input type="text" name="name" class="form-control" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
+          <% if (locals.errors && errors.name) { %>
+           <small class="text-danger"><%= errors.name.msg%></small>
+          <% } %>
         </div>
         <div class="price">
           <label for="price" class="form-label">Precio</label>
-          <input type="number" name="price" class="form-control" id="price">
+          <input type="number" name="price" class="form-control" id="price"value="<%= (locals.old && old.price) ? old.price : "" %>">
+          <% if (locals.errors && errors.price) { %>
+            <small class="text-danger"><%= errors.price.msg%></small>
+           <% } %>
         </div>
         <div class="discount">
           <label for="discount" class="form-label">Descuento</label>
-          <input type="number" name="discount" class="form-control" id="discount">
+          <input type="number" name="discount" class="form-control" id="discount" value="<%= (locals.old && old.discount) ? old.discount : "" %>">
+          <% if (locals.errors && errors.discount) { %>
+            <small class="text-danger"><%= errors.discount.msg%></small>
+          <% } %>
         </div>
         <div class="franquicia">
           <select name="category" class="form-select select-add" id="category">
-            <option selected hidden>Franquicia</option>
-            <option value="Dc">Dc</option>
-            <option value="Marvel">Marvel</option>
-            <option value="Disney">Disney</option>
-            <option value="Star Wars">Star Wars</option>
-            <option value="Anime">Anime</option>
-            <option value="Game">Game</option>
+            <option selected hidden value="">Franquicia</option>
+            <option value="Dc" <%= (locals.old && old.category) && old.category === "Dc" ? "selected" : "" %>>Dc</option>
+            <option value="Marvel" <%= (locals.old && old.category) && old.category === "Marvel" ? "selected" : "" %>>Marvel</option>
+            <option value="Disney" <%= (locals.old && old.category) && old.category === "Disney" ? "selected" : "" %>>Disney</option>
+            <option value="Star Wars" <%= (locals.old && old.category) && old.category === "Star Wars" ? "selected" : "" %>>Star Wars</option>
+            <option value="Anime" <%= (locals.old && old.category) && old.category === "Anime" ? "selected" : "" %>>Anime</option>
+            <option value="Games" <%= (locals.old && old.category) && old.category === "Games" ? "selected" : "" %>>Games</option>
           </select>
+          <% if (locals.errors && errors.category) { %>
+            <small class="text-danger"><%= errors.category.msg%></small>
+          <% } %>
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
           <input type="file" name="image" class="form-control" id="image">
         </div>
         <div class="form-check form-switch">
-          <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock">
+          <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock" <%= (locals.old && old.stock) ? "checked" : "" %>>
           <label class="form-check-label" for="stock">Stock</label>
         </div>
         <div class="description">
           <label for="description" class="form-label">Descripción</label>
-          <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+          <textarea name="description" class="form-control" id="description" rows="3"><%= (locals.old && old.description) ? old.description : "" %></textarea>
+          <% if (locals.errors && errors.description) { %>
+            <small class="text-danger"><%= errors.description.msg%></small>
+          <% } %>
         </div>
         <div class="button">
           <button type="submit">Crear</button>
