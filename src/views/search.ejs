@@ -23,9 +23,9 @@
                 <div>
                     <img src="/img/<%- producto.image %>" alt="...">
                     <div class="card-body">
-                    <h5 class="card-title"><%= producto.categoria.toUpperCase() %></h5>
-                    <p class="card-text">Nombre: <%= producto.nombre %></p>
-                    <p class="card-text">Precio: <%= producto.precio %></p>
+                    <h5 class="card-title"><%= producto.category.toUpperCase() %></h5>
+                    <p class="card-text">Nombre: <%= producto.name %></p>
+                    <p class="card-text">Precio: <%= producto.price %></p>
                     <p class="card-text">Descripción: <%= producto.description %></p>
                     <a href="/producto/detalle/<%- producto.id %>" class="btn btn-primary">Detalle</a>
                     </div>

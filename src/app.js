@@ -54,8 +54,13 @@ app.use('/admin', adminRouter); // Admin
 
 /* Vista not found */
 app.use((req, res, next) => {
-    res.status(404).render('not-found')
+    res.status(404).render("not-found", {
+        title: "Funko | Error 404",
+        stylesheet: "carrito.css",
+        session: req.session
+    })
 })
+
 
 app.listen(PORT,()=> console.log(`Puerto ${PORT} 
 link: http://localhost:${PORT}`));
