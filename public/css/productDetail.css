@@ -535,7 +535,7 @@ div.interest div.product button:hover {
     }
 
     div.product-detail {
-        max-width: 420px;
+        width: 420px;
         border: solid 1px #35858B;
         border-radius: 10px;
         margin-right: 1.3rem;
@@ -662,6 +662,11 @@ div.interest div.product button:hover {
     div.means-money div#items img:last-child {
         margin-bottom: 0;
     }
+    
+    div.description div#item p {
+        font-size: 1.8rem;
+    }
+
 
     section#section2 div.description {
         border: solid 1px #35858B;
