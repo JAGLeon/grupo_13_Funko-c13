@@ -2,10 +2,13 @@ let {getProducts, getCategories} = require('../data')
 
 let productsController = {
     listar: (req, res) => {
-        res.render('producto', {
-            productos : getProducts,
+        let productos = getProducts;
+        let categories = getCategories;
+        res.render('productos', {
+            productos,
+            categories,
             title: 'Funko | Listado',
-            stylesheet: 'productDetail.css',
+            stylesheet: 'products.css',
             session: req.session
         })
     },   

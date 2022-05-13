@@ -1,0 +1,228 @@
+@import url("/css/header.css");
+@import url("/css/footer.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+}
+
+
+/* FOOTER */
+.product-datail footer #footer-ul{
+    padding: 0;
+}
+.product-datail footer p{
+    margin: 0;
+}
+
+.product-datail footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.product-datail footer .footer_article-container{
+    height: 121px;
+}
+
+/* MAIN */
+
+
+main {
+    padding-top: 3.5rem;
+    max-width: 1225px;
+    margin: 0 auto;
+}
+
+/* SECTION */
+
+section#section3:hover {
+    box-shadow: 0px 0px 7px 3px rgb(0 0 0 / 30%);
+}
+
+div.tittle {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 50px;
+
+}
+
+div.tittle p {
+    margin-bottom: 0;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+}
+
+div.interest {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+div.interest div.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 20rem;
+    margin: 10px 10px;
+    min-width: 225px;
+}
+
+body main div.sales-container div.sales-box-container div.sales-box{
+    margin: 10px 10px;
+    min-width: 225px;
+}
+
+div.interest div.product div.img{
+    max-width: 100%;
+    height: 250px;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-bottom: 3px;
+}
+
+div.interest div.product div.img img.img-product{
+    width: 100%;
+    height: 100%;
+}
+
+div.interest div.product div.description {
+    margin-top: 1px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 10px;
+}
+
+div.interest div.product .funko-title,
+div.interest div.product .funko-name {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+div.interest div.product .funko-prices {
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+div.interest div.product .funko-cuotes {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+div.interest div.product button {
+    margin: 0 auto 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    height: 2rem;
+    text-transform: uppercase;
+    border: solid 2px #3483FA;
+    background-color: white;
+    color: #3483FA;
+    font-size: 0.8rem;
+}
+
+div.interest div.product button:hover {
+    background-color: #3483FA;
+    color: white;
+    border: none;
+}
+
+/* Media queries */
+
+/* Tablet */
+@media (min-width:768px) {
+
+    /* SECTION */
+
+    div.tittle {
+        height: 100px;
+    }
+
+    div.tittle p {
+        font-size: 1.7rem;
+    }
+
+    div.interest div.product.funko-tittle,
+    div.interest div.product .funko-name {
+        font-size: 1rem;
+        height: 3rem;
+    }
+
+    div.interest div.product .funko-prices {
+        font-size: 1.5rem;
+    }
+
+    div.interest div.product .funko-cuotes {
+        font-size: 0.7rem;
+    }
+
+    div.interest div.product button {
+        font-size: 0.8rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+
+    /* SECTION */
+
+    section#section3 {
+        margin: 1.3rem;
+        justify-content: space-evenly;
+        box-shadow: none;
+        border: 1px solid #35858B;
+        border-radius: 10px;
+    }
+
+    section#section3:hover {
+        box-shadow: none;
+    }
+    
+    div.tittle {
+        margin: 1rem;
+        width: 50%;
+        height: 50px;
+    }
+
+    div.means-money div#tittle:hover,
+    div.description div#tittle:hover {
+        box-shadow: none;
+    }
+
+    div.tittle p {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    div.interest div.product.funko-tittle,
+    div.interest div.product .funko-name {
+        font-size: 1.3rem;
+        height: 4rem;
+    }
+
+    div.interest div.product .funko-prices {
+        font-size: 1.5rem;
+    }
+
+    div.interest div.product .funko-cuotes {
+        font-size: 0.9rem;
+    }
+
+    div.interest div.product button {
+        font-size: 0.85rem;
+    }
+}

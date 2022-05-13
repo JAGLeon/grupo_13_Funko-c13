@@ -402,7 +402,7 @@
         "description": "Figura original de vinilo de 3 3/4 de pulgada de alto que hace una gran adición a cualquier colección de Funko oficial Este exclusivo Funko Pop es perfecto para cualquier coleccionista o entusiasta. Una caja protectora de pantalla mantiene su figura de vinilo en perfecto estado mientras que facilita su visualización. Edad sugerida: 4 años o más. Dimensiones: 9,5 x 7 x 7 cmPeso: 0.2kg",
         "category": "Anime",
         "discount": 10,
-        "image": "funkoOchako.png",
+        "image": "funkoVegeta.png",
         "stock": true,
         "cuotes": 3
     },
@@ -435,7 +435,7 @@
         "description": "Figura original de vinilo de 3 3/4 de pulgada de alto que hace una gran adición a cualquier colección de Funko oficial Este exclusivo Funko Pop es perfecto para cualquier coleccionista o entusiasta. Una caja protectora de pantalla mantiene su figura de vinilo en perfecto estado mientras que facilita su visualización. Edad sugerida: 4 años o más. Dimensiones: 9,5 x 7 x 7 cmPeso: 0.2kg",
         "category": "DC",
         "discount": 0,
-        "image": "funkoAquaman.jpg",
+        "image": "funkoBatmanJL.png",
         "stock": true,
         "cuotes": 3
     },
@@ -952,7 +952,7 @@
         "description": "Figura original de vinilo de 3 3/4 de pulgada de alto que hace una gran adición a cualquier colección de Funko oficial Este exclusivo Funko Pop es perfecto para cualquier coleccionista o entusiasta. Una caja protectora de pantalla mantiene su figura de vinilo en perfecto estado mientras que facilita su visualización. Edad sugerida: 4 años o más. Dimensiones: 9,5 x 7 x 7 cmPeso: 0.2kg",
         "category": "Star Wars",
         "discount": 10,
-        "image": "funkoWicket.png",
+        "image": "funkoWicket.jpg",
         "stock": true,
         "cuotes": 3
     },

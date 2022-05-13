@@ -45,7 +45,8 @@ div#carouselExampleIndicators {
 div#carouselExampleIndicators img.img-product {
     display: flex;
     margin: 0 auto;
-    height: 290px;
+    height: 255px;
+    width: 95%;
 }
 
 div#carouselExampleIndicators button.carousel-control-next,
@@ -373,6 +374,7 @@ div.interest div.product button:hover {
 
     div#carouselExampleIndicators img.img-product {
         height: 300px;
+        width: auto;
     }
 
     div#carouselExampleIndicators button.carousel-control-prev i#angle-left.fa-angle-left::before,
