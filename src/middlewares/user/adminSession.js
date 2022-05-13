@@ -1,9 +1,13 @@
 const adminSession = (req, res, next) => {
     if(req.session.usuario.rol === "ADMIN"){
-        next()
+        next();
     }else{
-        res.send("No tienes permisos para ingresar")
-    }
+        res.render('admin/noAdmin',{
+            title : 'Funko | ADMIN',
+            stylesheet: 'noAdmin.css',
+            session: req.session
+        });
+    };
 }
 
 module.exports = adminSession;
