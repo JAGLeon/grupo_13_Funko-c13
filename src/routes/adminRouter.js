@@ -10,6 +10,7 @@ const productCreateValidator = require('../validations/productCreateValidator');
 
 /* GET - Index */
 router.get('/', userSession, adminSession, adminController.index);
+router.get('/search', userSession, adminSession, adminController.index);
 
 /* CRUD PRODUCTOS */
 

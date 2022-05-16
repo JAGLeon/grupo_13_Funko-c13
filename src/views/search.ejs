@@ -8,39 +8,42 @@
 <%- include('partials/header') %> 
 <!-- END HEADER -->
 <!-- MAIN -->
-
-<main>
-    <h2>Tu Busqueda : <%= busqueda %>  </h2>
-    <div>
-
-        <% if (productos.length == 0) { %>
-
-            <h1>NO TENEMOS PRODUCTOS DE LA CATEGORIA SOLICITADA INTENTA CON OTRA</h1>
-
-        <% } else { %>
-     
-            <% productos.forEach( producto => { %>
-                <div>
-                    <img src="/img/<%- producto.image %>" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title"><%= producto.category.toUpperCase() %></h5>
-                    <p class="card-text">Nombre: <%= producto.name %></p>
-                    <p class="card-text">Precio: <%= producto.price %></p>
-                    <p class="card-text">Descripción: <%= producto.description %></p>
-                    <a href="/producto/detalle/<%- producto.id %>" class="btn btn-primary">Detalle</a>
+<main>      
+    <section id="section3">
+        <div class="products-title">
+            <p class="products-title">Resultado de tu busqueda <%= keyword  %> </p>
+        </div> 
+        <% if (searchResult.length > 0) { %> 
+        <div class="interest">
+            <% searchResult.forEach(productos => { %>
+                    <div class="product">
+                        <div class="img">
+                            <img src="/img/productos/<%= productos.category %>/<%= productos.image %>" class="img-product" alt="...">
+                        </div>
+                        <div class="description">
+                            <p class="funko-name"><%= productos.name %></p>
+                            <p class="funko-prices">$<%= productos.price %></p>
+                            <p class="funko-cuotes">en <%= productos.cuotes %> x $1.933,33</p>
+                            <p class="funko-cuotes">Sin Interés</p>
+                            <button>Agregar al carrito</button>
+                        </div>
                     </div>
-                </div>
             <% }) %>
-        <% } %>
-    </div>
+            <% } else {%> 
+
+            <div class="col-12">
+                <h2 class="products-title" style="color: red;">No hay productos </h2>
+            </div>
+            <% } %> 
+
+        </div>
+    </section>
 </main>
-
 <!-- END MAIN -->
-
 
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
-    <script src="../js/productDetail.js"></script>
+<script src="../../js/productDetail.js"></script>
 </body>
 </html>

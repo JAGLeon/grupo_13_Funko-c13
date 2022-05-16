@@ -1,4 +1,5 @@
 let {getProducts, getCategories} = require('../data/index')
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     home: (req,res)=>{
@@ -10,14 +11,20 @@ module.exports = {
         })
     },
     search: (req, res) => {
-        let busqueda = req.query.search.toLowerCase()
-        let productos = getProducts.filter( producto => producto.category == busqueda || producto.name == busqueda)
+        let searchResult = [];
+        getProducts.forEach( product => {
+            if(product.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
+                searchResult.push(product)
+            }
+        });
+
         res.render('search',{
+            searchResult,
+            keyword: req.query.keywords,
             title: 'Funko | Busqueda',
-            stylesheet: 'home.css',
+            stylesheet: 'productDetail.css',
+            toThousand,
             session: req.session,
-            productos,
-            busqueda,
         })
     },
     compra:(req,res)=>{
