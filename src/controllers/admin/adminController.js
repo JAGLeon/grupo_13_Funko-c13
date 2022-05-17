@@ -17,11 +17,11 @@ module.exports = {
             }
         });
 
-        res.render('admin/products/listProducts',{
+        res.render('search',{
             searchResult,
             keyword: req.query.keywords,
-            title: 'Funko | Admin Busqueda',
-            stylesheet: 'adminList.css',
+            title: 'Funko | Busqueda',
+            stylesheet: 'productDetail.css',
             toThousand,
             session: req.session,
         })
