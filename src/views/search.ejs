@@ -11,7 +11,7 @@
 <main>      
     <section id="section3">
         <div class="products-title">
-            <p class="products-title"> Resultado de búsqueda: "<%= keyword %>" </p>
+            <h2 class="title-listado">RESULTADO DE LA BÚSQUEDA: "<%= keyword %>"</h2>
         </div> 
         <% if (searchResult.length > 0) { %> 
         <div class="interest">
@@ -30,7 +30,6 @@
                     </div>
             <% }) %>
             <% } else {%> 
-
             <div class="col-12">
                 <h2 class="products-title text-center" style="color: #35858B;"> NO HUBO RESULTADOS PARA TU BÚSQUEDA</h2>
             </div>

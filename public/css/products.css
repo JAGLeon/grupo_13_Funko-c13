@@ -36,25 +36,24 @@ main {
     margin: 0 auto;
 }
 
+
 /* SECTION */
 
 section#section3:hover {
     box-shadow: 0px 0px 7px 3px rgb(0 0 0 / 30%);
 }
 
-div.tittle {
+div.title {
     display: flex;
     align-items: center;
-    background-color: white;
-    width: 100%;
-    height: 50px;
-
 }
 
-div.tittle p {
+#section3 div.title h2.title-listado {
     margin-bottom: 0;
-    margin-left: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 1rem;
+    font-weight: bold;
 }
 
 div.interest {
@@ -148,15 +147,15 @@ div.interest div.product button:hover {
 
     /* SECTION */
 
-    div.tittle {
+    div.title {
         height: 100px;
     }
 
-    div.tittle p {
-        font-size: 1.7rem;
+    #section3 div.title h2.title-listado {
+        font-size: 1.9rem;
     }
 
-    div.interest div.product.funko-tittle,
+    div.interest div.product.funko-title,
     div.interest div.product .funko-name {
         font-size: 1rem;
         height: 3rem;
@@ -192,23 +191,23 @@ div.interest div.product button:hover {
         box-shadow: none;
     }
     
-    div.tittle {
+    div.title {
         margin: 1rem;
         width: 50%;
         height: 50px;
     }
 
-    div.means-money div#tittle:hover,
-    div.description div#tittle:hover {
+    div.means-money div#title:hover,
+    div.description div#title:hover {
         box-shadow: none;
     }
 
-    div.tittle p {
+    #section3 div.title h2.title-listado {
         font-size: 2rem;
-        margin: 0;
+        margin: 2rem;
     }
 
-    div.interest div.product.funko-tittle,
+    div.interest div.product.funko-title,
     div.interest div.product .funko-name {
         font-size: 1.3rem;
         height: 4rem;

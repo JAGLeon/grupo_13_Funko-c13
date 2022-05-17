@@ -1,0 +1,19 @@
+@import url("header.css");
+@import url("footer.css");
+@import url("admin/adminList.css");
+@import url("products.css");
+
+div.products-title {
+    padding-top: 0.3rem;
+}
+
+div.col-12 {
+    height: 100vh;
+}
+
+@media (min-width: 1200px) {
+    section#section3{
+        border: none;
+    }
+
+}

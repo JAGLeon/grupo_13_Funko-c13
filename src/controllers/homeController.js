@@ -22,7 +22,7 @@ module.exports = {
             searchResult,
             keyword: req.query.keywords,
             title: 'Funko | Busqueda',
-            stylesheet: 'productDetail.css',
+            stylesheet: 'search.css',
             toThousand,
             session: req.session,
         })
