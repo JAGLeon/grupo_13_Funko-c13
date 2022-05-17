@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- HEAD -->
+<%- include('../adminPartials/adminHead') %>
+<!-- END HEAD -->
+<body>
+<!-- HEADER -->
+<%- include('../adminPartials/adminHeader') %> 
+<!-- END HEADER -->
+
+<!-- MAIN -->
+    <main class="container min-vh-100 pt-5">
+        <h2 class="title-listado">RESULTADO DE TU BÚSQUEDA: "<%= keyword %>"</h2>
+        <table class="table table-hover">
+            <% if (searchResult.length > 0) { %>
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Franquicia</th>
+                <th scope="col">Stock</th>
+                <th scope="col" class="btn"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <% searchResult.forEach(producto => { %>
+                <tr>
+                <th scope="row"><%- producto.id %></th>
+                <td><%- producto.name %></td>
+                <td><%- producto.price %></td>
+                <td><%- producto.category %></td>
+                <td><%- producto.stock %></td>
+                <td class="btn">
+                    <a href="/admin/productos/editar/<%- producto.id %>" class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <form action="/admin/productos/eliminar/<%- producto.id %>?_method=DELETE" method="post">
+                    <button class="btn-delete" type="submit">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                    </form>
+                </td>
+                </tr>
+            <% }) %> 
+
+            <% } else {%> 
+
+                <div class="col-12">
+                    <h2 class="products-title text-center" style="color: #35858B;"> NO HUBO RESULTADOS PARA TU BÚSQUEDA</h2>
+                </div>
+                <% } %> 
+     
+            </tbody>
+        </table>
+    </main>
+<!-- END MAIN -->
+<!-- FOOTER -->
+<%- include('../adminPartials/adminFooter') %> 
+<!-- END FOOTER -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

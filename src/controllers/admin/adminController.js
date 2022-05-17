@@ -17,13 +17,13 @@ module.exports = {
             }
         });
 
-        res.render('search',{
+        res.render('admin/products/adminSearch',{
             searchResult,
             keyword: req.query.keywords,
-            title: 'Funko | Busqueda',
-            stylesheet: 'productDetail.css',
+            title: 'Funko | Admin Busqueda',
+            stylesheet: 'adminList.css',
             toThousand,
-            session: req.session,
+            session: req.session
         })
     },
 }
