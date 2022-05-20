@@ -1,4 +1,5 @@
 const {getCategories, writeCategories} = require('../../data');
+const { validationResult } = require('express-validator');
 
 module.exports = {
     /* Envia la vista de listado de franquicias */
@@ -20,30 +21,45 @@ module.exports = {
     },
     /* Recibe los datos del form de creación y guarda el franquicia en la DB */
     createCategory: (req, res) => {
-        /* 1 - Crear el objeto franquicia */
-        let lastId = 0;
-        getCategories.forEach(category => {
-            if(category.id > lastId){
-                lastId = category.id;
-            }
-        });
 
-        let newCategory = {
-            ...req.body, 
-            id: lastId + 1
-        };
+        let errors = validationResult(req);
 
-        // Paso 2 - Guardar el nuevo franquicia en el array de franquicias
+        if(errors.isEmpty()){
 
-        getCategories.push(newCategory);
+            /* 1 - Crear el objeto franquicia */
+            let lastId = 0;
+            getCategories.forEach(category => {
+                if(category.id > lastId){
+                    lastId = category.id;
+                }
+            });
 
-       // Paso 3 - Escribir el JSON de franquicias con el array actual
+            let newCategory = {
+                ...req.body, 
+                id: lastId + 1
+            };
 
-       writeCategories(getCategories);
+            // Paso 2 - Guardar el nuevo franquicia en el array de franquicias
 
-       // Paso 4 - Devolver respuesta (redirección)
+            getCategories.push(newCategory);
 
-       res.redirect('/admin/franquicias');
+            // Paso 3 - Escribir el JSON de franquicias con el array actual
+
+            writeCategories(getCategories);
+
+            // Paso 4 - Devolver respuesta (redirección)
+
+            res.redirect('/admin/franquicias');
+
+        }else{
+            res.render('admin/categories/addCategories',{
+                title : 'Funko | Admin',
+                stylesheet: 'formsEditAdd.css',
+                session: req.session,
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
     },
     editCategory: (req,res)=>{
         /* 1 - Obtener el id de la franquicia */

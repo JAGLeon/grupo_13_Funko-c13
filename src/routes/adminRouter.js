@@ -6,6 +6,7 @@ const adminCategoryController = require('../controllers/admin/adminCategoryContr
 const userSession = require('../middlewares/user/userSession');
 const adminSession = require('../middlewares/user/adminSession');
 const productCreateValidator = require('../validations/productCreateValidator');
+const categoryCreateValidator = require('../validations/categoryCreateValidator');
 
 
 /* GET - Index */
@@ -35,7 +36,7 @@ router.get('/franquicias', userSession, adminSession, adminCategoryController.li
 /* GET - Agregar franquicia */
 router.get('/franquicias/agregar', userSession, adminSession, adminCategoryController.addCategory);
 /* POST - Crea un franquicia en la DB */
-router.post('/franquicias', adminCategoryController.createCategory);
+router.post('/franquicias', categoryCreateValidator, adminCategoryController.createCategory);
 /* GET - Editar franquicia */
 router.get('/franquicias/editar/:id', userSession, adminSession, adminCategoryController.editCategory);
 /* PUT - Actualiza franquicia en la DB */
