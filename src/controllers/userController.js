@@ -95,7 +95,7 @@ module.exports = {
         res.render('perfil',{
             title : 'Funko | Perfil',
             stylesheet : 'perfil.css',
-            session: req.session
+            session: req.session,
         });
     },
     logout: (req, res) => {
