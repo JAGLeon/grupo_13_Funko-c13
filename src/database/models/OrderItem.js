@@ -26,5 +26,17 @@ module.exports = (sequelize, dataTypes) => {
 
     const OrdersItems = sequelize.define(alias, cols, config);
 
+    OrdersItems.associate = (models) => {
+        OrdersItems.belongsTo(models.Order,{
+            as: 'items',
+            foreignKey: 'order_id'
+        });
+
+        OrdersItems.hasMany(models.Product,{
+            as: 'products',
+            foreignKey: 'product_id',
+        });
+    };
+
     return OrdersItems;
 }
