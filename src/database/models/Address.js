@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
     const Address = sequelize.define(alias, cols, config);
 
     Address.associate = (models) => {
-        Address.hasMany(models.User,{
+        Address.belongsTo(models.User,{
             as: 'user',
             foreignKey: 'user_id',
         });

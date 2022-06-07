@@ -37,7 +37,7 @@ module.exports = {
                 };
     
                 res.locals.user = req.session.user;
-    
+                
                 res.redirect('/');
             })
             .catch(error => console.log('Error USER LOGIN'))

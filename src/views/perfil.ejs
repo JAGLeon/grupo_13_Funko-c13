@@ -17,8 +17,8 @@
     </div>
     <div class="contendor-avatar">
         <div class="imgUser">
-        <% if (typeof session.usuario != "undefined") { %>
-            <img src="/img/users/<%= session.usuario.icon %>" alt="Foto de perfil de <%= session.usuario.name  %> ">
+        <% if (typeof session.user != "undefined") { %>
+            <img src="/img/users/<%= session.user.icon %>" alt="Foto de perfil de <%= session.user.name  %> ">
         <% } %> 
         </div>
         <div class="inputFile">
