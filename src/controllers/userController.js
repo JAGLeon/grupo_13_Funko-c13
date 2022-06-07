@@ -1,8 +1,8 @@
-const{getUsers,writeUsers} = require('../data');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const db = require("../database/models");
 
-let  countries = ['Argentina','Bolivia', 'Chile','Colombia','Ecuador', 'Paraguay', 'Perú' , 'Uruguay' ];
+let  provinces = ['Argentina','Bolivia', 'Chile','Colombia','Ecuador', 'Paraguay', 'Perú' , 'Uruguay' ];
 
 module.exports = {
     login: (req,res) => {
@@ -16,29 +16,32 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let user = getUsers.find(user => user.email === req.body.email);
+            db.User.findOne({where : {email : req.body.email}})
+            .then(user => {
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    userName: user.userName,
+                    icon: user.icon,
+                    email: user.email,
+                    rol: user.rol,
+                };
+    
+                if(req.body.recuerdame){
+                    const TIME_IN_MILISECONDS = 60000 * 60 * 24 * 365;
+                    res.cookie('funko', req.session.user, {
+                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                        httpOnly: true,
+                        secure: true
+                    });
+                };
+    
+                res.locals.user = req.session.user;
+    
+                res.redirect('/');
+            })
+            .catch(error => console.log('Error USER LOGIN'))
 
-            req.session.usuario = {
-                id: user.id,
-                name: user.name,
-                userName: user.userName,
-                avatar: user.avatar,
-                email: user.email,
-                rol: user.rol
-            };
-
-            if(req.body.recuerdame){
-                const TIME_IN_MILISECONDS = 60000 * 60 * 24 * 365;
-                res.cookie('funko', req.session.usuario, {
-                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                    httpOnly: true,
-                    secure: true
-                });
-            };
-
-            res.locals.user = req.session.usuario;
-
-            res.redirect('/');
         }else{
             res.render('login', {
                 title: 'Funko | Inicio',
@@ -52,51 +55,49 @@ module.exports = {
         res.render('register',{
             title : 'Funko | Registro',
             stylesheet: 'forms.css',
-            countries,
+            provinces,
             session: req.session
         });
     },
-    registrarUser : (req,res)=>{
+    registerUser : (req,res)=>{
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let lastId = 0;
-
-            getUsers.forEach(user => {
-                if (user.id > lastId) {
-                    lastId = user.id
-                };
-            });
-    
-            let newUser = {
-                id : lastId + 1,
+            db.User.create({
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
-                avatar : req.file ? req.file.filename : 'user.jpg',
-                rol : 'USER'
-            };
-    
-            getUsers.push(newUser);
-            writeUsers(getUsers);
-            res.redirect('/usuarios/inicio');
+                icon : req.file ? req.file.filename : 'user.jpg',
+                rol : 'USER',
+            })
+            .then(user => {res.redirect('/usuarios/inicio')})
+            .catch(error => console.log('Error REGISTER USER'))
         }else{
             res.render('register',{
                 title : 'Funko | Registro',
                 stylesheet: 'forms.css',
-                countries,          
+                provinces,          
                 errors : errors.mapped(),
                 oldData: req.body,
                 session: req.session
             });
         };
-        
     },
     perfil : (req,res)=>{
-        res.render('perfil',{
-            title : 'Funko | Perfil',
-            stylesheet : 'perfil.css',
-            session: req.session,
-        });
+
+/*         db.User.findOne({
+            where: {id : req.session.user.id},
+            include: [{ association : 'addresses'}],
+        })
+        .then(user => {
+            res.render('perfil',{
+                title : 'Funko | Perfil',
+                stylesheet : 'perfil.css',
+                session: req.session,
+                user,
+            });
+        })
+        .catch(error => console.log('Error PERFIL')) */
+
     },
     logout: (req, res) => {
         req.session.destroy();

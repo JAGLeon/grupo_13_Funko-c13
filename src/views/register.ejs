@@ -14,14 +14,14 @@
             <h1>Registrate</h1>
             <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
                 <div class="input-container">
-                    <select class="input-style selec-container" name="country" id="country" value="<%= locals.oldData && oldData.country ? oldData.country : "" %>">
+                    <select class="input-style selec-container" name="province" id="province" value="<%= locals.oldData && oldData.province ? oldData.province : "" %>">
                         <option value="" hidden>Elegí un país</option>
-                        <% for( const oneCountry of countries ) { %>
-                            <option value="<%= oneCountry %>" <%= locals.oldData && (oneCountry === oldData.country) ? 'selected' : null %> > <%= oneCountry %> </option>
+                        <% for( const oneProvince of provinces ) { %>
+                            <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.province) ? 'selected' : null %> > <%= oneProvince %> </option>
                         <% } %>
                     </select>
-                    <% if (locals.errors && errors.country) { %>
-                        <small class="text-danger"><%= errors.country.msg %> </small>
+                    <% if (locals.errors && errors.province) { %>
+                        <small class="text-danger"><%= errors.province.msg %> </small>
                     <% } %> 
                 </div>
                 <div class="nom_ape-container">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="input-container rInput">
                         <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
-                        <% if (locals.errors && errors.name) { %>
+                        <% if (locals.errors && errors.lastName) { %>
                             <small class="text-danger"><%= errors.lastName.msg %> </small>
                         <% } %> 
                     </div>
@@ -44,11 +44,6 @@
                         <small class="text-danger"><%= errors.userName.msg %> </small>
                     <% } %> 
                 </div>
-
-                    <!-- <div class="inputFile">
-                        <span>Subir imagen</span>
-                        <input type="file" name="avatar">
-                    </div> -->
 
                 <div class="input-container">
                     <input class="input-style" placeholder="Email" type="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
@@ -64,8 +59,8 @@
                     <% } %> 
                 </div>
                 <div class="mb-3">
-                    <label for="avatar" class="form-label">Foto de perfil</label>
-                    <input class="form-control" type="file" id="avatar" name="avatar" >
+                    <label for="icon" class="form-label">Foto de perfil</label>
+                    <input class="form-control" type="file" id="icon" name="icon" >
                 </div>
                 <span>Al registrarte estás aceptando las <a href="/enlaces-utiles/politicas-de-privacidad" target="_blank">políticas de privacidad</a></span>
                 <div class="btn-container">

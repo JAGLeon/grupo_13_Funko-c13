@@ -1,8 +1,9 @@
 const { check, body } = require('express-validator');
-const { getUsers } = require('../data')
+const db = require('../database/models');
+
 let validateRegister = [
-    check('country')
-        .notEmpty().withMessage('Seleccione su país'),
+    check('province')
+        .notEmpty().withMessage('Seleccione su provincia'),
     check('name')
         .notEmpty().withMessage('Ingrese su nombre').bail()
         .isLength({min:2, max:70}).withMessage('Ingrese un nombre valido'),
@@ -15,13 +16,18 @@ let validateRegister = [
     check('email')
         .notEmpty().withMessage('Ingrese su email').bail()
         .isEmail().withMessage('Ingrese un email valido'),
-    body("email").custom((value)=>{
-        let user = getUsers.find(user => user.email === value);
-        if(user){
-            return false;
-        }
-        return true;
-    }).withMessage("Email ya registrado"),
+    body("email").custom((value) => {
+        return db.User.findOne({
+            where : {
+                email : value
+            }
+        })
+        .then(user => { 
+            if(user){
+                return Promise.reject('Email ya registrado')
+            }
+        })
+    }),
     check('password')
         .notEmpty().withMessage('Ingrese una contraseña').bail()
         .isLength({min:8}).withMessage('La contraseña debe tener 8 caracteres')

@@ -18,12 +18,12 @@
     <div class="contendor-avatar">
         <div class="imgUser">
         <% if (typeof session.usuario != "undefined") { %>
-            <img src="/img/users/<%= session.usuario.avatar %>" alt="Foto de perfil de <%= session.usuario.name  %> ">
+            <img src="/img/users/<%= session.usuario.icon %>" alt="Foto de perfil de <%= session.usuario.name  %> ">
         <% } %> 
         </div>
         <div class="inputFile">
             <span>Subir imagen</span>
-            <input type="file" name="avatar">
+            <input type="file" name="icon">
         </div>
     </div>
 
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="pais_tel-contenedor">
-                <select class="selec-container" name="country" id="country">
+                <select class="selec-container" name="province" id="province">
                     <option value="" hidden>País</option>
                     <option value="ar">Argentina</option>
                     <option value="pe">Perú</option>
@@ -76,18 +76,18 @@
         <form action="" method="post">
             <div class="contenedor-address">
                 <div class="input-container">
-                    <input class="input-style" placeholder="Dirección" type="text" name="address" id="address" required>
+                    <input class="input-style" placeholder="Dirección" type="text" name="address" id="address" value="">
                 </div>
                 <div class="input-container">
-                    <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city" required>
+                    <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city" value="">
                 </div>
             </div>
             <div class="contenedor-bottom">
                 <div class="input-barrio">
-                    <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood" required>
+                    <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood" value="">
                 </div>
                 <div class="input-region">
-                    <input class="input-style" placeholder="Código postal" type="text" name="postalCode" id="postalCode" required>
+                    <input class="input-style" placeholder="Código postal" type="text" name="postalCode" id="postalCode" value="">
                     <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
                     <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">
                 </div>

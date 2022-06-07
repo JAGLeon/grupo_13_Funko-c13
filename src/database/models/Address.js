@@ -23,12 +23,16 @@ module.exports = (sequelize, dataTypes) => {
         departament: {
             type: dataTypes.STRING(100),
         },
-        postar_code: {
+        postal_code: {
             type: dataTypes.STRING(100),
             allowNull: false,
         },
         doorbell: {
             type: dataTypes.STRING(100),
+        },
+        user_id : {
+            type: dataTypes.INTEGER(11),
+            allowNull: false,
         },
     };
   
@@ -41,7 +45,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Address.associate = (models) => {
         Address.hasMany(models.User,{
-            as: 'addresses',
+            as: 'user',
             foreignKey: 'user_id',
         });
     };

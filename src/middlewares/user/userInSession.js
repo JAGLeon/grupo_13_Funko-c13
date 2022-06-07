@@ -1,5 +1,5 @@
 const userInSession = (req, res, next) => {
-    if(req.session.usuario){
+    if(req.session.user){
        return res.redirect('/')
     };
     next();

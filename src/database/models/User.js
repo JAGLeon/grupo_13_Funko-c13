@@ -31,8 +31,8 @@ module.exports = (sequelize, dataTypes) => {
         icon: {
             type: dataTypes.STRING(1000),
         },
-        rol_id: {
-            type: dataTypes.INTEGER(11),
+        rol: {
+            type: dataTypes.STRING(20),
             allowNull: false,
         },
         province: {
@@ -53,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
 
     User.associate = (models) => {
         User.hasMany(models.Order,{
-            as: 'order',
+            as: 'orders',
             foreignKey: 'user_id',
         });
 
