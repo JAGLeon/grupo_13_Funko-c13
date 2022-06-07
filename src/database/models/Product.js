@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'product_id',
         });
 
-        Product.hasOne(models.Category,{
+        Product.belongsTo(models.Category,{
             as: 'category',
             foreignKey: 'category_id'
         })
