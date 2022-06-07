@@ -52,10 +52,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'product_id',
         });
 
-        // Product.hasOne(models.Category,{
-        //     as: 'category',
-        //     foreignKey: 'category_id'
-        // })
+        Product.hasOne(models.Category,{
+            as: 'category',
+            foreignKey: 'category_id'
+        })
     };
 
     return Product;
