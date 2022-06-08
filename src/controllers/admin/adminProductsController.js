@@ -1,115 +1,109 @@
-const {getProducts, writeProducts} = require('../../data');
+/* const {getProducts, writeProducts} = require('../../data'); */
 const { validationResult } = require('express-validator');
+const db = require("../../database/models");
 
 module.exports = {
     /* Envia la vista de listado de productos */
     list: (req, res) => {
-        res.render('admin/products/listProducts', {
-            title: "Listado de productos",
-            stylesheet: 'adminList.css',
-            productos: getProducts,
-            session: req.session
+        db.Product.findAll()
+        .then((productos) => {
+            res.render('admin/products/listProducts', {
+                title: "Listado de productos",
+                stylesheet: 'adminList.css',
+                productos,
+                session: req.session
+            })
         })
+        .catch((error)=>{res.send(error)}); 
     },
     /* Envia la vista de formulario de creación de producto */
     addProduct: (req,res)=>{
         res.render('admin/products/addProduct',{
-            title : 'Funko | Admin',
-            stylesheet: 'formsEditAdd.css',
-            session: req.session
+                title : 'Funko | Admin',
+                stylesheet: 'formsEditAdd.css',
+                session: req.session
         })
     },
     /* Recibe los datos del form de creación y guarda el producto en la DB */
     createProduct: (req, res) => {
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-        /* 1 - Crear el objeto producto */
-        let lastId = 0;
-        getProducts.forEach(product => {
-            if(product.id > lastId){
-                lastId = product.id;
-            }
-        });
+        if (errors.isEmpty()){
+            db.Product.create({
+                name: req.body.name,
+            })
+                .then ((product) =>{
+                  res.redirect('/admin/productos')
+             })
+                .catch((error) => res.send(error));
 
-        let newProduct = {
-            ...req.body, 
-            id: lastId + 1,
-            stock: req.body.stock ? true : false
-        };
-
-        // Paso 2 - Guardar el nuevo producto en el array de productos
-
-        getProducts.push(newProduct);
-
-       // Paso 3 - Escribir el JSON de productos con el array actual
-
-       writeProducts(getProducts);
-
-       // Paso 4 - Devolver respuesta (redirección)
-
-         res.redirect('/admin/productos')
         }else{
             res.render('admin/products/addProduct',{
                 title : 'Funko | Admin',
                 stylesheet: 'formsEditAdd.css',
                 session: req.session,
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
             })
         }   
     },
     editProduct: (req,res)=>{
         /* 1 - Obtener el id del producto */
-        let idProducto = +req.params.id;
+        let idProduct = +req.params.id;
         /* 2 - Buscar el producto a editar */
-        let producto = getProducts.find(producto => producto.id === idProducto)
+        db.Product.findByPk(idProduct)
+            .then((product) => {
+                res.render('admin/products/editProduct',{
+                    title : 'Funko | Admin',
+                    stylesheet: 'formsEditAdd.css',
+                    product,
+                    session: req.session
+                })
+            })
         /* 3 - Mostrar el producto en la vista */
-        res.render('admin/products/editProduct',{
-            title : 'Funko | Admin',
-            stylesheet: 'formsEditAdd.css',
-            producto,
-            session: req.session
-        })
     },
     /* Recibe los datos actualizados del form de edición */
     updateProduct: (req, res) => {
         /* 1 - Obtener el id del producto */
-        let idProducto = +req.params.id;
-        /* 2 - Buscar el producto a editar y modificar el producto */
-        getProducts.forEach(producto => {
-            if(producto.id === idProducto){
-                producto.name = req.body.name
-                producto.price = req.body.price
-                producto.description = req.body.description
-                producto.category = req.body.category
-                producto.discount = req.body.discount
-                producto.stock = req.body.stock ? true : false
+        let idProduct = +req.params.id;
+        
+        db.Product.update(
+            {
+                name: req.body.name,
+            },
+            {
+                where: {
+                    id: idProduct,
+                },
             }
-        })
-
-        /* 3 - Guardar los cambios */
-        writeProducts(getProducts);
-
-        /* 4 - Respuesta */
-        res.redirect('/admin/productos');
+        )
+            .then((product) => {
+                if (product) {
+                    res.redirect('/admin/productos');
+                } else {
+                    res.render('not-found');
+                }
+            })
+            .catch((error) => res.send(error));
     },
     /* Recibe la info del producto a eliminar */
     deleteProduct: (req, res) => {
-        /* 1 - Obtener el id del producto a eliminar */
+        /* 1 - Obtener el id del franquicia a eliminar */
         let idProducto = +req.params.id;
-        /* 2 - Buscar el producto dentro del array y eliminarlo */
-        getProducts.forEach(producto => {
-            if(producto.id === idProducto){
-                //Obtener la ubicación del producto a eliminar
-                let productToDeleteIndex = getProducts.indexOf(producto);
-                //Elimino el producto del array
-                getProducts.splice(productToDeleteIndex, 1)
-            }
+
+        db.Product.destroy(
+        {
+            where: {
+                id: idProducto,
+            },
         })
-        /* 3 - Sobreescribir el json */
-        writeProducts(getProducts);
-        /* 4 - Enviar respuesta  */
-        res.redirect('/admin/productos');
+            .then((product) => {
+                if (product) {
+                    res.redirect('/admin/productos');
+                } else {
+                    res.render('not-found');
+                }
+            })
+            .catch((error) => res.send(error));
     },
 }
