@@ -83,10 +83,9 @@ module.exports = {
         };
     },
     perfil : (req,res)=>{
-
-/*         db.User.findOne({
+        db.User.findOne({
             where: {id : req.session.user.id},
-            include: [{ association : 'addresses'}],
+            include: [{ association: "addresses" }],
         })
         .then(user => {
             res.render('perfil',{
@@ -96,8 +95,7 @@ module.exports = {
                 user,
             });
         })
-        .catch(error => console.log('Error PERFIL')) */
-
+        .catch(error => console.log('Error PERFIL'))
     },
     logout: (req, res) => {
         req.session.destroy();

@@ -30,12 +30,12 @@
     <div class="contenedor-nameUser">
         <!-- <form action="" method="post"> -->
             <div>
-                <input type="text" name="userName" id="userName">
+                <input type="text" name="userName" id="userName" placeholder="<%= user.userName %>" disabled>
                 <button class="btnOpenPop-up"><i class="fa-solid fa-pen-to-square"></i></button>
             </div>
             <div>
-                <input type="email" name="email" id="email">
-                <button id="btnPopOpen"><i class="fa-solid fa-pen-to-square"></i></button>
+                <input type="email" name="email" id="email" placeholder="<%= user.address ? user.address : "AGREGAR DIRECCIÓN" %>" disabled>
+                <button id="btnPopOpen"><i class="fa-solid fa-location-dot"></i></button>
             </div>
         <!-- </form> -->
     </div>
@@ -47,10 +47,10 @@
         <form action="" method="POST">
             <div class="nom_ape-container">
                 <div>
-                    <input type="text" name="name" id="name" placeholder="nombre">
+                    <input type="text" name="name" id="name" placeholder=" <%= user.name  %>">
                 </div>
                 <div>
-                    <input type="text" name="lastName" id="lastName" placeholder="apellido">
+                    <input type="text" name="lastName" id="lastName" placeholder=" <%= user.lastName  %>">
                 </div>
             </div>
             <div class="pais_tel-contenedor">
