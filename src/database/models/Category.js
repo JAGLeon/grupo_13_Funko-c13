@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
         name: {
             type: dataTypes.STRING(100),
             allowNull: false,
-        },
+        },        
     };
   
     let config = {
@@ -23,8 +23,8 @@ module.exports = (sequelize, dataTypes) => {
 
     Category.associate = (models) => {
         Category.hasMany(models.Product,{
-            as: 'products',
-            foreignKey: 'product_id',
+            as: 'category',
+            foreignKey: 'category_id',
         });
     };
 

@@ -1,9 +1,10 @@
 let {getProducts, getCategories} = require('../data')
+const db = require("../database/models");
 
 let productsController = {
     listar: (req, res) => {
-        let productos = getProducts;
-        let categories = getCategories;
+    let productos = getProducts;
+    let categories = getCategories;
         res.render('productos', {
             productos,
             categories,
@@ -13,8 +14,8 @@ let productsController = {
         })
     },   
     detailProduct : (req, res) => {
-        let producto = getProducts.find( producto => producto.id == req.params.id)
-        let category = getCategories.find( category => category.id == producto.category)
+        let producto = getProducts.find( producto => producto.id == req.params.id);
+        let category = getCategories.find( category => category.id == producto.category);
         res.render('productDetail', {
             producto,
             category,

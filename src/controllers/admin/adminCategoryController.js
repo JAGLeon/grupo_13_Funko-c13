@@ -67,14 +67,8 @@ module.exports = {
         let idCategory = +req.params.id;
         
         db.Category.update(
-            {
-                name: req.body.name,
-            },
-            {
-                where: {
-                    id: idCategory,
-                },
-            }
+            {name: req.body.name,},
+            {where: {id: idCategory,},}
         )
             .then((category) => {
                 if (category) {

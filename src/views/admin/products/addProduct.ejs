@@ -36,12 +36,9 @@
         <div class="franquicia">
           <select name="category" class="form-select select-add" id="category">
             <option selected hidden value="">Franquicia</option>
-            <option value="Dc" <%= (locals.old && old.category) && old.category === "Dc" ? "selected" : "" %>>Dc</option>
-            <option value="Marvel" <%= (locals.old && old.category) && old.category === "Marvel" ? "selected" : "" %>>Marvel</option>
-            <option value="Disney" <%= (locals.old && old.category) && old.category === "Disney" ? "selected" : "" %>>Disney</option>
-            <option value="Star Wars" <%= (locals.old && old.category) && old.category === "Star Wars" ? "selected" : "" %>>Star Wars</option>
-            <option value="Anime" <%= (locals.old && old.category) && old.category === "Anime" ? "selected" : "" %>>Anime</option>
-            <option value="Games" <%= (locals.old && old.category) && old.category === "Games" ? "selected" : "" %>>Games</option>
+            <% category.forEach(({id,name}) =>{%>
+              <option value="<%= id %>" <%= (locals.old && old.category) && old.category === id ? "selected" : "" %>><%= name %></option>
+            <% });  %> 
           </select>
           <% if (locals.errors && errors.category) { %>
             <small class="text-danger"><%= errors.category.msg%></small>
