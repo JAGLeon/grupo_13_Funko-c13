@@ -2,7 +2,7 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const db = require("../database/models");
 
-let  provinces = ['Argentina','Bolivia', 'Chile','Colombia','Ecuador', 'Paraguay', 'Perú' , 'Uruguay' ];
+let  provinces = ["Buenos Aires", "Capital Federal", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"];
 
 module.exports = {
     login: (req,res) => {
@@ -65,7 +65,7 @@ module.exports = {
         if(errors.isEmpty()){
             db.User.create({
                 ...req.body,
-                password: bcrypt.hashSync(req.body.password, 10),
+                password : bcrypt.hashSync(req.body.password, 10),
                 icon : req.file ? req.file.filename : 'user.jpg',
                 rol : 'USER',
             })
@@ -74,28 +74,75 @@ module.exports = {
         }else{
             res.render('register',{
                 title : 'Funko | Registro',
-                stylesheet: 'forms.css',
+                stylesheet : 'forms.css',
                 provinces,          
                 errors : errors.mapped(),
-                oldData: req.body,
-                session: req.session
+                oldData : req.body,
+                session : req.session
             });
         };
     },
     perfil : (req,res)=>{
         db.User.findOne({
-            where: {id : req.session.user.id},
-            include: [{ association: "addresses" }],
+            where : {id : req.session.user.id},
+            include : [{ association: "addresses" }],
         })
         .then(user => {
             res.render('perfil',{
-                title : 'Funko | Perfil',
+                title : `Funko | Perfil ${req.session.user.name}`,
                 stylesheet : 'perfil.css',
                 session: req.session,
                 user,
+                provinces,
             });
         })
         .catch(error => console.log('Error PERFIL'))
+    },
+    profileUpdate: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.User.update({
+                ...req.body},
+                {where : {id: req.session.user.id}
+            })
+            .then(() => res.redirect("/usuarios/perfil"))
+            .catch(error => res.send(error))
+        }else{
+            db.User.findOne({
+                where: {id: req.session.user.id},
+                include: [{ association: "addresses" }],
+            })
+            .then((user) => {
+                res.render("users/userProfile", {
+                    title : `Funko | Perfil ${req.session.user.name}`,
+                    stylesheet : 'perfil.css',
+                    session: req.session,
+                    user,
+                    provinces,
+                    errors: errors.mapped()
+                })
+            })
+        }
+    },
+    addressCreate: (req, res) => {
+        db.Address.create({
+            ...req.body,
+            user_id : req.session.user.id,
+        })
+        .then(() => res.redirect("/usuarios/perfil"))
+        .catch((error) => res.send(error))
+    },
+        addressDestroy: (req, res) => {
+        db.Address.destroy({
+            where : {
+                id : req.params.id,
+            }
+        })
+        .then(() => {
+            res.redirect("/usuarios/perfil")    
+        })
+        .catch((error) => res.send('Error al eliminar direccion'))
     },
     logout: (req, res) => {
         req.session.destroy();

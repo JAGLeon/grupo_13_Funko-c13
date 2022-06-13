@@ -19,7 +19,6 @@ body.perfilUser main{
 }
 
 .perfilUser main p{
-    /* color: rgb(162, 160, 160); */
     font-size: .8rem;
     text-align: center;
 }
@@ -84,6 +83,10 @@ body.perfilUser main{
     padding-left: 1rem;
 }
 
+.contenedor-nameUser  div input::placeholder{
+    color: #000;
+}
+
 .contenedor-nameUser  div input:hover{
     outline: none;
 }
@@ -101,7 +104,7 @@ body.perfilUser main{
     background-color: rgba(52, 131, 250,0.9);
 }
 /* NAME LASTNAME  */
-.contenedor-datos form .nom_ape-container div input,
+.contenedor-datos .nom_ape-container div input,
 .selec-container,
 .input-style{
     width: 100%;
@@ -113,10 +116,9 @@ body.perfilUser main{
     margin-bottom: 1rem;
 }
 
-.contenedor-datos form .nom_ape-container div input:hover{
+.contenedor-datos .nom_ape-container div input:hover{
     outline: none;
 }
-
 /* BTN  */
 .btn-cambios .btnDelete{
     height: 3rem;
@@ -142,6 +144,7 @@ body.perfilUser main{
     border-radius: .8rem;
     border: none;
     color: white;
+    margin-bottom: 1rem;
     transition: all ease .5s;
 }
 
@@ -256,7 +259,15 @@ body.perfilUser main{
  @keyframes logoOut{
     0%{transform: translateY(-25px);opacity: 0;}
     100%{transform: translateY(0);opacity: 1;}
- }
+}
+.tableAddress{
+    display: none;
+}
+@media(min-width:700px){
+    .tableAddress{
+        display: inherit;
+    }
+}
 
 @media(min-width:768px){
     body.perfilUser{
@@ -286,35 +297,18 @@ body.perfilUser main{
     .contenedor-nameUser  div input{
         margin: 2rem 0;
     }
-    .contenedor-datos form .nom_ape-container,
+    .contenedor-datos  .nom_ape-container,
     .pais_tel-contenedor,
-    .contenedor-address,
-    .contenedor-bottom,
     .btn-cambios{
         display: flex;
         justify-content: space-between;
         width: 100%;
     }
-    .contenedor-datos form .nom_ape-container div,
+    .contenedor-datos  .nom_ape-container div,
     .selec-container,
     .pais_tel-contenedor div,
-    .contenedor-address .input-container,
-    .contenedor-bottom .input-barrio,
-    .contenedor-bottom .input-region,
     .btn-cambios .btnDelete,
     .btn-cambios .btnSubmit{
         width: 48%;
-    }
-    .contenedor-bottom .input-region{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .contenedor-bottom .input-region .input-style{
-        width: 33%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 0;
     }
 }

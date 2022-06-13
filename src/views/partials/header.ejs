@@ -14,7 +14,7 @@
             <div class="header-user">
                 <div class="header-imgUser">
                 <% if (typeof session.user != "undefined") { %>
-                    <img src="/img/users/<%= session.user.icon %>" alt="Foto de perfil de <%= session.user.name  %> ">
+                    <img src="/img/users/<%= session.user.icon %>" alt="Foto de perfil de <%= session.user.name %>">
                 <% } else { %> 
                     <img src="/img/users/user.jpg" alt="Funko foto">
                 <% } %> 
@@ -22,7 +22,7 @@
                 </div>
                 <div class="header-despliegeUser">
                     <% if (typeof session.user != "undefined") { %>
-                      <button class="header-btnMenu"><%= session.user.name %> <i class="fa-solid fa-caret-down"></i></button>
+                      <button class="header-btnMenu"><%= session.user.userName %> <i class="fa-solid fa-caret-down"></i></button>
                     <% } else { %> 
                       <button class="header-btnMenu">Usuario <i class="fa-solid fa-caret-down"></i></button>
                     <% } %> 

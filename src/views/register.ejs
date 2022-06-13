@@ -15,7 +15,7 @@
             <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
                 <div class="input-container">
                     <select class="input-style selec-container" name="province" id="province" value="<%= locals.oldData && oldData.province ? oldData.province : "" %>">
-                        <option value="" hidden>Elegí un país</option>
+                        <option value="" hidden>Elegí tu provincia</option>
                         <% for( const oneProvince of provinces ) { %>
                             <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.province) ? 'selected' : null %> > <%= oneProvince %> </option>
                         <% } %>

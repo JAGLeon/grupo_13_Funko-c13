@@ -12,6 +12,9 @@ router.post('/inicio', validateLogin, userController.loginUser);
 router.get('/registro', userInSession, userController.register);
 router.post('/registro', uploadFile.single('icon'), validateRegister, userController.registerUser);
 router.get('/perfil', userSession , userController.perfil);
+router.put('/perfil', uploadFile.single('icon'), userController.profileUpdate);
+router.post('/direcciones', userSession, userController.addressCreate);
+router.delete('/direcciones/:id', userSession, userController.addressDestroy);
 router.get('/salir', userController.logout);
 
 module.exports = router;

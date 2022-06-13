@@ -24,80 +24,87 @@
         <div class="inputFile">
             <span>Subir imagen</span>
             <input type="file" name="icon">
-        </div>
+        </div> <!-- Ver solucion para cambiar la imagen -->
     </div>
 
     <div class="contenedor-nameUser">
-        <!-- <form action="" method="post"> -->
-            <div>
-                <input type="text" name="userName" id="userName" placeholder="<%= user.userName %>" disabled>
-                <button class="btnOpenPop-up"><i class="fa-solid fa-pen-to-square"></i></button>
-            </div>
-            <div>
-                <input type="email" name="email" id="email" placeholder="<%= user.address ? user.address : "AGREGAR DIRECCIÓN" %>" disabled>
-                <button id="btnPopOpen"><i class="fa-solid fa-location-dot"></i></button>
-            </div>
-        <!-- </form> -->
+        <div>
+            <input type="text" name="userName" id="userName" placeholder="<%= user.userName %>" disabled>
+            <button class="btnOpenPop-up"><i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+        <div>
+            <input type="email" name="email" id="email" placeholder="AGREGAR DIRECCIÓN" disabled>
+            <button id="btnPopOpen"><i class="fa-solid fa-location-dot"></i></button>
+        </div>
     </div>
     <div class="contenedor-datos">
         <div class="perfilh4">
             <h5>DATOS PERSONALES</h5>
             <p>Administra tu nombre y dirección. Estos datos personales son privados y no se mostrarán a otros usuarios. Consulta nuestra <a href="/enlaces-utiles/politicas-de-privacidad">política de privacidad</a> </p>
         </div>
-        <form action="" method="POST">
+        <form action="/usuarios/perfil?_method=PUT" method="POST">
             <div class="nom_ape-container">
                 <div>
-                    <input type="text" name="name" id="name" placeholder=" <%= user.name  %>">
+                    <input type="text" name="name" id="name" value="<%=user.name%>">
                 </div>
                 <div>
-                    <input type="text" name="lastName" id="lastName" placeholder=" <%= user.lastName  %>">
+                    <input type="text" name="lastName" id="lastName" value="<%=user.lastName%>">
                 </div>
             </div>
             <div class="pais_tel-contenedor">
                 <select class="selec-container" name="province" id="province">
-                    <option value="" hidden>País</option>
-                    <option value="ar">Argentina</option>
-                    <option value="pe">Perú</option>
-                    <option value="ch">Chile</option>
-                    <option value="bo">Bolivia</option>
-                    <option value="ur">Uruguay</option>
-                    <option value="Ec">Ecuador</option>
-                    <option value="pa">Paraguay</option>
-                    <option value="co">Colombia</option>
+                    <% for( const oneProvince of provinces ) { %>
+                        <option value="<%= oneProvince %>" <%= (oneProvince === user.province) ? 'selected' : null %> > <%= oneProvince %> </option>
+                    <% } %>
                 </select>
                 <div >
-                    <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone">
+                    <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" value="<%=user.phone%>">
                 </div>
+            </div>
+            <div class="btn-cambios">
+                <button class="btnDelete" type="reset">DESCARTAR LOS CAMBIOS</button>
+                <button class="btnSubmit" type="submit">GUARDAR CAMBIOS</button>
             </div>
         </form>
     </div>
-    <div class="contenedor-direccion">
-        <h5>DIRECCIÓN</h5>
-        <form action="" method="post">
-            <div class="contenedor-address">
-                <div class="input-container">
-                    <input class="input-style" placeholder="Dirección" type="text" name="address" id="address" value="">
-                </div>
-                <div class="input-container">
-                    <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city" value="">
-                </div>
-            </div>
-            <div class="contenedor-bottom">
-                <div class="input-barrio">
-                    <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood" value="">
-                </div>
-                <div class="input-region">
-                    <input class="input-style" placeholder="Código postal" type="text" name="postalCode" id="postalCode" value="">
-                    <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
-                    <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="btn-cambios">
-        <button class="btnDelete" type="reset">DESCARTAR LOS CAMBIOS</button>
-        <button class="btnSubmit" type="submit">GUARDAR CAMBIOS</button>
-    </div>
+    <% if (user.addresses) { %>
+        <div class="tableAddress">
+            <table class="table table-hover">
+                <h5>MIS DIRECCIONES</h5>
+                <thead>
+                    <tr>
+                        <th>Provincia</th>
+                        <th>Calle</th>
+                        <th>Ciudad</th>
+                        <th>Barrio</th>
+                        <th>Depto</th>
+                        <th>Cod. Postal</th>
+                        <th>Timbre</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% user.addresses.forEach(address => { %>
+                  <tr>
+                    <td><%- user.province %></td>
+                    <td><%- address.address %></td>
+                    <td><%- address.city %></td>
+                    <td><%- address.neighborhood %></td>
+                    <td><%- address.departament %></td>
+                    <td><%- address.postal_code %></td>
+                    <td><%- address.doorbell %></td>
+                    <td>
+                      <form action="/usuarios/direcciones/<%- address.id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-outline-danger" type="submit">Eliminar</button>
+                      </form>
+                    </td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+        </div>
+    <% } %>
+
     <div class="overlay">
         <div class="pop-up">
             <div class="squareLogo">
@@ -109,10 +116,10 @@
                 <p><b>Aviso:</b> Si cambias el nombre de pantalla de Funko, no puedes volver a cambiarlo durante 2 semanas luego de confirmar este cambio.</p>
                 <b>Nombre en pantalla actual: <%  %></b>
             </article>
-            <form action="" method="post">
+            <form action="/usuarios/perfil?_method=PUT" method="POST">
                 <div class="input">
                     <input type="text" placeholder="Nuevo nombre de usuario" name="userName" id="userName">
-                    <input type="text" placeholder="Confirme nombre de usuario" name="userName" id="userName">
+                    <!-- <input type="text" placeholder="Confirme nombre de usuario" name="userName" id="userName"> -->
                 </div>
                 <button class="btnSubmit" type="submit">CONFIRMAR</button>
             </form>
@@ -126,15 +133,28 @@
                 <img src="/img/Logo.svg" alt="Logo Funko">
             </div>
             <article>
-                <h5>Cambiar la dirección de correo electrónico de la cuenta</h5>
-                <p><b>Aviso:</b> Se requiere una verificación con código de seguridad para completar este cambio. No podrás cambiar el email durante 90 días despúes de que se confirme el cambio en la cuenta.</p>
+                <h5>Agregar más direcciones donde estoy ubicado</h5>
+                <p><b>Aviso:</b> Podras administrar todas tus direcciones donde lleguen los pedidos de nuestro e-shop.</p>
             </article>
-            <form action="" method="post">
-                <div class="input">
-                    <input type="email" placeholder="Nuevo email" name="userName" id="userName">
-                </div>
-                <button class="btnSubmit" type="submit">CONFIRMAR</button>
-            </form>
+            <div class="contenedor-direccion">
+                <form action="/usuarios/direcciones" method="POST">
+                    <div class="contenedor-address">
+                        <div class="input-container">
+                            <input class="input-style" placeholder="Dirección" type="text" name="address" id="address">
+                            <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="contenedor-bottom">
+                        <div class="input-barrio">
+                            <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood">
+                            <input class="input-style" placeholder="Código postal" type="text" name="postal_code" id="postal_code">
+                            <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
+                            <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">
+                        </div>
+                    </div>
+                    <button class="btnSubmit" type="submit">CONFIRMAR</button>
+                </form>
+            </div>
         </div>
     </div>
 </main>
