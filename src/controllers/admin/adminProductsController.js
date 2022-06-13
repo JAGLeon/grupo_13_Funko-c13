@@ -5,7 +5,7 @@ const db = require("../../database/models");
 module.exports = {
     /* Envia la vista de listado de productos */
     list: (req, res) => {
-        db.Product.findAll()
+        db.Product.findAll({include:[{association: 'category'}]})
         .then((productos) => {
             res.render('admin/products/listProducts', {
                 title: "Listado de productos",
@@ -14,7 +14,7 @@ module.exports = {
                 session: req.session
             })
         })
-        .catch((error)=>{res.send('estoy aca')}); 
+        .catch((error)=>{res.send(error)}); 
     },
     /* Envia la vista de formulario de creación de producto */
     addProduct: (req,res)=>{
