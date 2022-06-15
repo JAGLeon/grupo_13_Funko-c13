@@ -62,7 +62,8 @@ module.exports = {
                         stylesheet: 'formsEditAdd.css',
                         session: req.session,
                         category,
-                        old: req.body
+                        old: req.body,
+                        errors : errors.mapped()
                 })
             })
         }   

@@ -12,7 +12,7 @@ const { check, body } = require('express-validator');
 let validateProduct = [
     check("name")
         .notEmpty().withMessage("El nombre es requerido").bail()
-        .isAlphanumeric().withMessage("Ingresa un nombre válido")
+        .isString().withMessage("Ingresa un nombre válido").bail()
         .isLength({min: 5}).withMessage("El nombre debe tener al menos 5 caracteres"),
     check("price")
         .notEmpty().withMessage("Ingresa un precio").bail()
@@ -20,7 +20,7 @@ let validateProduct = [
     check("category")
         .notEmpty().withMessage("Selecciona una categoría"),
     check("description")
-        .notEmpty().withMessage("Ingresa una descripción").bail(),
+        .notEmpty().withMessage("Ingresa una descripción"),
     body("discount").custom(value => {
             if(value >= 0 && value <= 100){
                 return true;
