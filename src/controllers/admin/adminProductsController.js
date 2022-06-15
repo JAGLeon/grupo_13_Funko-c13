@@ -39,22 +39,19 @@ module.exports = {
                 stock: req.body.stock ? true : false,
             })
             .then( product => {
-                console.log('pase por aca');
-                console.log(req.files);
-                if (req.files.length > 0) {
-                    let arrayImages = req.files.map(image => {
+                /* if (req.files.length > 0) { */
+                    let arrayImg = req.files.map(img => {
                         return {
-                            imageName : image.filename,
+                            image : img.filename,
                             product_id: product.id
                         }
                     })
-                    console.log('AAAAAA ESTUVE AKI!');
-                    db.ProductImage.bulkCreate(arrayImages)
+                    db.ProductImage.bulkCreate(arrayImg)
                     .then (() =>  res.redirect('/admin/productos'))
                     .catch((error) => res.send(error))
-                } else {
+/*                 } else {
                     res.redirect('/admin/productos')
-                }
+                } */
             })
             .catch(error => res.send('errror acaa!'))
         }else{
@@ -104,7 +101,7 @@ module.exports = {
             let idProduct = +req.params.id;
             
             db.Product.findByPk(idProduct)
-                .then((product) => {
+                .then((producto) => {
                     res.render('admin/products/editProduct',{
                         title : 'Funko | Admin',
                         stylesheet: 'formsEditAdd.css',
@@ -117,22 +114,13 @@ module.exports = {
     },
     /* Recibe la info del producto a eliminar */
     deleteProduct: (req, res) => {
-        /* 1 - Obtener el id del franquicia a eliminar */
         let idProducto = +req.params.id;
 
-        db.Product.destroy(
-        {
-            where: {
-                id: idProducto,
-            },
-        })
-            .then((product) => {
-                if (product) {
-                    res.redirect('/admin/productos');
-                } else {
-                    res.render('not-found');
-                }
+        db.ProductImage.destroy({where : {product_id : idProducto}})
+            .then(() => {
+                db.Product.destroy({where : {id : idProducto,}})
+                    .then(product => { product ? res.redirect('/admin/productos') : res.render('not-found')})
+                    .catch(error => res.send(error))
             })
-            .catch((error) => res.send(error));
     },
 }

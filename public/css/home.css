@@ -76,7 +76,7 @@ body main div.carousel-item div.banner-container{
     display: flex;
     flex-direction: column;
     text-align: left;
-    background-image: url("/img/backgroundBanner.png");
+    background-image: url("/img/productos/backgroundBanner.png");
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -84,18 +84,18 @@ body main div.carousel-item div.banner-container{
 
 
 body main div.carousel-item div.banner-container2{
-    background-image: url("/img/backgroundBanner2.jpg");
+    background-image: url("/img/productos/backgroundBanner2.jpg");
     background-position: center;
 }
 
 
 body main div.carousel-item div.banner-container3{
-    background-image: url("/img/backgroundBanner3.jpg");
+    background-image: url("/img/productos/backgroundBanner3.jpg");
     background-position: center right;
 }
 
 body main div.carousel-item div.banner-container4{
-    background-image: url("/img/backgroundBanner4.jpg");
+    background-image: url("/img/productos/backgroundBanner4.jpg");
 }
 
 body main div.carousel-item div.banner-container div.banner-text{
