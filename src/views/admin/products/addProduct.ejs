@@ -11,7 +11,7 @@
   <main>
     <section class="admin">
       <h2 class="titleAdd">AGREGAR PRODUCTO</h2>
-      <form class="formAdd" action="/admin/productos" method="POST">
+      <form class="formAdd" action="/admin/productos" method="POST" enctype="multipart/form-data">
         <div class="name">
           <label for="name" class="form-label">Nombre del producto</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
@@ -46,7 +46,7 @@
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
-          <input type="file" name="image" class="form-control" id="image">
+          <input type="file" name="images" class="form-control" id="image" multiple>
         </div>
         <div class="form-check form-switch">
           <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock" <%= (locals.old && old.stock) ? "checked" : "" %>>

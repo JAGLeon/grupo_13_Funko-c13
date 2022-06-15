@@ -7,6 +7,7 @@ const userSession = require('../middlewares/user/userSession');
 const adminSession = require('../middlewares/user/adminSession');
 const productCreateValidator = require('../validations/productCreateValidator');
 const categoryCreateValidator = require('../validations/categoryCreateValidator');
+const uploadProductImg = require('../middlewares/multer/uploadProductImg');
 
 
 /* GET - Index */
@@ -20,7 +21,7 @@ router.get('/productos', /* userSession, adminSession, */ adminProductsControlle
 /* GET - Agregar producto */
 router.get('/productos/agregar', /* userSession, adminSession, */ adminProductsController.addProduct);
 /* POST - Crea un producto en la DB */
-router.post('/productos', productCreateValidator ,adminProductsController.createProduct);
+router.post('/productos', uploadProductImg.array('images'), productCreateValidator ,adminProductsController.createProduct);
 /* GET - Editar producto */
 router.get('/productos/editar/:id', /* userSession, adminSession, */ adminProductsController.editProduct);
 /* PUT - Actualiza producto en la DB */
