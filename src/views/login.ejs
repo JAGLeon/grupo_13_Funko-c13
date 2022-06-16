@@ -27,7 +27,7 @@
                     <% if (locals.errors && errors.password) { %>
                         <small class="text-danger"><%= errors.password.msg %> </small>
                     <% } %> 
-                    <i class="fa-solid fa-eye-slash"></i>
+                    <i class="fa-solid fa-eye-slash" id="eye"></i>
                 </div>
                 <div class="input-container_login">
                     <label for="recuerdame">Recuerdame<input type="checkbox" name="recuerdame" id="recuerdame" class="checkbox"></label>
@@ -46,6 +46,7 @@
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
 <!-- Scripts -->
+    <script src="/js/seePassword.js"></script>
     <script src="/js/particlesFunko/particles.min.js"></script>
     <script src="/js/particlesFunko/funkoParticle.js"></script>
 </body>

@@ -53,7 +53,7 @@
                 </div>
                 <div class="input-container pass-container">
                     <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password">
-                    <i class="fa-solid fa-eye-slash"></i>
+                    <i class="fa-solid fa-eye-slash" id="eye"></i>
                     <% if (locals.errors && errors.password) { %>
                         <small class="text-danger"><%= errors.password.msg %> </small>
                     <% } %> 
@@ -78,6 +78,7 @@
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
 <!-- Scripts -->
+<script src="/js/seePassword.js"></script>
 <script src="/js/particlesFunko/particles.min.js"></script>
 <script src="/js/particlesFunko/funkoParticle.js"></script>
 </body>

@@ -24,7 +24,7 @@
                     <% if (typeof session.user != "undefined") { %>
                       <button class="header-btnMenu"><%= session.user.userName %> <i class="fa-solid fa-caret-down"></i></button>
                     <% } else { %> 
-                      <button class="header-btnMenu">Usuario <i class="fa-solid fa-caret-down"></i></button>
+                      <button class="header-btnMenu">Invitado <i class="fa-solid fa-caret-down"></i></button>
                     <% } %> 
                     <ul class="header-ulUser">
                         <% if (typeof session.user != "undefined") { %>
