@@ -21,10 +21,13 @@
             <img src="/img/users/<%= session.user.icon %>" alt="Foto de perfil de <%= session.user.name  %> ">
         <% } %> 
         </div>
-        <div class="inputFile">
-            <span>Subir imagen</span>
-            <input type="file" name="icon">
-        </div> <!-- Ver solucion para cambiar la imagen -->
+        <form action="/usuarios/perfil?_method=PUT" method="post" enctype="multipart/form-data">
+            <div class="inputFile">
+                <span>Subir imagen</span>
+                <input type="file" name="icon">
+            </div> <!-- Ver solucion para cambiar la imagen -->
+            <button type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
+        </form>
     </div>
 
     <div class="contenedor-nameUser">

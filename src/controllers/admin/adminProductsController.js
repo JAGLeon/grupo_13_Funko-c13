@@ -39,19 +39,15 @@ module.exports = {
                 stock: req.body.stock ? true : false,
             })
             .then( product => {
-                /* if (req.files.length > 0) { */
-                    let arrayImg = req.files.map(img => {
-                        return {
-                            image : img.filename,
-                            product_id: product.id
-                        }
-                    })
-                    db.ProductImage.bulkCreate(arrayImg)
-                    .then (() =>  res.redirect('/admin/productos'))
-                    .catch((error) => res.send(error))
-/*                 } else {
-                    res.redirect('/admin/productos')
-                } */
+                let arrayImg = req.files.map(img => {
+                    return {
+                        image : img.filename,
+                        product_id: product.id
+                    }
+                })
+                db.ProductImage.bulkCreate(arrayImg)
+                .then (() =>  res.redirect('/admin/productos'))
+                .catch((error) => res.send(error))
             })
             .catch(error => res.send('errror acaa!'))
         }else{
@@ -92,9 +88,7 @@ module.exports = {
                 ...req.body,
                 category_id : req.body.category,
                 stock: req.body.stock ? true : false,
-            },{
-                where : {id : req.params.id}
-            })
+            },{ where : {id : req.params.id}})
             .then (() => { res.redirect('/admin/productos')})
             .catch((error) => res.send(error))
         } else {
