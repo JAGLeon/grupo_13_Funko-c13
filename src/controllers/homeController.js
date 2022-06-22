@@ -1,5 +1,7 @@
 let {getProducts, getCategories} = require('../data/index')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../database/models');
+const { Op } = require("sequelize");
 
 module.exports = {
     home: (req,res)=>{
@@ -11,21 +13,26 @@ module.exports = {
         })
     },
     search: (req, res) => {
-        let searchResult = [];
-        getProducts.forEach( product => {
-            if(product.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
-                searchResult.push(product)
+        db.Product.findAll({
+            include : [{association : 'images'}],
+            where: {
+                name: {
+                    [Op.like]: '%' + req.query.keywords + '%'
+                }
             }
-        });
-
-        res.render('search',{
-            searchResult,
-            keyword: req.query.keywords,
-            title: 'Funko | Busqueda',
-            stylesheet: 'search.css',
-            toThousand,
-            session: req.session,
         })
+        .then((productos) => {
+            res.render('search',{
+                productos,
+                keyword: req.query.keywords,
+                title: 'Funko | Busqueda',
+                stylesheet: 'search.css',
+                toThousand,
+                session: req.session,
+            })
+        })
+        .catch((error) => {res.send(error)}) 
+
     },
     compra:(req,res)=>{
         res.render('carrito',{

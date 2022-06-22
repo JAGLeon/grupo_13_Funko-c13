@@ -33,8 +33,21 @@
             </div>
             <div class="product-detail">
                 <p id="name"><%= producto.name %></p>
-                <p id="price">$ <%= producto.price %></p>
-                <p id="cuotas">en <%= producto.cuotes %> x $1.933,33 Sin interés</p>
+                <% if (producto.discount > 0) { %>
+                    <div id="product-discount">
+                        <% let precioDescuento = producto.price - producto.discount * producto.price / 100 %>
+                        <p class="funko-prices">$ <%= precioDescuento %></p> 
+                        <p class="off"><%= producto.discount %> % OFF</p>
+                    </div>
+                <% } else { %>
+                    <p class="funko-prices">$ <%= producto.price %></p>
+                <% } %>
+                <% if (producto.discount > 0) { %>
+                    <% let precioDescuento = producto.price - producto.discount * producto.price / 100 %>
+                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= precioDescuento / producto.cuotes %> Sin interés</p>
+                <% } else { %>
+                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= producto.price / producto.cuotes %> Sin interés</p>
+                <% } %>
                 <div id="truck">
                     <img src="/img/productos/truck-fast-solid.png" class="truck">
                     <p>Envíos a todo el país</p>

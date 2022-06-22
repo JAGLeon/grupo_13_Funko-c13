@@ -13,17 +13,24 @@
         <div class="products-title">
             <h2 class="title-listado">RESULTADO DE LA BÚSQUEDA: "<%= keyword %>"</h2>
         </div> 
-        <% if (searchResult.length > 0) { %> 
+        <% if (productos.length > 0) { %> 
         <div class="interest">
-            <% searchResult.forEach(productos => { %>
+            <% productos.forEach(producto => { %>
                     <div class="product">
-                        <div class="img">
-                            <img src="/img/productos/<%= productos.category %>/<%= productos.image %>" class="img-product" alt="...">
-                        </div>
+                        <a href="productos/detalle/<%- producto.id %>" class="img">
+                            <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" class="img-product" alt="<%- producto.name %>">
+                        </a>
                         <div class="description">
-                            <p class="funko-name"><%= productos.name %></p>
-                            <p class="funko-prices">$<%= productos.price %></p>
-                            <p class="funko-cuotes">en <%= productos.cuotes %> x $1.933,33</p>
+                            <p class="funko-name"><%= producto.name %></p>
+                            <% if (producto.discount > 0) { %>
+                                <div id="product-discount">
+                                    <p class="funko-prices">$ <%= producto.price - producto.discount * producto.price / 100 %></p> 
+                                    <p class="off"><%= producto.discount %> % OFF</p>
+                                </div>
+                            <% } else { %>
+                                <p class="funko-prices">$ <%= producto.price %></p>
+                            <% } %>
+                            <p class="funko-cuotes">en <%= producto.cuotes %> x $1.933,33</p>
                             <p class="funko-cuotes">Sin Interés</p>
                             <button>Agregar al carrito</button>
                         </div>
@@ -33,9 +40,9 @@
             <div class="col-12">
                 <h2 class="products-title text-center" style="color: #35858B;"> NO HUBO RESULTADOS PARA TU BÚSQUEDA</h2>
             </div>
-            <% } %> 
-
+            
         </div>
+        <% } %> 
     </section>
 </main>
 <!-- END MAIN -->

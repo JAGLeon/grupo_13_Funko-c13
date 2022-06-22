@@ -85,9 +85,20 @@ div.product-detail #name{
     font-size: 1.2rem;
 }
 
-div.product-detail #price {
+div.product-detail div#product-discount {
+    display: flex;
+    gap: 0.5rem;
+}
+
+div.product-detail .funko-prices {
     margin-bottom: 0.3rem;
     font-size: 1.5rem;
+}
+
+div.product-detail .off {
+    color: green;
+    font-size: 0.8rem;
+    padding-top: 0.3rem;
 }
 
 div.product-detail #cuotas {
@@ -397,7 +408,7 @@ div.interest div.product button:hover {
         margin-bottom: 1rem;
     }
 
-    div.product-detail #price {
+    div.product-detail #product-discount {
         font-size: 2.2rem;
         margin-bottom: 0;
     }
@@ -548,8 +559,8 @@ div.interest div.product button:hover {
         font-size: 2rem;
     }
 
-    div.product-detail #price {
-        margin: 0 1rem 0.1rem;
+    div.product-detail .funko-prices {
+        margin: 0 0 0.1rem 1rem;
         font-size: 2.2rem;
     }
 
