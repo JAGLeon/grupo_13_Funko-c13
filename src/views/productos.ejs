@@ -17,7 +17,7 @@
             <div class="interest">
                 <% productos.forEach(producto => { %>
                     <div class="product">
-                        <a href="productos//detalle/<%- producto.id %>" class="img">
+                        <a href="productos/detalle/<%- producto.id %>" class="img">
                         <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" class="img-product" alt="<%- producto.name %>">
                         </a>
                         <div class="description">

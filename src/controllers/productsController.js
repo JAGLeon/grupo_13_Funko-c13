@@ -17,7 +17,22 @@ let productsController = {
         .catch((error) => {res.send(error)}) 
     },   
     detailProduct : (req, res) => {
-        let producto = getProducts.find( producto => producto.id == req.params.id);
+        let idProduct = req.params.id
+
+        db.Product.findByPk(idProduct)
+            .then(producto => {
+                db.ProductImage.findOne({where : {product_id : idProduct}})
+                    .then(img => {
+                        res.render('productDetail', {
+                            producto,
+                            image : img.image,
+                            title: 'Funko | Detalles',
+                            stylesheet: 'productDetail.css',
+                            session: req.session
+                        })
+                    })
+            })
+        /*let producto = getProducts.find( producto => producto.id == req.params.id);
         let category = getCategories.find( category => category.id == producto.category);
         res.render('productDetail', {
             producto,
@@ -25,7 +40,7 @@ let productsController = {
             title: 'Funko | Detalles',
             stylesheet: 'productDetail.css',
             session: req.session
-        })
+        })*/
     }
 }
 
