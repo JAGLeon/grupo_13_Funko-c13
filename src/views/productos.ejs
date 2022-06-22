@@ -22,7 +22,14 @@
                         </a>
                         <div class="description">
                             <p class="funko-name"><%= producto.name %></p>
-                            <p class="funko-prices">$<%= producto.price %></p>
+                            <% if (producto.discount > 0) { %>
+                                <div id="product-discount">
+                                    <p class="funko-prices">$ <%= producto.price - producto.discount * producto.price / 100 %></p> 
+                                    <p class="off"><%= producto.discount %> % OFF</p>
+                                </div>
+                            <% } else { %>
+                                <p class="funko-prices">$ <%= producto.price %></p>
+                            <% } %>
                             <p class="funko-cuotes">en <%= producto.cuotes %> x $1.933,33</p>
                             <p class="funko-cuotes">Sin Interés</p>
                             <button>Agregar al carrito</button>

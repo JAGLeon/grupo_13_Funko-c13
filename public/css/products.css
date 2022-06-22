@@ -110,11 +110,22 @@ div.interest div.product .funko-name {
     font-weight: bold;
 }
 
+div.interest div.product div#product-discount {
+    display: flex;
+    padding-left: 5rem;
+}
+
 div.interest div.product .funko-prices {
     font-weight: bold;
     padding: 5px;
     text-align: center;
     font-size: 1rem;
+}
+
+div.interest div.product p.off {
+    color: green;
+    font-size: 11px;
+    padding: 0.7rem 0.5rem 0 0;
 }
 
 div.interest div.product .funko-cuotes {
@@ -163,6 +174,10 @@ div.interest div.product button:hover {
 
     div.interest div.product .funko-prices {
         font-size: 1.5rem;
+    }
+
+    div.interest div.product div#product-discount {
+        padding-left: 7rem;
     }
 
     div.interest div.product .funko-cuotes {
