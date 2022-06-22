@@ -41,6 +41,21 @@ let productsController = {
             stylesheet: 'productDetail.css',
             session: req.session
         })*/
+    },
+    ofertas: (req, res) => {
+        db.Product.findAll({
+            include : [{association : 'images'}]
+        })
+        .then((products) => {
+            let productos = products.filter( product => product.discount > 0 )
+                res.render('ofertas', {
+                    title: 'Funko | Ofertas',
+                    stylesheet: 'products.css',
+                    productos: productos,
+                    session: req.session
+                })
+            })
+        .catch((error) => {res.send(error)}) 
     }
 }
 
