@@ -49,7 +49,7 @@ module.exports = {
                 .then (() =>  res.redirect('/admin/productos'))
                 .catch((error) => res.send(error))
             })
-            .catch(error => res.send('errror acaa!'))
+            .catch(error => res.send(error))
         }else{
             db.Category.findAll()
             .then(category => {

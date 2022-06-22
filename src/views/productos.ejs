@@ -16,18 +16,18 @@
             </div> 
             <div class="interest">
                 <% productos.forEach(producto => { %>
-                        <div class="product">
-                            <div class="img">
-                                <img src="/img/productos/<%= producto.images.image %>" class="img-product" alt="/img/productos/<%= producto.images.image %>">
-                            </div>
-                            <div class="description">
-                                <p class="funko-name"><%= producto.name %></p>
-                                <p class="funko-prices">$<%= producto.price %></p>
-                                <p class="funko-cuotes">en <%= producto.cuotes %> x $1.933,33</p>
-                                <p class="funko-cuotes">Sin Interés</p>
-                                <button>Agregar al carrito</button>
-                            </div>
+                    <div class="product">
+                        <a href="productos//detalle/<%- producto.id %>" class="img">
+                        <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" class="img-product" alt="<%- producto.name %>">
+                        </a>
+                        <div class="description">
+                            <p class="funko-name"><%= producto.name %></p>
+                            <p class="funko-prices">$<%= producto.price %></p>
+                            <p class="funko-cuotes">en <%= producto.cuotes %> x $1.933,33</p>
+                            <p class="funko-cuotes">Sin Interés</p>
+                            <button>Agregar al carrito</button>
                         </div>
+                    </div>
                 <% }) %>
             </div>
         </section>

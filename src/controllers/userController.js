@@ -134,7 +134,7 @@ module.exports = {
         .then(() => res.redirect("/usuarios/perfil"))
         .catch((error) => res.send(error))
     },
-        addressDestroy: (req, res) => {
+    addressDestroy: (req, res) => {
         db.Address.destroy({
             where : {
                 id : req.params.id,

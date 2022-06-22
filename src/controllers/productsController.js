@@ -2,11 +2,10 @@ let {getProducts, getCategories} = require('../data')
 const db = require("../database/models");
 
 let productsController = {
-    listar: (req, res) => {
-    db.Product.findAll({
-        include:[{association: 'category'},
-                {association: 'images'}]
-    })
+    listar : (req, res) => {
+        db.Product.findAll({
+            include : [{association : 'images'}]
+        })
         .then((productos) => {
             res.render('productos', {
                 title: 'Funko | Listado',
@@ -15,7 +14,7 @@ let productsController = {
                 session: req.session
             })
         })
-        .catch((error)=>{res.send(error)}); 
+        .catch((error) => {res.send(error)}) 
     },   
     detailProduct : (req, res) => {
         let producto = getProducts.find( producto => producto.id == req.params.id);
@@ -28,14 +27,6 @@ let productsController = {
             session: req.session
         })
     }
-/*     listar: (req, res) => {
-        let productos = db.Product.findAll()
-        let categories = db.Category.findAll()
-    
-        Promise.all([productos,categories])
-        .then(function name(params) {
-            
-        }) */
 }
 
 
