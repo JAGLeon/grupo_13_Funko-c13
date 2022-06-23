@@ -35,17 +35,17 @@
                 <p id="name"><%= producto.name %></p>
                 <% if (producto.discount > 0) { %>
                     <div id="product-discount">
-                        <p class="funko-prices">$ <%= toThousand (producto.price - producto.discount * producto.price / 100) %></p> 
+                        <p class="funko-prices">$ <%= toThousand ((producto.price - producto.discount * producto.price / 100).toFixed(0)) %></p> 
                         <p class="off"><%= producto.discount %> % OFF</p>
                     </div>
                 <% } else { %>
-                    <p class="funko-prices">$ <%= toThousand (producto.price) %></p>
+                    <p class="funko-prices">$ <%= toThousand ((producto.price).toFixed(0)) %></p>
                 <% } %>
                 <% if (producto.discount > 0) { %>
                     <% let precioDescuento = producto.price - producto.discount * producto.price / 100 %>
-                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand (precioDescuento / producto.cuotes) %> Sin interés</p>
+                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand ((precioDescuento / producto.cuotes).toFixed(0)) %> Sin interés</p>
                 <% } else { %>
-                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand(producto.price / producto.cuotes) %> Sin interés</p>
+                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand((producto.price / producto.cuotes).toFixed(0)) %> Sin interés</p>
                 <% } %>
                 <div id="truck">
                     <img src="/img/productos/truck-fast-solid.png" class="truck">

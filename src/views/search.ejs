@@ -15,37 +15,11 @@
         </div> 
         <% if (productos.length > 0) { %> 
         <div class="interest">
-            <% productos.forEach(producto => { %>
-                <div class="product">
-                    <a href="productos/detalle/<%- producto.id %>" class="img">
-                    <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" class="img-product" alt="<%- producto.name %>">
-                    </a>
-                    <div class="description">
-                        <p class="funko-name"><%= producto.name %></p>
-                        <% if (producto.discount > 0) { %>
-                            <div id="product-discount">
-                                <p class="funko-prices">$ <%= toThousand (producto.price - producto.discount * producto.price / 100) %></p> 
-                                <p class="off"><%= producto.discount %> % OFF</p>
-                            </div>
-                        <% } else { %>
-                            <p class="funko-prices">$ <%= toThousand (producto.price) %></p>
-                        <% } %>
-                        <% if (producto.discount > 0) { %>
-                            <% let precioDescuento = producto.price - producto.discount * producto.price / 100 %>
-                            <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand (precioDescuento / producto.cuotes) %> Sin interés</p>
-                        <% } else { %>
-                            <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand(producto.price / producto.cuotes) %> Sin interés</p>
-                        <% } %>
-                        <p class="funko-cuotes">Sin Interés</p>
-                        <button>Agregar al carrito</button>
-                    </div>
-                </div>
-            <% }) %>
-            <% } else {%> 
+            <%- include('./partials/productCard')  %> 
+        <% } else {%> 
             <div class="col-12">
                 <h2 class="products-title text-center" style="color: #35858B;"> NO HUBO RESULTADOS PARA TU BÚSQUEDA</h2>
             </div>
-            
         </div>
         <% } %> 
     </section>

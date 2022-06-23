@@ -48,8 +48,8 @@ app.set('views', path.join(__dirname, "views"));
 
 app.use('/', homeRouter); // Home
 app.use('/usuarios',userRouter); // Login
-app.use('/franquicias', categoriesRouter); // Productos
-app.use('/productos', productosRouter); // Categorias de Productos
+app.use('/franquicias', categoriesRouter); // Categorias de Productos
+app.use('/productos', productosRouter); // Productos
 app.use('/enlaces-utiles', enlacesRouter); // Politicas - FormaDePago
 app.use('/admin', adminRouter); // Admin
 

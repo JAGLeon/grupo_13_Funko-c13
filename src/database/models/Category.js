@@ -12,6 +12,9 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: false,
         },        
+        image: {
+            type: dataTypes.STRING(100),
+        },        
     };
   
     let config = {

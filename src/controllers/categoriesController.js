@@ -1,12 +1,20 @@
 let {getProducts, getCategories} = require('../data')
+const db = require('../database/models');
 
 module.exports = {
     categorias: (req, res) => {
-        res.render('categories', {
-            getCategories,
-            title : 'Funko || Categorias',
-            stylesheet: 'home.css'
+        db.Category.findAll({
+
         })
+        .then(categorias => {
+            res.render('categories', {
+                categorias,
+                title : 'Funko || Categorias',
+                stylesheet: 'home.css',
+                session: req.session,
+            })
+        })
+        .catch((error) => {res.send(error)}) 
     },
     categoria : (req, res) => {
         let id_category = req.params.IDcategories
