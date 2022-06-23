@@ -12,7 +12,7 @@
     <main class="container min-vh-100 pt-5">
         <h2 class="title-listado">RESULTADO DE TU BÚSQUEDA: "<%= keyword %>"</h2>
         <table class="table table-hover">
-            <% if (searchResult.length > 0) { %>
+            <% if (productos.length > 0) { %>
             <thead>
             <tr>
                 <th scope="col">id</th>
@@ -24,12 +24,12 @@
             </tr>
             </thead>
             <tbody>
-            <% searchResult.forEach(producto => { %>
+            <% productos.forEach(producto => { %>
                 <tr>
                 <th scope="row"><%- producto.id %></th>
                 <td><%- producto.name %></td>
-                <td><%- producto.price %></td>
-                <td><%- producto.category %></td>
+                <td><%- toThousand (producto.price) %></td>
+                <td><%- producto.category.name %></td>
                 <td><%- producto.stock %></td>
                 <td class="btn">
                     <a href="/admin/productos/editar/<%- producto.id %>" class="btn-edit">

@@ -1,6 +1,6 @@
-//const {getCategories, writeCategories} = require('../../data');
 const { validationResult } = require('express-validator');
 const db = require("../../database/models");
+
 
 module.exports = {
     /* Envia la vista de listado de franquicias */
@@ -11,7 +11,7 @@ module.exports = {
                 title: "Listado de franquicias",
                 stylesheet: 'adminList.css',
                 categories,
-                session: req.session
+                session: req.session,
             })
         })
         .catch((error) => res.send(error));

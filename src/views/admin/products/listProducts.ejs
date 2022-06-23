@@ -27,7 +27,7 @@
                 <tr>
                 <th scope="row"><%- producto.id %></th>
                 <td><%- producto.name %></td>
-                <td><%- producto.price %></td>
+                <td><%- toThousand (producto.price) %></td>
                 <td><%- producto.category.name %></td>
                 <td><%- producto.stock %></td>
                 <td class="btn">

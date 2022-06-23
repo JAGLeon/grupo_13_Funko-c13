@@ -1,6 +1,7 @@
 /* const {getProducts, writeProducts} = require('../../data'); */
 const { validationResult } = require('express-validator');
 const db = require("../../database/models");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     /* Envia la vista de listado de productos */
@@ -11,7 +12,8 @@ module.exports = {
                 title: "Listado de productos",
                 stylesheet: 'adminList.css',
                 productos,
-                session: req.session
+                session: req.session,
+                toThousand,
             })
         })
         .catch((error)=>{res.send(error)}); 

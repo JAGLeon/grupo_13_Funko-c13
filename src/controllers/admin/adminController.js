@@ -1,5 +1,6 @@
-const {getProducts} = require('../../data');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require('../../database/models');
+const { Op } = require("sequelize");
 
 module.exports = {
     index: (req,res)=>{
@@ -10,20 +11,23 @@ module.exports = {
         })
     },
     search: (req, res) => {
-        let searchResult = [];
-        getProducts.forEach( product => {
-            if(product.name.toLowerCase().includes(req.query.keywords.toLowerCase())){
-                searchResult.push(product)
+        db.Product.findAll({
+            include:[{association: 'category'}],
+            where: {
+                name: {
+                    [Op.like]: '%' + req.query.keywords + '%'
+                }
             }
-        });
-
-        res.render('admin/products/adminSearch',{
-            searchResult,
-            keyword: req.query.keywords,
-            title: 'Funko | Admin Busqueda',
-            stylesheet: 'adminList.css',
-            toThousand,
-            session: req.session
+        })
+        .then((productos) => {
+            res.render('admin/products/adminSearch',{
+                productos,
+                keyword: req.query.keywords,
+                title: 'Funko | Admin Busqueda',
+                stylesheet: 'adminList.css',
+                toThousand,
+                session: req.session
+            })
         })
     },
 }

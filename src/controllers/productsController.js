@@ -1,5 +1,6 @@
-let {getProducts, getCategories} = require('../data')
 const db = require("../database/models");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 
 let productsController = {
     listar : (req, res) => {
@@ -11,7 +12,8 @@ let productsController = {
                 title: 'Funko | Listado',
                 stylesheet: 'products.css',
                 productos,
-                session: req.session
+                session: req.session,
+                toThousand,
             })
         })
         .catch((error) => {res.send(error)}) 
@@ -28,7 +30,8 @@ let productsController = {
                             image : img.image,
                             title: 'Funko | Detalles',
                             stylesheet: 'productDetail.css',
-                            session: req.session
+                            session: req.session,
+                            toThousand,
                         })
                     })
             })
@@ -52,7 +55,8 @@ let productsController = {
                     title: 'Funko | Ofertas',
                     stylesheet: 'products.css',
                     productos: productos,
-                    session: req.session
+                    session: req.session,
+                    toThousand,
                 })
             })
         .catch((error) => {res.send(error)}) 
