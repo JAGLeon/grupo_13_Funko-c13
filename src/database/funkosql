@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: funko
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.19-MariaDB
+-- Server version	5.5.5-10.4.24-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -57,8 +57,9 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
+  `image` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +68,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Marvel'),(2,'Anime'),(3,'DC'),(4,'Disney'),(5,'Star Wars'),(6,'Games');
+INSERT INTO `categories` VALUES (1,'Marvel','marvel-logo.png'),(2,'Anime','anime-logo.png'),(3,'DC','dc-logo.png'),(4,'Disney','disney-logo.png'),(5,'Star Wars','starwars-logo.png'),(6,'Games','games-logo.png'),(16,'pruebaaaaaaa',NULL),(17,'',NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -221,7 +222,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Pity','Ayala','TheKing','res@mail.com','12345678','1651338385760_img_.png','USER','Bolivia',NULL),(2,'Chubaca','Colo','Chuba','chubaco@mail.com','$2a$10$BmxtXsU3CWtrJJ7cIgW9DuzEf6gUgTwGwHLybQtCRcG.D/PBy4e0S','1651344210260_img_.png','USER','Chile',NULL),(3,'Admin','Funko','ADMIN FUNKO','admin@mail.com','123','1651346749063_img_.png','USER','Argentina',NULL),(4,'Prueba','prueba','pruebaaaaaa','pruebaaa@gmail.com','$2a$10$EGEB9O5H4ZvOiZZMXu0y6.l6JlpeaniLvlvz8u5pe9DUzWJNhZjfO','1654637993941_img_.png','USER','Argentina',NULL),(5,'a','a','a','a@a.com','$2a$10$m3qCZb5kt3x4S3EI9Z1L/uMLP62SIrFqyOlWXFF6mbl1kZCI4.2iu','1654656713540_img_.png','USER','Argentina',NULL),(6,'as','as','admin','admin@gmail.com','$2a$10$ckkClNEtU1sR5PjJ3GzXKOFPYTQaes0yOubFwKUpUMCIWfYeMlevG','user.jpg','USER','Argentina',NULL),(7,'admin1','admin1','admin1','admin1@gmail.com','$2a$10$ANQuhYd5J.nhS1YV9ZyWxeSYlB8dUlBJYexANPZWdousZh1Ml5m/2','user.jpg','USER','Argentina',NULL),(8,'Funko','Admin','ADMIN','funko@gmail.com','$2a$10$c63oiUlwCG5EuPZZzv7ucuB2IOJ44bONv8Xhs38QBMErQfq7jhE2G','1654817506456_img_.png','ADMIN','Capital Federal','1134348474 '),(9,'Prueba','Guerrero','Gerli','gerli1@gmail.com','$2a$10$.abQqLp2y1IxFdEMh9mK0ele7sIGf4uYQ7DSVFIzfYbj.T4V3b3Oa','1655087088499_img_.png','USER','Buenos Aires',NULL),(10,'Sandro','rtd','Calvin','s@s.com','$2a$10$iMOxn4N70D6jeArwYCG1t.c53nTJDhXn/jiGYvMo89L4LmqhC4Y/S','user.jpg','USER','San Juan','11111111111111');
+INSERT INTO `users` VALUES (1,'Pity','Ayala','TheKing','res@mail.com','12345678','1651338385760_img_.png','USER','Bolivia',NULL),(2,'Chubaca','Colo','Chuba','chubaco@mail.com','$2a$10$BmxtXsU3CWtrJJ7cIgW9DuzEf6gUgTwGwHLybQtCRcG.D/PBy4e0S','1651344210260_img_.png','USER','Chile',NULL),(3,'Admin','Funko','ADMIN FUNKO','admin@mail.com','123','1651346749063_img_.png','ADMIN','Argentina',NULL),(4,'Prueba','prueba','pruebaaaaaa','pruebaaa@gmail.com','$2a$10$EGEB9O5H4ZvOiZZMXu0y6.l6JlpeaniLvlvz8u5pe9DUzWJNhZjfO','1654637993941_img_.png','USER','Argentina',NULL),(5,'a','a','a','a@a.com','$2a$10$m3qCZb5kt3x4S3EI9Z1L/uMLP62SIrFqyOlWXFF6mbl1kZCI4.2iu','1654656713540_img_.png','USER','Argentina',NULL),(6,'as','as','admin','admin@gmail.com','$2a$10$ckkClNEtU1sR5PjJ3GzXKOFPYTQaes0yOubFwKUpUMCIWfYeMlevG','user.jpg','USER','Argentina',NULL),(7,'admin1','admin1','admin1','admin1@gmail.com','$2a$10$ANQuhYd5J.nhS1YV9ZyWxeSYlB8dUlBJYexANPZWdousZh1Ml5m/2','user.jpg','USER','Argentina',NULL),(8,'Funko','Admin','ADMIN','funko@gmail.com','$2a$10$c63oiUlwCG5EuPZZzv7ucuB2IOJ44bONv8Xhs38QBMErQfq7jhE2G','1654817506456_img_.png','ADMIN','Capital Federal','1134348474 '),(9,'Prueba','Guerrero','Gerli','gerli1@gmail.com','$2a$10$.abQqLp2y1IxFdEMh9mK0ele7sIGf4uYQ7DSVFIzfYbj.T4V3b3Oa','1655087088499_img_.png','USER','Buenos Aires',NULL),(10,'Sandro','rtd','Calvin','s@s.com','$2a$10$iMOxn4N70D6jeArwYCG1t.c53nTJDhXn/jiGYvMo89L4LmqhC4Y/S','user.jpg','USER','San Juan','11111111111111');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -238,4 +239,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-13  0:21:15
+-- Dump completed on 2022-06-23 11:26:49
