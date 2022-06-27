@@ -104,7 +104,7 @@ module.exports = {
         if(errors.isEmpty()){
             db.User.update({
                 ...req.body,
-                icon : req.file ? req.session.user.icon : req.file.filename 
+                icon : req.file ? req.file.filename : req.session.user.icon 
             },
             {where : {id: req.session.user.id}})
             .then(() => res.redirect("/usuarios/perfil"))
