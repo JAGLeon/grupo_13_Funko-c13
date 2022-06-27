@@ -58,7 +58,7 @@
                 <select class="selec-container" name="province" id="province">
                     <% for( const oneProvince of provinces ) { %>
                         <option value="<%= oneProvince %>" <%= (oneProvince === user.province) ? 'selected' : null %> > <%= oneProvince %> </option>
-                    <% } %>
+                    <% } %> <!-- array de provincia -->
                 </select>
                 <div >
                     <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" value="<%=user.phone%>">
@@ -79,7 +79,7 @@
                         <th>Provincia</th>
                         <th>Calle</th>
                         <th>Ciudad</th>
-                        <th>Barrio</th>
+                        <th>Número</th>
                         <th>Depto</th>
                         <th>Cod. Postal</th>
                         <th>Timbre</th>
@@ -92,7 +92,7 @@
                     <td><%- user.province %></td>
                     <td><%- address.address %></td>
                     <td><%- address.city %></td>
-                    <td><%- address.neighborhood %></td>
+                    <td><%- address.number %></td>
                     <td><%- address.departament %></td>
                     <td><%- address.postal_code %></td>
                     <td><%- address.doorbell %></td>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="contenedor-bottom">
                         <div class="input-barrio">
-                            <input class="input-style" placeholder="Barrio" type="text" name="neighborhood" id="neighborhood">
+                            <input class="input-style" placeholder="Número" type="text" name="number" id="number">
                             <input class="input-style" placeholder="Código postal" type="text" name="postal_code" id="postal_code">
                             <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
                             <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">

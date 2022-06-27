@@ -3,9 +3,7 @@ const db = require('../database/models');
 
 module.exports = {
     categorias: (req, res) => {
-        db.Category.findAll({
-
-        })
+        db.Category.findAll()
         .then(categorias => {
             res.render('categories', {
                 categorias,

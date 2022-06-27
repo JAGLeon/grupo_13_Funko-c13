@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
             allowNull: false,
         },
-        neighborhood: {
+        number: {
             type: dataTypes.STRING(300),
             allowNull: false,
         },
