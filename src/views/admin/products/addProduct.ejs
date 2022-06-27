@@ -16,21 +16,27 @@
           <label for="name" class="form-label">Nombre del producto</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
           <% if (locals.errors && errors.name) { %>
-           <small class="text-danger"><%= errors.name.msg%></small>
+          <div class="error">
+            <small class="text-danger"><%= errors.name.msg%></small>
+          </div>
           <% } %>
         </div>
         <div class="price">
           <label for="price" class="form-label">Precio</label>
           <input type="number" name="price" class="form-control" id="price"value="<%= (locals.old && old.price) ? old.price : "" %>">
           <% if (locals.errors && errors.price) { %>
-            <small class="text-danger"><%= errors.price.msg%></small>
+            <div class="error">
+              <small class="text-danger"><%= errors.price.msg%></small>
+            </div>
            <% } %>
         </div>
         <div class="discount">
           <label for="discount" class="form-label">Descuento</label>
           <input type="number" name="discount" class="form-control" id="discount" value="<%= (locals.old && old.discount) ? old.discount : "" %>">
           <% if (locals.errors && errors.discount) { %>
-            <small class="text-danger"><%= errors.discount.msg%></small>
+            <div class="error">
+              <small class="text-danger"><%= errors.discount.msg%></small>
+            </div>
           <% } %>
         </div>
         <div class="franquicia">
@@ -41,7 +47,9 @@
             <% });  %> 
           </select>
           <% if (locals.errors && errors.category) { %>
-            <small class="text-danger"><%= errors.category.msg%></small>
+            <div class="error">
+              <small class="text-danger"><%= errors.category.msg%></small>
+            </div>
           <% } %>
         </div>
         <div class="image">
@@ -56,7 +64,9 @@
           <label for="description" class="form-label">Descripción</label>
           <textarea name="description" class="form-control" id="description" rows="3"><%= (locals.old && old.description) ? old.description : "" %></textarea>
           <% if (locals.errors && errors.description) { %>
-            <small class="text-danger"><%= errors.description.msg%></small>
+            <div class="error">
+              <small class="text-danger"><%= errors.description.msg%></small>
+            </div>
           <% } %>
         </div>
         <div class="button">
