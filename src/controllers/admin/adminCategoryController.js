@@ -64,20 +64,31 @@ module.exports = {
     /* Recibe los datos actualizados del form de edición */
     updateCategory: (req, res) => {
         /* 1 - Obtener el id de la franquicia */
+        let errors = validationResult(req);
         let idCategory = +req.params.id;
-        
-        db.Category.update(
-            {name: req.body.name,},
-            {where: {id: idCategory,},}
-        )
-            .then((category) => {
-                if (category) {
+
+        if(errors.isEmpty()){        
+            db.Category.update(
+                {name: req.body.name,},
+                {where: {id: idCategory,},}
+            )
+                .then((category) => {
                     res.redirect('/admin/franquicias');
-                } else {
-                    res.render('not-found');
-                }
+                })
+                .catch((error) => res.send(error));
+        } else {
+            db.Category.findByPk(idCategory)
+            .then(category => {
+                res.render('admin/categories/editCategories',{
+                    title : 'Funko | Admin',
+                    stylesheet: 'formsEditAdd.css',
+                    session: req.session,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    category
+                })
             })
-            .catch((error) => res.send(error));
+        }
     },
     /* Recibe la info del franquicia a eliminar */
     deleteCategory: (req, res) => {

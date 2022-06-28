@@ -25,7 +25,7 @@ router.post('/productos', uploadProductImg.array('images'), productCreateValidat
 /* GET - Editar producto */
 router.get('/productos/editar/:id', userSession, adminSession, adminProductsController.editProduct);
 /* PUT - Actualiza producto en la DB */
-router.put('/productos/:id', adminProductsController.updateProduct);
+router.put('/productos/:id', uploadProductImg.array('images'), productCreateValidator, adminProductsController.updateProduct);
 /* DELETE - Elimina un producto */
 router.delete('/productos/eliminar/:id', adminProductsController.deleteProduct);
 
@@ -41,7 +41,7 @@ router.post('/franquicias', categoryCreateValidator, adminCategoryController.cre
 /* GET - Editar franquicia */
 router.get('/franquicias/editar/:id', userSession, adminSession, adminCategoryController.editCategory);
 /* PUT - Actualiza franquicia en la DB */
-router.put('/franquicias/:id', adminCategoryController.updateCategory);
+router.put('/franquicias/:id', categoryCreateValidator, adminCategoryController.updateCategory);
 /* DELETE - Elimina un franquicia */
 router.delete('/franquicias/eliminar/:id', adminCategoryController.deleteCategory);
 

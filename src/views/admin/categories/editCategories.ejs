@@ -16,6 +16,11 @@
         <div class="name">
           <label for="name" class="form-label">Nombre de la franquicia:</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= category.name %>">
+          <% if (locals.errors && errors.name) { %>
+            <div class="error">
+              <small class="text-danger"><%= errors.name.msg%></small>
+            </div>
+          <% } %>
         </div>
         <div class="button">
           <button type="submit">EDITAR</button>
