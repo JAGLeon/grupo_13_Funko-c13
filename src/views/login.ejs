@@ -19,13 +19,13 @@
                 <div class="input-container">
                     <input class="input-style" placeholder="Email o usuario" type="text" name="email">
                     <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %> </small>
+                        <small class="text-danger" id="emailErrors"><%= errors.email.msg %> </small>
                     <% } %> 
                 </div>
                 <div class="input-container pass-container">
                     <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password">
                     <% if (locals.errors && errors.password) { %>
-                        <small class="text-danger"><%= errors.password.msg %> </small>
+                        <small class="text-danger" id="passwordErrors"><%= errors.password.msg %> </small>
                     <% } %> 
                     <i class="fa-solid fa-eye-slash" id="eye"></i>
                 </div>
