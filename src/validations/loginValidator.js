@@ -16,7 +16,7 @@ let validateLogin = [
         .catch(error => { return Promise.reject('Email o contraseña incorrecto')})
     }),
     check("password")
-        .notEmpty().withMessage("Ingrese una contraseña"),
+        .notEmpty()/*.withMessage("Ingrese una contraseña")*/,
 ];
 
 module.exports = validateLogin;
