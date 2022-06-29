@@ -94,6 +94,10 @@ body.forms main section.form-container div.input-container .input-style{
     background-color: rgba(128, 128, 128,0.6);
 }
 
+.is-invalid::placeholder{
+    color: red;
+}
+
 body.forms main section.form-container div.input-container .input-style:focus{
     outline: none;
 }
