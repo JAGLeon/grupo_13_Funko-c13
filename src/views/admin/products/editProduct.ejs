@@ -12,29 +12,30 @@
     <section class="admin">
       <h2 class="title">EDITAR PRODUCTO: </h2>
       <h2 class="name"><%= producto.name %></h2>
-      <form class="formEdit" action="/admin/productos/<%= producto.id %>?_method=PUT" method="POST">
+      <form class="formEdit" action="/admin/productos" method="POST">
         <div class="name">
           <label for="name" class="form-label">Nombre del producto</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= producto.name %>">
         </div>
         <div class="price">
           <label for="price" class="form-label">Precio</label>
-          <input type="number" name="price" class="form-control" id="price" placeholder="Ej: 1500" value="<%= producto.price %>">
+          <input type="number" name="price" class="form-control" id="price" value="<%= producto.price %>">
         </div>
         <div class="discount">        
           <label for="discount" class="form-label">Descuento</label>
-          <input type="number" name="discount" class="form-control" id="discount" placeholder="Ej: 1500" value="<%= producto.discount %>">
+          <input type="number" name="discount" class="form-control" id="discount" value="<%= producto.discount %>">
           <div class="franquicia">
-            <label for="category" >Franquicia:</label>
-            <select name="category" class="form-select" id="category">
-              <option value="dc" <%= producto.category === "dc" && "selected" %>>Dc</option>
-              <option value="marvel" <%= producto.category === "marvel" && "selected" %>>Marvel</option>
-              <option value="disney" <%= producto.category === "dc" && "selected" %>>Disney</option>
-              <option value="starWars" <%= producto.category === "starWars" && "selected" %>>Star Wars</option>
-              <option value="anime" <%= producto.category === "anime" && "selected" %>>Anime</option>
-              <option value="game" <%= producto.category === "game" && "selected" %>>Game</option>
+            <select name="category" class="form-select select-add" id="category">
+              <option selected hidden value="">Franquicia</option>
+              <% category.forEach(({id,name}) =>{%>
+                <option value="<%= id %>" <%= (locals.old && old.category) && old.category === id ? "selected" : "" %>><%= name %></option>
+              <% });  %> 
             </select>
-          </div>
+            <% if (locals.errors && errors.category) { %>
+              <div class="error">
+                <small class="text-danger"><%= errors.category.msg%></small>
+              </div>
+            <% } %>
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
