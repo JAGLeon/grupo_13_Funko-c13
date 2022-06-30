@@ -39,7 +39,7 @@
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
-          <input type="file" name="images" class="form-control" id="image">
+          <input type="file" name="images" class="form-control" id="image" multiple>
           <% if (locals.errors && errors.images) { %>
             <div class="error">
               <small class="text-danger"><%= errors.images.msg%></small>

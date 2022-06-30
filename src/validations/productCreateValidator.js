@@ -18,7 +18,7 @@ let validateProduct = [
             }
             return false;
         }).withMessage("El descuento debe tener un valor entre 0 y 100"), 
-    body('images')
+    body("images")
         .custom((value , {req}) => {
             if(!req.file){
                     return true
