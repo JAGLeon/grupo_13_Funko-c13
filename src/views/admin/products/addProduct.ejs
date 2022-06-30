@@ -55,6 +55,11 @@
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
           <input type="file" name="images" class="form-control" id="image" multiple>
+          <% if (locals.errors && errors.images) { %>
+            <div class="error">
+              <small class="text-danger"><%= errors.images.msg%></small>
+            </div>
+          <% } %>
         </div>
         <div class="form-check form-switch">
           <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock" <%= (locals.old && old.stock) ? "checked" : "" %>>

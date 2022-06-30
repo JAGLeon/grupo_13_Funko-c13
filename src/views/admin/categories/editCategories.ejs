@@ -12,13 +12,22 @@
     <section class="admin">
       <h2 class="title">EDITAR FRANQUICIA: </h2>
       <h2 class="name"><%= category.name %></h2>
-      <form class="formEdit" action="/admin/franquicias/<%= category.id %>?_method=PUT" method="POST">
+      <form class="formEdit" action="/admin/franquicias/<%= category.id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
         <div class="name">
           <label for="name" class="form-label">Nombre de la franquicia:</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= category.name %>">
           <% if (locals.errors && errors.name) { %>
             <div class="error">
               <small class="text-danger"><%= errors.name.msg%></small>
+            </div>
+          <% } %>
+        </div>
+        <div class="image">
+          <label for="image" class="form-label">Imágen</label>
+          <input type="file" name="image" class="form-control" id="image">
+          <% if (locals.errors && errors.image) { %>
+            <div class="error">
+              <small class="text-danger"><%= errors.image.msg%></small>
             </div>
           <% } %>
         </div>

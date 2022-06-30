@@ -17,7 +17,17 @@ let validateProduct = [
                 return true;
             }
             return false;
-    }).withMessage("El descuento debe tener un valor entre 0 y 100"),       
+        }).withMessage("El descuento debe tener un valor entre 0 y 100"), 
+    body("images")
+        .custom((value , {req}) => {
+            if(!req.file){
+                    return true
+            } else if (req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg"){
+                    return true
+            } else {
+                    return false
+            }
+            }).withMessage('Archivo de imagen en formato .png, .jpeg')      
 ]
 
 module.exports = validateProduct;

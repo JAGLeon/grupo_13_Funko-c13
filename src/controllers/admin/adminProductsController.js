@@ -71,6 +71,19 @@ module.exports = {
         let idProduct = +req.params.id;
         /* 2 - Buscar el producto a editar */
         db.Product.findByPk(idProduct)
+        .then((producto) => {
+            db.Category.findAll()
+            .then(category => {
+                res.render('admin/products/editProduct',{
+                        title : 'Funko | Admin',
+                        stylesheet: 'formsEditAdd.css',
+                        session: req.session,
+                        category,
+                        producto
+                })
+            })
+        })
+/*         db.Product.findByPk(idProduct)
             .then((producto) => {
                 res.render('admin/products/editProduct',{
                     title : 'Funko | Admin',
@@ -78,7 +91,8 @@ module.exports = {
                     producto,
                     session: req.session
                 })
-            })
+            }) */
+            .catch((error) => res.send('aca'))
         /* 3 - Mostrar el producto en la vista */
     },
     /* Recibe los datos actualizados del form de edición */
@@ -92,22 +106,34 @@ module.exports = {
                 stock: req.body.stock ? true : false,
             },{ where : {id : req.params.id}})
             .then (() => { res.redirect('/admin/productos')})
-            .catch((error) => res.send(error))
+            .catch((error) => res.send('aca'))
         } else {
             /* 1 - Obtener el id del producto */
-            let idProduct = +req.params.id;
-            
-            db.Product.findByPk(idProduct)
-                .then((producto) => {
-                    res.render('admin/products/editProduct',{
-                        title : 'Funko | Admin',
-                        stylesheet: 'formsEditAdd.css',
-                        producto,
-                        session: req.session
-                    })
-                })
-                .catch((error) => res.send(error));
+             let idProduct = +req.params.id;
+             
+             db.Product.findByPk(idProduct)
+                 .then((producto) => {
+                     res.render('admin/products/editProduct',{
+                         title : 'Funko | Admin',
+                         stylesheet: 'formsEditAdd.css',
+                         producto,
+                         session: req.session
+                     })
+                 })
+                 .catch((error) => res.send('aca'));
         }
+        
+        /* db.Category.findAll()
+        .then(category => {
+            res.render('admin/products/addProduct',{
+                    title : 'Funko | Admin',
+                    stylesheet: 'formsEditAdd.css',
+                    session: req.session,
+                    category,
+                    old: req.body,
+                    errors : errors.mapped()
+            })
+        }) */
     },
     /* Recibe la info del producto a eliminar */
     deleteProduct: (req, res) => {
