@@ -1,4 +1,3 @@
-let {getProducts, getCategories} = require('../data')
 const db = require('../database/models');
 
 module.exports = {
@@ -13,7 +12,8 @@ module.exports = {
             })
         })
         .catch((error) => {res.send(error)}) 
-    },
+    }
+    /* , 
     categoria : (req, res) => {
         let id_category = req.params.IDcategories
         let category = getCategories.find(category => category.id == id_category)
@@ -25,5 +25,5 @@ module.exports = {
             title : 'Funko || Categoria',
             stylesheet: 'home.css'
         })
-    }
+    } */
 }

@@ -26,13 +26,6 @@ footer .footer_article-container{
 
 /****/
 
-body.forms span.error-message{
-    display: none;
-    color: red;
-    font-size: 0.8rem;
-    margin-left: 1rem;
-}
-
 body.forms{
     display: flex;
     flex-direction: column;
@@ -95,7 +88,7 @@ body.forms main section.form-container div.input-container .input-style{
 }
 
 .is-invalid::placeholder{
-    color: red;
+    color: rgb(220, 53, 69);
 }
 
 body.forms main section.form-container div.input-container .input-style:focus{

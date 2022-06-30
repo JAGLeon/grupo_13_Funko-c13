@@ -12,7 +12,7 @@
     <main class="main_register">
         <section class="form-container register">
             <h1>Registrate</h1>
-            <form action="/usuarios/registro" method="POST" enctype="multipart/form-data">
+            <form action="/usuarios/registro" method="POST" id="formRegister" enctype="multipart/form-data">
                 <div class="input-container">
                     <select class="input-style selec-container" name="province" id="province" value="<%= locals.oldData && oldData.province ? oldData.province : "" %>">
                         <option value="" hidden>Elegí tu provincia</option>
@@ -20,40 +20,59 @@
                             <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.province) ? 'selected' : null %> > <%= oneProvince %> </option>
                         <% } %>
                     </select>
-                    <small class="text-danger"></small>
+                    <small class="text-danger" id="errorsSelect"></small>
+                    <% if (locals.errors && errors.province) { %>
+                        <small class="text-danger"><%= errors.province.msg %> </small>
+                    <% } %> 
                 </div>
                 <div class="nom_ape-container">
                     <div class="input-container rInput">
                         <input class="input-style rInput-style" placeholder="Nombre" type="text" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : "" %>">
-                        <small class="text-danger"></small>
+                        <small class="text-danger" id="errorsName"></small>
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.name.msg %> </small>
+                        <% } %> 
                     </div>
                     <div class="input-container rInput">
                         <input class="input-style rInput-style" placeholder="Apellido" type="text" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : "" %>">
-                        <small class="text-danger"></small>
+                        <small class="text-danger" id="errorsLastName"></small>
+                        <% if (locals.errors && errors.lastName) { %>
+                            <small class="text-danger"><%= errors.lastName.msg %> </small>
+                        <% } %> 
                     </div>
                 </div>
                 <div class="input-container">
                     <input class="input-style" placeholder="Nombre de usuario" type="text" name="userName" id="userName" value="<%= locals.oldData && oldData.userName ? oldData.userName : "" %>">
-                    <small class="text-danger"></small>
+                    <small class="text-danger" id="errorsUserName"></small>
+                    <% if (locals.errors && errors.userName) { %>
+                        <small class="text-danger"><%= errors.userName.msg %> </small>
+                    <% } %> 
                 </div>
 
                 <div class="input-container">
                     <input class="input-style" placeholder="Email" type="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : "" %>">
-                    <small class="text-danger"></small>
+                    <small class="text-danger" id="errorsEmail"></small>
+                    <% if (locals.errors && errors.email) { %>
+                        <small class="text-danger"><%= errors.email.msg %> </small>
+                    <% } %> 
                 </div>
                 <div class="input-container pass-container">
                     <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password">
                     <i class="fa-solid fa-eye-slash" id="eye"></i>
-                    <small class="text-danger"></small>
+                    <small class="text-danger" id="errorsPassword"></small>
+                    <% if (locals.errors && errors.password) { %>
+                        <small class="text-danger"><%= errors.password.msg %> </small>
+                    <% } %> 
                 </div>
                 <div class="mb-3">
                     <label for="icon" class="form-label">Foto de perfil</label>
                     <input class="form-control" type="file" id="icon" name="icon" >
+                    <small class="text-danger" id="fileErrors"></small>
                 </div>
                 <span>Al registrarte estás aceptando las <a href="/enlaces-utiles/politicas-de-privacidad" target="_blank">políticas de privacidad</a></span>
                 <div class="btn-container">
-                    <span class="error-message">Hubo un error en el registro</span>
                     <button type="submit" class="btn btn-submit">REGÍSTRARTE</button>
+                    <span class="text-danger" id="submitErrors"></span>
                 </div>
                 <span class="span-register">¿Ya tenés cuenta? <a href="/usuarios/inicio">Iniciá sesión aquí</a></span>
             </form>

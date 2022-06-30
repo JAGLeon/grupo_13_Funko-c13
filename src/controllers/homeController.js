@@ -5,12 +5,16 @@ const { Op } = require("sequelize");
 
 module.exports = {
     home: (req,res)=>{
+        db.Category.findAll()
+        .then(categorias => {
         res.render('home',{
             title : 'Funko',
             stylesheet: 'home.css',
-            categorias: getCategories,
-            session: req.session
+            session: req.session,
+            categorias
         })
+        })
+        .catch((error) => {res.send(error)}) 
     },
     search: (req, res) => {
         db.Product.findAll({

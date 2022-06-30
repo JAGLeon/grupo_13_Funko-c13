@@ -7,7 +7,7 @@ function qs(element) {
     $passErrors = qs('#passwordErrors'),
     $eye = qs('#eye'),
     $pass = qs('#password'),
-    $form = qs('#formLogin'),
+    $formLogin = qs('#formLogin'),
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
     $inputEmail.addEventListener("blur", (e) => {
@@ -33,9 +33,6 @@ function qs(element) {
                 $passErrors.innerHTML = "Se debe ingrasar una contraseña";
                 $inputpassword.classList.add("is-invalid");
                 break;
-            case !true: //Debo validar que la contrasea sea la misma
-                $inputpassword.classList.add("is-invalid");
-                break;
             default: 
                 $inputpassword.classList.remove("is-invalid");
                 $passErrors.innerHTML = "";
@@ -53,7 +50,7 @@ function qs(element) {
         }
     });
 
-    $form.addEventListener("submit", function(event) {
+    $formLogin.addEventListener("submit", function(event) {
 
         event.preventDefault()
         let elementsForm = this.elements;
@@ -61,16 +58,16 @@ function qs(element) {
 
         console.log(elementsForm)
 
-        for (let index = 0; index < elementsForm.length - 1; index++) {
+        for (let index = 0; index < elementsForm.length - 2; index++) {
             if(elementsForm[index].value == ""
             || elementsForm[index].classList.contains("is-invalid")){
                 elementsForm[index].classList.add("is-invalid");
-                fullErrors.innerHTML = "Email o contraseña erronea"
+                fullErrors.innerHTML = "Hay campos sin completar"
                 errores = true;
             }
         }
 
         if(!errores){
-            $form.submit()
+            $formLogin.submit()
         }
     })
