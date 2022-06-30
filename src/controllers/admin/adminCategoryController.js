@@ -17,7 +17,7 @@ module.exports = {
         .catch((error) => res.send(error));
     },
     /* Envia la vista de formulario de creación de franquicia */
-    addCategory: (req,res)=>{
+    addCategory: (req,res) => {
         res.render('admin/categories/addCategories',{
             title : 'Funko | Admin',
             stylesheet: 'formsEditAdd.css',
@@ -31,11 +31,10 @@ module.exports = {
         if(errors.isEmpty()){
             db.Category.create({
                 name: req.body.name,
+                image: req.file.filename
             })
-                .then((category) => {
-                    res.redirect('/admin/franquicias'); 
-                })
-                .catch((error) => res.send(error));
+            .then(() => res.redirect('/admin/franquicias'))
+            .catch((error) => res.send(error));
         } else {
             res.render('admin/categories/addCategories',{
                 title : 'Funko | Admin',
@@ -69,8 +68,13 @@ module.exports = {
 
         if(errors.isEmpty()){        
             db.Category.update(
-                {name: req.body.name,},
-                {where: {id: idCategory,},}
+                {
+                    name: req.body.name,
+                    image: req.file.filename
+                },
+                {
+                    where: {id: idCategory,},
+                }
             )
                 .then((category) => {
                     res.redirect('/admin/franquicias');

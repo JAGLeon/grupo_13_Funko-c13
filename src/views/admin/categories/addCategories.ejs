@@ -11,7 +11,7 @@
   <main class="container min-vh-100" id="category">
     <section class="admin">
       <h2 class="titleAdd">AGREGAR FRANQUICIA</h2>
-      <form class="formAdd" action="/admin/franquicias" method="POST">
+      <form class="formAdd" action="/admin/franquicias" method="POST"  enctype="multipart/form-data">
         <div class="name">
           <label for="name" class="form-label">Nombre de la franquicia:</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
@@ -20,6 +20,10 @@
               <small class="text-danger"><%= errors.name.msg%></small>
             </div>
           <% } %>
+        </div>
+        <div class="image">
+          <label for="image" class="form-label">Imágen</label>
+          <input type="file" name="image" class="form-control" id="image">
         </div>
         <div class="button">
           <button type="submit">CREAR</button>

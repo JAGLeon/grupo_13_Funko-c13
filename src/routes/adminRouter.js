@@ -8,6 +8,7 @@ const adminSession = require('../middlewares/user/adminSession');
 const productCreateValidator = require('../validations/productCreateValidator');
 const categoryCreateValidator = require('../validations/categoryCreateValidator');
 const uploadProductImg = require('../middlewares/multer/uploadProductImg');
+const uploadCategoryImg = require('../middlewares/multer/uploadCategoryImg');
 
 
 /* GET - Index */
@@ -37,11 +38,11 @@ router.get('/franquicias',  userSession, adminSession, adminCategoryController.l
 /* GET - Agregar franquicia */
 router.get('/franquicias/agregar', userSession, adminSession, adminCategoryController.addCategory);
 /* POST - Crea un franquicia en la DB */
-router.post('/franquicias', categoryCreateValidator, adminCategoryController.createCategory);
+router.post('/franquicias', uploadCategoryImg.single('image'), categoryCreateValidator, adminCategoryController.createCategory);
 /* GET - Editar franquicia */
 router.get('/franquicias/editar/:id', userSession, adminSession, adminCategoryController.editCategory);
 /* PUT - Actualiza franquicia en la DB */
-router.put('/franquicias/:id', categoryCreateValidator, adminCategoryController.updateCategory);
+router.put('/franquicias/:id', uploadCategoryImg.single('image'), categoryCreateValidator, adminCategoryController.updateCategory);
 /* DELETE - Elimina un franquicia */
 router.delete('/franquicias/eliminar/:id', adminCategoryController.deleteCategory);
 
