@@ -70,7 +70,7 @@ module.exports = {
             db.Category.update(
                 {
                     name: req.body.name,
-                    image: req.file.filename
+                    image: req.file ? req.file.filename : "deafult-image.png"
                 },
                 {
                     where: {id: idCategory,},

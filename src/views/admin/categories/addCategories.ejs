@@ -24,6 +24,11 @@
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
           <input type="file" name="image" class="form-control" id="image">
+          <% if (locals.errors && errors.image) { %>
+            <div class="error">
+              <small class="text-danger"><%= errors.image.msg%></small>
+            </div>
+          <% } %>
         </div>
         <div class="button">
           <button type="submit">CREAR</button>
