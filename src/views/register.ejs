@@ -68,6 +68,9 @@
                     <label for="icon" class="form-label">Foto de perfil</label>
                     <input class="form-control" type="file" id="icon" name="icon" >
                     <small class="text-danger" id="fileErrors"></small>
+                    <% if (locals.errors && errors.icon) { %>
+                        <small class="text-danger"><%= errors.icon.msg %> </small>
+                    <% } %> 
                 </div>
                 <span>Al registrarte estás aceptando las <a href="/enlaces-utiles/politicas-de-privacidad" target="_blank">políticas de privacidad</a></span>
                 <div class="btn-container">

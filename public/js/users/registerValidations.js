@@ -42,6 +42,10 @@ $inputName.addEventListener("blur", () => {
             $errorsName.innerHTML = "Ingrese su nombre";
             $inputName.classList.add("is-invalid");
             break;
+        case $inputName.value.trim().length < 2:
+            $errorsName.innerHTML = "Mínimo 2 carácteres";
+            $inputName.classList.add("is-invalid");
+            break;
         case !regExAlpha.test($inputName.value):
             $errorsName.innerHTML = "Nombre inválido";
             $inputName.classList.add("is-invalid");
@@ -59,6 +63,10 @@ $inputLastName.addEventListener("blur", () => {
             $errorsLastName.innerHTML = "Ingrese su apellido";
             $inputLastName.classList.add("is-invalid");
             break;
+        case $inputLastName.value.trim().length < 2:
+            $errorsLastName.innerHTML = "Mínimo 2 carácteres";
+            $inputLastName.classList.add("is-invalid");
+            break;
         case !regExAlpha.test($inputLastName.value):
             $errorsLastName.innerHTML = "Apellido inválido";
             $inputLastName.classList.add("is-invalid");
@@ -74,6 +82,10 @@ $inputUserName.addEventListener("blur", () => {
     switch (true) {
         case !$inputUserName.value.trim():
             $errorsUserName.innerHTML = "Debe ser completado con su usuario";
+            $inputUserName.classList.add("is-invalid");
+            break;
+        case $inputUserName.value.trim().length < 2:
+            $errorsUserName.innerHTML = "Mínimo 2 carácteres";
             $inputUserName.classList.add("is-invalid");
             break;
         default: 
@@ -107,7 +119,7 @@ $inputPassword.addEventListener('blur', function(){
             $inputPassword.classList.add('is-invalid');
             break;
         case !regExPass.test($inputPassword.value):
-            $errorsPassword.innerHTML = 'Mínimo 8 caracteres, debe contener mayúscula, minúscula, número';
+            $errorsPassword.innerHTML = 'Mínimo 8 carácteres, debe tener mayúscula, minúscula, número';
             $inputPassword.classList.add('is-invalid');
             break;    
         default:
@@ -120,9 +132,9 @@ $inputPassword.addEventListener('blur', function(){
 $fileIcon.addEventListener('change', 
 function fileValidation(){
     let filePath = $fileIcon.value,
-        allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i 
+        allowefExtensions = /(.jpg|.jpeg|.png)$/i 
     if(!allowefExtensions.exec(filePath)){
-        $fileErrors.innerHTML = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+        $fileErrors.innerHTML = 'Carga un archivo de imagen válido(.jpg - .jpeg - .png)';
         $fileIcon.value = '';
         return false;
     }

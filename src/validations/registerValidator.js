@@ -6,10 +6,10 @@ let validateRegister = [
         .notEmpty().withMessage('Seleccione su provincia'),
     check('name')
         .notEmpty().withMessage('Ingrese su nombre').bail()
-        .isLength({min:2, max:70}).withMessage('Ingrese un nombre valido'),
+        .isLength({min:2, max:30}).withMessage('Ingrese un nombre valido'),
     check('lastName')
         .notEmpty().withMessage('Ingrese su apellido').bail()
-        .isLength({min:2, max:70}).withMessage('Ingrese un apellido valido'),
+        .isLength({min:2, max:30}).withMessage('Ingrese un apellido valido'),
     check('userName')
         .notEmpty().withMessage('Ingrese su usuario').bail()
         .isLength({min:2, max:20}).withMessage('Ingrese un usuario valido'),
@@ -30,22 +30,17 @@ let validateRegister = [
     }),
     check('password')
         .notEmpty().withMessage('Ingrese una contraseña').bail()
-        .isLength({min:8}).withMessage('La contraseña debe tener 8 caracteres')
-    // body('fileProduct').custom((value,{ req })=>{
-    //     let file = req.file
-    //     let acceptedExtensions = ['.jpg','.png', '.gif'];
-        
-    //     if (!file) {
-    //         throw new Error ('Subir imagen del producto')
-    //     } else {       
-    //         let filExtensions = path.extname(file.originalname);
-    //         if(!acceptedExtensions.includes(filExtensions)){
-    //         throw new Error(`Las extenciones de archivo son ${acceptedExtensions.join(', ')}`);
-    //         }
-    //     }
-
-    //     return true
-    // })
+        .isLength({min:8}).withMessage('La contraseña debe tener 8 caracteres'),
+    body('icon')
+        .custom((value , {req}) => {
+            if(!req.file){
+                return true
+            } else if (req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
+                return true
+            } else {
+                return false
+            }
+        }).withMessage('Archivo de imagen en formato (.jpg - .jpeg - .png)')
 ];
 
 module.exports = validateRegister;
