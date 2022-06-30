@@ -6,9 +6,11 @@ let validateRegister = [
         .notEmpty().withMessage('Seleccione su provincia'),
     check('name')
         .notEmpty().withMessage('Ingrese su nombre').bail()
+        .isAlpha().withMessage('Nombre inválido')
         .isLength({min:2, max:30}).withMessage('Ingrese un nombre valido'),
     check('lastName')
         .notEmpty().withMessage('Ingrese su apellido').bail()
+        .isAlpha().withMessage('Apellido inválido')
         .isLength({min:2, max:30}).withMessage('Ingrese un apellido valido'),
     check('userName')
         .notEmpty().withMessage('Ingrese su usuario').bail()
@@ -30,7 +32,7 @@ let validateRegister = [
     }),
     check('password')
         .notEmpty().withMessage('Ingrese una contraseña').bail()
-        .isLength({min:8}).withMessage('La contraseña debe tener 8 caracteres'),
+        .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1}).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número'),
     body('icon')
         .custom((value , {req}) => {
             if(!req.file){

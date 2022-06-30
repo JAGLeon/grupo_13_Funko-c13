@@ -45,6 +45,9 @@ body.forms .main_register section.register .span-register a{
     width: 100%;
 }
 
+.mb-3{
+    margin-top: 1.3rem;
+}
 
 
 @media(min-width: 768px){

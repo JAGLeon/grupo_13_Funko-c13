@@ -68,6 +68,10 @@ body.forms main section.form-container div.input-container,
     margin-bottom: 1.3rem;
 }
 
+body.forms main section.form-container div.pass-container{
+    margin-bottom: 0;
+}
+
 body.forms main section.form-container .pass-container{
     position: relative;
 }

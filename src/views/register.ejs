@@ -59,11 +59,11 @@
                 <div class="input-container pass-container">
                     <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password">
                     <i class="fa-solid fa-eye-slash" id="eye"></i>
+                </div>
                     <small class="text-danger" id="errorsPassword"></small>
                     <% if (locals.errors && errors.password) { %>
                         <small class="text-danger"><%= errors.password.msg %> </small>
                     <% } %> 
-                </div>
                 <div class="mb-3">
                     <label for="icon" class="form-label">Foto de perfil</label>
                     <input class="form-control" type="file" id="icon" name="icon" >
@@ -90,6 +90,6 @@
 <!-- Scripts -->
 <script src="/js/particlesFunko/particles.min.js"></script>
 <script src="/js/particlesFunko/funkoParticle.js"></script>
-<script src="/js/users/registerValidations.js" defer></script>
+<!-- <script src="/js/users/registerValidations.js" defer></script> -->
 </body>
 </html>
