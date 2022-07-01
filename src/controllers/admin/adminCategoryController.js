@@ -31,7 +31,7 @@ module.exports = {
         if(errors.isEmpty()){
             db.Category.create({
                 name: req.body.name,
-                image: req.file.filename
+                image: req.file ? req.file.filename : "deafult-image.png"
             })
             .then(() => res.redirect('/admin/franquicias'))
             .catch((error) => res.send(error));
