@@ -1,4 +1,5 @@
 const db = require('../database/models');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     categorias: (req, res) => {
@@ -12,18 +13,28 @@ module.exports = {
             })
         })
         .catch((error) => {res.send(error)}) 
+    },
+    categoria: (req, res) => {
+        let idCategory = req.params.id
+
+        db.Category.findByPk(idCategory)
+            .then(categoria => {
+                db.Product.findAll({
+                    include : [{association : 'images'}]
+                })
+                .then(products => {
+                    let productos = products.filter( product => product.category_id == idCategory )
+                        res.render('category', {
+                            categoria,
+                            title : 'Funko | Categorias',
+                            stylesheet: 'products.css',
+                            session: req.session,
+                            productos: productos,
+                            toThousand,
+                        })
+
+                })
+            })
+            .catch(error => res.send(error))
     }
-    /* , 
-    categoria : (req, res) => {
-        let id_category = req.params.IDcategories
-        let category = getCategories.find(category => category.id == id_category)
-        
-        let productos = getProducts.filter( productos => productos.category == id_category)
-        res.render('category',{
-            category,
-            productos,
-            title : 'Funko || Categoria',
-            stylesheet: 'home.css'
-        })
-    } */
 }

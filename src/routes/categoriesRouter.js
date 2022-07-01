@@ -6,5 +6,6 @@ const userSession = require('../middlewares/user/userSession');
 /* GET Sucursal */
 router.get('/', categoriesController.categorias)
 // router.get('/:IDcategoria', categoriesController.categoria)
+router.get('/detalle/:id', categoriesController.categoria)
 
 module.exports = router;
