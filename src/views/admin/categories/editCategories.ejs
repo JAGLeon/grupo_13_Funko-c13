@@ -12,7 +12,8 @@
     <section class="admin">
       <h2 class="title">EDITAR FRANQUICIA: </h2>
       <h2 class="name"><%= category.name %></h2>
-      <form class="formEdit" action="/admin/franquicias/<%= category.id %>?_method=PUT" method="POST"  enctype="multipart/form-data">
+      <form class="formEdit" action="/admin/franquicias/<%= category.id %>?_method=PUT" method="POST"  enctype="multipart/form-data" id="formCategory">
+        <small class="text-danger" id="fullErrors"></small>
         <div class="name">
           <label for="name" class="form-label">Nombre de la franquicia:</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= category.name %>">

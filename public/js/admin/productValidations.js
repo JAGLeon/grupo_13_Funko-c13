@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
     let $imagesErrors = qs('#imagesErrors')
     let $inputDescription = qs('#description')
     let $descriptionErrors = qs('#descriptionErrors')
-    let $form = qs('form')
+    let $formProduct = qs('#formProduct')
 
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
     let regExNumeric = /^[0-9][A-Za-z0-9 -]*$/
@@ -112,6 +112,28 @@ window.addEventListener('load', () => {
                 $descriptionErrors.innerHTML = 'Ingresa una descripción';
                 $inputDescription.classList.add('is-invalid');
                 break;
+        }
+    });
+
+    $formProduct.addEventListener("submit", function(event) {
+
+        event.preventDefault()
+        let elementsForm = this.elements;
+        let errores = false;
+
+        console.log(elementsForm)
+
+        for (let index = 0; index < elementsForm.length - 2; index++) {
+            if(elementsForm[index].value == ""
+            || elementsForm[index].classList.contains("is-invalid")){
+                elementsForm[index].classList.add("is-invalid");
+                fullErrors.innerHTML = "Hay errores en el formulario"
+                errores = true;
+            }
+        }
+
+        if(!errores){
+            $formProduct.submit()
         }
     });
 });

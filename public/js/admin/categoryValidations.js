@@ -3,7 +3,7 @@ function qs(element) {
 };
 
 window.addEventListener('load', () => {
-    let $form = qs('form')
+    let $formCategory = qs('#formCategory')
     let $inputName = qs('#name')
     let $nameErrors = qs('#nameErrors')
     let $inputImage = qs('#image')
@@ -49,31 +49,26 @@ window.addEventListener('load', () => {
         }
     });
 
+    $formCategory.addEventListener("submit", function(event) {
 
-/* revisar esto */
-    $form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        let elementsForm = this.elements; 
+        event.preventDefault()
+        let elementsForm = this.elements;
         let errores = false;
 
-        
-        for (let i = 0; i < elementsForm.length; i++) {
-            if (elementsForm[i].value == ''
-                && elementsForm[i].type !== 'file'
-                || elementsForm[i].classList.contains('is-invalid')) { 
+        console.log(elementsForm)
 
-                elementsForm[i].classList.add('is-invalid');
-                submitErrors.innerHTML = 'Hay errores en el formulario';
+        for (let index = 0; index < elementsForm.length - 2; index++) {
+            if(elementsForm[index].value == ""
+            || elementsForm[index].classList.contains("is-invalid")){
+                elementsForm[index].classList.add("is-invalid");
+                fullErrors.innerHTML = "Hay errores en el formulario"
                 errores = true;
             }
-        };
+        }
 
-        if (!errores) { 
-            alert('Validado!');
-            $form.submit();
-        };
+        if(!errores){
+            $formCategory.submit()
+        }
     });
-
 
 });

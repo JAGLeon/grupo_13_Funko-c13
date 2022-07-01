@@ -11,7 +11,8 @@
   <main class="container min-vh-100" id="category">
     <section class="admin">
       <h2 class="titleAdd">AGREGAR FRANQUICIA</h2>
-      <form class="formAdd" action="/admin/franquicias" method="POST"  enctype="multipart/form-data">
+      <form class="formAdd" action="/admin/franquicias" method="POST"  enctype="multipart/form-data" id="formCategory">
+        <small class="text-danger" id="fullErrors"></small>
         <div class="name">
           <label for="name" class="form-label">Nombre de la franquicia:</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">

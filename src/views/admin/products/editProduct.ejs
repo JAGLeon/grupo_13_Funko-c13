@@ -12,7 +12,8 @@
     <section class="admin">
       <h2 class="title">EDITAR PRODUCTO: </h2>
       <h2 class="name"><%= producto.name %></h2>
-      <form class="formEdit" action="/admin/productos" method="POST">
+      <form class="formEdit" action="/admin/productos" method="POST" enctype="multipart/form-data" id="formProduct">
+        <small class="text-danger" id="fullErrors"></small>
         <div class="name">
           <label for="name" class="form-label">Nombre del producto</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= producto.name %>">

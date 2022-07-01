@@ -106,3 +106,8 @@ section.admin button:hover {
 div.error {
     margin-bottom: 1rem;
 }
+
+small#fullErrors {
+    margin: 0 auto 1rem;
+    align-items: center;
+}
