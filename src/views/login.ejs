@@ -13,23 +13,14 @@
         <section class="form-container login">
             <h1>Inicia sesión</h1>
             <form action="/usuarios/inicio" id="formLogin" method="POST">
-                <% if (locals.errors && errors.custom) { %>
-                    <small class="text-danger"><%= errors.custom.msg %></small>
-                <% } %>
-                <small class="text-danger" id="fullErrors"></small>
+                    <small class="text-danger"><%= (locals.errors && errors.custom) ? errors.custom.msg : "" %></small>
                 <div class="input-container">
                     <input class="input-style" placeholder="Email o usuario" type="email" name="email" id="email">
-                    <small class="text-danger" id="emailErrors"></small>
-                    <% if (locals.errors && errors.email) { %>
-                    <small class="text-danger" ><%= errors.email.msg %></small>
-                    <% } %> 
+                    <small class="text-danger" id="emailErrors"><%= (locals.errors && errors.email) ? errors.email.msg : "" %></small>
                 </div>
                 <div class="input-container pass-container">
                     <input class="input-style" placeholder="Contraseña" type="password" name="password" id="password">
-                    <small class="text-danger" id="passwordErrors"></small>
-                    <% if (locals.errors && errors.password) { %>
-                    <small class="text-danger" ><%= errors.password.msg %></small>
-                    <% } %> 
+                    <small class="text-danger" id="passwordErrors"><%= (locals.errors && errors.password) ? errors.password.msg : "" %></small>
                     <i class="fa-solid fa-eye-slash" id="eye"></i>
                 </div>
                 <div class="input-container_login">
