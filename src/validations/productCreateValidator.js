@@ -9,7 +9,7 @@ let validateProduct = [
         .notEmpty().withMessage("Ingresa un precio").bail()
         .isNumeric().withMessage("Sólo números"),     
     check("category")
-        .notEmpty().withMessage("Selecciona una categoría"),
+        .notEmpty().withMessage("Selecciona una franquicia"),
     check("description")
         .notEmpty().withMessage("Ingresa una descripción"),
     body("discount").custom(value => {
@@ -22,7 +22,7 @@ let validateProduct = [
         .custom((value , {req}) => {
             if(!req.file){
                     return true
-            } else if (req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg"){
+            } else if (req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg"){
                     return true
             } else {
                     return false

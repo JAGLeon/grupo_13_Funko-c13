@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     let $inputImage = qs('#image')
     let $imageErrors = qs('#imageErrors')
 
-    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/, //para validar si es alfabetico
+    let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/ //para validar si es alfabetico
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
@@ -19,6 +19,10 @@ window.addEventListener('load', () => {
                 break;
             case !regExAlpha.test($inputName.value):
                 $nameErrors.innerHTML = 'Ingresa un nombre válido';
+                $inputName.classList.add('is-invalid');
+                break;
+            case $inputName.value.trim().length < 5:
+                $nameErrors.innerHTML = 'El nombre debe tener al menos 5 caracteres';
                 $inputName.classList.add('is-invalid');
                 break;
             default:
@@ -34,7 +38,6 @@ window.addEventListener('load', () => {
             allowefExtensions = /(.jpg|.jpeg|.png)$/i
         if(!allowefExtensions.exec(filePath)){ 
             $imageErrors.innerHTML = 'Archivo de imagen en formato .png, .jpeg, .jpg';
-            //$inputImage.value = '';
             return false;
         } else {
             if($inputImage.files && $inputImage.files[0]){
@@ -47,10 +50,7 @@ window.addEventListener('load', () => {
     });
 
 
-
-
-
-
+/* revisar esto */
     $form.addEventListener('submit', function(event) {
         event.preventDefault();
 
@@ -58,9 +58,8 @@ window.addEventListener('load', () => {
         let errores = false;
 
         
-        for (let i = 0; i < elementsForm.length-1; i++) {
+        for (let i = 0; i < elementsForm.length; i++) {
             if (elementsForm[i].value == ''
-                && elementsForm[i].name !== 'apellido'
                 && elementsForm[i].type !== 'file'
                 || elementsForm[i].classList.contains('is-invalid')) { 
 
