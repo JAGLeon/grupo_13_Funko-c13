@@ -35,10 +35,6 @@ section.admin {
     border-radius: 5px;
 }
 
-main#category section {
-    height: 20rem;
-}
-
 main#category section h2 {
     margin-bottom: 3rem;
 }
@@ -49,6 +45,10 @@ main#category section form div.name {
 
 section.admin form{
     width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
 }
 
 section.admin h2.title {

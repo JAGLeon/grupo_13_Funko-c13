@@ -11,12 +11,12 @@ let validateCategory = [
                 .custom((value, { req }) => {
                         if (!req.file) {
                                 return true
-                        } else if (req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg") {
+                        } else if (req.file.mimetype === "image/png" || req.file.mimetype === "image/jpeg" || req.file.mimetype === "image/jpg") {
                                 return true
                         } else {
                                 return false
                         }
-                }).withMessage('Archivo de imagen en formato .png, .jpeg')
+                }).withMessage('Archivo de imagen en formato .png, .jpeg, .jpg')
 ]
 
 module.exports = validateCategory;
