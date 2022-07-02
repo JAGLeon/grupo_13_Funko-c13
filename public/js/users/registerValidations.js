@@ -23,6 +23,21 @@ regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
 regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
 
+fetch("https://apis.datos.gob.ar/georef/api/provincias")
+.then(response => response.json())
+.then(data => {
+    let provinces = data.provincias;
+    provinces.sort((prov1,prov2) => {
+        let provinceA = prov1.nombre.toLowerCase();
+        let provinceB = prov2.nombre.toLowerCase();
+        if (provinceA < provinceB) {return -1;} else if (provinceA > provinceB) {return 1;} else {return 0;};
+    });
+    for (let index = 0; index < provinces.length; index++) {
+        $selectProvince.innerHTML += `<option value="${provinces[index].id}">${provinces[index].nombre}</option>`
+    };
+})
+.catch(error => console.log(error));
+
 $selectProvince.addEventListener("blur", () => {
     switch (true) {
         case !$selectProvince.value.trim():
@@ -33,7 +48,7 @@ $selectProvince.addEventListener("blur", () => {
             $selectProvince.classList.remove("is-invalid");
             $errorsSelect.innerHTML = "";
             break;
-    }
+    };
 });
     
 $inputName.addEventListener("blur", () => {
@@ -54,7 +69,7 @@ $inputName.addEventListener("blur", () => {
             $inputName.classList.remove("is-invalid");
             $errorsName.innerHTML = "";
             break;
-    }
+    };
 });
 
 $inputLastName.addEventListener("blur", () => {
@@ -75,7 +90,7 @@ $inputLastName.addEventListener("blur", () => {
             $inputLastName.classList.remove("is-invalid");
             $errorsLastName.innerHTML = "";
             break;
-    }
+    };
 });
 
 $inputUserName.addEventListener("blur", () => {
@@ -92,7 +107,7 @@ $inputUserName.addEventListener("blur", () => {
             $inputUserName.classList.remove("is-invalid");
             $errorsUserName.innerHTML = "";
             break;
-    }
+    };
 });
 
 $inputEmail.addEventListener("blur", () => {
@@ -109,7 +124,7 @@ $inputEmail.addEventListener("blur", () => {
             $inputEmail.classList.remove("is-invalid");
             $errorsEmail.innerHTML = "";
             break;
-    }
+    };
 });
 
 $inputPassword.addEventListener('blur', function(){
@@ -126,7 +141,7 @@ $inputPassword.addEventListener('blur', function(){
             $inputPassword.classList.remove("is-invalid");
             $errorsPassword.innerHTML = "";
             break;
-    }
+    };
 });
 
 $fileIcon.addEventListener('change', 
@@ -137,7 +152,7 @@ function fileValidation(){
         $fileErrors.innerHTML = 'Carga un archivo de imagen válido(.jpg - .jpeg - .png)';
         $fileIcon.value = '';
         return false;
-    }
+    };
 });
 
 $eye.addEventListener("click",() => {
