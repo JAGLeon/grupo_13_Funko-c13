@@ -8,6 +8,14 @@
     box-sizing: border-box;
 }
 
+.bannerFranquicias{
+    width: 90%;
+    margin: auto;
+}
+.bannerFranquicias img{
+    width: 100%;
+    object-fit: contain;
+}
 
 /* FOOTER */
 .product-datail footer #footer-ul{

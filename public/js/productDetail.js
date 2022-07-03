@@ -5,10 +5,10 @@ let description = document.querySelector('#item');
 
 /* eventos */
 
-arrowPagos.addEventListener('click', function () {
+arrowPagos.addEventListener('click',() => {
     mediosDePago.classList.toggle('active')
 });
 
-arrowDescription.addEventListener('click', function () {
+arrowDescription.addEventListener('click',() => {
    description.classList.toggle('active') 
 });
