@@ -1,0 +1,21 @@
+create table funko.orders (
+	id INT auto_increment not null primary Key,
+	state varchar(100) default null,
+	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP ,
+  	updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+)
+
+create table funko.order_items (
+	id INT auto_increment not null primary Key,
+	orderId INT default 0,
+	quantity INT default 0,
+	createdAt DATETIME DEFAULT CURRENT_TIMESTAMP ,
+  	updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  	foreign key (orderId) references orders(id)
+)
+
+	userId INT(100) not null, 
+	foreign key (usersId) references users(id),
+	
+	productId varchar(100) not null,
+	foreign key (productId) references products(id),

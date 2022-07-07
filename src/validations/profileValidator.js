@@ -6,7 +6,7 @@ let validateProfile = [
         .isLength({min:2, max:20}).withMessage('Ingrese un usuario valido'),
     check('name')
         .notEmpty().withMessage('Ingrese su nombre').bail()
-        .isAlpha().withMessage('Nombre inválido')
+        .isString().withMessage('Nombre inválido')
         .isLength({min:2, max:30}).withMessage('Ingrese un nombre valido'),
     check('lastName')
         .notEmpty().withMessage('Ingrese su apellido').bail()

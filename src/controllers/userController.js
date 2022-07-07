@@ -115,7 +115,7 @@ module.exports = {
                 include: [{ association: "addresses" }],
             })
             .then((user) => {
-                res.render("users/userProfile", {
+                res.render("perfil", {
                     title : `Funko | Perfil ${req.session.user.name}`,
                     stylesheet : 'perfil.css',
                     session: req.session,

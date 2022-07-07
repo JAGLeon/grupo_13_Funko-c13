@@ -19,27 +19,31 @@
         <div class="imgUser">
         <% if (typeof session.user != "undefined") { %>
             <img src="/img/users/<%= session.user.icon %>" alt="Foto de perfil de <%= session.user.name  %> ">
+
         <% } %> 
         </div>
         <form action="/usuarios/perfil?_method=PUT" method="post" enctype="multipart/form-data">
             <div class="inputFile">
                 <span>Subir imagen</span>
                 <input type="file" name="icon">
-            </div> 
+            </div>        
             <button type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
         </form>
+        <small class="text-danger" id="fileErrors"><%=(locals.errors && errors.icon) ? errors.icon.msg : "" %> </small>
     </div>
 
     <div class="contenedor-nameUser">
         <div>
             <input type="text" name="userName" id="userName" placeholder="<%= user.userName %>" disabled>
             <button class="btnOpenPop-up"><i class="fa-solid fa-pen-to-square"></i></button>
+            <small class="text-danger" id="errorsSelect"><%= (locals.errors && errors.userName)? errors.userName.msg : "" %> </small>
         </div>
         <div>
             <input type="email" name="email" id="email" placeholder="AGREGAR DIRECCIÓN" disabled>
             <button id="btnPopOpen"><i class="fa-solid fa-location-dot"></i></button>
         </div>
     </div>
+    
     <div class="contenedor-datos">
         <div class="perfilh4">
             <h5>DATOS PERSONALES</h5>
@@ -49,19 +53,23 @@
             <div class="nom_ape-container">
                 <div>
                     <input type="text" name="name" id="name" value="<%=user.name%>">
+                    <small class="text-danger" id="fileErrors"><%=(locals.errors && errors.name) ? errors.name.msg : "" %> </small>
                 </div>
                 <div>
                     <input type="text" name="lastName" id="lastName" value="<%=user.lastName%>">
+                    <small class="text-danger" id="fileErrors"><%=(locals.errors && errors.lastName) ? errors.lastName.msg : "" %> </small>
                 </div>
             </div>
             <div class="pais_tel-contenedor">
-                <select class="selec-container" name="province" id="province">
-                    <% for( const oneProvince of provinces ) { %>
-                        <option value="<%= oneProvince %>" <%= (oneProvince === user.province) ? 'selected' : null %> > <%= oneProvince %> </option>
-                    <% } %> <!-- array de provincia -->
-                </select>
-                <div >
+                <div>
+                    <select class="selec-container" name="province" id="province" value="">
+                        <option value="" hidden>Elegí tu provincia</option> 
+                    </select>
+                    <small class="text-danger" id="errorsSelect"><%= (locals.errors && errors.province)? errors.province.msg : "" %> </small>  
+                </div>
+                <div>
                     <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" value="<%=user.phone%>">
+                    <small class="text-danger" id="errorsSelect"><%= (locals.errors && errors.phone)? errors.phone.msg : "" %> </small>
                 </div>
             </div>
             <div class="btn-cambios">
@@ -167,5 +175,6 @@
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
 <script src="../js/overlay.js"></script>
+<script src="/js/users/profileValidations.js" defer></script>
 </body>
 </html>
