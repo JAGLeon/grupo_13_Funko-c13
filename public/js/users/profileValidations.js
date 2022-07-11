@@ -4,17 +4,20 @@ function qs(element) {
 
 let $selectProvince = qs('#province'),
 $inputName = qs('#name'),
-$inputLastName = qs('#lastName'),
-$inputUserName = qs('#userName'),
-$inputEmail = qs('#email'),
-$inputPassword = qs('#password'),
-$fileIcon = qs('#icon'),
-$fileErrors = qs('#fileErrors'),
-$errorsSelect = qs('#errorsSelect'),
 $errorsName = qs('#errorsName'),
+$inputLastName = qs('#lastName'),
 $errorsLastName = qs('#errorsLastName'),
+$inputUserName = qs('#userName'),
 $errorsUserName = qs('#errorsUserName'),
-$errorsEmail = qs('#errorsEmail');
+$inputPhone = qs('#phone'),
+$errorsPhone = qs('#errorsPhone'),
+$formIcon = qs('#formIcon'),
+$file = qs('#icon'),
+$imgPreview = qs('#img-preview'),
+$fileErrors = qs('#fileErrors'),
+$formDatos = qs('#formDatos'),
+regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
 fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then(response => response.json())
@@ -30,19 +33,6 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
     };
 })
 .catch(error => console.log(error));
-
-$selectProvince.addEventListener("blur", () => {
-    switch (true) {
-        case !$selectProvince.value.trim():
-            $errorsSelect.innerHTML = "Seleccione su provincia";
-            $selectProvince.classList.add("is-invalid");
-            break;
-        default: 
-            $selectProvince.classList.remove("is-invalid");
-            $errorsSelect.innerHTML = "";
-            break;
-    };
-});
     
 $inputName.addEventListener("blur", () => {
     switch (true) {
@@ -103,30 +93,85 @@ $inputUserName.addEventListener("blur", () => {
     };
 });
 
-$inputEmail.addEventListener("blur", () => {
+$inputPhone.addEventListener("blur", () => {
     switch (true) {
-        case !$inputEmail.value.trim():
-            $errorsEmail.innerHTML = "Campo obligatorio complete con su email";
-            $inputEmail.classList.add("is-invalid");
+        case !$inputPhone.value.trim():
+            $errorsPhone.innerHTML = "Ingrese su celular";
+            $inputPhone.classList.add("is-invalid");
             break;
-        case !regExEmail.test($inputEmail.value):
-            $errorsEmail.innerHTML = "Email inválido";
-            $inputEmail.classList.add("is-invalid");
+        case !regExPhone.test($inputPhone.value):
+            $errorsPhone.innerHTML = "Numero argentos";
+            $inputPhone.classList.add("is-invalid");
             break;
         default: 
-            $inputEmail.classList.remove("is-invalid");
-            $errorsEmail.innerHTML = "";
+            $inputPhone.classList.remove("is-invalid");
+            $errorsPhone.innerHTML = "";
             break;
     };
 });
 
-$fileIcon.addEventListener('change', 
-function fileValidation(){
-    let filePath = $fileIcon.value,
-        allowefExtensions = /(.jpg|.jpeg|.png)$/i 
-    if(!allowefExtensions.exec(filePath)){
-        $fileErrors.innerHTML = 'Carga un archivo de imagen válido(.jpg - .jpeg - .png)';
-        $fileIcon.value = '';
-        return false;
+$file.addEventListener('change', 
+    function fileValidation(){
+        let filePath = $file.value, 
+            allowefExtensions = /(.jpg|.jpeg|.png)$/i 
+        if(!allowefExtensions.exec(filePath)){ 
+            $fileErrors.innerHTML = 'Carga un archivo de imagen válido(.jpg - .jpeg - .png)';
+            $file.value = '';
+            $imgPreview.innerHTML = '';
+            return false;
+        }else{
+            if($file.files && $file.files[0]){
+                let reader = new FileReader();
+                reader.onload = function(e){
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                };
+                reader.readAsDataURL($file.files[0]);
+                $fileErrors.innerHTML = '';
+                $file.classList.remove('is-invalid')
+            }
+        }
+    })
+
+$formDatos.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+    let elementsForm = this.elements;
+    let errores = false;
+
+    for (let index = 0; index < elementsForm.length - 2; index++) {
+        if(elementsForm[index].value == ""
+        || elementsForm[index].classList.contains("is-invalid")){
+            elementsForm[index].classList.add("is-invalid");
+            datosErrors.innerHTML = "Hay errores en el formulario"
+            errores = true;
+        }
     };
+
+    if(!errores){
+        $formDatos.submit()
+    };
+
+});
+
+
+
+$formIcon.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+    let elementsForm = this.elements;
+    let errores = false;
+
+    for (let index = 0; index < elementsForm.length - 2; index++) {
+        if(elementsForm[index].value == ""
+        || elementsForm[index].classList.contains("is-invalid")){
+            elementsForm[index].classList.add("is-invalid");
+            formIconErrors.innerHTML = "Hay errores en el formulario"
+            errores = true;
+        }
+    };
+
+    if(!errores){
+        $formIcon.submit()
+    };
+
 });

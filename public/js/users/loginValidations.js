@@ -62,7 +62,7 @@ function qs(element) {
             if(elementsForm[index].value == ""
             || elementsForm[index].classList.contains("is-invalid")){
                 elementsForm[index].classList.add("is-invalid");
-                fullErrors.innerHTML = "Hay errores en el formulario"
+                fullErrors.innerHTML = "Contraseña o Email invalidos"
                 errores = true;
             }
         }

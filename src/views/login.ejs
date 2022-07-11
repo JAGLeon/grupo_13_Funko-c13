@@ -13,7 +13,7 @@
         <section class="form-container login">
             <h1>Inicia sesión</h1>
             <form action="/usuarios/inicio" id="formLogin" method="POST">
-                    <small class="text-danger"><%= (locals.errors && errors.custom) ? errors.custom.msg : "" %></small>
+                    <small class="text-danger" id="fullErrors"><%= (locals.errors && errors.custom) ? errors.custom.msg : "" %></small>
                 <div class="input-container">
                     <input class="input-style" placeholder="Email o usuario" type="email" name="email" id="email">
                     <small class="text-danger" id="emailErrors"><%= (locals.errors && errors.email) ? errors.email.msg : "" %></small>

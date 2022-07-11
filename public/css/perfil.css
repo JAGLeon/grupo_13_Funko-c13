@@ -2,7 +2,9 @@
 @import url('/css/footer.css');
 
 
-
+.is-invalid::placeholder{
+    color: rgb(220, 53, 69);
+}
 
 body.perfilUser{
     margin-top: 3rem;

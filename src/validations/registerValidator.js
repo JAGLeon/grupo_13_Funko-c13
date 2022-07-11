@@ -31,8 +31,8 @@ let validateRegister = [
         })
     }),
     check('password')
-        .notEmpty().withMessage('Ingrese una contraseña').bail()
-        .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1}).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número'),
+        .notEmpty().withMessage('Ingrese una contraseña').bail(),
+        // .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1}).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número23'),
     body('icon')
         .custom((value , {req}) => {
             if(!req.file){

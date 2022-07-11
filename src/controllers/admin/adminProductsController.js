@@ -2,6 +2,8 @@
 const { validationResult } = require('express-validator');
 const db = require("../../database/models");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const path = require('path');
+
 
 module.exports = {
     /* Envia la vista de listado de productos */
@@ -105,8 +107,58 @@ module.exports = {
                 category_id : req.body.category,
                 stock: req.body.stock ? true : false,
             },{ where : {id : req.params.id}})
-            .then (() => { res.redirect('/admin/productos')})
-            .catch((error) => res.send('aca'))
+            .then (() => {
+  /*                if(req.files !== undefined){
+                //1 - Preguntar si está subiendo imagenes
+                if(req.files.length > 0){
+                  //2 - Traer imágenes del project
+                  //2 - a. obtener todas las imágenes del proyecto
+                  db.ProductImage.findAll({
+                    where: {
+                      product_id: req.params.id,
+                    }
+                  })
+                  .then((images) => {
+                    //2 - b. hacer un array con los nombres de las imagenes.
+                    let imageNames = images.map(img => img.image);
+                    //3 - Eliminar imagenes del servidor
+                    imageNames.forEach(img => {
+                      if(fs.existsSync(path.join(__dirname, `../../../img/productos/${img}`))){
+                        fs.unlinkSync(path.join(__dirname, `../../../img/productos/${img}`))
+                        console.log('asdsadasdasdasdasdasdasdadasdsadasdas');
+                      }else{
+                        console.log("-- No se encontró el archivo");
+                      }
+                    });
+                    //4 - Eliminar las imágenes de la tabla
+                    db.ProductImage.destroy({
+                      where: {
+                        product_id: req.params.id,
+                      }
+                    })
+                    .then(() => {
+                      //5 - Cargar nuevas imágenes
+                      let arrayImages = req.files.map(img => {
+                        return {
+                          image: img.filename,
+                          product_id: req.params.id
+                        } 
+                       })
+           
+                       db.ProductImage.bulkCreate(arrayImages)
+                       .then(() => res.redirect('/admin/productos'))
+                       .catch(error => console.log(error))
+                    })
+                    .catch(error => console.log(error))
+                  })
+                  .catch(error => console.log(error))
+                }else{
+                  res.redirect('/admin/productos')
+                }
+              } */
+              res.redirect('/admin/productos')
+            })
+            .catch(error => console.log(error))
         } else {
             /* 1 - Obtener el id del producto */
              let idProduct = +req.params.id;

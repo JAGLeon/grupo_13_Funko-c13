@@ -103,7 +103,11 @@ module.exports = {
 
         if(errors.isEmpty()){
             db.User.update({
-                ...req.body,
+                name : req.body.name,
+                phone : req.body.phone,
+                lastName : req.body.lastName,
+                province : req.body.province,
+                userName : req.body.userName,
                 icon : req.file ? req.file.filename : req.session.user.icon 
             },
             {where : {id: req.session.user.id}})
@@ -121,6 +125,7 @@ module.exports = {
                     session: req.session,
                     user,
                     provinces,
+                    old : req.body,
                     errors: errors.mapped()
                 })
             })
