@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- HEAD -->
-<%- include('./partials/head')  %> 
+<%- include('../partials/head')  %> 
 <!-- END HEAD -->
 <body class="forms perfilUser">
 <!-- HEADER -->
-<%- include('partials/header') %> 
+<%- include('../partials/header') %> 
 <!-- END HEADER -->
 
 <!-- MAIN -->
@@ -62,6 +62,9 @@
             </div>
             <div class="pais_tel-contenedor">
                 <select class="selec-container" name="province" id="province" value="<%=user.province%>">
+                    <% for( const oneProvince of provinces) { %>
+                        <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.provinces) ? 'selected' : null %> > <%= oneProvince %> </option>
+                    <% } %>
                 </select>
                 <div>
                     <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" value="<%=user.phone%>">
@@ -168,9 +171,9 @@
 <!-- END MAIN -->
 
 <!-- FOOTER -->
-<%- include('./partials/footer')  %> 
+<%- include('../partials/footer')  %> 
 <!-- END FOOTER -->
 <script src="../js/overlay.js"></script>
-<script src="/js/users/profileValidations.js" defer></script>
+<script src="../js/users/profileValidations.js" defer></script>
 </body>
 </html>

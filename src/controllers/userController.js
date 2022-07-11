@@ -6,7 +6,7 @@ let  provinces = ["Buenos Aires", "Capital Federal", "Catamarca", "Chaco", "Chub
 
 module.exports = {
     login: (req,res) => {
-        res.render('login',{
+        res.render('users/login',{
             title : 'Funko | Inicio',
             stylesheet: 'forms.css',
             session: req.session
@@ -43,7 +43,7 @@ module.exports = {
             .catch(error => console.log('Error USER LOGIN'))
 
         }else{
-            res.render('login', {
+            res.render('users/login', {
                 title: 'Funko | Inicio',
                 stylesheet: 'forms.css',
                 errors: errors.mapped(),
@@ -52,7 +52,7 @@ module.exports = {
         };
     },
     register:(req,res)=>{
-        res.render('register',{
+        res.render('users/register',{
             title : 'Funko | Registro',
             stylesheet: 'forms.css',
             provinces,
@@ -72,7 +72,7 @@ module.exports = {
             .then(user => {res.redirect('/usuarios/inicio')})
             .catch(error => console.log('Error REGISTER USER'))
         }else{
-            res.render('register',{
+            res.render('users/register',{
                 title : 'Funko | Registro',
                 stylesheet : 'forms.css',
                 provinces,          
@@ -88,7 +88,7 @@ module.exports = {
             include : [{ association: "addresses" }],
         })
         .then(user => {
-            res.render('perfil',{
+            res.render('users/perfil',{
                 title : `Funko | Perfil ${req.session.user.name}`,
                 stylesheet : 'perfil.css',
                 session: req.session,
@@ -103,11 +103,12 @@ module.exports = {
 
         if(errors.isEmpty()){
             db.User.update({
-                name : req.body.name,
+/*                 name : req.body.name,
                 phone : req.body.phone,
                 lastName : req.body.lastName,
                 province : req.body.province,
-                userName : req.body.userName,
+                userName : req.body.userName, */
+                ...req.body,
                 icon : req.file ? req.file.filename : req.session.user.icon 
             },
             {where : {id: req.session.user.id}})
@@ -119,7 +120,7 @@ module.exports = {
                 include: [{ association: "addresses" }],
             })
             .then((user) => {
-                res.render("perfil", {
+                res.render("users/perfil", {
                     title : `Funko | Perfil ${req.session.user.name}`,
                     stylesheet : 'perfil.css',
                     session: req.session,
