@@ -6,11 +6,16 @@ let  provinces = ["Buenos Aires", "Capital Federal", "Catamarca", "Chaco", "Chub
 
 module.exports = {
     login: (req,res) => {
-        res.render('users/login',{
-            title : 'Funko | Inicio',
-            stylesheet: 'forms.css',
-            session: req.session
-        });
+        db.Category.findAll()
+        .then(categorias => {
+            res.render('users/login',{
+                title : 'Funko | Inicio',
+                stylesheet: 'forms.css',
+                session: req.session,
+                categorias
+            })
+        })
+        .catch(error => res.send(error));
     },
     loginUser: (req,res) => {
         let errors = validationResult(req);
@@ -43,21 +48,31 @@ module.exports = {
             .catch(error => console.log('Error USER LOGIN'))
 
         }else{
-            res.render('users/login', {
-                title: 'Funko | Inicio',
-                stylesheet: 'forms.css',
-                errors: errors.mapped(),
-                session: req.session
-            });
+            db.Category.findAll()
+            .then(categorias => {
+                res.render('users/login', {
+                    title: 'Funko | Inicio',
+                    stylesheet: 'forms.css',
+                    errors: errors.mapped(),
+                    session: req.session,
+                    categorias
+                })
+            })
+            .catch(error => res.send(error));
         };
     },
     register:(req,res)=>{
-        res.render('users/register',{
-            title : 'Funko | Registro',
-            stylesheet: 'forms.css',
-            provinces,
-            session: req.session
-        });
+        db.Category.findAll()
+        .then(categorias => {
+            res.render('users/register',{
+                title : 'Funko | Registro',
+                stylesheet: 'forms.css',
+                provinces,
+                session: req.session,
+                categorias
+            })
+        })
+        .catch(error => res.send(error));
     },
     registerUser : (req,res)=>{
         let errors = validationResult(req);
@@ -72,14 +87,19 @@ module.exports = {
             .then(user => {res.redirect('/usuarios/inicio')})
             .catch(error => console.log('Error REGISTER USER'))
         }else{
-            res.render('users/register',{
-                title : 'Funko | Registro',
-                stylesheet : 'forms.css',
-                provinces,          
-                errors : errors.mapped(),
-                oldData : req.body,
-                session : req.session
-            });
+            db.Category.findAll()
+            .then(categorias => {
+                res.render('users/register',{
+                    title : 'Funko | Registro',
+                    stylesheet : 'forms.css',
+                    provinces,          
+                    errors : errors.mapped(),
+                    oldData : req.body,
+                    session : req.session,
+                    categorias
+                })
+            })
+            .catch(error => res.send(error));
         };
     },
     perfil : (req,res)=>{
@@ -88,13 +108,18 @@ module.exports = {
             include : [{ association: "addresses" }],
         })
         .then(user => {
-            res.render('users/perfil',{
-                title : `Funko | Perfil ${req.session.user.name}`,
-                stylesheet : 'perfil.css',
-                session: req.session,
-                user,
-                provinces,
-            });
+            db.Category.findAll()
+            .then(categorias => {
+                res.render('users/perfil',{
+                    title : `Funko | Perfil ${req.session.user.name}`,
+                    stylesheet : 'perfil.css',
+                    session: req.session,
+                    user,
+                    provinces,
+                    categorias
+                })
+            })
+            .catch(error => res.send(error));
         })
         .catch(error => console.log('Error PERFIL'))
     },
@@ -120,15 +145,20 @@ module.exports = {
                 include: [{ association: "addresses" }],
             })
             .then((user) => {
-                res.render("users/perfil", {
-                    title : `Funko | Perfil ${req.session.user.name}`,
-                    stylesheet : 'perfil.css',
-                    session: req.session,
-                    user,
-                    provinces,
-                    old : req.body,
-                    errors: errors.mapped()
+                db.Category.findAll()
+                .then(categorias => {
+                    res.render("users/perfil", {
+                        title : `Funko | Perfil ${req.session.user.name}`,
+                        stylesheet : 'perfil.css',
+                        session: req.session,
+                        user,
+                        provinces,
+                        old : req.body,
+                        errors: errors.mapped(),
+                        categorias
+                    })
                 })
+                .catch(error => res.send(error));
             })
         }
     },

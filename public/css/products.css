@@ -75,10 +75,10 @@ div.title {
 div.interest {
     display: flex;
     flex-direction: row;
-    margin: 1rem;
+    justify-content: center;
+    margin: auto;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 0 0 0 2rem;
 }
 
 div.interest div.product {
@@ -206,6 +206,7 @@ div.interest div.product button:hover {
     div.interest div.product button {
         font-size: 0.8rem;
     }
+
 }
 
 /* Desktop */
@@ -240,7 +241,7 @@ div.interest div.product button:hover {
         font-size: 2rem;
         margin: 2rem;
     }
-
+    
     div.interest div.product.funko-title,
     div.interest div.product .funko-name {
         font-size: 1.3rem;

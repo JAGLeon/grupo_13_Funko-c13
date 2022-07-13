@@ -49,13 +49,19 @@
                 </form>
             </div>
             <div class="conteiner-redirecciones">
-                <div class="header-redireccionBtn">
-                    <a href="/productos">Categorias</a>
+                <div class="header-despliegeUser header-redireccionBtn catRedirect">
+                    <button class="header-btnMenu" id="btnCat">Categorias</i></button>
+                    <ul class="header-ulUser" id="despliegueCat">
+                        <li><a href="/productos">Productos</a></li>
+                        <% categorias.forEach(categoria => { %>
+                            <li><a href="/franquicias/detalle/<%- categoria.id %>"><%- categoria.name %></a></li>
+                        <% }) %>
+                    </ul>
                 </div>
-                <div class="header-redireccionBtn">
+                <div class="header-redireccionBtn offRedirect">
                     <a href="/productos/ofertas">Ofertas</a>
                 </div>
-                <div class="header-redireccionBtn">
+                <div class="header-redireccionBtn sliderRedirect">
                     <label class="switch">
                         <input type="checkbox" id="slider">
                         <span class="slider"></span>

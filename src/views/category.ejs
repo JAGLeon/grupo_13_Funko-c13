@@ -12,10 +12,10 @@
 <main>
     <section id="section3">
         <div class="title">
-            <h2 class="title-listado">FRANQUICIA: <%= categoria.name %> </h2>
+            <h2 class="title-listado">FRANQUICIA: <% categorias.forEach(categoria => { %><%= categoria.id == idCategory ? categoria.name : "" %><% }) %></h2>
         </div> 
         <div class="bannerFranquicias">
-            <img src="/img/noAdmin/<%- categoria.name %>.jpg"  alt="Banner Marvel">
+            <img src="/img/noAdmin/<% categorias.forEach(categoria => { %><%= categoria.id == idCategory ? categoria.name : "" %><% }) %>.jpg"  alt="Banner de <% categorias.forEach(categoria => { %><%= categoria.id == idCategory ? categoria.name : "" %><% }) %>">
         </div>
         <div class="interest">
             <%- include('./partials/productCard')  %> 
@@ -29,5 +29,6 @@
 <!-- END FOOTER -->
     <!-- <script src="/js/productDetail.js" defer></script> -->
     <script src="/js/users/darkMode.js" type="text/javascript" defer></script>
+    <script src="/js/header.js" defer></script>
 </body>
 </html>

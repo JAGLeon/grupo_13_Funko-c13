@@ -8,13 +8,18 @@ let productsController = {
             include : [{association : 'images'}]
         })
         .then((productos) => {
-            res.render('productos', {
-                title: 'Funko | Listado',
-                stylesheet: 'products.css',
-                productos,
-                session: req.session,
-                toThousand,
+            db.Category.findAll()
+            .then(categorias => {
+                res.render('productos', {
+                    title: 'Funko | Listado',
+                    stylesheet: 'products.css',
+                    productos,
+                    session: req.session,
+                    toThousand,
+                    categorias
+                })
             })
+            .catch(error => res.send(error));
         })
         .catch((error) => {res.send(error)})
     },   
@@ -25,14 +30,19 @@ let productsController = {
         .then(producto => {
             db.ProductImage.findOne({where : {product_id : idProduct}})
             .then(img => {
-                res.render('productDetail', {
-                    producto,
-                    image : img.image,
-                    title: 'Funko | Detalles',
-                    stylesheet: 'productDetail.css',
-                    session: req.session,
-                    toThousand,
+                db.Category.findAll()
+                .then(categorias => {
+                    res.render('productDetail', {
+                        producto,
+                        image : img.image,
+                        title: 'Funko | Detalles',
+                        stylesheet: 'productDetail.css',
+                        session: req.session,
+                        toThousand,
+                        categorias
+                    })
                 })
+                .catch(error => res.send(error));
             })
         })
     },
@@ -41,14 +51,19 @@ let productsController = {
             include : [{association : 'images'}]
         })
         .then((products) => {
-            let productos = products.filter( product => product.discount > 0 )
-                res.render('ofertas', {
-                    title: 'Funko | Ofertas',
-                    stylesheet: 'products.css',
-                    productos: productos,
-                    session: req.session,
-                    toThousand,
+            db.Category.findAll()
+            .then(categorias => {
+                let productos = products.filter( product => product.discount > 0 )
+                    res.render('ofertas', {
+                        title: 'Funko | Ofertas',
+                        stylesheet: 'products.css',
+                        productos: productos,
+                        session: req.session,
+                        toThousand,
+                        categorias
+                    })
                 })
+                .catch(error => res.send(error));
             })
         .catch((error) => {res.send(error)}) 
     }

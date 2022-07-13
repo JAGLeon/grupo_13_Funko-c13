@@ -17,3 +17,13 @@ let menuUser = document.querySelector('.header-ulUser');
 btnUser.addEventListener('click',()=>{
 menuUser.classList.toggle('active')
 })
+
+
+//Categorias NO ADMIN
+
+let btnCat = document.querySelector('#btnCat');
+let categorias = document.querySelector('#despliegueCat');
+
+btnCat.addEventListener('click',()=>{
+    categorias.classList.toggle('active');
+});

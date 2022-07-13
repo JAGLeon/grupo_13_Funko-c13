@@ -17,24 +17,25 @@ module.exports = {
     categoria: (req, res) => {
         let idCategory = req.params.id
 
-        db.Category.findByPk(idCategory)
-            .then(categoria => {
-                db.Product.findAll({
-                    include : [{association : 'images'}]
-                })
-                .then(products => {
-                    let productos = products.filter( product => product.category_id == idCategory )
-                        res.render('category', {
-                            categoria,
-                            title : 'Funko | Categorias',
-                            stylesheet: 'products.css',
-                            session: req.session,
-                            productos: productos,
-                            toThousand,
-                        })
-
-                })
+        db.Category.findAll()
+        .then(categorias => {
+            db.Product.findAll({
+                include : [{association : 'images'}]
             })
-            .catch(error => res.send(error))
+            .then(products => {
+                let productos = products.filter( product => product.category_id == idCategory )
+                    res.render('category', {
+                        idCategory,
+                        categorias,
+                        title : 'Funko | Categorias',
+                        stylesheet: 'products.css',
+                        session: req.session,
+                        productos: productos,
+                        toThousand,
+                    })
+
+            })
+        })
+        .catch(error => res.send(error))
     }
 }

@@ -26,23 +26,33 @@ module.exports = {
             }
         })
         .then((productos) => {
-            res.render('search',{
-                productos,
-                keyword: req.query.keywords,
-                title: 'Funko | Busqueda',
-                stylesheet: 'search.css',
-                toThousand,
-                session: req.session,
+            db.Category.findAll()
+            .then(categorias => {
+                res.render('search',{
+                    productos,
+                    keyword: req.query.keywords,
+                    title: 'Funko | Busqueda',
+                    stylesheet: 'search.css',
+                    toThousand,
+                    session: req.session,
+                    categorias
+                })
             })
+            .catch(error => res.send(error));
         })
         .catch((error) => {res.send(error)}) 
 
     },
     compra:(req,res)=>{
-        res.render('carrito',{
-            title : 'Funko | Compras',
-            stylesheet: 'carrito.css',
-            session: req.session
+        db.Category.findAll()
+        .then(categorias => {
+            res.render('carrito',{
+                title : 'Funko | Compras',
+                stylesheet: 'carrito.css',
+                session: req.session,
+                categorias
+            })
         })
+        .catch(error => res.send(error));
     }
 }
