@@ -31,6 +31,7 @@ body.forms{
     flex-direction: column;
     min-height: 100vh;
     margin-top: 3rem;
+    background-color: var(--background);
 }
 
 body.forms main{
@@ -52,6 +53,8 @@ body.forms main section.form-container{
     justify-content: center;
     align-self: center;
     max-width:  85rem;
+    background-color: var(--contenedor);
+    color: var(--text);
 }
 
 body.forms main section.form-container h1{
@@ -88,7 +91,8 @@ body.forms main section.form-container div.input-container .input-style{
     padding: 0 1rem;
     border-radius: 0.8rem;
     border: none;
-    background-color: rgba(128, 128, 128,0.6);
+    background-color: var(--input);
+    color: var(--text);
 }
 
 .is-invalid::placeholder{
@@ -101,6 +105,7 @@ body.forms main section.form-container div.input-container .input-style:focus{
 
 body.forms main section.form-container div.input-container .input-style::placeholder{
     font-size: 1rem;
+    color: var(--placeholder);
 }
 
 body.forms main section.form-container .btn{
@@ -112,11 +117,11 @@ body.forms main section.form-container .btn{
     cursor: pointer;
     margin: 1.3rem 0 0;
     width: 100%;
-    background-color: #3483FA;
+    background-color: var(--botones);
 }
 
 body.forms span a{
-    color:black;
+    color: #1EC124;
 }
 
 /*****************/

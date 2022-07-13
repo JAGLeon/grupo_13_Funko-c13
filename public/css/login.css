@@ -13,13 +13,12 @@ body.forms .span-register a{
 }
 
 .a-contraseña{
-    color: black;
+    color: var(--text);
 }
 
 input.checkbox{
     order:-1;
     position: relative;
-    top: 14%;
     margin-right: 0.2rem;
     cursor: pointer;
 }

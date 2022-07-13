@@ -1,5 +1,6 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
+@import url("/css/varCss.css");
 
 *{
     margin: 0;
@@ -8,6 +9,13 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--background);
+}
+
+p{
+    color: var(--text);
+}
 
 /* FOOTER */
 .product-datail footer #footer-ul{
@@ -57,7 +65,7 @@ div#carouselExampleIndicators button.carousel-control-prev{
 div#carouselExampleIndicators button.carousel-control-prev i#angle-left.fa-angle-left::before,
 i#angle-right.fa-solid.fa-angle-right::before {
     font-size: 2rem;
-    color: #35858B;
+    color: var(--verdeCuadro);
     display: none;
 }
 
@@ -68,7 +76,7 @@ div.carousel-indicators {
 
 div#carouselExampleIndicators div.carousel-indicators button {
     margin: 0 0.2rem;
-    background-color: #3483FA;
+    background-color: var(--botones);
     height: 0.7rem;
     width: 0.7rem;
     border-radius: 50%;
@@ -83,6 +91,7 @@ div.product-detail {
 div.product-detail #name{
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    color: var(--text);
 }
 
 div.product-detail div#product-discount {
@@ -93,6 +102,7 @@ div.product-detail div#product-discount {
 div.product-detail .funko-prices {
     margin-bottom: 0.3rem;
     font-size: 1.5rem;
+    color: var(--text);
 }
 
 div.product-detail .off {
@@ -103,6 +113,7 @@ div.product-detail .off {
 
 div.product-detail #cuotas {
     margin-bottom: 1rem;
+    color: var(--text);
 }
 
 div.product-detail img.truck {
@@ -115,6 +126,7 @@ div.product-detail div#truck {
     align-items: flex-end;
     font-size: 1rem;
     margin-bottom: 0.3rem;
+    color: var(--text);
 }
 div.product-detail div#truck p {
     margin-bottom: 0;
@@ -122,7 +134,7 @@ div.product-detail div#truck p {
 
 div.product-detail #send {
     font-size: 0.8rem;
-    color: #3483FA;
+    color: var(--botones);
     margin-bottom: 1.3rem;
 }
 
@@ -133,9 +145,10 @@ div.product-detail div.btn-quantity {
     width: 9rem;
     height: 3rem;
     margin: 0 auto 1rem;
-    border: solid 2px #3483FA;
+    border: solid 2px var(--botones);
     font-size: 1.7rem;
     border-radius: 0.5rem;
+    color: var(--text);
 }
 
 div.product-detail div.btn-quantity #sum,
@@ -143,7 +156,7 @@ div.product-detail div.btn-quantity #res {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 1px #3483FA;
+    border: solid 1px var(--botones);
     width: 2rem;
     height: 2rem;
     border-radius: 0.5rem;
@@ -163,7 +176,7 @@ div.product-detail .btn-buy{
     height: 2rem;
     text-transform: uppercase;
     border: none;
-    background-color: #3483FA;
+    background-color: var(--botones);
     font-size: 1rem;
     transition: all 0.3s ease-in;
     text-decoration: none;
@@ -176,8 +189,8 @@ div.product-detail .btn-buy{
 
 div.product-detail .btn-buy:hover {
     background-color: white;
-    color: #3483FA;
-    border: solid 2px #3483FA;
+    color: var(--botones);
+    border: solid 2px var(--botones);
 }
 
 div.product-detail button.btn-add {
@@ -186,15 +199,15 @@ div.product-detail button.btn-add {
     width: 90%;
     height: 2rem;
     text-transform: uppercase;
-    border: solid 2px #3483FA;
+    border: solid 2px var(--botones);
     background-color: white;
-    color: #3483FA;
+    color: var(--botones);
     font-size: 1rem;
     transition: all 0.3s ease-in;
 }
 
 div.product-detail button.btn-add:hover {
-    background-color: #3483FA;
+    background-color: var(--botones);
     color: white;
     border: none;
 }
@@ -222,6 +235,7 @@ div.description div#tittle p {
     margin-bottom: 0;
     margin-left: 1rem;
     font-size: 1.1rem;
+    color: var(--text);
 }
 
 div.means-money div#tittle i,
@@ -237,6 +251,7 @@ div.means-money div#items {
 
 div.means-money div#items.active {
     display: block;
+    color: var(--text);
 }
 
 main input#medios {
@@ -255,6 +270,7 @@ div.description div#item {
 
 div.description div#item.active {
     display: block;
+    color: var(--text);
 }
 
 main input#description {
@@ -271,10 +287,9 @@ section#section3:hover {
 div.tittle {
     display: flex;
     align-items: center;
-    background-color: white;
+    background-color: var(--background);
     width: 100%;
     height: 50px;
-
 }
 
 div.tittle p {
@@ -314,11 +329,12 @@ div.interest div.product img{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-bottom: 3px;
+    background-color: var(--background);
 }
 
 div.interest div.product div.description {
     margin-top: 1px;
-    background-color: #ffffff;
+    background-color: var(--card);
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -350,14 +366,14 @@ div.interest div.product button {
     width: 90%;
     height: 2rem;
     text-transform: uppercase;
-    border: solid 2px #3483FA;
-    background-color: white;
-    color: #3483FA;
+    border: solid 2px var(--botones);
+    background-color: var(--card); 
+    color: var(--botones);
     font-size: 0.8rem;
 }
 
 div.interest div.product button:hover {
-    background-color: #3483FA;
+    background-color: var(--botones);
     color: white;
     border: none;
 }
@@ -581,7 +597,7 @@ div.interest div.product button:hover {
 
     div.product-detail #send {
         font-size: 1rem;
-        color: #3483FA;
+        color: var(--botones);
         margin: 0 0 1.3rem 1rem;
     }
 
@@ -589,7 +605,7 @@ div.interest div.product button:hover {
         width: 12rem;
         height: 4rem;
         margin: 0 auto 1.5rem;
-        border: solid 2px #3483FA;
+        border: solid 2px var(--botones);
         font-size: 2rem;
         border-radius: 0.5rem;
     }

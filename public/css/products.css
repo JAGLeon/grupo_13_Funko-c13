@@ -78,7 +78,7 @@ div.interest {
     margin: 1rem;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 0 1rem;
+    padding: 0 0 0 2rem;
 }
 
 div.interest div.product {

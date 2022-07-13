@@ -306,7 +306,7 @@ body main div.sales-container div.sales-box-container div.sales-box div.cart-box
 }
 
 body main div.sales-container div.sales-box-container div.sales-box div.cart-box p.add-cart:hover{
-    background-color: #3483FA;
+    background-color: var(--despliegueHover);
     color: white;
 }
 

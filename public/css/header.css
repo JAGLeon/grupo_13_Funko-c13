@@ -279,6 +279,7 @@ header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .heade
 header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .header-redireccionBtn a{
     text-decoration: none;
     color: white;
+
 }
 /*SWITCH*/
 
@@ -424,7 +425,7 @@ header.header-main .retenedor button.header-btnBars{
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-imgUser{
         width: 40px;
         height: 40px;
-        background-color: white;
+        background-color: var(--background);
         margin-bottom:0;
     }   
 
@@ -435,6 +436,7 @@ header.header-main .retenedor button.header-btnBars{
    
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu{
         background-color: var(--header);
+        font-size: 18px;
     }
     
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu:hover{
@@ -468,7 +470,7 @@ header.header-main .retenedor button.header-btnBars{
     /*REDIRECCION C O N*/
     header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones{
         height: 40px;
-        width: 25%;
+        width: 30%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -478,6 +480,10 @@ header.header-main .retenedor button.header-btnBars{
     header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .header-redireccionBtn{
         height: auto;
         width: 30%;
+    }
+
+    header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .header-redireccionBtn a{
+        font-size: 18px;
     }
     
     header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .header-redireccionBtn:hover{
@@ -490,6 +496,7 @@ header.header-main .retenedor button.header-btnBars{
         height: auto;
         order: 3;
         width: 100px;
+        font-size: 18px;
     }
     
     header.header-main .retenedor nav.header-navMenu .header-carrito:hover{

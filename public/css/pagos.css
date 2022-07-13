@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--background);
+}
+
 /* MAIN */
 
 main { 
@@ -17,6 +21,7 @@ main {
 main h1{
     text-align: center;
     text-decoration: underline;
+    color: var(--text);
 }
 
 main section{
@@ -28,6 +33,7 @@ main section{
 
 main section article{
     max-width: 400px;
+    color: var(--text);
 }
 
 main section article div.check-pago{
@@ -37,7 +43,7 @@ main section article div.check-pago{
 }
 
 main section article div.check-pago i{
-    color: #3483FA;
+    color: var(--botones);
     font-size: 1.5rem;
     margin-right: 1rem;
 }

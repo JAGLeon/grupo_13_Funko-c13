@@ -31,7 +31,7 @@ body.perfilUser main{
     color: var(--text);
 }
 .perfilUser main p a{
-    color: green;
+    color: #1EC124;
 }
 .perfilUser main p a:hover{
     color: var(--botones);
@@ -130,7 +130,7 @@ body.perfilUser main{
 }
 
 .contenedor-nameUser  div button:hover{
-    background-color: rgba(52, 131, 250,0.9);
+    background-color: var(--despliegueHover);
 }
 /* NAME LASTNAME  */
 .contenedor-datos .nom_ape-container div input,
@@ -183,7 +183,7 @@ body.perfilUser main{
 }
 
 .btn-cambios .btnSubmit:hover{
-    background-color: rgba(52, 131, 250,0.9);
+    background-color: var(--despliegueHover);
 }
 
 /* POP-UP */
@@ -202,10 +202,11 @@ body.perfilUser main{
 }
 .overlay.active{
     visibility: visible;
+    z-index: 999;
 }
 
 .overlay .pop-up{
-    background-color: #f8f8f8;
+    background-color: var(--card);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
     border-radius: 3px;
     font-family: 'Roboto';
@@ -216,6 +217,7 @@ body.perfilUser main{
     transition: .5s ease all;
     transform: scale(.7);
     opacity: 0;
+    color: var(--text);
 }
 
 .pop-up .squareLogo{
@@ -240,15 +242,16 @@ body.perfilUser main{
 }
 
 .pop-up .squareLogo .closePop-up:hover{
-    color: #000;
+    color: var(--text);
 }
 
 .pop-up article h5{
     margin-bottom: .8rem;
+    color: var(--text);
 }
 
 .pop-up article p{
-    color: #000;
+    color: var(--text);
     font-size: .9rem;
     margin-bottom: .8rem;
 }
@@ -265,6 +268,7 @@ body.perfilUser main{
     border: none;
     background-color: var(--input);
     text-align: center;
+    color: var(--text);
 }
 .pop-up form .input input:hover{
     outline: none;
@@ -284,7 +288,7 @@ body.perfilUser main{
 }
 
 .pop-up form .btnSubmit:hover{
-    background-color: rgba(52, 131, 250,0.9);
+    background-color: var(--despliegueHover);
 }
 
 /* Transition - Animacion */
