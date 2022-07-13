@@ -8,6 +8,13 @@
     box-sizing: border-box;
     font-family: 'Roboto';
 }
+
+strong{
+    color: var(--text);
+}
+label{
+    color: var(--text);
+}
 /* CATALOGO */
 body.carrito{
     margin-top: 4rem;
@@ -21,6 +28,7 @@ body main img.banner-bottom {
 body main .novedad-h2{
     margin: 1rem 0 0;
     text-align: center;
+    color: var(--text);
     text-decoration: underline;
 }
 
@@ -33,9 +41,10 @@ body main .novedad-h2{
     text-align: center;
     margin: 0 auto 1.5rem;  
     text-decoration: underline;
+    color: var(--text);
 }
 .main-carrito .main_section-muestra{
-    background-color: lightgrey;
+    background-color: var(--verdeCuadro);
     padding: .3rem;
     border-radius: 3px;
     margin: 0 auto 1rem;
@@ -46,12 +55,12 @@ body main .novedad-h2{
 }
 .main-carrito .main_section-muestra h4{
     text-align: center;
-    background-color: white;
+    background-color: var(--card);
     margin:0 0 .2rem ;
 }
 /* FUNKOS */
 .main-carrito .main_section-muestra .carrito-funkos{
-    background-color: white;
+    background-color: var(--card);
     padding: .3rem;
     margin: 0 0 .2rem;
 }
@@ -64,7 +73,7 @@ body main .novedad-h2{
 .main-carrito .main_section-muestra .carrito-funkos .muestra-funko .muestra-img{
     width: 90px;
     height: 90px;
-    background-color: white;
+    background-color: var(--card);
     margin: 0 .3rem 0 0;
 }
 
@@ -90,18 +99,18 @@ body main .novedad-h2{
     width: 80px;
     height: 30px;
     border-radius: 7px;
-    border: solid 3px rgba(177, 171, 171, 0.4);
+    border: solid 3px var(--verdeCuadro);
     margin: 0 auto .5rem;
 }
 
 .main-carrito .main_section-muestra .carrito-funkos .btn_carrito-aumento button{
     border: none;
-    background-color: white;
+    background-color: var(--card);
     color: rgba(177, 171, 171, 0.4);
 }
 
 .main-carrito .main_section-muestra .carrito-funkos .btn_carrito-aumento button:hover{
-    color: grey;
+    color: var(--text);
 }
 /* SUBTOTAL */
 .main-carrito .main_section-muestra .carrito-funkos .carrito-precio{
@@ -112,7 +121,7 @@ p.p_espacio-carrito{
     margin: 0 .2rem 0 0;
 }
 .main-carrito .main_section-muestra .bottom-carrito{
-    background-color: white;
+    background-color: var(--card);
     padding: .3rem;
 }
 /* BOTTTOM CARRITO */
@@ -143,7 +152,7 @@ p.p_espacio-carrito{
 
 .main-carrito .main_section-muestra .bottom-carrito .btn-finalizar button{
     border: none;
-    background-color: #3483FA;
+    background-color: var(--botones);
     color: white;
     width: 150px;
     height: 40px;

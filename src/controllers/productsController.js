@@ -16,25 +16,25 @@ let productsController = {
                 toThousand,
             })
         })
-        .catch((error) => {res.send(error)}) 
+        .catch((error) => {res.send(error)})
     },   
     detailProduct : (req, res) => {
         let idProduct = req.params.id
 
         db.Product.findByPk(idProduct)
-            .then(producto => {
-                db.ProductImage.findOne({where : {product_id : idProduct}})
-                    .then(img => {
-                        res.render('productDetail', {
-                            producto,
-                            image : img.image,
-                            title: 'Funko | Detalles',
-                            stylesheet: 'productDetail.css',
-                            session: req.session,
-                            toThousand,
-                        })
-                    })
+        .then(producto => {
+            db.ProductImage.findOne({where : {product_id : idProduct}})
+            .then(img => {
+                res.render('productDetail', {
+                    producto,
+                    image : img.image,
+                    title: 'Funko | Detalles',
+                    stylesheet: 'productDetail.css',
+                    session: req.session,
+                    toThousand,
+                })
             })
+        })
     },
     ofertas: (req, res) => {
         db.Product.findAll({
