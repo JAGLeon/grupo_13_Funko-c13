@@ -1,3 +1,4 @@
+@import url("/css/varCss.css");
 *{
     margin: 0;
     padding: 0;
@@ -16,7 +17,7 @@ header.header-main{
     left: 0;
     z-index: 10;
     padding: 0 0.6rem;
-    background-color: #072227;
+    background-color: var(--header);
 }
 
 header.header-main .retenedor{
@@ -189,12 +190,12 @@ header.header-main .retenedor nav.header-navMenu div.header-user div.header-desp
     border: none;
     color: white;
     font-size: 1.3rem;
-    background-color: #3483FA;
+    background-color: var(--menu);
 }
 
 header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu:hover{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #5e9af5;
+    background-color: var(--menuHover);
 }
 
 
@@ -214,7 +215,7 @@ header.header-main .retenedor nav.header-navMenu div.header-user div.header-desp
     width: 100%;
     height: 40px;
     font-size: 1rem;
-    background-color: #5e9af5;
+    background-color: var(--menuHover);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -279,6 +280,56 @@ header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .heade
     text-decoration: none;
     color: white;
 }
+/*SWITCH*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 2px;
+    background-color: #35858b;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+  
+input:checked + .slider {
+    background-color: var(--background);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
 
 /*CARRITO*/
 
@@ -307,7 +358,7 @@ header.header-main .retenedor button.header-btnBars{
     color: white;
     border: none;
     font-size: 1.5rem;
-    background-color: #072227;
+    background-color: var(--header);
 }
 
 
@@ -343,7 +394,7 @@ header.header-main .retenedor button.header-btnBars{
         display: flex; /*Se activa luego*/
         flex-direction: row;
         justify-content: space-around;
-        background-color: #072227;
+        background-color: var(--header);
         padding-top: 0;
     }
     /*CLOSE*/
@@ -383,11 +434,11 @@ header.header-main .retenedor button.header-btnBars{
     }
    
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu{
-        background-color: #072227;
+        background-color: var(--header);
     }
     
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu:hover{
-        background-color: #072227;
+        background-color: var(--header);
     }
 
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu i{
@@ -430,7 +481,7 @@ header.header-main .retenedor button.header-btnBars{
     }
     
     header.header-main .retenedor nav.header-navMenu .conteiner-redirecciones .header-redireccionBtn:hover{
-        background-color: rgba(7, 34, 39, 0.8);
+        background-color: var(--header);
     }
     
     /*CARRITO*/
@@ -442,6 +493,6 @@ header.header-main .retenedor button.header-btnBars{
     }
     
     header.header-main .retenedor nav.header-navMenu .header-carrito:hover{
-        background-color: rgba(7, 34, 39, 0.8);
+        background-color: var(--header);
     }
 }

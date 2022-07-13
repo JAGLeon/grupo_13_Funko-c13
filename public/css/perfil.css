@@ -1,13 +1,17 @@
 @import url('/css/header.css');
 @import url('/css/footer.css');
-
+@import url("/css/varCss.css");
 
 .is-invalid::placeholder{
     color: rgb(220, 53, 69);
 }
+thead, th, td , tbody{
+    color: var(--text) !important;
+}
 
 body.perfilUser{
     margin-top: 3rem;
+    background-color: var(--background);
 }
 
 body.perfilUser main{
@@ -18,21 +22,24 @@ body.perfilUser main{
     border: 1px solid rgba(128, 128, 128, 0.4);
     font-size: 1.3rem;
     text-align: center;
+    color: var(--text);
 }
 
 .perfilUser main p{
     font-size: .8rem;
     text-align: center;
+    color: var(--text);
 }
 .perfilUser main p a{
-    color: black;
+    color: green;
 }
 .perfilUser main p a:hover{
-    color: #3483FA;
+    color: var(--botones);
 }
 
 .perfilUser main h5{
     text-align: center;
+    color: var(--text);
 }
 /* AVATAR  */
 .contendor-avatar{
@@ -41,7 +48,7 @@ body.perfilUser main{
     align-items: center;
 }
 .contendor-avatar .imgUser{
-    background-color: beige;
+    background-color: var(--contenedor);
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -63,11 +70,11 @@ body.perfilUser main{
 }
 
 .contendor-avatar form .inputFile{
-    background-color: rgba(128, 128, 128,0.6);
+    background-color: var(--input);
     width: 78%;
     height: 3rem;
     border-radius: 0.8rem;
-    color: white;
+    color: var(--text);
     margin: 1rem auto;
     position: relative;
     cursor: pointer;
@@ -88,7 +95,7 @@ body.perfilUser main{
     width: 20%;
     height: 3rem;
     border: none;
-    background-color: #3483FA;
+    background-color: var(--botones);
     color: white;
     border-radius: .8rem;
 }
@@ -99,14 +106,14 @@ body.perfilUser main{
     width: 78%;
     margin-bottom: 1rem;
     height: 3rem;
-    background-color: rgba(128, 128, 128,0.6);
+    background-color: var(--input);
     border-radius:  .8rem  ;
     border: none;
     padding-left: 1rem;
 }
 
 .contenedor-nameUser  div input::placeholder{
-    color: #000;
+    color: var(--text);
 }
 
 .contenedor-nameUser  div input:hover{
@@ -117,7 +124,7 @@ body.perfilUser main{
     width: 20%;
     height: 3rem;
     border: none;
-    background-color: #3483FA;
+    background-color: var(--botones);
     color: white;
     border-radius: .8rem;
 }
@@ -131,11 +138,16 @@ body.perfilUser main{
 .input-style{
     width: 100%;
     height: 3rem;
-    background-color: rgba(128, 128, 128,0.6);
+    background-color: var(--input);
     border-radius: .8rem;
     border: none;
     padding-left: 1rem;
     margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.input-style::placeholder{
+    color: var(--placeholder);
 }
 
 .contenedor-datos .nom_ape-container div input:hover{
@@ -146,21 +158,21 @@ body.perfilUser main{
     height: 3rem;
     width: 100%;
     border-radius: .8rem;
-    border:#3483FA 1px solid;
+    border:var(--botones) 1px solid;
     margin-bottom: 1rem;
     transition: all ease .7s;
     background-color: white;
-    color: #3483FA;
+    color: var(--botones);
 }
 
 .btn-cambios .btnDelete:hover{
-    background-color: #3483FA;
+    background-color: var(--botones);
     border: none;
     color: white;
 }
 
 .btn-cambios .btnSubmit{
-    background-color: #3483FA;
+    background-color: var(--botones);
     height: 3rem;
     width: 100%;
     border-radius: .8rem;
@@ -251,7 +263,7 @@ body.perfilUser main{
     margin-top: 1rem;
     border-radius: 0.8rem;
     border: none;
-    background-color: rgba(128, 128, 128,0.6);
+    background-color: var(--input);
     text-align: center;
 }
 .pop-up form .input input:hover{
@@ -267,7 +279,7 @@ body.perfilUser main{
     font-family: 'Roboto';
     cursor: pointer;
     border: none;
-    background-color: #3483FA;
+    background-color: var(--botones);
     border-radius: 0.8rem;
 }
 
@@ -301,12 +313,13 @@ body.perfilUser main{
         border: none;
         margin: 0 auto 2rem;
         border-radius: .3rem;
-        background-color: rgb(208, 208, 208);
+        background-color: var(--contenedor);
     }
     .perfilH1 h1{
         border:none;
         font-size: 1.6rem;
         text-decoration: underline;
+        color: var(--text);
     }
     .contenedor-nameUser{
         display: flex;

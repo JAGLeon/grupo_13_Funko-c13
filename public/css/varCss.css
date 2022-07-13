@@ -1,0 +1,37 @@
+[data-theme="light"]{
+    --verdeClaro: #35858b;
+    --verdeOscuro: #072227;
+    --verdeCuadro: #4fbdba;
+    --botones: #3483fa;
+    --background: #fff;
+    --text: #000;
+    --header: #09333a;
+    --card: #fff;
+    /*FORMS*/
+    --input: rgba(128, 128, 128,0.6);
+    --placeholder: rgb(83, 82, 82);
+    --contenedor: rgb(208, 208, 208);
+    /*HEADER*/
+    --menu: #3483fa;
+    --menuHover: #5e9af5;
+    --despliegueHover: rgb(108, 163, 247);
+}
+
+[data-theme="dark"]{
+    --verdeClaro: #35858b;
+    --verdeOscuro: #072227;
+    --verdeCuadro: #233a39;
+    --botones: #35858b;
+    --background: #061b1f;
+    --text: #fff;
+    --card: #030f11;
+    /*FORMS*/
+    --input: rgba(42, 41, 41, 0.6);
+    --placeholder: rgba(255, 255, 255, 0.42);
+    --contenedor: #093635;
+    /*HEADER*/
+    --header: #030f11;
+    --menu: #35858b;
+    --menuHover: ;
+    --despliegue: #248c94;
+}

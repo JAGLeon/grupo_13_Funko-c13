@@ -1,14 +1,10 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
+@import url("/css/varCss.css");
 
 /* Variables */
 
 :root {
-  --verdeClaro: #35858b;
-  --verdeOscuro: #072227;
-  --verdeCuadro: #4fbdba;
-  --botones: #3483fa;
-
   /* Fuentes */
   --fontRoboto: "Roboto", sans-serif;
 
@@ -31,8 +27,13 @@ ul {
   padding: 0px;
 }
 
+h4{
+    color: var(--text);
+}
+
 p {
   margin-bottom: 0;
+  color: var(--text);
 }
 
 a {
@@ -42,6 +43,7 @@ a {
 body {
   font-family: var(--fontRoboto);
   overflow-x: hidden;
+  background-color: var(--background);
 }
 
 .page_container {
@@ -262,11 +264,12 @@ body main div.sales-container div.sales-box-container div.sales-box img{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-bottom: 3px;
+    background-color: var(--card);
 }
 
 body main div.sales-container div.sales-box-container div.sales-box div.sales-description{
     margin-top: 1px;
-    background-color: #ffffff;
+    background-color: var(--card);
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -377,7 +380,6 @@ body main img.banner-bottom{
 }
 
 .categorias__container--slider .funko-name {
-    color: black;
     margin-top: 1rem;
 }
 
