@@ -8,6 +8,15 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--background);
+    color: var(--text);
+}
+
+thead, th, td , tbody{
+    color: var(--text) !important;
+}
+
 /* FOOTER */
 footer ul#footer-ul{
     padding: 0;
@@ -41,10 +50,10 @@ td.btn {
 }
 
 a.btn-edit{
-    color: #35858B;
+    color: var(--botones);
     width: 2.5rem;
     height: 2.5rem;
-    border: 1px solid #35858B;
+    border: 1px solid var(--botones);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -57,7 +66,7 @@ a.btn-edit i{
 
 button.btn-delete{
     color: white;
-    background-color: #35858B;
+    background-color: var(--botones);
     border: none;
     width: 2.5rem;
     height: 2.5rem;

@@ -82,8 +82,8 @@ $inputUserName.addEventListener("blur", () => {
             $errorsUserName.innerHTML = "Debe ser completado con su usuario";
             $inputUserName.classList.add("is-invalid");
             break;
-        case $inputUserName.value.trim().length < 2:
-            $errorsUserName.innerHTML = "Mínimo 2 carácteres";
+        case $inputUserName.value.trim().length < 4:
+            $errorsUserName.innerHTML = "Mínimo 4 carácteres";
             $inputUserName.classList.add("is-invalid");
             break;
         default: 

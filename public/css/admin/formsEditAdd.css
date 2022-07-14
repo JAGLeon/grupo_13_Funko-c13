@@ -8,6 +8,15 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--background);
+    color: var(--text);
+}
+
+thead, th, td , tbody{
+    color: var(--text) !important;
+}
+
 /* FOOTER */
 footer ul#footer-ul{
     padding: 0;
@@ -31,7 +40,7 @@ section.admin {
     margin: 4rem auto;
     width: 90%;
     max-width: 30rem;
-    border: solid 1px #35858B;
+    border: solid 1px var(--botones);
     border-radius: 5px;
 }
 
@@ -99,8 +108,8 @@ section.admin button {
 
 section.admin button:hover {
     background-color: white;
-    color: #3483FA;
-    border: solid 2px #3483FA;
+    color: var(--despliegueHover);
+    border: solid 2px var(--botones);
 }
 
 div.error {

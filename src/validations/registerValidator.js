@@ -15,7 +15,7 @@ let validateRegister = [
         .isLength({min:2, max:30}).withMessage('Ingrese un apellido valido'),
     check('userName')
         .notEmpty().withMessage('Ingrese su usuario').bail()
-        .isLength({min:2, max:20}).withMessage('Ingrese un usuario valido'),
+        .isLength({min:4, max:20}).withMessage('Ingrese un usuario de 4 carácteres'),
     check('email')
         .notEmpty().withMessage('Ingrese su email').bail()
         .isEmail().withMessage('Ingrese un email valido'),

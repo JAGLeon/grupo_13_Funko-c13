@@ -19,7 +19,7 @@
                 </div>
                 <div class="header-despliegeUser">
                     <% if (typeof session.user != "undefined") { %>
-                        <button class="header-btnMenu"><%= session.user.name %> <i class="fa-solid fa-caret-down"></i></button>
+                        <button class="header-btnMenu"><%= session.user.userName %> <i class="fa-solid fa-caret-down"></i></button>
                     <% } %> 
                     <ul class="header-ulUser">
                         <li><a href="/usuarios/perfil">Mi perfil</a></li>

@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--background);
+    color: var(--text);
+}
+
 /* FOOTER */
 footer ul#footer-ul{
     padding: 0;
