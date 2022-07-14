@@ -27,7 +27,6 @@
           <input type="number" name="discount" class="form-control" id="discount" value="<%= producto.discount %>">
           <div class="franquicia">
             <select name="category" class="form-select select-add" id="category">
-              <option selected hidden value="">Franquicia</option>
               <% category.forEach(({id,name}) =>{%>
                 <option value="<%= id %>" <%= (locals.old && old.category) && old.category === id ? "selected" : "" %>><%= name %></option>
               <% });  %> 
