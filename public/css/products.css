@@ -96,8 +96,8 @@ div.sales-container div.sales-box-container div.product{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: 10px 10px;
-    min-width: 20rem;
+    margin: 10px 0px;
+    min-width: 18rem;
 }
 
 body main div.sales-container div.sales-box-container div.sales-box{
@@ -106,7 +106,7 @@ body main div.sales-container div.sales-box-container div.sales-box{
 }
 
 .product a.img{
-    max-width: 100%;
+    max-width: 70%;
     height: 100%;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
     border-top-left-radius: 15px;
@@ -127,6 +127,7 @@ body main div.sales-container div.sales-box-container div.sales-box{
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
     padding: 10px;
+    max-width: 70%;
 }
 
 .product .funko-title,
@@ -139,7 +140,7 @@ body main div.sales-container div.sales-box-container div.sales-box{
 
 .product div#product-discount {
     display: flex;
-    padding-left: 5rem;
+    padding-left: 4rem;
 }
 
 .product .funko-prices {
@@ -151,9 +152,9 @@ body main div.sales-container div.sales-box-container div.sales-box{
 }
 
 .product p.off {
-    color: green;
+    color: #1EC124;
     font-size: 11px;
-    padding: 0.7rem 0.5rem 0 0;
+    padding: 0.2rem 0.5rem 0 0;
 }
 
 .product .funko-cuotes {
@@ -216,6 +217,17 @@ body main div.sales-container div.sales-box-container div.sales-box{
         font-size: 0.8rem;
     }
 
+
+    div.sales-container div.sales-box-container div.product{
+        margin: 10px 10px;
+        min-width: 20rem;
+    }
+    .product a.img{
+        max-width: 100%;
+    }
+    .product div.description {
+        max-width: 100%;
+    }
 }
 
 /* Desktop */
