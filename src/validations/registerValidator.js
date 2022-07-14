@@ -1,4 +1,5 @@
 const { check, body } = require('express-validator');
+const { is } = require('type-is');
 const db = require('../database/models');
 
 let validateRegister = [
@@ -20,9 +21,7 @@ let validateRegister = [
         .isEmail().withMessage('Ingrese un email valido'),
     body("email").custom((value) => {
         return db.User.findOne({
-            where : {
-                email : value
-            }
+            where : {email : value}
         })
         .then(user => { 
             if(user){
@@ -31,8 +30,11 @@ let validateRegister = [
         })
     }),
     check('password')
-        .notEmpty().withMessage('Ingrese una contraseña').bail(),
-        // .isStrongPassword({ minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1}).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número23'),
+        .notEmpty().withMessage('Ingrese una contraseña').bail()
+        .isLength({min:8,max:20}).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número')
+        .matches(/^(.*[a-z].*)$/).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número')
+        .matches(/^(.*[A-Z].*)$/).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número')
+        .matches(/^(.*\d.*)$/).withMessage('Mínimo 8 carácteres, debe tener mayúscula, minúscula, número'),
     body('icon')
         .custom((value , {req}) => {
             if(!req.file){
