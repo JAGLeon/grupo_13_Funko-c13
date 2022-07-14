@@ -5,6 +5,7 @@
 
 div.products-title {
     padding-top: 0.3rem;
+    color: var(--text);
 }
 
 div.col-12 {
