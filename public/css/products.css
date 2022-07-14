@@ -45,7 +45,7 @@ p{
 /* MAIN */
 
 
-main {
+main.mainProduct {
     padding-top: 3.5rem;
     max-width: 1225px;
     margin: 0 auto;
@@ -81,7 +81,7 @@ div.interest {
     gap: 1rem;
 }
 
-div.interest div.product {
+.product {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,12 +91,21 @@ div.interest div.product {
     min-width: 225px;
 }
 
+div.sales-container div.sales-box-container div.product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 10px 10px;
+    min-width: 20rem;
+}
+
 body main div.sales-container div.sales-box-container div.sales-box{
     margin: 10px 10px;
     min-width: 225px;
 }
 
-div.interest div.product a.img{
+.product a.img{
     max-width: 100%;
     height: 100%;
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
@@ -105,13 +114,13 @@ div.interest div.product a.img{
     margin-bottom: 3px;
 }
 
-div.interest div.product a.img img.img-product{
+.product a.img img.img-product{
     width: 100%;
     height: 100%;
     background-color: var(--card);
 }
 
-div.interest div.product div.description {
+.product div.description {
     margin-top: 1px;
     background-color: var(--card);
     box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
@@ -120,20 +129,20 @@ div.interest div.product div.description {
     padding: 10px;
 }
 
-div.interest div.product .funko-title,
-div.interest div.product .funko-name {
+.product .funko-title,
+.product .funko-name {
     font-size: 1rem;
     text-align: center;
     font-weight: bold;
     color: var(--text);
 }
 
-div.interest div.product div#product-discount {
+.product div#product-discount {
     display: flex;
     padding-left: 5rem;
 }
 
-div.interest div.product .funko-prices {
+.product .funko-prices {
     font-weight: bold;
     padding: 5px;
     text-align: center;
@@ -141,18 +150,18 @@ div.interest div.product .funko-prices {
     color: var(--text);
 }
 
-div.interest div.product p.off {
+.product p.off {
     color: green;
     font-size: 11px;
     padding: 0.7rem 0.5rem 0 0;
 }
 
-div.interest div.product .funko-cuotes {
+.product .funko-cuotes {
     font-size: 0.8rem;
     text-align: center;
 }
 
-div.interest div.product button {
+.product button {
     margin: 0 auto 1rem;
     border-radius: 0.5rem;
     width: 90%;
@@ -164,8 +173,8 @@ div.interest div.product button {
     font-size: 0.8rem;
 }
 
-div.interest div.product button:hover {
-    background-color: #3483FA;
+.product button:hover {
+    background-color: var(--botones);
     color: white;
     border: none;
 }
@@ -185,25 +194,25 @@ div.interest div.product button:hover {
         font-size: 1.9rem;
     }
 
-    div.interest div.product.funko-title,
-    div.interest div.product .funko-name {
+    .product.funko-title,
+    .product .funko-name {
         font-size: 1rem;
         height: 3rem;
     }
 
-    div.interest div.product .funko-prices {
+    .product .funko-prices {
         font-size: 1.5rem;
     }
 
-    div.interest div.product div#product-discount {
+    .product div#product-discount {
         padding-left: 7rem;
     }
 
-    div.interest div.product .funko-cuotes {
+    .product .funko-cuotes {
         font-size: 0.7rem;
     }
 
-    div.interest div.product button {
+    .product button {
         font-size: 0.8rem;
     }
 
@@ -242,21 +251,21 @@ div.interest div.product button:hover {
         margin: 2rem;
     }
     
-    div.interest div.product.funko-title,
-    div.interest div.product .funko-name {
+    .product.funko-title,
+    .product .funko-name {
         font-size: 1.3rem;
         height: 4rem;
     }
 
-    div.interest div.product .funko-prices {
+    .product .funko-prices {
         font-size: 1.5rem;
     }
 
-    div.interest div.product .funko-cuotes {
+    .product .funko-cuotes {
         font-size: 0.9rem;
     }
 
-    div.interest div.product button {
+    .product button {
         font-size: 0.85rem;
     }
 }

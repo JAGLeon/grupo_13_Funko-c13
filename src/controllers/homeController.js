@@ -7,23 +7,33 @@ module.exports = {
     home: (req,res)=>{
         db.Category.findAll()
         .then(categorias => {
-        res.render('home',{
-            title : 'Funko',
-            stylesheet: 'home.css',
-            session: req.session,
-            categorias
+            db.Product.findAll({
+                include : [{association : 'images'}],
+                order : [['name','ASC']],
+                offset: 0,
+                limit: 20
+            })
+            .then(products => {
+                let productos = products.filter( product => product.discount == 0 );
+                let productosOff = products.filter( product => product.discount > 0 );
+                res.render('home',{
+                    title : 'Funko',
+                    stylesheet: 'home.css',
+                    session: req.session,
+                    categorias,
+                    productos,
+                    productosOff,
+                    toThousand
+                });
+            })
+            .catch((error) => {res.send(error)});
         })
-        })
-        .catch((error) => {res.send(error)}) 
+        .catch((error) => {res.send(error)});
     },
     search: (req, res) => {
         db.Product.findAll({
             include : [{association : 'images'}],
-            where: {
-                name: {
-                    [Op.like]: '%' + req.query.keywords + '%'
-                }
-            }
+            where: {name: {[Op.like]: '%' + req.query.keywords + '%'}}
         })
         .then((productos) => {
             db.Category.findAll()
@@ -36,22 +46,32 @@ module.exports = {
                     toThousand,
                     session: req.session,
                     categorias
-                })
+                });
             })
             .catch(error => res.send(error));
         })
-        .catch((error) => {res.send(error)}) 
-
+        .catch((error) => {res.send(error)});
     },
     compra:(req,res)=>{
         db.Category.findAll()
         .then(categorias => {
-            res.render('carrito',{
-                title : 'Funko | Compras',
-                stylesheet: 'carrito.css',
-                session: req.session,
-                categorias
+            db.Product.findAll({
+                include : [{association : 'images'}],
+                order : [['name','DESC']],
+                // offset:13,
+                limit: 10
             })
+            .then(productos => {
+                res.render('carrito',{
+                    title : 'Funko | Compras',
+                    stylesheet: 'carrito.css',
+                    session: req.session,
+                    categorias,
+                    productos,
+                    toThousand
+                });
+            })
+            .catch((error) => {res.send(error)});
         })
         .catch(error => res.send(error));
     }

@@ -1,0 +1,34 @@
+<div class="sales-container">
+    <div class="sales-top">
+      <p class="sales-title">Catálogo</p>
+      <a href="/productos">Ver más</a>
+    </div>
+    <div class="sales-box-container">
+      <% productos.forEach(producto => { %>
+        <div class="product">
+            <a href="/productos/detalle/<%- producto.id %>" class="img">
+            <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" class="img-product" alt="<%- producto.name %>">
+            </a>
+            <div class="description">
+                <p class="funko-name"><%= producto.name %></p>
+                <% if (producto.discount > 0) { %>
+                    <div id="product-discount">
+                        <p class="funko-prices">$ <%= toThousand (producto.price - producto.discount * producto.price / 100) %></p> 
+                        <p class="off"><%= producto.discount %> % OFF</p>
+                    </div>
+                <% } else { %>
+                    <p class="funko-prices">$ <%= toThousand (producto.price) %></p>
+                <% } %>
+                <% if (producto.discount > 0) { %>
+                    <% let precioDescuento = producto.price - producto.discount * producto.price / 100 %>
+                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand ((precioDescuento / producto.cuotes).toFixed(0)) %></p>
+                <% } else { %>
+                    <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand((producto.price / producto.cuotes).toFixed(0)) %></p>
+                <% } %>
+                <p class="funko-cuotes">Sin Interés</p>
+                <button>Agregar al carrito</button>
+            </div>
+        </div>
+      <% }) %>
+    </div>
+</div>

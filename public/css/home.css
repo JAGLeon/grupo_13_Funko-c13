@@ -1,7 +1,7 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
 @import url("/css/varCss.css");
-
+@import url("/css/products.css");
 /* Variables */
 
 :root {
@@ -232,7 +232,7 @@ body main div.sales-container{
     padding: 15px 10px;
 }
 
-body main div.sales-container div.sales-top{
+div.sales-container div.sales-top{
     display: flex;
     align-items: center;
     width: 100%;
@@ -242,80 +242,20 @@ body main div.sales-container div.sales-top{
     margin-bottom: 5px;
 }
 
-body main div.sales-container div.sales-box-container{
+div.sales-container div.sales-box-container{
     width: 100%;
     display: flex;
+    flex-direction: row;
     overflow-x: scroll;
 }
 
-body main div.sales-container div.sales-box-container div.sales-box{
-    margin: 10px 10px;
-    min-width: 225px;
-}
 
-body main div.sales-container div.sales-top a{
+
+div.sales-container div.sales-top a{
     font-size: 14px;
     color: #3483FA;
 }
 
-body main div.sales-container div.sales-box-container div.sales-box img{
-    max-width: 100%;
-    height: 250px;
-    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-bottom: 3px;
-    background-color: var(--card);
-}
-
-body main div.sales-container div.sales-box-container div.sales-box div.sales-description{
-    margin-top: 1px;
-    background-color: var(--card);
-    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.2);
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    padding: 10px;
-}
-
-
-body main div.sales-container div.sales-box-container div.sales-box div.sales-description h4.funko-title,
-body main div.sales-container div.sales-box-container div.sales-box div.sales-description p.funko-name{
-    font-size: var(--title);
-    text-align: center;
-    font-weight: bold;
-}
-
-
-body main div.sales-container div.sales-box-container div.sales-box div.sales-description p.funko-prices{
-    text-align: center;
-    font-size: var(--prices);
-    font-weight: bold;
-    padding: 5px;
-}
-
-body main div.sales-container div.sales-box-container div.sales-box div.sales-description p.funko-cuotes{
-    text-align: center;
-    font-size: 12px;
-}
-
-body main div.sales-container div.sales-box-container div.sales-box div.cart-box{
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-body main div.sales-container div.sales-box-container div.sales-box div.cart-box p.add-cart:hover{
-    background-color: var(--despliegueHover);
-    color: white;
-}
-
-body main div.sales-container div.sales-box-container div.sales-box div.cart-box p.add-cart{
-    color: var(--botones);
-    border-radius: 15px;
-    padding: 5px;
-    border: 2px solid var(--botones);
-}
 
 
 body main img.banner-bottom{

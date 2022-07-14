@@ -5,7 +5,8 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let productsController = {
     listar : (req, res) => {
         db.Product.findAll({
-            include : [{association : 'images'}]
+            include : [{association : 'images'}],
+            order : [['name', 'ASC']]
         })
         .then((productos) => {
             db.Category.findAll()
@@ -17,15 +18,14 @@ let productsController = {
                     session: req.session,
                     toThousand,
                     categorias
-                })
+                });
             })
             .catch(error => res.send(error));
         })
-        .catch((error) => {res.send(error)})
+        .catch((error) => {res.send(error)});
     },   
     detailProduct : (req, res) => {
         let idProduct = req.params.id
-
         db.Product.findByPk(idProduct)
         .then(producto => {
             db.ProductImage.findOne({where : {product_id : idProduct}})
@@ -40,16 +40,14 @@ let productsController = {
                         session: req.session,
                         toThousand,
                         categorias
-                    })
+                    });
                 })
                 .catch(error => res.send(error));
             })
         })
     },
     ofertas: (req, res) => {
-        db.Product.findAll({
-            include : [{association : 'images'}]
-        })
+        db.Product.findAll({include : [{association : 'images'}]})
         .then((products) => {
             db.Category.findAll()
             .then(categorias => {
@@ -61,11 +59,11 @@ let productsController = {
                         session: req.session,
                         toThousand,
                         categorias
-                    })
+                    });
                 })
                 .catch(error => res.send(error));
             })
-        .catch((error) => {res.send(error)}) 
+        .catch((error) => {res.send(error)});
     }
 }
 

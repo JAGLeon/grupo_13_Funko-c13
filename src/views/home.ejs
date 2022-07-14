@@ -163,161 +163,40 @@
         <div class="sales-container">
           <div class="sales-top">
             <p class="sales-title">Ofertas</p>
-            <a href="#">Ver más</a>
+            <a href="/productos/ofertas">Ver más</a>
           </div>
           <div class="sales-box-container">
-
-            <div class="sales-box">
-              <img src="img/productos/Batgirl-product.png" alt="Funko Batwoman" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Batwoman</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
+            <% productosOff.forEach(producto => { %>
+              <div class="product">
+                  <a href="/productos/detalle/<%- producto.id %>" class="img">
+                  <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" class="img-product" alt="<%- producto.name %>">
+                  </a>
+                  <div class="description">
+                      <p class="funko-name"><%= producto.name %></p>
+                      <% if (producto.discount > 0) { %>
+                          <div id="product-discount">
+                              <p class="funko-prices">$ <%= toThousand (producto.price - producto.discount * producto.price / 100) %></p> 
+                              <p class="off"><%= producto.discount %> % OFF</p>
+                          </div>
+                      <% } else { %>
+                          <p class="funko-prices">$ <%= toThousand (producto.price) %></p>
+                      <% } %>
+                      <% if (producto.discount > 0) { %>
+                          <% let precioDescuento = producto.price - producto.discount * producto.price / 100 %>
+                          <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand ((precioDescuento / producto.cuotes).toFixed(0)) %></p>
+                      <% } else { %>
+                          <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand((producto.price / producto.cuotes).toFixed(0)) %></p>
+                      <% } %>
+                      <p class="funko-cuotes">Sin Interés</p>
+                      <button>Agregar al carrito</button>
+                  </div>
               </div>
-            </div>
-            <div class="sales-box">
-              <img src="img/productos/funkoSnowwhite.png" alt="" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Blancanieves</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/Ironman-product.png" alt="Funko Iron-man" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Iron-man</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/Ironman-product.png" alt="Funko Iron-man" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Iron-man</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/Ironman-product.png" alt="Funko Iron-man" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Iron-man</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
+             <% }) %>
           </div>
         </div>
-
         <!-- Catálogo -->
+        <%- include('partials/catalogoSlider') %> 
 
-        <div class="sales-container">
-          <div class="sales-top">
-            <p class="sales-title">Catálogo</p>
-            <a href="#">Ver más</a>
-          </div>
-          <div class="sales-box-container">
-
-            <div class="sales-box">
-              <a href="/detalle-del-producto"><img src="img/productos/image_cap-america.png" alt="Funko Capitan America"/></a>
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Capitan America</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/funkoThanos.png" alt="Funko Thanos" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Thanos</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/funkoDrStrange.png" alt="Funko DrStrange" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Dr. Strange</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/funkoHulk.jpg" alt="Funko Hulk" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Banner Hulk</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="sales-box">
-              <img src="img/productos/funkoAlakazam.png" alt="Funko Alazakam" />
-              <div class="sales-description">
-                <h4 class="funko-title">Funko POP</h4>
-                <p class="funko-name">Alazakam</p>
-                <p class="funko-prices">$5.799</p>
-                <p class="funko-cuotes">en 3x $1.933,33</p>
-                <p class="funko-cuotes">Sin Interés</p>
-                <div class="cart-box">
-                  <p class="add-cart">Agregar al carrito</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
       <img
         class="banner-bottom"

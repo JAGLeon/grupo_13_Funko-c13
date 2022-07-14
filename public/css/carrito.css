@@ -17,9 +17,7 @@ label{
 }
 
 /* CATALOGO */
-body.carrito{
-    margin-top: 4rem;
-}
+
 
 body main img.banner-bottom {
     max-width: 1161px;
@@ -36,6 +34,7 @@ body main .novedad-h2{
 /*MAIN*/
 .main-carrito{
     margin: 3rem auto 1rem;
+    padding-top: 0;
 }
 
 .main-carrito h1{
