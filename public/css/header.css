@@ -374,6 +374,13 @@ header.header-main .retenedor button.header-btnBars{
 /*MEDIA QUERIES*/
 
 @media(min-width:992px){
+
+    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu:hover,
+    .header-despliegeUser .header-btnMenu:hover{
+        box-shadow: none;
+        background-color: var(--header);
+    }
+
     header.header-main{
         height: 4rem;
         padding: 1rem 1rem;
@@ -449,10 +456,7 @@ header.header-main .retenedor button.header-btnBars{
         font-size: 18px;
     }
     
-    header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu:hover,
-    .header-despliegeUser .header-btnMenu:hover{
-        background-color: var(--header);
-    }
+
 
     header.header-main .retenedor nav.header-navMenu div.header-user div.header-despliegeUser .header-btnMenu i{
         display: none;
