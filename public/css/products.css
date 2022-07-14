@@ -96,7 +96,7 @@ div.sales-container div.sales-box-container div.product{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin: 10px 0px;
+    margin: 10px 10px;
     min-width: 18rem;
 }
 
@@ -179,11 +179,24 @@ body main div.sales-container div.sales-box-container div.sales-box{
     color: white;
     border: none;
 }
-
+/*SLIDER CARRITO*/
+.main-carrito div.sales-container div.sales-box-container div.product{
+    margin: 10px 10px;
+}
+.main-carrito .product div#product-discount {
+    padding-left: 3rem;
+}
 /* Media queries */
 
 /* Tablet */
 @media (min-width:768px) {
+
+    .main-carrito .product div#product-discount {
+        padding-left: 6rem;
+    }
+    .product p.off {
+        font-size: 13px;
+    }
 
     /* SECTION */
 
