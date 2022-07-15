@@ -31,7 +31,7 @@ let productsController = {
 
         Promise.all([productPromise, allProducts])
         .then(([producto, productos]) => {
-            res.send(productos)
+            // res.send(productos)
             db.ProductImage.findOne({where : {product_id : idProduct}})
             .then(img => {
                 db.Category.findAll()

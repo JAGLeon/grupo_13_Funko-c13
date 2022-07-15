@@ -1,6 +1,7 @@
 @import url("/css/header.css");
 @import url("/css/footer.css");
 @import url("/css/varCss.css");
+@import url("/css/home.css");
 
 *{
     margin: 0;
