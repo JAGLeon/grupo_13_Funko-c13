@@ -26,8 +26,12 @@ let productsController = {
     },   
     detailProduct : (req, res) => {
         let idProduct = req.params.id
-        db.Product.findByPk(idProduct)
-        .then(producto => {
+        let productPromise = db.Product.findByPk(idProduct);
+        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name', 'ASC']]});
+
+        Promise.all([productPromise, allProducts])
+        .then(([producto, productos]) => {
+            res.send(productos)
             db.ProductImage.findOne({where : {product_id : idProduct}})
             .then(img => {
                 db.Category.findAll()
@@ -39,7 +43,8 @@ let productsController = {
                         stylesheet: 'productDetail.css',
                         session: req.session,
                         toThousand,
-                        categorias
+                        categorias, 
+                        productos
                     });
                 })
                 .catch(error => res.send(error));

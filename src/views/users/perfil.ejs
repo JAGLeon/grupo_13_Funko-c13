@@ -61,10 +61,12 @@
                 </div>
             </div>
             <div class="pais_tel-contenedor">
-                <select class="selec-container" name="province" id="province" value="<%=user.province%>">
+                <select class="selec-container" name="province" id="province">
                     <% for( const oneProvince of provinces) { %>
-                        <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.provinces) ? 'selected' : null %> > <%= oneProvince %> </option>
+                        <option value="<%= oneProvince %>" <%= (locals.oldData && (oneProvince === oldData.provinces)) || user.province === oneProvince ? 'selected' : null %> > <%= oneProvince %> </option>
                     <% } %>
+
+
                 </select>
                 <div>
                     <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" value="<%=user.phone%>">
