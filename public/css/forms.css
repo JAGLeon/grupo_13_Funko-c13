@@ -55,6 +55,8 @@ body.forms main section.form-container{
     max-width:  85rem;
     background-color: var(--contenedor);
     color: var(--text);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 body.forms main section.form-container h1{

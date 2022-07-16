@@ -1,0 +1,143 @@
+@import url("politica.css");
+
+body.somos{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main section.politicas-priv{
+    margin-top: 5rem;
+}
+
+
+/*CARDS*/
+
+.cards{
+    margin: auto auto;
+}
+
+.card{
+    position: relative;
+    width: 280px;
+    height: 190px;
+    background-color: var(--somosContenedor);
+    border-radius: 20px;
+    margin: 10rem auto;
+    transition: 0.5s;
+}
+
+.card:hover{
+    height: 360px;
+    box-shadow: 0 9px 14px var(--borderBox);
+}
+
+.imgBox{
+    position: absolute;
+    left: 50%;
+    top: -27%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 9px 14px var(--borderBox);
+    overflow: hidden;
+}
+
+.card:hover .imgBox{
+    width: 190px;
+    height: 190px;
+    top: -16%;
+}
+.imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card .content .details{
+    padding: 0 40px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5;
+    transform: translateY(120px);
+}
+
+.card:hover .content .details{
+    transform: translateY(0px);
+}
+
+.card .content .details h2{
+    font-size: 1.25em;
+    font-weight: 600;
+    color: var(--somosText);
+    line-height: 1.2em;
+    margin-bottom: 2rem;
+}
+
+.card .content .details h2 span{
+    font-size: 0.75em;
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.card .content .details .history p{
+    margin-bottom: 0;
+    color: var(--text);
+}
+
+.card .content .details .data{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .content .details .data a{
+    color: var(--botones);
+}
+
+.card .content .details .data a:hover{
+    color: var(--despliegueHover);
+}
+
+@media(min-width: 768px){
+    body.somos main{
+        margin: auto;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        display: block;
+    }
+
+    body.somos main .politicas-priv{
+        margin: 0 auto;
+    }
+
+    .card{
+        margin: 3rem 2rem;
+    }
+
+    .cards{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;   
+        margin-top: 7rem; 
+    }
+}
+
+@media(min-width: 768px){
+
+}

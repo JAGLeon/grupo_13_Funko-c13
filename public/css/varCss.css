@@ -18,6 +18,10 @@
     /*POLITICAS*/
     --polText: rgb(44, 43, 43);
     --polAnclas: rgb(50, 50, 168);
+    /*SOMOS*/
+    --somosContenedor: rgb(255, 250, 250);
+    --somosText: #555;
+    --borderBox: rgba(0,0,0,0.35);
 }
 
 [data-theme="dark"]{
@@ -40,4 +44,8 @@
     /*POLITICAS*/
     --polText: rgba(236, 236, 236, 0.797);
     --polAnclas: #1a919a;
+    /*SOMOS*/
+    --somosContenedor: #030f11;
+    --somosText: rgb(226, 225, 225);
+    --borderBox: rgba(96, 91, 91, 0.15);
 }
