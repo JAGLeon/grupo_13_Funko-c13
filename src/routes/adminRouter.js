@@ -5,8 +5,8 @@ const adminProductsController = require('../controllers/admin/adminProductsContr
 const adminCategoryController = require('../controllers/admin/adminCategoryController');
 const userSession = require('../middlewares/user/userSession');
 const adminSession = require('../middlewares/user/adminSession');
-const productCreateValidator = require('../validations/productCreateValidator');
-const categoryCreateValidator = require('../validations/categoryCreateValidator');
+const productValidator = require('../validations/productValidator');
+const categoryValidator = require('../validations/categoryValidator');
 const uploadProductImg = require('../middlewares/multer/uploadProductImg');
 const uploadCategoryImg = require('../middlewares/multer/uploadCategoryImg');
 
@@ -22,11 +22,11 @@ router.get('/productos',  userSession, adminSession, adminProductsController.lis
 /* GET - Agregar producto */
 router.get('/productos/agregar', userSession, adminSession, adminProductsController.addProduct);
 /* POST - Crea un producto en la DB */
-router.post('/productos', uploadProductImg.array('images'), productCreateValidator ,adminProductsController.createProduct);
+router.post('/productos', uploadProductImg.array('images'), productValidator ,adminProductsController.createProduct);
 /* GET - Editar producto */
 router.get('/productos/editar/:id', userSession, adminSession, adminProductsController.editProduct);
 /* PUT - Actualiza producto en la DB */
-router.put('/productos/:id', uploadProductImg.array('images'), productCreateValidator, adminProductsController.updateProduct);
+router.put('/productos/:id', uploadProductImg.array('images'), productValidator, adminProductsController.updateProduct);
 /* DELETE - Elimina un producto */
 router.delete('/productos/eliminar/:id', adminProductsController.deleteProduct);
 
@@ -38,11 +38,11 @@ router.get('/franquicias',  userSession, adminSession, adminCategoryController.l
 /* GET - Agregar franquicia */
 router.get('/franquicias/agregar', userSession, adminSession, adminCategoryController.addCategory);
 /* POST - Crea un franquicia en la DB */
-router.post('/franquicias', uploadCategoryImg.single('image'), categoryCreateValidator, adminCategoryController.createCategory);
+router.post('/franquicias', uploadCategoryImg.single('image'), categoryValidator, adminCategoryController.createCategory);
 /* GET - Editar franquicia */
 router.get('/franquicias/editar/:id', userSession, adminSession, adminCategoryController.editCategory);
 /* PUT - Actualiza franquicia en la DB */
-router.put('/franquicias/:id', uploadCategoryImg.single('image'), categoryCreateValidator, adminCategoryController.updateCategory);
+router.put('/franquicias/:id', uploadCategoryImg.single('image'), categoryValidator, adminCategoryController.updateCategory);
 /* DELETE - Elimina un franquicia */
 router.delete('/franquicias/eliminar/:id', adminCategoryController.deleteCategory);
 
