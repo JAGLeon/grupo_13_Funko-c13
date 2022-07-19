@@ -16,9 +16,9 @@ router.post('/inicio', validateLogin, userController.loginUser);
 router.get('/registro', userInSession, userController.register);
 router.post('/registro', uploadFile.single('icon'), validateRegister, userController.registerUser);
 router.get('/perfil', userSession , userController.perfil);
-router.put('/perfil', uploadFile.single('icon'), iconValidator  ,userController.imgUpdate);
-/* router.put('/perfil', uploadFile.single('icon'), userNameValidator ,userController.userNameUpdate); */
-/* router.put('/perfil', uploadFile.single('icon'), dataValidator ,userController.dataUpdate); */
+router.put('/perfil/icon', uploadFile.single('icon'), iconValidator  ,userController.imgUpdate);
+router.put('/perfil/nombres', userNameValidator ,userController.userNameUpdate);
+router.put('/perfil/datos', dataValidator ,userController.dataUpdate);
 router.post('/direcciones', userSession, userController.addressCreate);
 router.delete('/direcciones/:id', userSession, userController.addressDestroy);
 router.get('/salir', userController.logout);
