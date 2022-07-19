@@ -21,7 +21,7 @@
             <img src="/img/users/<%= session.user.icon %>" alt="Foto de perfil de <%= session.user.name  %> ">
         <% } %> 
         </div>
-        <form action="/usuarios/perfil?_method=PUT" method="post" enctype="multipart/form-data" id="formIcon">
+        <form action="/usuarios/perfil/icon?_method=PUT" method="post" enctype="multipart/form-data" id="formIcon">
             <div class="inputFile">
                 <span>Subir imagen</span>
                 <input type="file" name="icon" id="icon">
@@ -49,7 +49,7 @@
             <p>Administra tu nombre y dirección. Estos datos personales son privados y no se mostrarán a otros usuarios. Consulta nuestra <a href="/enlaces-utiles/politicas-de-privacidad">política de privacidad</a> </p>
             <small class="text-danger" id="datosErrors"><%= (locals.errors && errors.custom) ? errors.custom.msg : "" %></small>
         </div>
-        <form action="/usuarios/perfil?_method=PUT" method="POST" id="formDatos">
+        <form action="/usuarios/perfil/datos?_method=PUT" method="POST" id="formDatos">
             <div class="nom_ape-container">
                 <div>
                     <input type="text" name="name" id="name" value="<%= (locals.old && old.name) ? old.name : user.name %>">
@@ -128,7 +128,7 @@
                 <p><b>Aviso:</b> Si cambias el nombre de pantalla de Funko, no puedes volver a cambiarlo durante 2 semanas luego de confirmar este cambio.</p>
                 <b>Nombre en pantalla actual: <%  %></b>
             </article>
-            <form action="/usuarios/perfil?_method=PUT" method="POST">
+            <form action="/usuarios/perfil/nombres?_method=PUT" method="POST">
                 <div class="input">
                     <input type="text" placeholder="Nuevo nombre de usuario" name="userName" id="userName" value="<%=user.userName%>">
                 </div>

@@ -16,12 +16,7 @@
         <div class="name">
           <label for="name" class="form-label">Nombre de la franquicia:</label>
           <input type="text" name="name" class="form-control" id="name" value="<%= (locals.old && old.name) ? old.name : "" %>">
-          <small class="text-danger" id="nameErrors"></small>
-          <% if (locals.errors && errors.name) { %>
-            <div class="error">
-              <small class="text-danger" id="nameErrors"><%= errors.name.msg%></small>
-            </div>
-          <% } %>
+          <small class="text-danger" id="nameErrors"><%= (locals.errors && errors.name) ? errors.name.msg : "" %></small>
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
@@ -44,6 +39,6 @@
 <%- include('../adminPartials/adminFooter') %> 
 <!-- END FOOTER -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="/js/admin/categoryValidations.js"></script>
+    <script src="/js/admin/categoryCreateValidations.js"></script>
 </body>
 </html>

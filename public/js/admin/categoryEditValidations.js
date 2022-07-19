@@ -37,7 +37,8 @@ window.addEventListener('load', () => {
         let filePath = $inputImage.value, 
             allowefExtensions = /(.jpg|.jpeg|.png)$/i
         if(!allowefExtensions.exec(filePath)){ 
-            $imageErrors.innerHTML = 'Archivo de imagen en formato .png, .jpeg, .jpg';
+            $imageErrors.innerHTML = 'Carga un archivo de imagen válido(.jpg - .jpeg - .png)';
+            $inputImage.value = '';
             return false;
         } else {
             if($inputImage.files && $inputImage.files[0]){
@@ -57,8 +58,9 @@ window.addEventListener('load', () => {
 
         console.log(elementsForm)
 
-        for (let index = 0; index < elementsForm.length - 2; index++) {
+        for (let index = 0; index < elementsForm.length - 1; index++) {
             if(elementsForm[index].value == ""
+            && elementsForm[index].type !== "file"
             || elementsForm[index].classList.contains("is-invalid")){
                 elementsForm[index].classList.add("is-invalid");
                 fullErrors.innerHTML = "Hay errores en el formulario"

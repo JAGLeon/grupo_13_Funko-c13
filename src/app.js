@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookies/cookieSession');
+const db = require("./database/models");
 
 // Enrutadores 
 const productosRouter = require('./routes/productosRouter');
@@ -55,11 +56,16 @@ app.use('/admin', adminRouter); // Admin
 
 /* Vista not found */
 app.use((req, res, next) => {
-    res.status(404).render("not-found", {
-        title: "Funko | Error 404",
-        stylesheet: "carrito.css",
-        session: req.session
+    db.Category.findAll()
+    .then(categorias => {
+        res.status(404).render("not-found", {
+            title: "Funko | Error 404",
+            stylesheet: "carrito.css",
+            session: req.session,
+            categorias
+        })
     })
+    .catch(error => res.send(error));
 })
 
 

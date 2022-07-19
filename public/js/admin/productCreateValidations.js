@@ -93,7 +93,8 @@ window.addEventListener('load', () => {
         let filePath = $inputImages.value, 
             allowefExtensions = /(.jpg|.jpeg|.png)$/i
         if(!allowefExtensions.exec(filePath)){ 
-            $imagesErrors.innerHTML = 'Archivo de imagen en formato .png, .jpeg, .jpg';
+            $imagesErrors.innerHTML = 'Carga un archivo de imagen válido(.jpg - .jpeg - .png)';
+            $inputImages.value = '';
             return false;
         } else {
             if($inputImages.files && $inputImages.files[0]){
@@ -112,6 +113,11 @@ window.addEventListener('load', () => {
                 $descriptionErrors.innerHTML = 'Ingresa una descripción';
                 $inputDescription.classList.add('is-invalid');
                 break;
+            default:
+                $inputDescription.classList.remove('is-invalid');
+                $inputDescription.classList.add('is-valid');
+                $descriptionErrors.innerHTML = '';
+                break;
         }
     });
 
@@ -123,7 +129,7 @@ window.addEventListener('load', () => {
 
         console.log(elementsForm)
 
-        for (let index = 0; index < elementsForm.length - 2; index++) {
+        for (let index = 0; index < elementsForm.length -1; index++) {
             if(elementsForm[index].value == ""
             || elementsForm[index].classList.contains("is-invalid")){
                 elementsForm[index].classList.add("is-invalid");

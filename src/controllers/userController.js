@@ -123,16 +123,11 @@ module.exports = {
         })
         .catch(error => console.log('Error PERFIL'))
     },
-    profileUpdate: (req, res) => {
+    /* profileUpdate: (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
             db.User.update({
-/*                 name : req.body.name,
-                phone : req.body.phone,
-                lastName : req.body.lastName,
-                province : req.body.province,
-                userName : req.body.userName, */
                 ...req.body,
                 icon : req.file ? req.file.filename : req.session.user.icon 
             },
@@ -161,7 +156,111 @@ module.exports = {
                 .catch(error => res.send(error));
             })
         }
+    }, */
+    
+    imgUpdate: (req,res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.User.update({
+                icon : req.file ? req.file.filename : req.session.user.icon 
+            },
+            {where : {id: req.session.user.id}})
+            .then(() => res.redirect("/usuarios/perfil"))
+            .catch(error => res.send(error))
+        }else{
+            db.User.findOne({
+                where: {id: req.session.user.id},
+                include: [{ association: "addresses" }],
+            })
+            .then((user) => {
+                db.Category.findAll()
+                .then(categorias => {
+                    res.render("users/perfil", {
+                        title : `Funko | Perfil ${req.session.user.name}`,
+                        stylesheet : 'perfil.css',
+                        session: req.session,
+                        user,
+                        provinces,
+                        old : req.body,
+                        errors: errors.mapped(),
+                        categorias
+                    })
+                })
+                .catch(error => res.send(error));
+            })
+        }
     },
+    userNameUpdate: (req,res) =>{
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.User.update({
+                userName : req.body.userName
+            },
+            {where : {id: req.session.user.id}})
+            .then(() => res.redirect("/usuarios/perfil"))
+            .catch(error => res.send(error))
+        }else{
+            db.User.findOne({
+                where: {id: req.session.user.id},
+                include: [{ association: "addresses" }],
+            })
+            .then((user) => {
+                db.Category.findAll()
+                .then(categorias => {
+                    res.render("users/perfil", {
+                        title : `Funko | Perfil ${req.session.user.name}`,
+                        stylesheet : 'perfil.css',
+                        session: req.session,
+                        user,
+                        provinces,
+                        old : req.body,
+                        errors: errors.mapped(),
+                        categorias
+                    })
+                })
+                .catch(error => res.send(error));
+            })
+        }
+    },
+    dataUpdate: (req,res) =>{
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.User.update({
+                name : req.body.name,
+                lastName : req.body.lastName,
+                phone : req.body.phone, 
+                province : req.body.province,
+            },
+            {where : {id: req.session.user.id}})
+            .then(() => res.redirect("/usuarios/perfil"))
+            .catch(error => res.send(error))
+        }else{
+            db.User.findOne({
+                where: {id: req.session.user.id},
+                include: [{ association: "addresses" }],
+            })
+            .then((user) => {
+                db.Category.findAll()
+                .then(categorias => {
+                    res.render("users/perfil", {
+                        title : `Funko | Perfil ${req.session.user.name}`,
+                        stylesheet : 'perfil.css',
+                        session: req.session,
+                        user,
+                        provinces,
+                        old : req.body,
+                        errors: errors.mapped(),
+                        categorias
+                    })
+                })
+                .catch(error => res.send(error));
+            })
+        }
+    },
+    
     addressCreate: (req, res) => {
         db.Address.create({
             ...req.body,

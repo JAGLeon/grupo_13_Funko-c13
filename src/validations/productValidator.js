@@ -27,7 +27,7 @@ let validateProduct = [
             } else {
                     return false
             }
-            }).withMessage('Archivo de imagen en formato .png, .jpeg')      
+            }).withMessage('Archivo de imagen en formato (.jpg - .jpeg - .png)')      
 ]
 
 module.exports = validateProduct;
