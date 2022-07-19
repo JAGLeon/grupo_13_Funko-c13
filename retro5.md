@@ -1,0 +1,23 @@
+** Sprint 7 **
+
+Empezar a hacer (+): 
+Definir dias y horario fijo para las dailys. 
+
+Dejar de hacer (-): 
+Dejar para último momento detalles.
+
+Hacer más (>):
+Dailys.
+Consultar sobre dificultades en el proyecto.
+
+Hacer menos (<): 
+Exigencia al codear.
+
+Seguir haciendo (=): 
+Seguir teniendo buena relación entre equipo.
+Proactivos a la hora de realizar sprint por sprint.
+Asignar tareas a inicio de sprint.
+Revision de Trello.
+Tomar ideas nuevas para el proyecto.
+
+
