@@ -171,6 +171,7 @@ header.header-main .retenedor nav.header-navMenu div.header-user div.header-imgU
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    color: var(--text);
 }
 
 /*DESPLEGABLE*/   

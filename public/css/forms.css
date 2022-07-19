@@ -53,9 +53,8 @@ body.forms main section.form-container{
     justify-content: center;
     align-self: center;
     max-width:  85rem;
-    background-color: var(--contenedor);
+    background-color: var(--background);
     color: var(--text);
-    padding: 20px;
     border-radius: 10px;
 }
 
@@ -148,5 +147,9 @@ body.forms{
 /* MAIN */
 body.forms main{
     margin: auto 0;
+}
+
+body.forms main section.form-container{
+    background-color: var(--contenedor);
 }
 }

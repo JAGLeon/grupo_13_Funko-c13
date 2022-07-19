@@ -59,6 +59,7 @@ body.perfilUser main{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    color: var(--text);
 }
 
 .contendor-avatar form{
