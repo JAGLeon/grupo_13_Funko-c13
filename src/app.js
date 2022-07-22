@@ -1,14 +1,13 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 const path  = require('path');
-const PORT =  Number(process.env.PORT);
+const PORT =  Number(process.env.PORT) || 3001;
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookies/cookieSession');
 const db = require("./database/models");
-require("dotenv").config();
-console.log(process.env);
 
 // Enrutadores 
 const productosRouter = require('./routes/productosRouter');

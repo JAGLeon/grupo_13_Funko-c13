@@ -259,8 +259,7 @@ module.exports = {
                 .catch(error => res.send(error));
             })
         }
-    },
-    
+    },   
     addressCreate: (req, res) => {
         db.Address.create({
             ...req.body,
@@ -299,7 +298,7 @@ module.exports = {
           email: user.email,
           googleId: user.social_id,
           userName: user.name,
-          rol: "USER",
+          rol: user.rol,
           province: " ",
           icon : user.icon,
         }
