@@ -26,7 +26,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         password: {
             type: dataTypes.STRING(300),
-            allowNull: false,
         },
         icon: {
             type: dataTypes.STRING(1000),
@@ -41,6 +40,10 @@ module.exports = (sequelize, dataTypes) => {
         },
         phone: {
             type: dataTypes.STRING(100),
+        },
+        social_id: {
+            type:dataTypes.STRING(60),
+            defaultValue: null
         }
     };
 

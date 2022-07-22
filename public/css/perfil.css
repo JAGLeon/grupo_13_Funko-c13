@@ -11,6 +11,9 @@ thead, th, td , tbody{
 
 body.perfilUser{
     margin-top: 3rem;
+    min-height: 100vh;    
+    display: flex;
+    flex-direction: column;
     background-color: var(--background);
 }
 

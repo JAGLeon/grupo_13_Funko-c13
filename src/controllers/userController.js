@@ -288,5 +288,21 @@ module.exports = {
         };
 
         res.redirect('/');
+    },
+    loginGoogle: (req, res) => {
+        let user = req.session.passport.user[0]
+
+        req.session.user = {
+          id: user.id,
+          name: user.name,
+          lasName: user.lasName,
+          email: user.email,
+          googleId: user.social_id,
+          userName: user.name,
+          rol: "USER",
+          province: " ",
+          icon : user.icon,
+        }
+        res.redirect('/')
     }
 };
