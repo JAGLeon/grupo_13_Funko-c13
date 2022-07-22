@@ -4,17 +4,17 @@
     <a href="/franquicias">Ver más</a>
   </div>
   <div class="sales-box-container">
-<div class="categorias__container--slider">
-    <% categorias.forEach(categoria => { %>
-      <div class="sales-box">
-            <a href="/franquicias/detalle/<%= categoria.id %> ">
-                <div id="img-category">
-                  <img id="category" src="/img/categorias/<%= categoria.image  %>" alt="Categoria: <%= categoria.name %>">
-                </div>
-                <p class="funko-name"><%= categoria.name %></p>
-            </a>
-      </div>
-    <% }) %>
-</div>
-</div>
+    <div class="categorias__container--slider">
+        <% categorias.forEach(categoria => { %>
+          <div class="sales-box">
+                <a href="/franquicias/detalle/<%= categoria.id %> ">
+                    <div id="img-category">
+                      <img id="category" src="/img/categorias/<%= categoria.image  %>" alt="Categoria: <%= categoria.name %>">
+                    </div>
+                    <p class="funko-name"><%= categoria.name %></p>
+                </a>
+          </div>
+        <% }) %>
+    </div>
+  </div>
 </div>

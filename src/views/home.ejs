@@ -153,11 +153,35 @@
       </div>
 
       <!-- FRANQUICIAS -->
-      <div class="page_container">
-        
-          <%- include('partials/categoriesSlider') %> 
-
-
+      <div class="page_container"> 
+          <div class="sales-container">
+            <div class="sales-top">
+              <p class="sales-title">Franquicias</p>
+              <a href="/franquicias">Ver más</a>
+            </div>
+            <div class="carrusel">
+              <div class="carrusel-items">
+                <% categorias.forEach(categoria => { %>
+                  <div class="carrusel-item">
+                      <a href="/franquicias/detalle/<%= categoria.id %> ">
+                          <div id="img-category">
+                            <img id="category" src="/img/categorias/<%= categoria.image  %>" alt="Categoria: <%= categoria.name %>">
+                          </div>
+                      </a>
+                  </div>
+                <% }) %>
+                <% categorias.forEach(categoria => { %>
+                  <div class="carrusel-item">
+                      <a href="/franquicias/detalle/<%= categoria.id %> ">
+                          <div id="img-category">
+                            <img id="category" src="/img/categorias/<%= categoria.image  %>" alt="Categoria: <%= categoria.name %>">
+                          </div>
+                      </a>
+                  </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
         <!-- Ofertas -->
 
         <div class="sales-container">
@@ -210,5 +234,7 @@
 <!-- FOOTER -->
   <%- include('partials/footer') %> 
 <!-- END FOOTER -->
+<script src="./js/sliderAutomatic.js" defer></script>
+
   </body>
 </html>
