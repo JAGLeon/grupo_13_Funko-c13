@@ -28,8 +28,8 @@ module.exports = () => {
                         icon : "userG.png" || profile.photos[0].value,
                     }
                 })
-                .then(usuario =>{
-                    return done(null, usuario);
+                .then(user =>{
+                    return done(null, user);
                 })
                 .catch(error=>{
                     console.log(error);

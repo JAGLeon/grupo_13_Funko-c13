@@ -11,7 +11,7 @@ let validateRegister = [
         .isLength({min:2, max:30}).withMessage('Ingrese un nombre valido'),
     check('lastName')
         .notEmpty().withMessage('Ingrese su apellido').bail()
-        .isAlpha().withMessage('Apellido inválido')
+        // .isAlpha().withMessage('Apellido inválido')
         .isLength({min:2, max:30}).withMessage('Ingrese un apellido valido'),
     check('userName')
         .notEmpty().withMessage('Ingrese su usuario').bail()
