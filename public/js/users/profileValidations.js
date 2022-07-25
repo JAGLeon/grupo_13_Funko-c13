@@ -130,7 +130,8 @@ $file.addEventListener('change',
                 $file.classList.remove('is-invalid')
             }
         }
-    })
+    }
+)
 
 $formDatos.addEventListener("submit", function(event) {
 
