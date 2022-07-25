@@ -76,32 +76,3 @@ module.exports = {
         .catch(error => res.send(error));
     }
 }
-
-
-cart: (req, res)=>{
-    let userId = req.session.user.id;
-
-    let productos = db.OrderItem.findAll({where: {user_id: userId},include: [{association: 'products',include: [{association: 'images'}]}]});
-    let categorias = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']],/* offset:13,*/ limit: 10});
-
-    Promise.all([productos, categorias])
-    db.OrderItem.findAll({
-        where: {usuario_id: userId},
-            include: [{association: 'products',
-            include: [{association: 'images'}]
-        }]
-    })
-    .then([productos, categorias] => {
-        db.Users.findByPk(userId)
-        .then(usuario => {
-            res.render('carrito', {
-                title: 'Funko | Carrito',
-                stylesheet: 'products.css',
-                productos: productos,
-                session: req.session,
-                toThousand,
-                categorias
-            })
-        })
-    })
-}
