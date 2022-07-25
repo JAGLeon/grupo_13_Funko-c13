@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "OrdersItems";
+    let alias = "OrderItem";
     let cols = {
         id: {
             type: dataTypes.INTEGER(11),
@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false,
         }, 
-        order_id : {
+        user_id : {
             type: dataTypes.INTEGER(11),
             allowNull: false,
         },
@@ -20,16 +20,16 @@ module.exports = (sequelize, dataTypes) => {
         },
     }
     let config = {
-        tableName: "orders_items",
+        tableName: "order_items",
         timestamps: true,
     }
 
     const OrdersItems = sequelize.define(alias, cols, config);
 
     OrdersItems.associate = (models) => {
-        OrdersItems.belongsTo(models.Order,{
-            as: 'items',
-            foreignKey: 'order_id'
+        OrdersItems.belongsTo(models.User,{
+            as: 'user',
+            foreignKey: 'user_id'
         });
 
         OrdersItems.belongsTo(models.Product,{
@@ -38,5 +38,5 @@ module.exports = (sequelize, dataTypes) => {
         });
     };
 
-    return OrdersItems;
+    return OrderItem;
 }

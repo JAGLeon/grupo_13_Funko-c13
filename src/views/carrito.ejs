@@ -12,7 +12,14 @@
         <h1>Carrito</h1>
         <section class="main_section-muestra">
             <h4>PRODUCTOS (2)</h4>
-            <article class="carrito-funkos">
+            <%  if (productos == 0 ) { %>  
+                <h2>No hay productos en su carrito</h2>
+                
+            <% } else { %> 
+                
+            <% } %> 
+
+<!--             <article class="carrito-funkos">
                 <div class="muestra-funko">
                     <div class="muestra-img">
                         <img src="/img/productos/funkoSpiderMan.png" alt="Funko POP Spiderman">
@@ -32,7 +39,7 @@
                     <p class="p_espacio-carrito">Subtotal:</p>
                     <p class="dinero-domicilio">$5.470</p>
                 </div>
-            </article>
+            </article> -->
             <article class="carrito-funkos">
                 <div class="muestra-funko">
                     <div class="muestra-img">
