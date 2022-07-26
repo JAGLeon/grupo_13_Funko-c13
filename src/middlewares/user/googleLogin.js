@@ -11,7 +11,7 @@ module.exports = () => {
                 clientSecret,
                 callbackURL: "http://localhost:3000/usuarios/autenticacion/google/llamada"
             },
-            function(accessToken, refreshToken, profile, done) {
+            function(profile, done) {
                 db.User.findOrCreate({
                     where: {
                         social_id: profile.id
