@@ -1,4 +1,3 @@
-/* const {getProducts, writeProducts} = require('../../data'); */
 const { validationResult } = require('express-validator');
 const db = require("../../database/models");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -9,7 +8,12 @@ const fs = require('fs');
 module.exports = {
     /* Envia la vista de listado de productos */
     list: (req, res) => {
-        db.Product.findAll({include:[{association: 'category'}]})
+        db.Product.findAll({
+            include:[
+                {association: 'category'},
+                {association : 'images'}
+            ]
+        })
         .then((productos) => {
             res.render('admin/products/listProducts', {
                 title: "Listado de productos",
@@ -180,18 +184,6 @@ module.exports = {
                  })
                  .catch((error) => res.send('aca'));
         }
-        
-        /* db.Category.findAll()
-        .then(category => {
-            res.render('admin/products/addProduct',{
-                    title : 'Funko | Admin',
-                    stylesheet: 'formsEditAdd.css',
-                    session: req.session,
-                    category,
-                    old: req.body,
-                    errors : errors.mapped()
-            })
-        }) */
     },
     /* Recibe la info del producto a eliminar */
     deleteProduct: (req, res) => {

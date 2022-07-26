@@ -12,7 +12,10 @@ module.exports = {
     },
     search: (req, res) => {
         db.Product.findAll({
-            include:[{association: 'category'}],
+            include:[
+                {association: 'category'},
+                {association : 'images'}
+            ],
             where: {
                 name: {
                     [Op.like]: '%' + req.query.keywords + '%'

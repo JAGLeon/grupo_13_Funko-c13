@@ -16,6 +16,7 @@
                 <thead>
                 <tr>
                     <th scope="col">id</th>
+                    <th scope="col">Imágen</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Franquicia</th>
@@ -27,6 +28,7 @@
                 <% productos.forEach(producto => { %>
                     <tr>
                     <th scope="row"><%- producto.id %></th>
+                    <td><img class="imgTableProduct" src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" alt="<%- producto.name %>"></td>
                     <td><%- producto.name %></td>
                     <td><%- toThousand (producto.price) %></td>
                     <td><%- producto.category.name %></td>

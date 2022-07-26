@@ -16,6 +16,7 @@
                 <thead>
                 <tr>
                     <th scope="col">id</th>
+                    <th scope="col">Imágen</th>
                     <th scope="col">Nombre</th>
                     <th scope="col" class="btn"></th>
                 </tr>
@@ -24,6 +25,7 @@
                     <% categories.forEach(category => { %>
                         <tr>
                         <th scope="row"><%- category.id %></th>
+                        <td><img class="imgTableCategory" src="/img/categorias/<%= category.image %>" alt="<%- category.name %>"></td>
                         <td><%- category.name %></td>
                         <td class="btn">
                             <a href="/admin/franquicias/editar/<%- category.id %>" class="btn-edit">
