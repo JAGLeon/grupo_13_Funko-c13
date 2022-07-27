@@ -77,7 +77,10 @@ module.exports = {
         /* 1 - Obtener el id del producto */
         let idProduct = +req.params.id;
         /* 2 - Buscar el producto a editar */
-        db.Product.findByPk(idProduct)
+        db.Product.findByPk(idProduct, 
+            {include:[
+                {association : 'images'}
+            ]})
         .then((producto) => {
             db.Category.findAll()
             .then(category => {
@@ -90,15 +93,6 @@ module.exports = {
                 })
             })
         })
-/*         db.Product.findByPk(idProduct)
-            .then((producto) => {
-                res.render('admin/products/editProduct',{
-                    title : 'Funko | Admin',
-                    stylesheet: 'formsEditAdd.css',
-                    producto,
-                    session: req.session
-                })
-            }) */
             .catch((error) => res.send('aca'))
         /* 3 - Mostrar el producto en la vista */
     },

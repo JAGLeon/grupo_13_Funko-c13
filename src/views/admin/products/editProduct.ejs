@@ -59,6 +59,9 @@
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
+          <div class="imgProduct" id="img-preview">
+            <img src="/img/productos/<% producto.images.forEach(img => { %><%= img.image %><% }) %>" alt="<%= category.name %>">
+          </div>
           <input type="file" name="images" class="form-control" id="images" multiple>
           <small class="text-danger" id="imagesErrors"></small>
           <% if (locals.errors && errors.images) { %>

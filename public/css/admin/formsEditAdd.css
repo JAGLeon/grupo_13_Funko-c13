@@ -120,3 +120,27 @@ small#fullErrors {
     margin: 0 auto 1rem;
     align-items: center;
 }
+
+div.imgCategory {
+    width: 19.4rem;
+    height: 10rem;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+div.imgCategory img {
+    width: 19.4rem;
+    height: 10rem;
+}
+
+div.imgProduct {
+    width: 19.4rem;
+    height: 14rem;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+div.imgProduct img {
+    width: 19.4rem;
+    height: 14rem;
+}
