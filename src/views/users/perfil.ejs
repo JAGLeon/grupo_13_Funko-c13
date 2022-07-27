@@ -142,23 +142,28 @@
         <div class="pop-up" id="pop-up">
             <div class="squareLogo">
                 <a href="" class="closePop-up" id="closePop-up"><i class="fas fa-times"></i></a>
-                <img src="/img/productos/Logo.svg" alt="Logo Funko">
+                <img src="/img/productos/Logo.svg" alt="Logo Funko" >
             </div>
             <article>
                 <h5>Agregar más direcciones donde estoy ubicado</h5>
                 <p><b>Aviso:</b> Podras administrar todas tus direcciones donde lleguen los pedidos de nuestro e-shop.</p>
             </article>
+            <small class="text-danger" id="addressErrors"><%= (locals.errors && errors.custom) ? errors.custom.msg : "" %></small>
             <div class="contenedor-direccion">
-                <form action="/usuarios/direcciones" method="POST">
+                <form action="/usuarios/direcciones" method="POST" id="formAddress">
                     <div class="contenedor-address">
                         <div class="input-container">
-                            <input class="input-style" placeholder="Dirección" type="text" name="address" id="address">
+                            <small class="text-danger" id="errorsAddress"><%=(locals.errors && errors.addressName) ? errors.addressName.msg : "" %> </small>
+                            <input class="input-style" placeholder="Dirección" type="text" name="address" id="addressName">
+                            <small class="text-danger" id="errorsCity"><%=(locals.errors && errors.city) ? errors.city.msg : "" %> </small>
                             <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city">
                         </div>
                     </div>
                     <div class="contenedor-bottom">
                         <div class="input-barrio">
-                            <input class="input-style" placeholder="Número" type="text" name="number" id="number">
+                            <small class="text-danger" id="errorsNumberAddress"><%=(locals.errors && errors.numberAddress) ? errors.numberAddress.msg : "" %> </small>
+                            <input class="input-style" placeholder="Número" type="text" name="number" id="numberAddress">
+                            <small class="text-danger" id="errorsPostal_code"><%=(locals.errors && errors.postal_code) ? errors.postal_code.msg : "" %> </small>
                             <input class="input-style" placeholder="Código postal" type="text" name="postal_code" id="postal_code">
                             <input class="input-style" placeholder="Departamento" type="text" name="departament" id="departament">
                             <input class="input-style" placeholder="Timbre" type="text" name="doorbell" id="doorbell">
@@ -176,6 +181,7 @@
 <%- include('../partials/footer')  %> 
 <!-- END FOOTER -->
 <script src="../js/overlay.js"></script>
-<!-- <script src="../js/users/profileValidations.js" defer></script> -->
+<script src="../js/users/profileValidations.js" defer></script>
+<script src="../js/users/AddressValidations.js" defer></script>
 </body>
 </html>
