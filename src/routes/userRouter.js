@@ -10,16 +10,16 @@ const userNameValidator =require('../validations/userNameValidator');
 const dataValidator = require('../validations/dataValidator');
 const userInSession = require('../middlewares/user/userInSession');
 const userSession = require('../middlewares/user/userSession');
-//const passport = require('passport');
-//const googleLogin = require('../middlewares/user/googleLogin');
-//googleLogin()
+const passport = require('passport');
+const googleLogin = require('../middlewares/user/googleLogin');
+googleLogin()
 
-/* passport.serializeUser(function(user, done) {
+passport.serializeUser(function(user, done) {
     done(null, user);
 });
 passport.deserializeUser(function(user, done) {
 done(null, user);
-}); */
+});
   
 
 router.get('/inicio', userInSession, userController.login);
@@ -36,7 +36,7 @@ router.get('/salir', userController.logout);
 
 
 /* GOOGLE LOGIN */
-//router.get("/autenticacion/google", passport.authenticate("google", { scope: ["profile", "email"] }));
-//router.get('/autenticacion/google/llamada', passport.authenticate('google', { failureRedirect: '/users/login' }), userController.loginGoogle);
+router.get("/autenticacion/google", passport.authenticate("google", { scope: ["profile", "email"] }));
+router.get('/autenticacion/google/llamada', passport.authenticate('google', { failureRedirect: '/users/login' }), userController.loginGoogle);
 
 module.exports = router;
