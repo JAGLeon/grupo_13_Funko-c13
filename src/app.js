@@ -16,6 +16,8 @@ const userRouter = require('../src/routes/userRouter');
 const homeRouter = require ('../src/routes/homeRouter');
 const enlacesRouter = require ('../src/routes/enlacesRouter');
 const adminRouter = require('../src/routes/adminRouter');
+const apiRouter = require('../src/routes/apiRoutes/apiRouter');
+
 const { title } = require('process');
 
 // Middlewares
@@ -54,6 +56,7 @@ app.use('/franquicias', categoriesRouter); // Categorias de Productos
 app.use('/productos', productosRouter); // Productos
 app.use('/enlaces-utiles', enlacesRouter); // Politicas - FormaDePago
 app.use('/admin', adminRouter); // Admin
+app.use('/api', apiRouter); // Api
 
 /* Vista not found */
 app.use((req, res, next) => {

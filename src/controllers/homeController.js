@@ -5,6 +5,8 @@ const { Op } = require("sequelize");
 
 module.exports = {
     home: (req,res)=>{
+        let products = [];
+
         db.Category.findAll()
         .then(categorias => {
             db.Product.findAll({
@@ -23,7 +25,9 @@ module.exports = {
                     categorias,
                     productos,
                     productosOff,
-                    toThousand
+                    user: req.session.user?.id || null,
+                    toThousand,
+                    products
                 });
             })
             .catch((error) => {res.send(error)});
@@ -31,6 +35,8 @@ module.exports = {
         .catch((error) => {res.send(error)});
     },
     search: (req, res) => {
+        let products = [];
+
         db.Product.findAll({
             include : [{association : 'images'}],
             where: {name: {[Op.like]: '%' + req.query.keywords + '%'}}
@@ -45,34 +51,13 @@ module.exports = {
                     stylesheet: 'search.css',
                     toThousand,
                     session: req.session,
-                    categorias
+                    user: req.session.user?.id || null,
+                    categorias,
+                    products
                 });
             })
             .catch(error => res.send(error));
         })
         .catch((error) => {res.send(error)});
-    },
-    compra:(req,res)=>{
-        db.Category.findAll()
-        .then(categorias => {
-            db.Product.findAll({
-                include : [{association : 'images'}],
-                order : [['name','DESC']],
-                // offset:13,
-                limit: 10
-            })
-            .then(productos => {
-                res.render('carrito',{
-                    title : 'Funko | Compras',
-                    stylesheet: 'carrito.css',
-                    session: req.session,
-                    categorias,
-                    productos,
-                    toThousand
-                });
-            })
-            .catch((error) => {res.send(error)});
-        })
-        .catch(error => res.send(error));
     }
 }

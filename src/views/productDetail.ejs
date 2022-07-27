@@ -57,8 +57,10 @@
                     <div id="num">1</div>
                     <div id="sum">+</div>
                 </div>
-                <a href="/carrito" class="btn-buy">Comprar ahora</a>
-                <button type="" class="btn-add">Agregar al carrito</button>
+                <a href="/productos/carrito" class="btn-buy">Comprar ahora</a>
+                <% if (session.user !== undefined) { %>
+                    <button class="btn-add" onclick="addToCart(`<%- producto.id %>`, 1,`<%= user %>`)">Agregar al carrito</button>
+                <% } %> 
             </div>
         </section>
 
