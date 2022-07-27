@@ -86,6 +86,7 @@ function qs(element) {
         fetch(`${BASE_URL}/api/carrito/limpiarCarrito/${user}`, {method: "DELETE"})
         .then(res => {
             if(res.ok){
+                console.log(res + " soy el res");
                 return res.json()
             }else{
                 throw {
@@ -94,7 +95,7 @@ function qs(element) {
             }
         })
         .then(result => {
-            
+            console.log(result + " soy el resultado de producto eliminado"); 
             if(result.status === 200){
                 alert('Producto Eliminado')
                 window.location.reload()
