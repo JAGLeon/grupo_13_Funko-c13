@@ -124,7 +124,7 @@ small#fullErrors {
 div.imgCategory {
     width: 19.4rem;
     height: 10rem;
-    border: 1px solid black;
+    border: 1.5px solid #ced4da;
     margin-bottom: 1rem;
 }
 
@@ -136,7 +136,7 @@ div.imgCategory img {
 div.imgProduct {
     width: 19.4rem;
     height: 14rem;
-    border: 1px solid black;
+    border: 1.5px solid #ced4da;
     margin-bottom: 1rem;
 }
 
