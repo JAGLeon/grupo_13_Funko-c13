@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
     let $inputDescription = qs('#description')
     let $descriptionErrors = qs('#descriptionErrors')
     let $formProduct = qs('#formProduct')
+    let $imgPreview = qs('#img-preview')
 
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
     let regExNumeric = /^[0-9][A-Za-z0-9 -]*$/
@@ -99,6 +100,9 @@ window.addEventListener('load', () => {
         } else {
             if($inputImages.files && $inputImages.files[0]){
                 let reader = new FileReader();
+                reader.onload = function(e){
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                };
                 reader.readAsDataURL($inputImages.files[0]);
                 $imagesErrors.innerHTML = '';
                 $inputImages.classList.remove('is-invalid')

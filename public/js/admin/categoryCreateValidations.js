@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     let $nameErrors = qs('#nameErrors')
     let $inputImage = qs('#image')
     let $imageErrors = qs('#imageErrors')
+    let $imgPreview = qs('#img-preview')
 
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/ //para validar si es alfabetico
 
@@ -43,6 +44,9 @@ window.addEventListener('load', () => {
         } else {
             if($inputImage.files && $inputImage.files[0]){
                 let reader = new FileReader();
+                reader.onload = function(e){
+                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                };
                 reader.readAsDataURL($inputImage.files[0]);
                 $imageErrors.innerHTML = '';
                 $inputImage.classList.remove('is-invalid')

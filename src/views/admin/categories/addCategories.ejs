@@ -20,6 +20,8 @@
         </div>
         <div class="image">
           <label for="image" class="form-label">Imágen</label>
+          <div class="imgCategory" id="img-preview">
+          </div>
           <input type="file" name="image" class="form-control" id="image">
           <small class="text-danger" id="imageErrors"></small>
           <% if (locals.errors && errors.image) { %>
