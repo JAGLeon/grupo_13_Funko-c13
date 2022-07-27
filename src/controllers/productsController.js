@@ -28,12 +28,12 @@ let productsController = {
         let idProduct = req.params.id
         let productPromise = db.Product.findByPk(idProduct);
         let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name', 'ASC']]});
-
         Promise.all([productPromise, allProducts])
         .then(([producto, productos]) => {
             // res.send(productos)
             db.ProductImage.findOne({where : {product_id : idProduct}})
             .then(img => {
+                console.log(img);
                 db.Category.findAll()
                 .then(categorias => {
                     res.render('productDetail', {
