@@ -21,13 +21,12 @@ module.exports = {
                 res.render('home',{
                     title : 'Funko',
                     stylesheet: 'home.css',
+                    user: req.session.user?.id || null,
                     session: req.session,
                     categorias,
                     productos,
                     productosOff,
-                    user: req.session.user?.id || null,
                     toThousand,
-                    products
                 });
             })
             .catch((error) => {res.send(error)});

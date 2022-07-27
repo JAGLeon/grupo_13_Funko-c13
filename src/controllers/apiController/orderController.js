@@ -9,12 +9,14 @@ module.exports = {
         if (userId) {
             db.Orders.findAll({
               where: { user_id : userId },
-              include: [{association: "items",
+              include: [{association: "order_items",
                include: [{association: "products"}]
-            }]
-            }).then((result) => {
+              }]
+            })
+            .then((result) => {
+              console.log(result + " result controller");
                 if (result.length > 0) {
-                    let products = result[0].items || null;
+                    let products = result[0].order_items || null;
                     let item = products?.find((item) => item.product_id === +productID);
                     if (item) {
                       let newQuantity = +quantity + item.quantity;
@@ -23,7 +25,7 @@ module.exports = {
                           product_id: productID,
                           quantity: newQuantity,
                         },
-                        {where: {id: item.id,},}
+                        {where: {id: item.id}}
                       )
                         .then((result) => {
                           res.json({
@@ -43,6 +45,7 @@ module.exports = {
                         quantity: +quantity,
                       })
                         .then((createdProduct) => {
+                          console.log(createdProduct + " lo cree al producto en la lista del carrito");
                           res.status(201).json({
                             status: 201,
                             data: createdProduct,
@@ -55,14 +58,18 @@ module.exports = {
                         );
                     }
                 }  else {
-                    db.Orders.create({userId})
-                      .then((order) => {
+                    db.Orders.create({user_id : userId})
+                      .then(order => {
+                        console.log(order + " soy el order");
                         if (order) {
+                          console.log(order + " vemos si se creo correctamente");
                           db.OrdersItems.create({
                             order_id: order.id,
                             product_id: productID,
                             quantity: +quantity,
-                          }).then((order_item) => {
+                          })
+                          .then(order_item => {
+                            console.log(order_item +  " devuelvo la tabla creada");
                             res.json({
                               meta: {
                                 status: 201,
@@ -88,11 +95,11 @@ module.exports = {
         db.Orders.findOne({
           where: {user_id: user},
           include: [{
-              association: "items",
+              association: "order_items",
               include: [{ association: "products" }]
             }]
         }).then((order) => {
-          let itemToRemove = order.items.find((item) => item.product_id === +itemId);
+          let itemToRemove = order.order_items.find((item) => item.product_id === +itemId);
 
           if (itemToRemove !== undefined) {
             db.OrdersItems.findByPk(itemToRemove.id)
@@ -145,12 +152,12 @@ module.exports = {
           where: {user_id: user},
           include: [
             {
-              association: "items",
+              association: "order_items",
               include: [{association: "products"}]
             },
           ],
         }).then((order) => {
-        let itemToRemove = order.items.find((item) => item.product_id === +itemId);
+        let itemToRemove = order.order_items.find((item) => item.product_id === +itemId);
 
           if (itemToRemove !== undefined) {
             db.OrdersItems.destroy({
@@ -176,7 +183,7 @@ module.exports = {
             where: {user_id: user},
             include: [
             {
-              association: "items",
+              association: "order_items",
               include: [
                 {association: "products"}]
             },
@@ -207,25 +214,25 @@ module.exports = {
         db.Orders.findOne({
           where: {user_id: user},
           include: [{
-                association: "items",
+                association: "order_items",
                 include: [{
                     association: "products",
                     include: [{association: "images"}]
                 }]
             }]
         })
-            .then((order) => {
-            if(order){
-                res.json({
-                    data: order,
-                });
-            }else{
-                res.json({
-                    status: 404,
-                    msg: "No hay una orden creada"
-                });
-            };
-            })
-            .catch(error => console.log(error))
+          .then((order) => {
+          if(order){
+              res.json({
+                  data: order,
+              });
+          }else{
+              res.json({
+                  status: 404,
+                  msg: "No hay una orden creada"
+              });
+          };
+          })
+          .catch(error => console.log(error))
     }
 };

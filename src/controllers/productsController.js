@@ -74,18 +74,53 @@ let productsController = {
         .catch((error) => {res.send(error)});
     },
     compra:(req,res)=>{
+        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']]/*,offset:13*/,limit: 10});
+        let allCategories = db.Category.findAll();
         let user = req.session.user.id
+
+        Promise.all([allProducts, allCategories])
+        .then(([productos, categorias]) => {
+            axios({
+                method: 'get',
+                url: `http://localhost:3000/api/carrito/${user}`,
+            })
+            .then(response =>{
+                console.log(response);
+                let products = response.data.data?.order_items.map(item => {
+                  return {
+                    ...item.products,
+                    quantity: item.quantity
+                  }
+                })  
+                    res.render('carrito',{
+                    title : 'Funko | Compras',
+                    stylesheet : 'carrito.css',
+                    session : req.session,
+                    categorias,
+                    productos,
+                    user : req.session.user?.id || null,
+                    toThousand,
+                    products : products !== undefined ? products : []
+                });
+            })    
+        })
+    }
+}
+
+/* let user = req.session.user.id
         axios({
             method: 'get',
             url: `http://localhost:3000/api/carrito/${user}`,
         })
         .then(response =>{
-            let products = response.data.data?.order_items.map(item => {
+            console.log(response);
+            let products = response.data.data?.products.map(item => {
               return {
                 ...item.products,
                 quantity: item.quantity
               }
             })  
+            console.log(products);
             db.Category.findAll()
                 .then(categorias => {
                     db.Product.findAll({
@@ -110,9 +145,7 @@ let productsController = {
                 })
                 .catch(error => res.send(error));
         })  
-        .catch(error => res.send(error));
-    }
-}
+        .catch(error => res.send(error)); */
 
 
 module.exports = productsController

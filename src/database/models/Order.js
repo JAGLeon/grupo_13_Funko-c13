@@ -24,12 +24,12 @@ module.exports = (sequelize, dataTypes) => {
 
     Orders.associate = (models) => {
         Orders.hasMany(models.OrdersItems,{
-            as: 'items',
+            as: 'order_items',
             foreignKey: 'order_id',
         });
 
         Orders.belongsTo(models.User,{
-            as: 'order',
+            as: 'users',
             foreignKey: 'user_id',
         });
     };

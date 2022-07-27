@@ -14,13 +14,14 @@ function qs(element) {
 // }
 
     
-    let $addToCart = qs('#addToCart'),
+/*     let $addToCart = qs('#addToCart'),
     $removeOne = qs('#removeOne'),
     $removeAll = qs('#removeAll'),
     $clearCart = qs('#clearCart'),
     $addToCartOk = qs('#addToCartOk');
-
-    function addToCart (productId, quantity = 1, user){
+ */
+    function addToCart(productId, quantity = 1, user){
+        console.log(productId, quantity , user + "SOY EL BOTON" + BASE_URL);
         fetch(`${BASE_URL}/api/carrito/${productId}/${quantity}/${user}`, {method: "POST"})
         .then(res => {
             if(res.ok){

@@ -16,17 +16,17 @@
             <% } else { %>
                 <h4>PRODUCTOS (<%= products.length %> )</h4>
             <form action="#">
-                <% productos.forEach(product => { %>
+                <% products.forEach(product => { %>
 
                 <article class="carrito-funkos">
                     <div class="muestra-funko">
                         <div class="muestra-img">
-                            <img src="/img/productos/<%- product.productImages[0].image %>" alt="<%- product.name %>">
+                            <img src="/img/productos/<%- product.images[0].image %>" alt="<%- product.name %>">
                         </div>
                         <div class="muestra-caracteristica">
                             <strong><%- product.name %></strong><br>
                             <p>Caracteristica: Sin ma...</p> 
-                            <a href="" class="muestra_carac-funko">Eliminar</a><br> <a href="" class="muestra_carac-funko">Productos similares</a>
+                            <a href="" class="muestra_carac-funko" onclick="removeAll(`<%- product.id %>`, `<%= session.user.id %>`)">Eliminar</a><br> <a href="" class="muestra_carac-funko">Productos similares</a>
                             <!-- <button class="clear-cart" onclick="removeAll(`<%- product.id %>`, `<%= session.user.id %>`)">
                                 Quitar del carrito
                             </button> -->
@@ -38,9 +38,8 @@
                         <button onclick="addToCart(`<%= product.id %>`, 1,`<%= session.user.id %>`)"><i class="fa-solid fa-plus"></i></button>
                     </div>
                     <div class="carrito-precio">
-                        <p class="p_espacio-carrito">Subtotal:</p>
-                        <p class="dinero-domicilio">$<%- product.price %></p>
-                        <p>Precio total: $<%- (Number(product.price) * Number(product.quantity))%></p>
+                        <p class="p_espacio-carrito">Unidad $<%- product.price %></p>
+                        <p>Subtotal: $<%- (Number(product.price) * Number(product.quantity))%></p>
                     </div>
                 </article>
                 <% }) %>
@@ -80,7 +79,7 @@
             <% } %> 
         </section>
         <!-- Catálogo -->
-        <%- include('partials/catalogoSlider') %> 
+         <%- include('partials/catalogoSlider') %>
         <h2 class="novedad-h2">Novedad</h2>
         <img
           class="banner-bottom"
@@ -92,5 +91,7 @@
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
+<script src="../../js/cart.js" defer></script>
+
 </body>
 </html>
