@@ -30,6 +30,16 @@ main.index {
 
 main.index h1 {
     text-align: center;
-    margin-top: 6rem;
+    margin: 6rem 0 1rem;
 }
+
+div.image {
+    text-align: center;
+}
+
+div.image img {
+    width: 40rem;
+    height: 32rem;
+}
+
 /* END INDEX */
