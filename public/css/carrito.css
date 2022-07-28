@@ -61,6 +61,16 @@ body main .novedad-h2{
     background-color: var(--card);
     margin:0 0 .2rem ;
 }
+
+/*ClearCart*/
+.btnClearCart button{
+    border: none;
+    background-color:var(--verdeCuadro);
+}
+
+.btnClearCart span{
+    color: var(--text);
+}
 /* FUNKOS */
 .main-carrito .main_section-muestra .carrito-funkos{
     background-color: var(--card);

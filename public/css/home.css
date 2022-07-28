@@ -14,6 +14,54 @@
   --publish: 16px;
 }
 
+/* POP UP CARRITO */
+.producto-agregado-ok {
+    padding: 30px;
+    background: #fff;
+    display: flex;
+    position: fixed;
+    border-radius: 15px;
+    z-index: 100000000000000000000;
+    top: 45px;
+    color: #35bd35;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 20px;
+    text-align: center;
+    right: 0px;
+    opacity: 0;
+    transition: all .8s ease; 
+}
+  
+.producto-agregado-ok i {
+    margin-right: 10px;
+    font-size: 1.6rem; 
+}
+
+.producto-eliminado{
+    padding: 30px;
+    background: #fff;
+    display: flex;
+    position: fixed;
+    border-radius: 15px;
+    z-index: 1000000000000000000000;
+    top: 45px;
+    color: red;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 20px;
+    text-align: center;
+    right: 0px;
+    opacity: 0;
+    transition: all .8s ease; 
+}
+
+.producto-eliminado i{
+    margin-right: 10px;
+    font-size: 1.6rem; 
+}
+
+/* FIN POP UP */
 /* Estilos Generales */
 
 * {

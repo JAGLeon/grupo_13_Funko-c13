@@ -27,16 +27,16 @@ router.post('/inicio', validateLogin, userController.loginUser);
 router.get('/registro', userInSession, userController.register);
 router.post('/registro', uploadFile.single('icon'), validateRegister, userController.registerUser);
 router.get('/perfil', userSession , userController.perfil);
-router.put('/perfil/icon', uploadFile.single('icon'), iconValidator  ,userController.imgUpdate);
-router.put('/perfil/nombres', userNameValidator ,userController.userNameUpdate);
-router.put('/perfil/datos', dataValidator ,userController.dataUpdate);
+router.put('/perfil/icon', userSession, uploadFile.single('icon'), iconValidator  ,userController.imgUpdate);
+router.put('/perfil/nombres', userSession, userNameValidator ,userController.userNameUpdate);
+router.put('/perfil/datos', userSession, dataValidator ,userController.dataUpdate);
 router.post('/direcciones', userSession, userController.addressCreate);
 router.delete('/direcciones/:id', userSession, userController.addressDestroy);
-router.get('/salir', userController.logout);
+router.get('/salir', userSession, userController.logout);
 
 
 /* GOOGLE LOGIN */
 router.get("/autenticacion/google", passport.authenticate("google", { scope: ["profile", "email"] }));
-router.get('/autenticacion/google/llamada', passport.authenticate('google', { failureRedirect: '/users/login' }), userController.loginGoogle);
+router.get('/autenticacion/google/llamada', passport.authenticate('google', { failureRedirect: '/usuarios/inicio' }), userController.loginGoogle);
 
 module.exports = router;

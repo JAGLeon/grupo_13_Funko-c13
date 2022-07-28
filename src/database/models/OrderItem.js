@@ -20,15 +20,15 @@ module.exports = (sequelize, dataTypes) => {
         },
     }
     let config = {
-        tableName: "orders_items",
+        tableName: "order_items",
         timestamps: true,
     }
 
     const OrdersItems = sequelize.define(alias, cols, config);
 
     OrdersItems.associate = (models) => {
-        OrdersItems.belongsTo(models.Order,{
-            as: 'items',
+        OrdersItems.belongsTo(models.Orders,{
+            as: 'orders',
             foreignKey: 'order_id'
         });
 

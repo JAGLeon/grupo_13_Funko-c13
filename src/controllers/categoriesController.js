@@ -10,6 +10,7 @@ module.exports = {
                 title : 'Funko || Categorias',
                 stylesheet: 'home.css',
                 session: req.session,
+                user : req.session.user?.id || null,
             })
         })
         .catch((error) => {res.send(error)}) 
@@ -32,6 +33,7 @@ module.exports = {
                         session: req.session,
                         productos: productos,
                         toThousand,
+                        user : req.session.user?.id || null,
                     })
 
             })
