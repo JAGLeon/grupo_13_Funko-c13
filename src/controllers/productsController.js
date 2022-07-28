@@ -1,6 +1,6 @@
 const db = require("../database/models");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+let axios = require('axios');
 
 let productsController = {
     listar : (req, res) => {
@@ -17,7 +17,8 @@ let productsController = {
                     productos,
                     session: req.session,
                     toThousand,
-                    categorias
+                    categorias,
+                    user: req.session.user?.id || null,
                 });
             })
             .catch(error => res.send(error));
@@ -43,6 +44,7 @@ let productsController = {
                         stylesheet: 'productDetail.css',
                         session: req.session,
                         toThousand,
+                        user: req.session.user?.id || null,
                         categorias, 
                         productos
                     });
@@ -62,6 +64,7 @@ let productsController = {
                         stylesheet: 'products.css',
                         productos: productos,
                         session: req.session,
+                        user: req.session.user?.id || null,
                         toThousand,
                         categorias
                     });
@@ -69,8 +72,40 @@ let productsController = {
                 .catch(error => res.send(error));
             })
         .catch((error) => {res.send(error)});
-    }
-}
+    },
+    compra:(req,res)=>{
+        let userAddress = db.User.findOne({where : {id : req.session.user.id},include : [{ association: "addresses" }],})
+        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']]/*,offset:13*/,limit: 10});
+        let allCategories = db.Category.findAll();
+        let user = req.session.user.id
 
+        Promise.all([allProducts, allCategories,userAddress])
+        .then(([productos, categorias,userAddress]) => {
+            axios({
+                method: 'get',
+                url: `http://localhost:3000/api/carrito/${user}`,
+            })
+            .then(response =>{
+                let products = response.data.data?.order_items.map(item => {
+                    return {
+                    ...item.products,
+                    quantity: item.quantity
+                    }
+                })  
+                    res.render('carrito',{
+                    title : 'Funko | Compras',
+                    stylesheet : 'carrito.css',
+                    session : req.session,
+                    categorias,
+                    productos,
+                    userAddress,
+                    user : req.session.user?.id || null,
+                    toThousand,
+                    products : products !== undefined ? products : []
+                });
+            })    
+        })
+    }
+};
 
 module.exports = productsController

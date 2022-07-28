@@ -7,62 +7,57 @@
 <!-- HEADER -->
 <%- include('./partials/header')  %> 
 <!-- END HEADER -->
+<%- include('./partials/popUpProduct') %> 
+
 <!-- MAIN -->
     <main class="main-carrito">
         <h1>Carrito</h1>
         <section class="main_section-muestra">
-            <h4>PRODUCTOS (2)</h4>
-            <article class="carrito-funkos">
-                <div class="muestra-funko">
-                    <div class="muestra-img">
-                        <img src="/img/productos/funkoSpiderMan.png" alt="Funko POP Spiderman">
-                    </div>
-                    <div class="muestra-caracteristica">
-                        <strong>Funko POP Spiderman</strong><br>
-                        <p>Caracteristica: Sin ma...</p> 
-                        <a href="" class="muestra_carac-funko">Eliminar</a><br> <a href="" class="muestra_carac-funko">Productos similares</a>
-                    </div>
-                </div>
-                <div class="btn_carrito-aumento">
-                    <button><i class="fa-solid fa-minus"></i></i></button>
-                    <p>1</p>
-                    <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="carrito-precio">
-                    <p class="p_espacio-carrito">Subtotal:</p>
-                    <p class="dinero-domicilio">$5.470</p>
-                </div>
-            </article>
-            <article class="carrito-funkos">
-                <div class="muestra-funko">
-                    <div class="muestra-img">
-                        <img src="/img/productos/funkoBreakingBad.png" alt="Funko POP Breaking Bad">
-                    </div>
-                    <div class="muestra-caracteristica">
-                        <strong>Funko POP Breaking Bad</strong><br>
-                        <p>Caracteristica: Traje a...</p> 
-                        <a href="" class="muestra_carac-funko">Eliminar</a><br> <a href="" class="muestra_carac-funko">Productos similares</a>
-                    </div>
-                </div>
-                <div class="btn_carrito-aumento">
-                    <button><i class="fa-solid fa-minus"></i></i></button>
-                    <p>1</p>
-                    <button><i class="fa-solid fa-plus"></i></button>
-                </div>
-                <div class="carrito-precio">
-                    <p class="p_espacio-carrito">Subtotal:</p>
-                    <p class="dinero-domicilio">$5.800</p>
-                </div>
-            </article>    
+            <% if (products.length === 0) { %>
+                <h4>PRODUCTOS (<%- products.length %>)</h4>
+            <% } else { %>
+                <h4>PRODUCTOS (<%= products.length %> )</h4>
+            <form action="#">
+                <% products.forEach(product => { %>
+                    <article class="carrito-funkos">
+                        <div class="muestra-funko">
+                            <div class="muestra-img">
+                                <img src="/img/productos/<%- product.images[0].image %>" alt="<%- product.name %>">
+                            </div>
+                            <div class="muestra-caracteristica">
+
+                                <% if (product.name.length > 20) { %>
+                                    <strong><%- `${product.name.slice(0,17)}...` %></strong>
+                                <% } else { %>
+                                    <strong><%- product.name %></strong><br>
+                                <% } %></p>
+
+                                <p>Caracteristica: Sin ma...</p> 
+                                <a href="" class="muestra_carac-funko" onclick="removeAll(`<%- product.id %>`, `<%= session.user.id %>`)">Eliminar</a><br>
+                                <p >Unidad $<%- product.price %></p>
+                            </div>
+                        </div>
+                        <div class="btn_carrito-aumento">
+                            <button onclick="removeOne(`<%- product.id %>`, `<%= session.user.id %>`)"><i class="fa-solid fa-minus"></i></i></button>
+                            <p><%- product.quantity %></p>
+                            <button onclick="addToCart(`<%= product.id %>`, 1,`<%= session.user.id %>`)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="carrito-precio">
+                            <p class="p_espacio-carrito">Subtotal: $<%- (Number(product.price) * Number(product.quantity))%></p>
+                        </div>
+                    </article>
+                <% }) %>
+
+  
             <div class="bottom-carrito">
                 <article class="costo-envio">
                     <div class="domicilio">
-                        <p class="p_espacio-carrito">Enviar al domicilio:</p>
-                        <p class="dinero-domicilio">XXXXXXX</p>
+                        <p class="p_espacio-carrito">Enviar al domicilio: </p>
+                        <a href="/usuarios/perfil" class="envio-domicilio"><%- userAddress.addresses.length > 0 ? userAddress.addresses[0].address : "Agregar dirección" %></a>
                     </div>
                     <div class="total-precio">
                     <p class="p_espacio-carrito">Total:</p>
-                    <p class="dinero-domicilio">$11.270</p>
+                    <p class="dinero-domicilio">$123123</p>
                     </div>
                 </article>
                 <div class="methods-payment">
@@ -75,16 +70,24 @@
                   </select>
                 </div>
                 <article class="btn-finalizar">
-                    <button>CONTINUAR</button>
+                    <button onclick="clearCart(`<%= user %>`)">COMPRAR</button>
                 </article>
             </div>
+            <div class="btnClearCart">
+                <button class="clear-cart" onclick="clearCart(`<%= user %>`)">
+                    <i style="color: red" class="fa-solid fa-dumpster-fire"></i>
+                    <span> Vaciar carrito</span>
+                </button>
+            </div>
+            </form>
+            <% } %> 
         </section>
         <!-- Catálogo -->
-        <%- include('partials/catalogoSlider') %> 
+         <%- include('partials/catalogoSlider') %>
         <h2 class="novedad-h2">Novedad</h2>
         <img
           class="banner-bottom"
-          src="img/productos/novedad.png"
+          src="/img/productos/novedad.png"
           alt="Banner Bottom Funko"
         />
     </main>
@@ -92,5 +95,7 @@
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
+<script src="../js/cart.js" defer></script>
+
 </body>
 </html>

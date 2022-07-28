@@ -61,6 +61,16 @@ body main .novedad-h2{
     background-color: var(--card);
     margin:0 0 .2rem ;
 }
+
+/*ClearCart*/
+.btnClearCart button{
+    border: none;
+    background-color:var(--verdeCuadro);
+}
+
+.btnClearCart span{
+    color: var(--text);
+}
 /* FUNKOS */
 .main-carrito .main_section-muestra .carrito-funkos{
     background-color: var(--card);
@@ -133,7 +143,8 @@ p.p_espacio-carrito{
     cursor: pointer;
 }
 
-.main-carrito .main_section-muestra .bottom-carrito .costo-envio .domicilio p{
+.main-carrito .main_section-muestra .bottom-carrito .costo-envio .domicilio p,
+.envio-domicilio{
     color: #027981;
 }
 
@@ -188,8 +199,9 @@ p.p_espacio-carrito{
         font-size: 1.4rem;
     }
     
-    p.p_espacio-carrito,
-    .dinero-domicilio{
+    .p_espacio-carrito,
+    .dinero-domicilio,
+    .envio-domicilio{
         font-size: 1.4rem;
     }
 

@@ -9,6 +9,7 @@
 <!-- END HEADER -->
 
 <!-- MAIN -->
+<%- include('./partials/popUpProduct') %> 
 
     <main>
       <div class="carrousel-container">
@@ -212,7 +213,9 @@
                           <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand((producto.price / producto.cuotes).toFixed(0)) %></p>
                       <% } %>
                       <p class="funko-cuotes">Sin Interés</p>
-                      <button>Agregar al carrito</button>
+                      <% if (session.user !== undefined) { %>
+                        <button  onclick="addToCart(`<%- producto.id %>`, 1,`<%= user %>`)">Agregar al carrito</button>
+                      <% } %> 
                   </div>
               </div>
              <% }) %>
@@ -234,7 +237,7 @@
 <!-- FOOTER -->
   <%- include('partials/footer') %> 
 <!-- END FOOTER -->
-<script src="./js/sliderAutomatic.js" defer></script>
-
-  </body>
+  <script src="./js/sliderAutomatic.js" defer></script>
+  <script src="./js/cart.js" defer></script>
+</body>
 </html>

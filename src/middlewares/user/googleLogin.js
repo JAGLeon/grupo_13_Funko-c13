@@ -24,7 +24,7 @@ module.exports = () => {
                         social_id: profile.id,
                         rol: "USER",
                         userName: profile.name.givenName,
-                        province: " " ,
+                        province: " ",
                         icon : "userG.png" || profile.photos[0].value,
                     }
                 })
@@ -34,7 +34,7 @@ module.exports = () => {
                 .catch(error=>{
                     console.log(error);
                 })
-            }
+                }
             )
         )
     )

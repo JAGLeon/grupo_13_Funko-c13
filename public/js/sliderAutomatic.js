@@ -9,7 +9,6 @@ const start = () => {
     if (carrusel.scrollLeft === maxScrollLeft) {
       step = step * -1;
     } else if (carrusel.scrollLeft === 0) {
-        console.log(maxScrollLeft);
       step = step * -1;
     }
   }, 10);
