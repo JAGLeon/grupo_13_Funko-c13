@@ -77,8 +77,39 @@ module.exports = {
                         where: {id: idCategory,},
                     }
                 )
-                    .then((category) => {
-                        res.redirect('/admin/franquicias');
+                    .then(() => {
+                        if(req.files !== undefined){
+                            if(req.files.length > 0){
+                            let imageNames = imageCategory.map(img => img.image);
+                            /* Elimina img del servidor */
+                            imageNames.forEach(img => {
+                                if(fs.existsSync(path.join(__dirname, `/img/categorias/${img}`))){
+                                  fs.unlinkSync(path.join(__dirname, `/img/categorias/${img}`))
+                                }else{
+                                  console.log("-- No se encontró el archivo");
+                                }
+                              });
+                            //Eliminar las imágenes de la tabla
+                            db.Category.image.destroy({
+                                where: {
+                                    idCategory: req.params.id,
+                                }
+                            })
+                            .then(() => {
+                                //5 - Cargar nuevas imágenes
+                                 let arrayImg = req.files.map(img => {
+                                  return {
+                                      image : img.filename,
+                                      idCategory: req.params.id
+                                  }
+                                  })
+                                  db.Category.image.bulkCreate(arrayImg)
+                                  .then (() =>  res.redirect('/admin/franquicias'))
+                                  .catch((error) => res.send(error))
+                              })
+                        }} else {
+                            res.redirect('/admin/franquicias');
+                        }
                     })
                     .catch((error) => res.send(error));
             } else {

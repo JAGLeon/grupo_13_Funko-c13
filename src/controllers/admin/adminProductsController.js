@@ -124,7 +124,6 @@ module.exports = {
                     imageNames.forEach(img => {
                       if(fs.existsSync(path.join(__dirname, `../../../public/img/productos/${img}`))){
                         fs.unlinkSync(path.join(__dirname, `../../../public/img/productos/${img}`))
-                        console.log('asdsadasdasdasdasdasdasdadasdsadasdas');
                       }else{
                         console.log("-- No se encontró el archivo");
                       }
