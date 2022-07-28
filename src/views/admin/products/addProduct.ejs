@@ -43,6 +43,16 @@
             </div>
           <% } %>
         </div>
+        <div class="cuotes">
+          <label for="cuotes" class="form-label">Cuotas</label>
+          <input type="number" name="cuotes" class="form-control" id="cuotes" value="<%= (locals.old && old.cuotes) ? old.cuotes : "" %>">
+          <small class="text-danger" id="cuotesErrors"></small>
+          <% if (locals.errors && errors.cuotes) { %>
+            <div class="error">
+              <small class="text-danger"><%= errors.cuotes.msg%></small>
+            </div>
+          <% } %>
+        </div>
         <div class="franquicia">
           <select name="category" class="form-select select-add" id="category">
             <option selected hidden value="">Franquicia</option>

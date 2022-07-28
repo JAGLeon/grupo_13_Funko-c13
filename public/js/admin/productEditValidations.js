@@ -9,6 +9,8 @@ window.addEventListener('load', () => {
     let $priceErrors = qs('#priceErrors')
     let $inputDiscount = qs('#discount')
     let $discountErrors = qs('#discountErrors')
+    let $inputCuotes = qs('#cuotes')
+    let $cuotesErrors = qs('#cuotesErrors')
     let $inputCategory = qs('#category')
     let $categoryErrors = qs('#categoryErrors')
     let $inputImages = qs('#images')
@@ -72,6 +74,20 @@ window.addEventListener('load', () => {
                 $inputDiscount.classList.remove('is-invalid');
                 $inputDiscount.classList.add('is-valid');
                 $discountErrors.innerHTML = '';
+                break;
+        }
+    });
+
+    $inputCuotes.addEventListener('blur', () => {
+        switch (true) {
+            case !regExNumber0y12.test($inputCuotes.value) || !regExNumeric.test($inputCuotes.value):
+                $cuotesErrors.innerHTML = 'Las cuotas deben tener un valor entre 0 y 12';
+                $inputCuotes.classList.add('is-invalid');
+                break;
+            default:
+                $inputCuotes.classList.remove('is-invalid');
+                $inputCuotes.classList.add('is-valid');
+                $cuotesErrors.innerHTML = '';
                 break;
         }
     });
