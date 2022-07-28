@@ -11,25 +11,10 @@
 <!-- MAIN -->
     <main>
         <section id="section1">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
+            <div class="contentImageDetail">
+
                         <img src="/img/productos/<%= image %>" class="img-product" alt="<%= producto.name %>">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/img/productos/<%= image %>" class="img-product" alt="<%= producto.name %>">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <i class="fa-solid fa-angle-left" id="angle-left"></i>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <i class="fa-solid fa-angle-right" id="angle-right"></i>
-                </button>
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                </div>
+
             </div>
             <div class="product-detail">
                 <p id="name"><%= producto.name %></p>
@@ -48,7 +33,7 @@
                     <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand((producto.price / producto.cuotes).toFixed(0)) %> Sin interés</p>
                 <% } %>
                 <div id="truck">
-                    <img src="/img/productos/truck-fast-solid.png" class="truck">
+                    <i class="fa-solid fa-truck"></i>
                     <p>Envíos a todo el país</p>
                 </div>
                 <a href="" id="send">calcular costo de envío</a>

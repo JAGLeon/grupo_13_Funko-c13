@@ -224,7 +224,7 @@ body main div.franchises-container h3.franchises-title{
     font-size: var(--title);
 }
 
-body main div.sales-container{
+.sales-container{
     font-family: var(--fontRoboto);
     display: flex;
     text-align: center;
@@ -417,15 +417,15 @@ body main img.banner-bottom{
         font-size: 16px;
     }
 
-    body main div.sales-container{
+    .sales-container{
         position: relative;
     }
 
-    body main div.sales-container div.sales-box{
+    .sales-container div.sales-box{
         width: 30%;
     }
 
-    body main div.sales-container div.sales-box img{
+    .sales-container div.sales-box img{
         padding: 10px;
         width: 100%;
         height: 50%;
@@ -469,7 +469,7 @@ body main img.banner-bottom{
         left: -50px;
     }
 
-     body main div.sales-container div.sales-box{
+    .sales-container div.sales-box{
         width: 10%;
     }
 

@@ -65,34 +65,36 @@ module.exports = {
         /* 1 - Obtener el id de la franquicia */
         let errors = validationResult(req);
         let idCategory = +req.params.id;
-
-        if(errors.isEmpty()){        
-            db.Category.update(
-                {
-                    name: req.body.name,
-                    image: req.file ? req.file.filename : "deafult-image.png"
-                },
-                {
-                    where: {id: idCategory,},
-                }
-            )
-                .then((category) => {
-                    res.redirect('/admin/franquicias');
+        db.Category.findByPk(idCategory)
+        .then(imageCategory => {
+            if(errors.isEmpty()){        
+                db.Category.update(
+                    {
+                        name: req.body.name,
+                        image: req.file ? req.file.filename : imageCategory.image
+                    },
+                    {
+                        where: {id: idCategory,},
+                    }
+                )
+                    .then((category) => {
+                        res.redirect('/admin/franquicias');
+                    })
+                    .catch((error) => res.send(error));
+            } else {
+                db.Category.findByPk(idCategory)
+                .then(category => {
+                    res.render('admin/categories/editCategories',{
+                        title : 'Funko | Admin',
+                        stylesheet: 'formsEditAdd.css',
+                        session: req.session,
+                        errors: errors.mapped(),
+                        old: req.body,
+                        category
+                    })
                 })
-                .catch((error) => res.send(error));
-        } else {
-            db.Category.findByPk(idCategory)
-            .then(category => {
-                res.render('admin/categories/editCategories',{
-                    title : 'Funko | Admin',
-                    stylesheet: 'formsEditAdd.css',
-                    session: req.session,
-                    errors: errors.mapped(),
-                    old: req.body,
-                    category
-                })
-            })
-        }
+            }
+        })
     },
     /* Recibe la info del franquicia a eliminar */
     deleteCategory: (req, res) => {

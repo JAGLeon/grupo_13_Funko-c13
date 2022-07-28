@@ -5,7 +5,7 @@ const userSession = require('../middlewares/user/userSession');
 
 router.get('/', homeController.home);
 router.get('/search', homeController.search);
-router.get('/carrito', userSession, homeController.compra);
+router.get('/carrito'/* , userSession */, homeController.compra);
 
 
 module.exports = router;
