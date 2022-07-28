@@ -7,12 +7,14 @@
 <!-- HEADER -->
 <%- include('./partials/header')  %> 
 <!-- END HEADER -->
+<%- include('./partials/popUpProduct') %> 
+
 <!-- MAIN -->
     <main class="main-carrito">
         <h1>Carrito</h1>
         <section class="main_section-muestra">
             <% if (products.length === 0) { %>
-                <h4>PRODUCTOS (2)</h4>
+                <h4>PRODUCTOS (<%- products.length %>)</h4>
             <% } else { %>
                 <h4>PRODUCTOS (<%= products.length %> )</h4>
             <form action="#">
@@ -93,7 +95,7 @@
 <!-- FOOTER -->
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
-<script src="../../js/cart.js" defer></script>
+<script src="../js/cart.js" defer></script>
 
 </body>
 </html>

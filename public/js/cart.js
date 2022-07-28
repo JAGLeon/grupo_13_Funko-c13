@@ -1,106 +1,111 @@
 const BASE_URL = window.location.origin
-function qs(element) {
-    return document.querySelector(element);
+
+let $addOk = document.querySelector(".producto-agregado-ok");
+let $deleteOk = document.querySelector(".producto-eliminado");
+
+function addToCart(productId, quantity = 1, user){
+    fetch(`${BASE_URL}/api/carrito/${productId}/${quantity}/${user}`, {method: "POST"})
+    .then(res => {
+        if(res.ok){
+            return res.json()
+        }else{
+            throw {
+                errorMsg: "Ocurrió un error"
+            }
+        }
+    })
+    .then(result => {
+        if(result.status === 200 || result.status === 201){
+            setTimeout(() => {
+                $addOk.style.opacity = 1;
+                setTimeout(() => {
+                    $addOk.style.opacity = 0;
+                }, 1500)
+            }, 500);
+
+            window.location.reload();
+        }
+    })
+    .catch(error => alert(`${error.errorMsg}`))
 };
 
-// function radio(x){
-//     if(x == 0){
-//         qs("sucursal-inputs").classList.remove("none");
-//         qs("domicilio-inputs").classList.add("none");
-//     } else {
-//         qs("domicilio-inputs").classList.remove("none");
-//         qs("sucursal-inputs").classList.add("none");
-//     }
-// }
+function removeOne (productId, user){
+    fetch(`${BASE_URL}/api/carrito/eliminarUno/${productId}/${user}`, {method: "DELETE"})
+    .then(res => {
+        if(res.ok){
+            return res.json()
+        }else{
+            throw {
+                errorMsg: "Ocurrió un error"
+            }
+        };
+    })
+    .then(result => {
+        if(result.status === 200){
+            alert("SE ELIMINO")
+            setTimeout(() => {
+                $deleteOk.style.opacity = 1;
+                setTimeout(() => {
+                    $deleteOk.style.opacity = 0;
+                }, 1500)
+            }, 500);
 
-    
-/*     let $addToCart = qs('#addToCart'),
-    $removeOne = qs('#removeOne'),
-    $removeAll = qs('#removeAll'),
-    $clearCart = qs('#clearCart'),
-    $addToCartOk = qs('#addToCartOk');
- */
-    function addToCart(productId, quantity = 1, user){
-        console.log(productId, quantity , user + "SOY EL BOTON" + BASE_URL);
-        fetch(`${BASE_URL}/api/carrito/${productId}/${quantity}/${user}`, {method: "POST"})
-        .then(res => {
-            if(res.ok){
-                return res.json()
-            }else{
-                throw {
-                    errorMsg: "Ocurrió un error"
-                }
-            }
-        })
-        .then(result => {
-            if(result.status === 200 || result.status === 201){
-                alert('Producto agregado')
-                window.location.reload()
-            }
-        })
-        .catch(error => alert(`${error.errorMsg}`))
-    }
+            window.location.reload();
+        };
+    })
+    .catch(error => alert(`${error.errorMsg}`))
+};
 
-    function removeOne (productId, user){
-        fetch(`${BASE_URL}/api/carrito/eliminarUno/${productId}/${user}`, {method: "DELETE"})
-        .then(res => {
-            if(res.ok){
-                return res.json()
-            }else{
-                throw {
-                    errorMsg: "Ocurrió un error"
-                }
+function removeAll (productId, user){
+    fetch(`${BASE_URL}/api/carrito/eliminarTodo/${productId}/${user}`, {method: "DELETE"})
+    .then(res => {
+        if(res.ok){
+            return res.json()
+        }else{
+            throw {
+                errorMsg: "Ocurrió un error"
             }
-        })
-        .then(result => {
-            if(result.status === 200){
-                alert('Producto Eliminado')
-                window.location.reload()
-            }
-        })
-        .catch(error => alert(`${error.errorMsg}`))
-    }
+        };
+    })
+    .then(result => {
+        if(result.status === 200){
+            setTimeout(() => {
+                $deleteOk.style.opacity = 1;
+                setTimeout(() => {
+                    $deleteOk.style.opacity = 0;
+                }, 1500)
+            }, 500);
 
-    function removeAll (productId, user){
-        fetch(`${BASE_URL}/api/carrito/eliminarTodo/${productId}/${user}`, {method: "DELETE"})
-        .then(res => {
-            if(res.ok){
-                return res.json()
-            }else{
-                throw {
-                    errorMsg: "Ocurrió un error"
-                }
-            }
-        })
-        .then(result => {
-            
-            if(result.status === 200){
-                alert('Producto Eliminado')
-                window.location.reload()
-            }
-        })
-        .catch(error => alert(`${error.errorMsg}`))
-    }
+            window.location.reload();
+        };
+    })
+    .catch(error => alert(`${error.errorMsg}`))
+};
 
-    function clearCart (user){
-        fetch(`${BASE_URL}/api/carrito/limpiarCarrito/${user}`, {method: "DELETE"})
-        .then(res => {
-            if(res.ok){
-                console.log(res + " soy el res");
-                return res.json()
-            }else{
-                throw {
-                    errorMsg: "Ocurrió un error"
-                }
+function clearCart (user){
+    fetch(`${BASE_URL}/api/carrito/limpiarCarrito/${user}`, {method: "DELETE"})
+    .then(res => {
+        if(res.ok){
+            console.log(res + " soy el res");
+            return res.json()
+        }else{
+            throw {
+                errorMsg: "Ocurrió un error"
             }
-        })
-        .then(result => {
-            console.log(result + " soy el resultado de producto eliminado"); 
-            if(result.status === 200){
-                alert('Producto Eliminado')
-                window.location.reload()
-            }
-        })
-        .catch(error => alert(`${error.errorMsg}`))
-    }
+        };
+    })
+    .then(result => {
+        console.log(result + " soy el resultado de producto eliminado"); 
+        if(result.status === 200){
+            setTimeout(() => {
+                $deleteOk.style.opacity = 1;
+                setTimeout(() => {
+                    $deleteOk.style.opacity = 0;
+                }, 1500)
+            }, 500);
 
+            window.location.reload();
+        };
+    })
+    .catch(error => alert(`${error.errorMsg}`))
+};

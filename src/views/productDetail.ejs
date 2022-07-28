@@ -7,6 +7,7 @@
 <!-- HEADER -->
 <%- include('./partials/header')  %> 
 <!-- END HEADER -->
+<%- include('./partials/popUpProduct') %> 
 
 <!-- MAIN -->
     <main>
@@ -53,9 +54,9 @@
                 </div>
                 <a href="" id="send">calcular costo de envío</a>
                 <div class="btn-quantity">
-                    <div id="res">-</div>
+                    <div id="res" onclick="subtract()">-</div>
                     <div id="num">1</div>
-                    <div id="sum">+</div>
+                    <div id="sum" onclick="add()">+</div>
                 </div>
                 <a href="/productos/carrito" class="btn-buy">Comprar ahora</a>
                 <% if (session.user !== undefined) { %>
