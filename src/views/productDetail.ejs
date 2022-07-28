@@ -40,12 +40,12 @@
                 <a href="" id="send">calcular costo de envío</a>
                 <div class="btn-quantity">
                     <div id="res" onclick="subtract()">-</div>
-                    <div id="num">1</div>
+                    <div id="num" >1</div>
                     <div id="sum" onclick="add()">+</div>
                 </div>
                 <a href="/productos/carrito" class="btn-buy">Comprar ahora</a>
                 <% if (session.user !== undefined) { %>
-                    <button class="btn-add" onclick="addToCart(`<%- producto.id %>`, 1,`<%= user %>`)">Agregar al carrito</button>
+                    <button class="btn-add" onclick="addToCart(`<%- producto.id %>`,1,`<%= user %>`)">Agregar al carrito</button>
                 <% } %> 
             </div>
         </section>

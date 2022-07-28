@@ -12,5 +12,7 @@ router.delete('/carrito/eliminarUno/:productoCarrito/:usuario', orderController.
 router.delete('/carrito/eliminarTodo/:productoCarrito/:usuario', orderController.removeAllFromCart);
 /* QUITA TODO DEL CARRITO */
 router.delete('/carrito/limpiarCarrito/:usuario', orderController.clearCart);
+/* POR EL MOMENTO FINJE LA COMPRA */
+router.delete('/carrito/comprar/:orden/:usuario', orderController.buyCart);
 
 module.exports = router;
