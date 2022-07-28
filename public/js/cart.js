@@ -1,8 +1,13 @@
-const BASE_URL = window.location.origin
+const BASE_URL = window.location.origin;
 
-let $addOk = document.querySelector(".producto-agregado-ok");
-let $addCart = document.querySelector("#productoComprado");
-let $deleteOk = document.querySelector(".producto-eliminado");
+function qs(element) {
+    return document.querySelector(element)
+}
+
+let $addOk = qs(".producto-agregado-ok"),
+ $addCart = qs("#productoComprado"),
+ $deleteOk = qs(".producto-eliminado");
+
 
 function addToCart(productId, quantity = 1, user){
     fetch(`${BASE_URL}/api/carrito/${productId}/${quantity}/${user}`, {method: "POST"})
@@ -22,8 +27,8 @@ function addToCart(productId, quantity = 1, user){
                 setTimeout(() => {
                     $addOk.style.display = "none";
                     window.location.reload();
-                }, 1000)
-            }, 500);
+                }, 1500)
+            }, 300);
         // }
     })
     .catch(error => alert(`${error.errorMsg}`))
@@ -46,10 +51,10 @@ function removeOne(productId, user){
                 $deleteOk.style.display = "flex";
                 setTimeout(() => {
                     $deleteOk.style.display = "none";
+                    window.location.reload();
                 }, 1500)
-            }, 500);
+            }, 300);
 
-            window.location.reload();
         // };
     })
     .catch(error => alert(`${error.errorMsg}`))
@@ -73,7 +78,7 @@ function removeAll(productId, user){
                 setTimeout(() => {
                     $deleteOk.style.display = "none";
                     window.location.reload();
-                }, 1000)
+                }, 1500)
             }, 300);
         // };
     })
@@ -98,7 +103,7 @@ function clearCart(user){
                 setTimeout(() => {
                     $deleteOk.style.display = "none";
                     window.location.reload();
-                }, 1000)
+                }, 1500)
             }, 300);
         // };
     })
@@ -126,7 +131,7 @@ function buyCart(carritoOrder,user){
                 setTimeout(() => {
                     $addCart.style.display = "none";
                     window.location.reload();
-                }, 1000)
+                }, 1500)
             }, 300);
         // };
     })

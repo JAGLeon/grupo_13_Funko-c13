@@ -31,10 +31,8 @@ let productsController = {
         let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name', 'ASC']]});
         Promise.all([productPromise, allProducts])
         .then(([producto, productos]) => {
-            // res.send(productos)
             db.ProductImage.findOne({where : {product_id : idProduct}})
             .then(img => {
-                console.log(img);
                 db.Category.findAll()
                 .then(categorias => {
                     res.render('productDetail', {
@@ -100,7 +98,7 @@ let productsController = {
                     categorias,
                     productos,
                     userAddress,
-                    carritoOrder : carritoOrder.id,
+                    carritoOrder : carritoOrder?.id || null,
                     user : req.session.user?.id || null,
                     toThousand,
                     products : products !== undefined ? products : []

@@ -1,6 +1,6 @@
 # Fünko
 
-![logo](/public/img/Logo.svg)
+![logo](/public/img/productos/Logo.svg)
 
 FÜNKO es una empresa dedicada a la venta de figuras coleccionables, llamados Funkos. Siendo apta para toda edad sin limite alguno!.
 Los productos que comercializamos abarcan desde franquicias de Disney, Marvel, Star Wars, DC, NBA, y muchos más!. 
@@ -14,7 +14,6 @@ Si estás interesado en nuestros productos podes adquirirlo desde nuestro págin
 
 * Mi nombre es Brian Rodriguez, tengo 25 años y vivo en CABA. Me recibí como Técnico Superior en Higiene y Seguridad en el Trabajo en el año 2020 pero decidí abarcar por nuevos rumbos y dedicarme 100% a la Programación Web Full Stack.
 
-* Soy Dylan Ojeda, tengo 19 años, soy papá de un varoncito y me encanta la programación, espero poder vivir de esto al finalizar la cursada.
 
 ## Páginas de Referencia
 

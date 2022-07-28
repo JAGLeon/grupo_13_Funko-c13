@@ -43,7 +43,7 @@
                             <button onclick="addToCart(`<%= product.id %>`, 1,`<%= session.user.id %>`)"><i class="fa-solid fa-plus"></i></button>
                         </div>
                         <div class="carrito-precio">
-                            <p class="p_espacio-carrito">Subtotal: $<%- (Number(product.price) * Number(product.quantity))%></p>
+                            <p class="p_espacio-carrito subtotal">Subtotal: $<%- (Number(product.price) * Number(product.quantity))%></p>
                         </div>
                     </article>
                 <% }) %>
@@ -53,11 +53,11 @@
                 <article class="costo-envio">
                     <div class="domicilio">
                         <p class="p_espacio-carrito">Enviar al domicilio: </p>
-                        <a href="/usuarios/perfil" class="envio-domicilio"><%- userAddress.addresses.length > 0 ? userAddress.addresses[0].address : "Agregar dirección" %></a>
+                        <a href="/usuarios/perfil" class="envio-domicilio"><%- userAddress.addresses.length > 0 ? userAddress.addresses[0].address : "Agregar dirección" %> <%- userAddress.addresses.length > 0 ? userAddress.addresses[0].number : "" %></a>
                     </div>
                     <div class="total-precio">
                     <p class="p_espacio-carrito">Total:</p>
-                    <p class="dinero-domicilio">$123123</p>
+                    <p class="dinero-domicilio" id="totalProducts">$0</p>
                     </div>
                 </article>
                 <div class="methods-payment">
@@ -96,6 +96,7 @@
 <%- include('./partials/footer')  %> 
 <!-- END FOOTER -->
 <script src="../js/cart.js" defer></script>
+<script src="../js/cartTotal.js" defer></script>
 
 </body>
 </html>

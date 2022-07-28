@@ -9,7 +9,21 @@ body.somos{
 main section.politicas-priv{
     margin-top: 5rem;
 }
+.somosQr{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--text);
+}
 
+article img{
+    width: 150px;
+    height: 150px;
+
+}
 
 /*CARDS*/
 
