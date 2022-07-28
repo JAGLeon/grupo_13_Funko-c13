@@ -29,7 +29,7 @@ function addToCart(productId, quantity = 1, user){
     .catch(error => alert(`${error.errorMsg}`))
 };
 
-function removeOne (productId, user){
+function removeOne(productId, user){
     fetch(`${BASE_URL}/api/carrito/eliminarUno/${productId}/${user}`, {method: "DELETE"})
     .then(res => {
         if(res.ok){
@@ -56,7 +56,7 @@ function removeOne (productId, user){
     .catch(error => alert(`${error.errorMsg}`))
 };
 
-function removeAll (productId, user){
+function removeAll(productId, user){
     fetch(`${BASE_URL}/api/carrito/eliminarTodo/${productId}/${user}`, {method: "DELETE"})
     .then(res => {
         if(res.ok){
@@ -82,7 +82,7 @@ function removeAll (productId, user){
     .catch(error => alert(`${error.errorMsg}`))
 };
 
-function clearCart (user){
+function clearCart(user){
     fetch(`${BASE_URL}/api/carrito/limpiarCarrito/${user}`, {method: "DELETE"})
     .then(res => {
         if(res.ok){
