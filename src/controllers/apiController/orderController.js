@@ -171,33 +171,61 @@ module.exports = {
           }
         });
       },
-      clearCart: (req, res) => {
-        let user = req.params.usuario;
-        db.Orders.findOne({
-            where: {user_id: user},
-            include: [{
-              association: "order_items",
-              include: [{association: "products"}]
-            }]
-        }).then((order) => {
-            db.OrdersItems.destroy({
-            where: {order_id: order.id}
-            })
-                .then((result) => {
-                db.Order.destroy({where: {id: order.id}})
-                .then((finalResult) => {
-                        res.json({
-                        status: 200,
-                        msg: "Carrito eliminado",
-                        });
-                    });
-                })
-                .catch((error) =>
+    clearCart: (req, res) => {
+      let user = req.params.usuario;
+      db.Orders.findOne({
+          where: {user_id: user},
+          include: [{
+            association: "order_items",
+            include: [{association: "products"}]
+          }]
+      }).then((order) => {
+          db.OrdersItems.destroy({
+          where: {order_id: order.id}
+          })
+            .then((result) => {
+            db.Order.destroy({where: {id: order.id}})
+            .then((finalResult) => {
                     res.json({
-                        errors: error,
-                    })
-                );
-        });
+                    status: 200,
+                    msg: "Carrito eliminado",
+                    });
+                });
+            })
+            .catch((error) =>
+                res.json({
+                    errors: error,
+                })
+            );
+      });
+    },
+    buyCart: (req, res) =>{
+      let user = req.params.usuario;
+      db.Orders.findOne({
+          where: {user_id: user},
+          include: [{
+            association: "order_items",
+            include: [{association: "products"}]
+          }]
+      }).then((order) => {
+          db.OrdersItems.destroy({
+          where: {order_id: order.id}
+          })
+            .then((result) => {
+            db.Order.destroy({where: {id: order.id}})
+            .then((finalResult) => {
+                    res.json({
+                    status: 200,
+                    msg: "Carrito comprado",
+                    });
+                });
+            })
+            .catch((error) =>
+                res.json({
+                    errors: error,
+                })
+            );
+      });
     },
     productsInCart: (req, res) => {
         let user = req.params.usuario;

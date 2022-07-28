@@ -77,10 +77,11 @@ let productsController = {
         let userAddress = db.User.findOne({where : {id : req.session.user.id},include : [{ association: "addresses" }],})
         let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']]/*,offset:13*/,limit: 10});
         let allCategories = db.Category.findAll();
-        let user = req.session.user.id
+        let user = req.session.user.id;
+        let carritoOrder = db.Orders.findOne({where: {user_id: user},include: [{association: "order_items",include: [{association: "products"}]}]})
 
-        Promise.all([allProducts, allCategories,userAddress])
-        .then(([productos, categorias,userAddress]) => {
+        Promise.all([allProducts, allCategories,userAddress,carritoOrder])
+        .then(([productos, categorias,userAddress,carritoOrder]) => {
             axios({
                 method: 'get',
                 url: `http://localhost:3000/api/carrito/${user}`,
@@ -99,6 +100,7 @@ let productsController = {
                     categorias,
                     productos,
                     userAddress,
+                    carritoOrder : carritoOrder.id,
                     user : req.session.user?.id || null,
                     toThousand,
                     products : products !== undefined ? products : []

@@ -138,6 +138,9 @@ body main div.sales-container div.sales-box-container div.sales-box{
     text-align: center;
     font-weight: bold;
     color: var(--text);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .product div#product-discount {

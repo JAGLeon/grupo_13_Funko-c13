@@ -1,6 +1,7 @@
 const BASE_URL = window.location.origin
 
 let $addOk = document.querySelector(".producto-agregado-ok");
+let $addCart = document.querySelector("#productoComprado");
 let $deleteOk = document.querySelector(".producto-eliminado");
 
 function addToCart(productId, quantity = 1, user){
@@ -15,16 +16,15 @@ function addToCart(productId, quantity = 1, user){
         }
     })
     .then(result => {
-        if(result.status === 200 || result.status === 201){
+        // if(result.status === 200 || result.status === 201){
             setTimeout(() => {
-                $addOk.style.opacity = 1;
+                $addOk.style.display = "flex";
                 setTimeout(() => {
-                    $addOk.style.opacity = 0;
-                }, 1500)
+                    $addOk.style.display = "none";
+                    window.location.reload();
+                }, 1000)
             }, 500);
-
-            window.location.reload();
-        }
+        // }
     })
     .catch(error => alert(`${error.errorMsg}`))
 };
@@ -41,17 +41,16 @@ function removeOne(productId, user){
         };
     })
     .then(result => {
-        if(result.status === 200){
-            alert("SE ELIMINO")
+        // if(result.status === 200){
             setTimeout(() => {
-                $deleteOk.style.opacity = 1;
+                $deleteOk.style.display = "flex";
                 setTimeout(() => {
-                    $deleteOk.style.opacity = 0;
+                    $deleteOk.style.display = "none";
                 }, 1500)
             }, 500);
 
             window.location.reload();
-        };
+        // };
     })
     .catch(error => alert(`${error.errorMsg}`))
 };
@@ -68,16 +67,15 @@ function removeAll(productId, user){
         };
     })
     .then(result => {
-        if(result.status === 200){
+        // if(result.status === 200){
             setTimeout(() => {
-                $deleteOk.style.opacity = 1;
+                $deleteOk.style.display = "flex";
                 setTimeout(() => {
-                    $deleteOk.style.opacity = 0;
-                }, 1500)
-            }, 500);
-
-            window.location.reload();
-        };
+                    $deleteOk.style.display = "none";
+                    window.location.reload();
+                }, 1000)
+            }, 300);
+        // };
     })
     .catch(error => alert(`${error.errorMsg}`))
 };
@@ -86,7 +84,6 @@ function clearCart(user){
     fetch(`${BASE_URL}/api/carrito/limpiarCarrito/${user}`, {method: "DELETE"})
     .then(res => {
         if(res.ok){
-            console.log(res + " soy el res");
             return res.json()
         }else{
             throw {
@@ -95,17 +92,43 @@ function clearCart(user){
         };
     })
     .then(result => {
-        console.log(result + " soy el resultado de producto eliminado"); 
-        if(result.status === 200){
+        // if(result.status == 200){
             setTimeout(() => {
-                $deleteOk.style.opacity = 1;
+                $deleteOk.style.display = "flex";
                 setTimeout(() => {
-                    $deleteOk.style.opacity = 0;
-                }, 1500)
-            }, 500);
+                    $deleteOk.style.display = "none";
+                    window.location.reload();
+                }, 1000)
+            }, 300);
+        // };
+    })
+    .catch(error => alert(`${error.errorMsg}`))
+};
 
-            window.location.reload();
+
+function buyCart(carritoOrder,user){
+    fetch(`${BASE_URL}/api/carrito/comprar/${carritoOrder}/${user}`, {method: "DELETE"})
+    .then(res => {
+            console.log(res + "SOY UN RES LUEGO DEL THEN");
+        if(res.ok){
+            console.log(res + "SOY UN RES EN OK");
+            return res.json()
+        }else{
+            throw {
+                errorMsg: "Ocurrió un error"
+            }
         };
+    })
+    .then(result => {
+        // if(result.status == 200){
+            setTimeout(() => {
+                $addCart.style.display = "flex";
+                setTimeout(() => {
+                    $addCart.style.display = "none";
+                    window.location.reload();
+                }, 1000)
+            }, 300);
+        // };
     })
     .catch(error => alert(`${error.errorMsg}`))
 };
