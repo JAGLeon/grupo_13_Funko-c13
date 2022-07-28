@@ -107,9 +107,6 @@ module.exports = {
                 stock: req.body.stock ? true : false,
             },{ where : {id : req.params.id}})
             .then (() => {
-
-
-
                  if(req.files !== undefined){
                 //1 - Preguntar si está subiendo imagenes
                 if(req.files.length > 0){
@@ -157,10 +154,6 @@ module.exports = {
                   res.redirect('/admin/productos')
                 }
               }
-
-
-
-            //   res.redirect('/admin/productos')
             })
             .catch(error => console.log(error))
         } else {

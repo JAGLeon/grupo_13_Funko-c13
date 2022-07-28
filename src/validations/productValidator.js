@@ -18,6 +18,12 @@ let validateProduct = [
             }
             return false;
         }).withMessage("El descuento debe tener un valor entre 0 y 100"), 
+    body("cuotes").custom(value => {
+            if(value >= 0 && value <= 12){
+                return true;
+            }
+            return false;
+        }).withMessage("Las cuotas deben tener un valor entre 0 y 12"), 
     body("images")
         .custom((value , {req}) => {
             if(!req.file){

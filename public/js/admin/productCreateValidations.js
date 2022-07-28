@@ -11,6 +11,8 @@ window.addEventListener('load', () => {
     let $discountErrors = qs('#discountErrors')
     let $inputCategory = qs('#category')
     let $categoryErrors = qs('#categoryErrors')
+    let $inputCuotes = qs('#cuotes')
+    let $cuotesErrors = qs('#cuotesErrors')
     let $inputImages = qs('#images')
     let $imagesErrors = qs('#imagesErrors')
     let $inputDescription = qs('#description')
@@ -21,6 +23,7 @@ window.addEventListener('load', () => {
     let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
     let regExNumeric = /^[0-9][A-Za-z0-9 -]*$/
     let regExNumber0y100 = /(?:\b|-)([0-9]{1,2}|100)\b/
+    let regExNumber0y12 = /(?:\b|-)([0-9]{1,2}|12)\b/
 
     $inputName.addEventListener('blur', () => {
         switch (true) {
@@ -72,6 +75,20 @@ window.addEventListener('load', () => {
                 $inputDiscount.classList.remove('is-invalid');
                 $inputDiscount.classList.add('is-valid');
                 $discountErrors.innerHTML = '';
+                break;
+        }
+    });
+
+    $inputCuotes.addEventListener('blur', () => {
+        switch (true) {
+            case !regExNumber0y12.test($inputCuotes.value) || !regExNumeric.test($inputCuotes.value):
+                $cuotesErrors.innerHTML = 'Las cuotas deben tener un valor entre 0 y 12';
+                $inputCuotes.classList.add('is-invalid');
+                break;
+            default:
+                $inputCuotes.classList.remove('is-invalid');
+                $inputCuotes.classList.add('is-valid');
+                $cuotesErrors.innerHTML = '';
                 break;
         }
     });
@@ -130,9 +147,7 @@ window.addEventListener('load', () => {
         event.preventDefault()
         let elementsForm = this.elements;
         let errores = false;
-
-        console.log(elementsForm)
-
+        
         for (let index = 0; index < elementsForm.length -1; index++) {
             if(elementsForm[index].value == ""
             || elementsForm[index].classList.contains("is-invalid")){
