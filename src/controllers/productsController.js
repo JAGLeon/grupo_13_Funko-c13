@@ -74,23 +74,23 @@ let productsController = {
         .catch((error) => {res.send(error)});
     },
     compra:(req,res)=>{
+        let userAddress = db.User.findOne({where : {id : req.session.user.id},include : [{ association: "addresses" }],})
         let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']]/*,offset:13*/,limit: 10});
         let allCategories = db.Category.findAll();
         let user = req.session.user.id
 
-        Promise.all([allProducts, allCategories])
-        .then(([productos, categorias]) => {
+        Promise.all([allProducts, allCategories,userAddress])
+        .then(([productos, categorias,userAddress]) => {
             axios({
                 method: 'get',
                 url: `http://localhost:3000/api/carrito/${user}`,
             })
             .then(response =>{
-                console.log(response);
                 let products = response.data.data?.order_items.map(item => {
-                  return {
+                    return {
                     ...item.products,
                     quantity: item.quantity
-                  }
+                    }
                 })  
                     res.render('carrito',{
                     title : 'Funko | Compras',
@@ -98,6 +98,7 @@ let productsController = {
                     session : req.session,
                     categorias,
                     productos,
+                    userAddress,
                     user : req.session.user?.id || null,
                     toThousand,
                     products : products !== undefined ? products : []
@@ -105,47 +106,6 @@ let productsController = {
             })    
         })
     }
-}
-
-/* let user = req.session.user.id
-        axios({
-            method: 'get',
-            url: `http://localhost:3000/api/carrito/${user}`,
-        })
-        .then(response =>{
-            console.log(response);
-            let products = response.data.data?.products.map(item => {
-              return {
-                ...item.products,
-                quantity: item.quantity
-              }
-            })  
-            console.log(products);
-            db.Category.findAll()
-                .then(categorias => {
-                    db.Product.findAll({
-                        include : [{association : 'images'}],
-                        order : [['name','DESC']],
-                        // offset:13,
-                        limit: 10
-                    })
-                        .then(productos => {
-                            res.render('carrito',{
-                                title : 'Funko | Compras',
-                                stylesheet : 'carrito.css',
-                                session : req.session,
-                                categorias,
-                                productos,
-                                user : req.session.user?.id || null,
-                                toThousand,
-                                products : products !== undefined ? products : []
-                            });
-                        })
-                        .catch((error) => {res.send(error)});
-                })
-                .catch(error => res.send(error));
-        })  
-        .catch(error => res.send(error)); */
-
+};
 
 module.exports = productsController

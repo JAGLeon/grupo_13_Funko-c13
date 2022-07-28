@@ -143,7 +143,8 @@ p.p_espacio-carrito{
     cursor: pointer;
 }
 
-.main-carrito .main_section-muestra .bottom-carrito .costo-envio .domicilio p{
+.main-carrito .main_section-muestra .bottom-carrito .costo-envio .domicilio p,
+.envio-domicilio{
     color: #027981;
 }
 
@@ -198,8 +199,9 @@ p.p_espacio-carrito{
         font-size: 1.4rem;
     }
     
-    p.p_espacio-carrito,
-    .dinero-domicilio{
+    .p_espacio-carrito,
+    .dinero-domicilio,
+    .envio-domicilio{
         font-size: 1.4rem;
     }
 

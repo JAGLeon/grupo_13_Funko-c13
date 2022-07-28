@@ -52,12 +52,12 @@
             <div class="bottom-carrito">
                 <article class="costo-envio">
                     <div class="domicilio">
-                        <p class="p_espacio-carrito">Enviar al domicilio:</p>
-                        <p class="dinero-domicilio">XXXXXXX</p>
+                        <p class="p_espacio-carrito">Enviar al domicilio: </p>
+                        <a href="/usuarios/perfil" class="envio-domicilio"><%- userAddress.addresses.length > 0 ? userAddress.addresses[0].address : "Agregar dirección" %></a>
                     </div>
                     <div class="total-precio">
                     <p class="p_espacio-carrito">Total:</p>
-                    <p class="dinero-domicilio">$11.270</p>
+                    <p class="dinero-domicilio">$123123</p>
                     </div>
                 </article>
                 <div class="methods-payment">
