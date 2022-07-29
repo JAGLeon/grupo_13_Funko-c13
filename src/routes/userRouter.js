@@ -8,6 +8,7 @@ const validateProfile = require('../validations/profileValidator');
 const iconValidator = require('../validations/iconValidator');
 const userNameValidator =require('../validations/userNameValidator');
 const dataValidator = require('../validations/dataValidator');
+const addressValidator = require('../validations/addressValidator');
 const userInSession = require('../middlewares/user/userInSession');
 const userSession = require('../middlewares/user/userSession');
 const passport = require('passport');
@@ -30,7 +31,7 @@ router.get('/perfil', userSession , userController.perfil);
 router.put('/perfil/icon', userSession, uploadFile.single('icon'), iconValidator  ,userController.imgUpdate);
 router.put('/perfil/nombres', userSession, userNameValidator ,userController.userNameUpdate);
 router.put('/perfil/datos', userSession, dataValidator ,userController.dataUpdate);
-router.post('/direcciones', userSession, userController.addressCreate);
+router.post('/direcciones', userSession, addressValidator, userController.addressCreate);
 router.delete('/direcciones/:id', userSession, userController.addressDestroy);
 router.get('/salir', userSession, userController.logout);
 

@@ -25,10 +25,6 @@ $inputAddress.addEventListener("blur", () => {
             $errorsAddress.innerHTML = "Mínimo 2 carácteres";
             $inputAddress.classList.add("is-invalid");
             break;
-        case !regExAlpha.test($inputAddress.value):
-            $errorsAddress.innerHTML = "Dirección inválida";
-            $inputAddress.classList.add("is-invalid");
-            break;
         default: 
             $inputAddress.classList.remove("is-invalid");
             $errorsAddress.innerHTML = "";

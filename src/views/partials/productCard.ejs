@@ -19,7 +19,6 @@
             <% } else { %>
                 <p id="cuotas">en <%= producto.cuotes %> x $ <%= toThousand((producto.price / producto.cuotes).toFixed(0)) %> Sin interés</p>
             <% } %>
-            <p class="funko-cuotes">Sin Interés</p>
             <% if (session.user !== undefined) { %>
                 <button  onclick="addToCart(`<%- producto.id %>`, 1,`<%= user %>`)">Agregar al carrito</button>
             <% } %> 
