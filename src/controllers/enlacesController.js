@@ -29,7 +29,7 @@ module.exports = {
         db.Category.findAll()
         .then(categorias => {
             res.render('enlaces/nosotros',{
-                title : 'Funko | ADMIS',
+                title : 'Funko | ADMINS',
                 stylesheet: 'somos.css',
                 session: req.session,
                 categorias
