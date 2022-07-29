@@ -160,13 +160,43 @@ module.exports = {
     
     imgUpdate: (req,res) => {
         let errors = validationResult(req);
+        let idUser = +req.params.id;
 
         if(errors.isEmpty()){
             db.User.update({
                 icon : req.file ? req.file.filename : req.session.user.icon 
             },
             {where : {id: req.session.user.id}})
-            .then(() => res.redirect("/usuarios/perfil"))
+            .then(users => {
+                if(req.files.length > 0){
+                    let imagesNames = users.map (user => user.icon);
+                    imagesNames.forEach(img => {
+                        if(fs.existsSync(path.join(__dirname, `../../../public/img/users/${img}`))){
+                            fs.unlinkSync(path.join(__dirname, `../../../public/img/users/${img}`))
+                        }else{
+                            console.log("-- No se encontró el archivo");
+                        }
+                    });
+                    db.User.icon.destroy({
+                        where: {
+                        idUser: req.params.id,
+                        }
+                    })
+                    .then(() => {
+                        let arrayImg = req.files.map(img => {
+                            return {
+                                icon : img.filename,
+                                idUser: req.params.id
+                            }
+                            })
+                            db.User.icon.bulkCreate(arrayImg)
+                            .then (() =>  res.redirect('/usuarios/perfil'))
+                            .catch((error) => res.send(error))
+                    })
+                } else {
+                    res.redirect("/usuarios/perfil")
+                }
+            })
             .catch(error => res.send(error))
         }else{
             db.User.findOne({
