@@ -11,6 +11,19 @@ thead, th, td , tbody{
     color: var(--text) !important;
 }
 
+.cpa{
+    position: relative;
+}
+
+.cpa a{
+    position: absolute;
+    right: 2%;
+    top: 21%;
+    cursor: pointer;
+    font-size: 12px;
+    color: #1EC124;
+}
+
 body.perfilUser{
     margin-top: 3rem;
     min-height: 100vh;    
@@ -133,6 +146,10 @@ body.perfilUser main{
     background-color: var(--botones);
     color: white;
     border-radius: .8rem;
+}
+
+.input-container .localidadPerfil{
+    width: 100%;
 }
 
 .contenedor-nameUser  div button:hover{

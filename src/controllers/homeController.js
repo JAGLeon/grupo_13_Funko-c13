@@ -11,7 +11,7 @@ module.exports = {
         .then(categorias => {
             db.Product.findAll({
                 include : [{association : 'images'}],
-                order : [['name','ASC']],
+                order : [[ 'id','DESC']],
                 offset: 0,
                 limit: 20
             })

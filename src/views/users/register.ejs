@@ -16,9 +16,7 @@
                 <div class="input-container">
                     <select class="input-style selec-container" name="province" id="province" value="">
                         <option value="" hidden>Elegí tu provincia</option>
-                        <% for( const oneProvince of provinces) { %>
-                            <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.provinces) ? 'selected' : null %> > <%= oneProvince %> </option>
-                        <% } %>
+
                     </select>
                         <small class="text-danger" id="errorsSelect"><%= (locals.errors && errors.province)? errors.province.msg : "" %> </small>
                 </div>

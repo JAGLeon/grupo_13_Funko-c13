@@ -25,17 +25,17 @@ footer p{
 
 /* INDEX */
 main.index {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main.index h1 {
-    text-align: center;
-    margin: 6rem 0 1rem;
+    margin: 8rem 0 3rem;
 }
 
-div.image {
-    text-align: center;
-}
+
 
 div.image img {
     width: 40rem;

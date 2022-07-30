@@ -3,6 +3,7 @@ function qs(element) {
 };
 
 let $selectProvince = qs('#province'),
+$selectLocalidad = qs('#localidad'),
 $inputName = qs('#name'),
 $errorsName = qs('#errorsName'),
 $inputLastName = qs('#lastName'),
@@ -19,6 +20,7 @@ $formDatos = qs('#formDatos'),
 regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
+
 fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then(response => response.json())
 .then(data => {
@@ -33,7 +35,28 @@ fetch("https://apis.datos.gob.ar/georef/api/provincias")
     };
 })
 .catch(error => console.log(error));
-    
+
+let idProvincia = $selectProvince.value;
+$selectLocalidad.innerHTML = `<option value="" hidden selected>Localidades</option>`
+
+fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}&campos=id,nombre&max=5000`)
+.then((response) => response.json())
+.then((data) => {
+    let localidades = data.localidades;
+    localidades.sort((local1,local2) => {
+        let localidadA = local1.nombre.toLowerCase();
+        let localidadB = local2.nombre.toLowerCase();
+        if (localidadA < localidadB) {return -1;} else if (localidadA > localidadB) {return 1;} else {return 0;};
+    });
+
+    localidades.forEach(localidad => { 
+        $selectLocalidad.innerHTML += `<option value="${localidad.id}">${localidad.nombre}</option>`
+    });
+})
+.catch((error) => console.log(error))
+
+
+
 $inputName.addEventListener("blur", () => {
     switch (true) {
         case !$inputName.value.trim():

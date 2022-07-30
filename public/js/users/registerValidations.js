@@ -23,6 +23,7 @@ regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
 regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
 
+$selectProvince.innerHTML = `<option value="" hidden selected>Elija su provincia</option>`
 fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then(response => response.json())
 .then(data => {

@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('./middlewares/cookies/cookieSession');
 const db = require("./database/models");
 
+
 // Enrutadores 
 const productosRouter = require('./routes/productosRouter');
 const categoriesRouter = require('../src/routes/categoriesRouter');

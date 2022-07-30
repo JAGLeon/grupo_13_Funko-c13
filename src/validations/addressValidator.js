@@ -6,9 +6,7 @@ let addressValidator = [
     .isString().withMessage('Ciudad inválido')
     .isLength({min:2, max:20}).withMessage('Ingrese una dirección valida'),
 check('city')
-    .notEmpty().withMessage('Ingrese su ciudad').bail()
-    .isString().withMessage('Ciudad inválido')
-    .isLength({min:2, max:30}).withMessage('Ingrese una ciudad valida'),
+    .notEmpty().withMessage('Ingrese su ciudad'),
 check('numberAddress')
     .notEmpty().withMessage('Ingrese su número de domicilio').bail()
     .isNumeric().withMessage("Sólo números")

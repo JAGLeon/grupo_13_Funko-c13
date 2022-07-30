@@ -5,7 +5,7 @@ function qs(element) {
 let 
 $inputAddress = qs('#addressName'),
 $errorsAddress = qs('#errorsAddress'),
-$inputCity = qs('#city'),
+$inputCity = qs('#localidad'),
 $errorsCity = qs('#errorsCity'),
 $inputNumberAddress = qs('#numberAddress'),
 $errorsNumberAddress= qs('#errorsNumberAddress'),
@@ -38,14 +38,6 @@ $inputCity.addEventListener("blur", () => {
     switch (true) {
         case !$inputCity.value.trim():
             $errorsCity.innerHTML = "Ingrese su ciudad";
-            $inputCity.classList.add("is-invalid");
-            break;
-        case $inputCity.value.trim().length < 2:
-            $errorsCity.innerHTML = "Mínimo 2 carácteres";
-            $inputCity.classList.add("is-invalid");
-            break;
-        case !regExAlpha.test($inputCity.value):
-            $errorsCity.innerHTML = "Ciudad inválida";
             $inputCity.classList.add("is-invalid");
             break;
         default: 

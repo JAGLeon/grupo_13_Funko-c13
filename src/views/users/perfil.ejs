@@ -61,17 +61,16 @@
                 </div>
             </div>
             <div class="pais_tel-contenedor">
+
                 <select class="selec-container" name="province" id="province">
-                    <% for( const oneProvince of provinces) { %>
-                        <option value="<%= oneProvince %>" <%= (locals.oldData && (oneProvince === oldData.provinces)) || user.province === oneProvince ? 'selected' : null %> > <%= oneProvince %> </option>
-                    <% } %>
-
-
+                    <option value=" " hidden>Elegí tu provincia</option>
+                    <!-- ERROR 429 API -->
                 </select>
+
                 <div>
                     <input class="input-style" placeholder="Celular" type="tel" name="phone" id="phone" value="<%=user.phone%>">
                     <small class="text-danger" id="errorsPhone"><%= (locals.errors && errors.phone)? errors.phone.msg : "" %> </small>
-                </div> <!-- falta validar -->
+                </div> 
             </div>
             <div class="btn-cambios">
                 <button class="btnDelete" type="reset">DESCARTAR LOS CAMBIOS</button>
@@ -147,6 +146,9 @@
             <article>
                 <h5>Agregar más direcciones donde estoy ubicado</h5>
                 <p><b>Aviso:</b> Podras administrar todas tus direcciones donde lleguen los pedidos de nuestro e-shop.</p>
+                <% if(user.province == " "){ %>
+                    <p style="color: lightskyblue">Debe elegir una provincia antes de agregar una direccion</p>    
+                <% } %>  
             </article>
             <small class="text-danger" id="addressErrors"><%= (locals.errors && errors.custom) ? errors.custom.msg : "" %></small>
             <div class="contenedor-direccion">
@@ -156,7 +158,11 @@
                             <small class="text-danger" id="errorsAddress"><%=(locals.errors && errors.addressName) ? errors.addressName.msg : "" %> </small>
                             <input class="input-style" placeholder="Dirección" type="text" name="address" id="addressName">
                             <small class="text-danger" id="errorsCity"><%=(locals.errors && errors.city) ? errors.city.msg : "" %> </small>
-                            <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city">
+
+                            <select class="selec-container localidadPerfil" name="city" id="localidad">            
+                                <!-- ERROR 429 API -->
+                            </select>
+
                         </div>
                     </div>
                     <div class="contenedor-bottom">
@@ -164,7 +170,10 @@
                             <small class="text-danger" id="errorsNumberAddress"><%=(locals.errors && errors.numberAddress) ? errors.numberAddress.msg : "" %> </small>
                             <input class="input-style" placeholder="Número" type="text" name="number" id="numberAddress">
                             <small class="text-danger" id="errorsPostal_code"><%=(locals.errors && errors.postal_code) ? errors.postal_code.msg : "" %> </small>
-                            <input class="input-style" placeholder="Código postal" type="text" name="postal_code" id="postal_code">
+                            <div class="cpa">
+                                <input class="input-style" placeholder="Código postal" type="text" name="postal_code" id="postal_code">
+                                <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">Busca tu cpa</a>
+                            </div>
                             <input class="input-style" placeholder="Departamento (opcional)" type="text" name="departament" id="departament">
                             <input class="input-style" placeholder="Timbre (opcional)" type="text" name="doorbell" id="doorbell">
                         </div>
