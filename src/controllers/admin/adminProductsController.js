@@ -110,8 +110,8 @@ module.exports = {
                  if(req.files !== undefined){
                 //1 - Preguntar si está subiendo imagenes
                 if(req.files.length > 0){
-                  //2 - Traer imágenes del project
-                  //2 - a. obtener todas las imágenes del proyecto
+                  //2 - Traer imágenes del producto
+                  //2 - a. obtener todas las imágenes del producto
                   db.ProductImage.findAll({
                     where: {
                       product_id: req.params.id,
