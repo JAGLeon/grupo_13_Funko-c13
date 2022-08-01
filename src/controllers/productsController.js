@@ -28,7 +28,7 @@ let productsController = {
     detailProduct : (req, res) => {
         let idProduct = req.params.id
         let productPromise = db.Product.findByPk(idProduct);
-        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name', 'ASC']]});
+        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name', 'DESC']],offset:13,limit: 10});
         Promise.all([productPromise, allProducts])
         .then(([producto, productos]) => {
             db.ProductImage.findOne({where : {product_id : idProduct}})
@@ -73,7 +73,7 @@ let productsController = {
     },
     compra:(req,res)=>{
         let userAddress = db.User.findOne({where : {id : req.session.user.id},include : [{ association: "addresses" }],})
-        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']]/*,offset:13*/,limit: 10});
+        let allProducts = db.Product.findAll({include : [{association : 'images'}],order : [['name','DESC']],offset:33,limit: 10});
         let allCategories = db.Category.findAll();
         let user = req.session.user.id;
         let carritoOrder = db.Orders.findOne({where: {user_id: user},include: [{association: "order_items",include: [{association: "products"}]}]})
