@@ -1,15 +1,17 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const db = require('../../database/models');
-// clientID = process.env.clientID;
-// clientSecret = process.env.clientSecret;
+clientID = process.env.clientID;
+clientSecret = process.env.clientSecret;
+callbackURL = process.env.callbackURL;
+
 module.exports = () => {
     return(
         passport.use(
             new GoogleStrategy({
-                clientID : '563512132209-e9gi2tqdj6fl2pmad17dp9c9n74j6950.apps.googleusercontent.com',
-                clientSecret : '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',
-                callbackURL: "http://localhost:3000/usuarios/autenticacion/google/llamada"
+                clientID,
+                clientSecret,
+                callbackURL
             },
             function(accessToken, refreshToken, profile, done) {
                 db.User.findOrCreate({

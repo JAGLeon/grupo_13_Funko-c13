@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require('express');
 const app = express();
 const path  = require('path');
-const PORT =  /* Number(process.env.PORT) || */ 3000;
+const PORT =  Number(process.env.PORT) || 3000;
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');

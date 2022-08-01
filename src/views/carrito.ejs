@@ -17,7 +17,6 @@
                 <h4>PRODUCTOS (<%- products.length %>)</h4>
             <% } else { %>
                 <h4>PRODUCTOS (<%= products.length %> )</h4>
-            <form action="#">
                 <% products.forEach(product => { %>
                     <article class="carrito-funkos">
                         <div class="muestra-funko">
@@ -70,7 +69,7 @@
                   </select>
                 </div>
                 <article class="btn-finalizar">
-                    <button onclick="buyCart(`<%= carritoOrder %>` , `<%= user %>`)">COMPRAR</button>
+                    <button class="btn-buy-cart" onclick="buyCart(`<%= carritoOrder %>` , `<%= user %>`)">COMPRAR</button>
                 </article>
             </div>
             <div class="btnClearCart">
@@ -79,7 +78,6 @@
                     <span> Vaciar carrito</span>
                 </button>
             </div>
-            </form>
             <% } %> 
         </section>
         <!-- Catálogo -->

@@ -14,9 +14,65 @@
   --publish: 16px;
 }
 
+/* PRODUCTO COMPRADO */
+
+.producto-comprado .contentBuy{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: rgb(196, 196, 196);
+    box-shadow: 0 0 5px rgb(248, 246, 246);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.producto-comprado .contentBuy i{
+    font-size: 4rem;
+    color: #1EC124;
+    margin-right: 10px;
+}
+div.producto-comprado .contentBuy p{
+    font-size: 1.7rem;
+    color: #1EC124;
+}
+
+div.producto-comprado div.contentBuy article{
+    width: 80%;
+    height: 40px;
+    margin-top: 2rem;
+    border-radius: 15px;
+    background-color: #3483fa;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+div.producto-comprado .contentBuy article:hover{
+    background-color: #5e9af5;
+}
+
+div.producto-comprado .contentBuy article a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+div.producto-comprado{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000000;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+/* FIN PRODUCTO COMPRADO */
+
 /* POP UP CARRITO */
-.producto-agregado-ok,
-.producto-comprado{
+.producto-agregado-ok{
     padding: 30px;
     background: #fff;
     display: none;

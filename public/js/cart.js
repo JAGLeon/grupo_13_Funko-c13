@@ -5,9 +5,12 @@ function qs(element) {
 }
 
 let $addOk = qs(".producto-agregado-ok"),
- $addCart = qs("#productoComprado"),
- $deleteOk = qs(".producto-eliminado");
+ $addCart = qs(".producto-comprado"),
+ $deleteOk = qs(".producto-eliminado"),
+ $btnBuy = qs(".btn-buy-cart");
 
+//  $btnBuy.addEventListener('click', () => {
+// });
 
 function addToCart(productId, quantity = 1, user){
     fetch(`${BASE_URL}/api/carrito/${productId}/${quantity}/${user}`, {method: "POST"})
@@ -114,9 +117,7 @@ function clearCart(user){
 function buyCart(carritoOrder,user){
     fetch(`${BASE_URL}/api/carrito/comprar/${carritoOrder}/${user}`, {method: "DELETE"})
     .then(res => {
-            console.log(res + "SOY UN RES LUEGO DEL THEN");
         if(res.ok){
-            console.log(res + "SOY UN RES EN OK");
             return res.json()
         }else{
             throw {
@@ -126,13 +127,11 @@ function buyCart(carritoOrder,user){
     })
     .then(result => {
         // if(result.status == 200){
-            setTimeout(() => {
-                $addCart.style.display = "flex";
-                setTimeout(() => {
-                    $addCart.style.display = "none";
-                    window.location.reload();
-                }, 1500)
-            }, 300);
+            $addCart.style.display = "flex";
+            setTimeout(()=>{
+                $addCart.style.display = "none";
+                window.location.reload();
+            },5000)
         // };
     })
     .catch(error => alert(`${error.errorMsg}`))

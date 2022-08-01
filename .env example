@@ -1,0 +1,3 @@
+PORT = 3000
+clientID = '563512132209-e9gi2tqdj6fl2pmad17dp9c9n74j6950.apps.googleusercontent.com'
+clientSecret = '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'
