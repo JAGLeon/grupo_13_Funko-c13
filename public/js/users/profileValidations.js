@@ -21,7 +21,7 @@ regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
 
-fetch("https://apis.datos.gob.ar/georef/api/provincias")
+/* fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then(response => response.json())
 .then(data => {
     let provinces = data.provincias;
@@ -53,7 +53,7 @@ fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}
         $selectLocalidad.innerHTML += `<option value="${localidad.id}">${localidad.nombre}</option>`
     });
 })
-.catch((error) => console.log(error))
+.catch((error) => console.log(error)) */
 
 
 

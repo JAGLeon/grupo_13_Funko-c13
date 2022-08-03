@@ -17,6 +17,7 @@
 /* PRODUCTO COMPRADO */
 
 .producto-comprado .contentBuy{
+    display: flex;
     width: 300px;
     height: 300px;
     border-radius: 10px;
@@ -38,6 +39,7 @@ div.producto-comprado .contentBuy p{
 }
 
 div.producto-comprado div.contentBuy article{
+    display: flex;
     width: 80%;
     height: 40px;
     margin-top: 2rem;

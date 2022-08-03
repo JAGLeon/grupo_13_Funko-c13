@@ -14,9 +14,9 @@
         <h1>Carrito</h1>
         <section class="main_section-muestra">
             <% if (products.length === 0) { %>
-                <h4>PRODUCTOS (<%- products.length %>)</h4>
+                <h4><a href="/productos">No tenes productos ¿Querés comprar?</a></h4>
             <% } else { %>
-                <h4>PRODUCTOS (<%= products.length %> )</h4>
+                <h4>PRODUCTOS</h4>
                 <% products.forEach(product => { %>
                     <article class="carrito-funkos">
                         <div class="muestra-funko">

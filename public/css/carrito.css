@@ -10,6 +10,13 @@
     font-family: 'Roboto';
 }
 
+h4 a{
+    color: var(--text);
+    cursor: pointer;
+}
+h4 a:hover{
+    color: var(--botones);
+}
 strong{
     color: var(--text);
 }
