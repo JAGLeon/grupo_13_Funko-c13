@@ -65,7 +65,7 @@
                 <select class="selec-container" name="province" id="province">
                     <option value="" hidden>Elegí tu provincia</option>
                     <% for( const oneProvince of provinces) { %>
-                        <option value="<%= oneProvince %>" <%= locals.oldData && (oneProvince === oldData.provinces) ? 'selected' : null %> > <%= oneProvince %> </option>
+                        <option value="<%= oneProvince %>" <%= (locals.oldData && (oneProvince === oldData.provinces)) || user.province === oneProvince ? 'selected' : null %> > <%= oneProvince %> </option>
                     <% } %>
                 </select>
 
@@ -160,10 +160,10 @@
                             <small class="text-danger" id="errorsAddress"><%=(locals.errors && errors.addressName) ? errors.addressName.msg : "" %> </small>
                             <input class="input-style" placeholder="Dirección" type="text" name="address" id="addressName">
                             <small class="text-danger" id="errorsCity"><%=(locals.errors && errors.city) ? errors.city.msg : "" %> </small>
-                            <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city">
+                            <!-- <input class="input-style" placeholder="Ciudad" type="text" name="city" id="city"> -->
 
-                            <!-- <select class="selec-container localidadPerfil" name="city" id="localidad">            
-                            </select> -->
+                            <select class="selec-container localidadPerfil" name="city" id="localidad">            
+                            </select>
 
                         </div>
                     </div>

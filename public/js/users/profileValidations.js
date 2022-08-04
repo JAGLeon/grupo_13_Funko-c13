@@ -21,7 +21,7 @@ regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
 regExPhone = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
 
-/* fetch("https://apis.datos.gob.ar/georef/api/provincias")
+fetch("https://apis.datos.gob.ar/georef/api/provincias")
 .then(response => response.json())
 .then(data => {
     let provinces = data.provincias;
@@ -50,10 +50,10 @@ fetch(`https://apis.datos.gob.ar/georef/api/localidades?provincia=${idProvincia}
     });
 
     localidades.forEach(localidad => { 
-        $selectLocalidad.innerHTML += `<option value="${localidad.id}">${localidad.nombre}</option>`
+        $selectLocalidad.innerHTML += `<option value="${localidad.nombre}">${localidad.nombre}</option>`
     });
 })
-.catch((error) => console.log(error)) */
+.catch((error) => console.log(error))
 
 
 
@@ -116,15 +116,10 @@ $inputUserName.addEventListener("blur", () => {
     };
 });
 
-$inputPhone.addEventListener("blur", () => {
+$inputPhone.addEventListener("change", () => {
     switch (true) {
-        case !$inputPhone.value.trim():
-            $errorsPhone.innerHTML = "Ingrese su celular";
-            $inputPhone.classList.add("is-invalid");
-            break;
         case !regExPhone.test($inputPhone.value):
             $errorsPhone.innerHTML = "Numero argentos";
-            $inputPhone.classList.add("is-invalid");
             break;
         default: 
             $inputPhone.classList.remove("is-invalid");
@@ -162,7 +157,7 @@ $formDatos.addEventListener("submit", function(event) {
     let elementsForm = this.elements;
     let errores = false;
 
-    for (let index = 0; index < elementsForm.length - 2; index++) {
+    for (let index = 0; index < elementsForm.length - 3; index++) {
         if(elementsForm[index].value == ""
         || elementsForm[index].classList.contains("is-invalid")){
             elementsForm[index].classList.add("is-invalid");
